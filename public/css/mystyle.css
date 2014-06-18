@@ -1,0 +1,109 @@
+.topbar
+{
+	background-color:#F6645F; 
+	height:25px;
+	min-height: 25px;
+	color:#fff; 
+	margin-bottom:2px;
+	font-size: 11px;
+}
+.white
+{
+	color:#fff;
+}
+#top-nav ul > li > a:hover
+{
+
+}
+.hover
+{
+	color: #000;
+}
+#header
+{
+	color:#fff;
+}
+.logo
+{
+	margin-bottom: 2%;
+	position: relative;
+	padding-top: 1%;
+	width: 200px;
+	float: left;
+	margin-left: 5px;
+	z-index: 101;
+}
+.logotext
+{
+	position: relative;
+	padding-top: 30px;
+	width: 150px;
+	float: left;
+	margin-left: 20px;
+}
+.sideMenu {
+width: 230px;
+padding: 0;
+margin: 0;
+list-style: none;
+font-size: 13px;
+background-color: #fff;
+}
+.sideMenu > li {
+overflow: hidden;
+height: 50px;
+line-height: 50px;
+text-indent: 25px;
+position: relative;
+z-index: 2;
+border-top: 1px solid #ffffff;
+border-bottom: 1px solid #dddddd;
+-webkit-backface-visibility: hidden;
+-webkit-transition: height .2s ease;
+-moz-transition: height .2s ease;
+transition: height .2s ease;
+}
+.sideMenu > li.active::before {
+content: "";
+position: absolute;
+width: 0;
+height: 0;
+border-top: 9px solid rgba(255,255,255,0);
+border-right: 10px solid #fff;
+border-bottom: 9px solid rgba(255,255,255,0);
+top: 18px;
+right: 0;
+}
+.sideMenu > li.active::after {
+content: "";
+position: absolute;
+width: 0;
+height: 0;
+border-top: 9px solid rgba(255,255,255,0);
+border-right: 10px solid #ffffff;
+border-bottom: 9px solid rgba(255,255,255,0);
+top: 17px;
+right: 0;
+}
+.sideMenu {
+width: 230px;
+padding: 0;
+margin: 0;
+list-style: none;
+font-size: 13px;
+min-height: 500px;
+}
+footer
+{
+position: fixed;
+bottom: 0;
+width: 100%;
+z-index: 91;
+min-height: 20px;
+background: #2d3e52;
+color: #fff;
+}
+.fa
+{
+	padding-right: 20px;
+}
