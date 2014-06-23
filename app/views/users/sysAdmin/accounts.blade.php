@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>Dashboard</title>
 @include('users.includes.head')
 <body>
 <div id="wrapper">
@@ -46,10 +41,10 @@
         <div class="row">
 <div class="col-md-3">
     <ul class="sideMenu">
-        <li class="active">
+        <li>
             <a href="sysAdmin"><i class="fa fa-home"></i>Dashboard</a>
         </li>
-        <li>
+        <li class="active">
             <a href="accounts"><i class="fa fa-user"></i>Accounts</a>
         </li>
         <li>
@@ -57,5 +52,6 @@
         </li>
     </ul>
 </div>
-@include('users.financing.layouts.financialReports')
+@include('users.sysAdmin.adminLayouts.body')
+
 @include('users.includes.footer')

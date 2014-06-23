@@ -1,6 +1,7 @@
 	{{HTML::script('js/jquery-ui-1.9.2.custom.min.js')}}
 	{{HTML::script('js/bootstrap.min.js')}}
 	{{HTML::script('js/App.js')}}
+	{{HTML::script('js/Login.js')}}
 	<!--{{HTML::script('js/skin.js')}}-->
 	<script type="text/javascript">
 		$('.dropdown-toggle').dropdown()
@@ -14,6 +15,10 @@
     	}
 	};
 	$.plot($("#placeholder"), [ [[0, 0], [1, 1]] ], { yaxis: { max: 1 } });
+	</script>
+
+	<script type="text/javascript">
+
 	</script>
 
 <a id="back-to-top" href="#" style="display: none;"><i class="fa fa-chevron-up"></i></a>

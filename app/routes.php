@@ -6,16 +6,28 @@ Route::get('/', ['as' => 'home', function()
 
 }])->before('auth');
 
-
-
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
+
+Route::get('create', ['as' => 'create', function()
+{
+	return View::make('users.create');
+
+}])->before('auth|sysAdmin');
+
 Route::get('admin', ['as' => 'admin', function()
 {
 
 	return View::make('users.admin.index');	
 
 }])->before('auth|admin');
+
+Route::get('accounts', ['as' => 'accounts', function()
+{
+
+	return View::make('users.sysAdmin.accounts');	
+
+}])->before('auth|sysAdmin');
 
 Route::get('sysAdmin', ['as' => 'sysAdmin' , function()
 {
@@ -44,6 +56,13 @@ Route::get('financing', ['as' => 'financing' , function()
 	return View::make('users.financing.index');	
 
 }])->before('auth|financing');
+
+Route::get('purchaseOrder', ['as' => 'purchaseOrder' , function()
+{
+
+	return View::make('users.purchasing.purchaseOrder');	
+
+}])->before('auth|purchasing');
 
 Route::resource('sessions', 'SessionsController');
 Route::resource('users', 'UsersController');

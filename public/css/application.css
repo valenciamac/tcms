@@ -1741,7 +1741,7 @@ Layout: Topbar
   position: relative;
   z-index: 101;
   padding: 8px;
-  background: #2d3e52;
+  background: #1f1f1f;
   border-bottom: 1px solid #000000;
 }
 #topbar .badge {
@@ -1825,7 +1825,7 @@ Layout: Topbar
 #topbar #top-nav > ul > li > a {
   color: #fff;
 }#topbar #top-nav > ul > li > a:hover {
-  color: #A9D2FF;
+  color: #F4AF3C;
 }
 #topbar #top-nav > ul > li > a > .caret {
   border-top-color: #80a7cf;
@@ -1840,10 +1840,15 @@ Layout: Header
   z-index: 91;
   height: 80px;
   max-height: 80px;
-  background: #FFF6CA;
-  -webkit-box-shadow: inset 0 1px 0 #28496b;
-  -moz-box-shadow: inset 0 1px 0 #28496b;
-  box-shadow: inset 0 1px 0 #28496b;
+  background: #f4af3c; /* Old browsers */
+  background: -moz-linear-gradient(top,  #f4af3c 0%, #f2b85c 50%, #f4af3c 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4af3c), color-stop(50%,#f2b85c), color-stop(100%,#f4af3c)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #f4af3c 0%,#f2b85c 50%,#f4af3c 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #f4af3c 0%,#f2b85c 50%,#f4af3c 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #f4af3c 0%,#f2b85c 50%,#f4af3c 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #f4af3c 0%,#f2b85c 50%,#f4af3c 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4af3c', endColorstr='#f4af3c',GradientType=0 ); /* IE6-9 */
+
 }
 #header .container {
   position: relative;

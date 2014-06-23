@@ -43,7 +43,7 @@ class UsersController extends \BaseController {
 		$user->role = Input::get('role');
 		$user->save();
 
-		return Redirect::home();
+		return Redirect::to('create');
 		
 	}
 

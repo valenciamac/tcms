@@ -11,17 +11,9 @@
 {
 	color:#fff;
 }
-#top-nav ul > li > a:hover
-{
-
-}
 .hover
 {
 	color: #000;
-}
-#header
-{
-	color:#fff;
 }
 .logo
 {
@@ -63,27 +55,13 @@ border-bottom: 1px solid #dddddd;
 -moz-transition: height .2s ease;
 transition: height .2s ease;
 }
-.sideMenu > li.active::before {
-content: "";
-position: absolute;
-width: 0;
-height: 0;
-border-top: 9px solid rgba(255,255,255,0);
-border-right: 10px solid #fff;
-border-bottom: 9px solid rgba(255,255,255,0);
-top: 18px;
-right: 0;
+.sideMenu > li.active
+{
+	border-left: 3px solid #F4AF3C;
 }
-.sideMenu > li.active::after {
-content: "";
-position: absolute;
-width: 0;
-height: 0;
-border-top: 9px solid rgba(255,255,255,0);
-border-right: 10px solid #ffffff;
-border-bottom: 9px solid rgba(255,255,255,0);
-top: 17px;
-right: 0;
+.sideMenu > li.active > a
+{
+	color: #F4AF3C;
 }
 .sideMenu {
 width: 230px;
@@ -100,10 +78,22 @@ bottom: 0;
 width: 100%;
 z-index: 91;
 min-height: 20px;
-background: #2d3e52;
+background: #1f1f1f;
 color: #fff;
 }
 .fa
 {
 	padding-right: 20px;
+}
+a 
+{
+	color: #404040;
+}
+a:hover
+{
+	color: #F4AF3C;
+}
+.drop
+{
+	border-bottom: 1px solid #dddddd;
 }

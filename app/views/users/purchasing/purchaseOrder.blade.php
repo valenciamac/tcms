@@ -12,7 +12,7 @@
 		<div id="top-nav">			
 			<ul class="pull-right">
 				<li class="dropdown">
-				<a href="purchasing"><i class="fa fa-home" style="padding-right:5px;"></i> Home</a>
+				<a href="sysAdmin"><i class="fa fa-home" style="padding-right:5px;"></i> Home</a>
 				</li>
 
 				<li class="dropdown">
@@ -38,10 +38,10 @@
 		<div class="row">
 			<div class="col-md-3">
     <ul class="sideMenu">
-        <li class="active">
+        <li>
             <a href="purchasing"><i class="fa fa-home"></i>Dashboard</a>
         </li>
-        <li>
+        <li class="active">
             <a href="purchaseOrder"><i class="fa fa-user"></i>Purchase Order</a>
         </li>
     </ul>
