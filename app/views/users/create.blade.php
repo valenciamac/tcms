@@ -19,19 +19,6 @@
                 <li class="dropdown">
                 <a href="sysAdmin"><i class="fa fa-home" style="padding-right:5px;"></i> Home</a>
                 </li>
-
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle hover" data-toggle="dropdown">
-                        <i class="fa fa-user" style="padding-right:5px;" ></i> {{ ucwords(Auth::user()->fname), '&nbsp;', ucwords(Auth::user()->lname) }}                       
-                        <b class="caret hover"></b>
-                    </a>
-                    
-                    <ul class="dropdown-menu pull-right">
-                        <li class="drop"><a href="create">Create new user</a></li>
-                        <li><a href="logout">Logout</a></li>
-                    </ul> 
-                </li>
-
             </ul>
             
         </div> <!-- /#top-nav -->
