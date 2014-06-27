@@ -71,4 +71,17 @@ public static $rules = [
 	'fname' => 'required',
 	'lname' => 'required'
 ];
+
+	public function scopeSearch($query, $search)
+	{
+		return $query->where(function($query) use ($search)
+			{
+				$query->where('fname', 'LIKE', "%$search%")
+					  ->orWhere('lname', 'LIKE', "%$search%")
+					  ->orWhere('username', 'LIKE', "%$search%")
+					  ->orWhere('role', 'LIKE', "%$search%")
+					  ->orWhere('id', 'LIKE', "%$search%");
+			});
+	}
+
 }

@@ -1,6 +1,14 @@
 <div class="col-md-9">
 				
 		<!-- content here -->
+		<form class="form-inline" action="accounts" role="form">
+    <div class="form-group" >
+        <div class="input-inline">
+          <input class="form-control" type="text" placeholder="search" name="search">
+        </div>
+      </div>
+</form>
+		
 		<table class="table table-bordered table-hover" style="font-size:13px;">
 	      <thead>
 	        <tr>

@@ -44,7 +44,15 @@ class AccountsController extends \BaseController {
 	 */
 	public function show()
 	{
-		$accounts = User::all();
+		if ( $search = Request::get('search'))
+		{
+			$accounts = User::search($search)->get();
+		}
+		else
+		{
+			$accounts = User::all();
+		}
+		
 
 		return View::make('users.sysAdmin.accounts')->withUsers($accounts);
 	}
