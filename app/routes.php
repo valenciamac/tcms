@@ -22,12 +22,8 @@ Route::get('admin', ['as' => 'admin', function()
 
 }])->before('auth|admin');
 
-Route::get('accounts', ['as' => 'accounts', function()
-{
 
-	return View::make('users.sysAdmin.accounts');	
-
-}])->before('auth|sysAdmin');
+Route::get('accounts', ['as' => 'accounts', 'uses' => 'AccountsController@show' ])->before('auth|sysAdmin');
 
 Route::get('sysAdmin', ['as' => 'sysAdmin' , function()
 {
