@@ -66,7 +66,9 @@ public function getRememberTokenName()
 
 public static $rules = [
 	
-	'username' => 'required',
-	'password' => 'required'
+	'username' => 'required|unique:users',
+	'password' => 'required',
+	'fname' => 'required',
+	'lname' => 'required'
 ];
 }

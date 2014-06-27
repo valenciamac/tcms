@@ -11,7 +11,7 @@ Route::get('logout', 'SessionsController@destroy');
 
 Route::get('create', ['as' => 'create', function()
 {
-	return View::make('users.create');
+	return View::make('users.sysAdmin.createUser');
 
 }])->before('auth|sysAdmin');
 
