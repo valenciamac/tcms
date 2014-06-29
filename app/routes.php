@@ -60,6 +60,10 @@ Route::get('purchaseOrder', ['as' => 'purchaseOrder' , function()
 
 }])->before('auth|purchasing');
 
+Route::get('accounts/{id}', ['uses' => 'AccountsController@edit' ])->before('auth|sysAdmin');
+Route::get('accounts/{id}/update', ['uses' => 'AccountsController@update' ])->before('auth|sysAdmin');
+Route::get('accounts/{id}/delete', ['uses' => 'AccountsController@destroy' ])->before('auth|sysAdmin');
+
 Route::resource('sessions', 'SessionsController');
 Route::resource('users', 'UsersController');
 

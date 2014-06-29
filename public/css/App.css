@@ -460,8 +460,8 @@ fieldset[disabled] .btn-twitter.active {
 .pagination > .active > span:focus {
   z-index: 2;
   color: #fff;
-  background-color: #e5412d;
-  border-color: #e5412d;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
   cursor: default;
 }
 .pager > li > a {

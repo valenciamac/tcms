@@ -46,11 +46,11 @@ class AccountsController extends \BaseController {
 	{
 		if ( $search = Request::get('search'))
 		{
-			$accounts = User::search($search)->get();
+			$accounts = User::search(trim($search))->paginate(5);
 		}
 		else
 		{
-			$accounts = User::all();
+			$accounts = User::paginate(5);
 		}
 		
 
@@ -66,7 +66,9 @@ class AccountsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$user = User::where('id', '=', $id)->get();
+
+		return View::make('users.sysAdmin.profile')->withUsers($user);
 	}
 
 	/**
@@ -78,7 +80,23 @@ class AccountsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$user = User::find($id);
+
+		$user->fname = Input::get('fname');
+		$user->lname = Input::get('lname');
+		$user->username = Input::get('username');
+		$user->role = Input::get('role');
+
+		$saved = $user->save();
+
+		if ($saved)
+		{
+			return Redirect::to('accounts');
+		}
+		else
+		{
+			return 'not saved';
+		}
 	}
 
 	/**
@@ -90,7 +108,11 @@ class AccountsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$user = User::find($id);
+
+		$user->delete();
+
+		return Redirect::to('accounts');
 	}
 
 }
