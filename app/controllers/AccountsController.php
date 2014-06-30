@@ -112,7 +112,7 @@ class AccountsController extends \BaseController {
 
 		$user->delete();
 
-		return Redirect::to('accounts');
+		return Redirect::back();
 	}
 
 }

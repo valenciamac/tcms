@@ -67,6 +67,8 @@ return array(
 
 	'key' => '0VNph0PPEx7Y1r6kZimlPw1520FAnf3f',
 
+	'cipher' => MCRYPT_RIJNDAEL_256,
+
 	/*
 	|--------------------------------------------------------------------------
 	| Autoloaded Service Providers
@@ -176,5 +178,6 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 
 	),
+		
 
 );

@@ -66,4 +66,5 @@ Route::get('accounts/{id}/delete', ['uses' => 'AccountsController@destroy' ])->b
 
 Route::resource('sessions', 'SessionsController');
 Route::resource('users', 'UsersController');
+Route::resource('profiles', 'ProfilesController');
 
