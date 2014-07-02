@@ -44,6 +44,9 @@
         <li>
             <a href="purchaseOrder"><i class="fa fa-user"></i>Purchase Order</a>
         </li>
+         <li>
+            <a href="view"><i class="fa fa-user"></i>view</a>
+        </li>
     </ul>
 </div>
 @include('users.purchasing.layouts.body')

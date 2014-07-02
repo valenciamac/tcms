@@ -1,0 +1,1 @@
+C:\xampp\htdocs\tcms-mvc\app/views/pos/show.blade.php

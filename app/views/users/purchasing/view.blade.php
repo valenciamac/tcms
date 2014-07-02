@@ -41,14 +41,15 @@
         <li>
             <a href="purchasing"><i class="fa fa-home"></i>Dashboard</a>
         </li>
-        <li class="active">
+        <li>
             <a href="purchaseOrder"><i class="fa fa-user"></i>Purchase Order</a>
         </li>
-        <li>
-            <a href="view"><i class="fa fa-home"></i>View</a>
+         <li class="active">
+            <a href="view"><i class="fa fa-user"></i>View</a>
         </li>
+
     </ul>
 </div>
-@include('users.purchasing.layouts.purchaseOrderbody')
+@include('users.purchasing.layouts.viewBody')
 
 @include('users.includes.footer')

@@ -67,4 +67,11 @@ Route::get('accounts/{id}/delete', ['uses' => 'AccountsController@destroy' ])->b
 Route::resource('sessions', 'SessionsController');
 Route::resource('users', 'UsersController');
 Route::resource('profiles', 'ProfilesController');
+Route::get('view', ['as' => 'view' , function()
+{
 
+	return View::make('users.purchasing.view');	
+
+}])->before('auth|purchasing'); 
+Route::get('view',['as' => 'view', 'uses' => 'PoController@show'])->before('auth|purchasing');
+Route::resource('po', 'PoController');

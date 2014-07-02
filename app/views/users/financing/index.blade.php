@@ -49,7 +49,7 @@
             <a href="financing"><i class="fa fa-home"></i>Dashboard</a>
         </li>
         <li>
-            <a href="javascript;"><i class="fa fa-user"></i>Financial Report</a>
+            <a href="#"><i class="fa fa-user"></i>Financial Report</a>
         </li>
     </ul>
 </div>
