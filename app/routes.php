@@ -75,3 +75,11 @@ Route::get('view', ['as' => 'view' , function()
 }])->before('auth|purchasing'); 
 Route::get('view',['as' => 'view', 'uses' => 'PoController@show'])->before('auth|purchasing');
 Route::resource('po', 'PoController');
+Route::get('accts', function()
+{
+	return User::all();
+})->before('auth|sysAdmin');
+Route::post('save', function()
+{
+	return User::create(Input::all());
+})->before('auth|sysAdmin');

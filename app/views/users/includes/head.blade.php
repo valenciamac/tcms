@@ -18,6 +18,8 @@
 	{{HTML::script('js/jquery-1.9.1.min.js')}}
 	{{HTML::script('js/jquery.flot.js')}}
 	{{HTML::script('js/jquery.cookie.js')}}
+	{{HTML::script('js/angular.min.js')}}
+	{{HTML::script('js/main.js')}}
 </head>
 
 			

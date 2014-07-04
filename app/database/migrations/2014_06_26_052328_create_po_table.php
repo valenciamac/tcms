@@ -12,7 +12,7 @@ class CreatePoTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('po', function(Blueprint $table)
+		Schema::create('pos', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('suppler_name');
@@ -34,7 +34,7 @@ class CreatePoTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('po');
+		Schema::drop('pos');
 	}
 
 }

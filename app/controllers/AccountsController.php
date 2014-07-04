@@ -44,7 +44,7 @@ class AccountsController extends \BaseController {
 	 */
 	public function show()
 	{
-		if ( $search = Request::get('search'))
+		/*if ( $search = Request::get('search'))
 		{
 			$accounts = User::search(trim($search))->paginate(5);
 		}
@@ -54,7 +54,8 @@ class AccountsController extends \BaseController {
 		}
 		
 
-		return View::make('users.sysAdmin.accounts')->withUsers($accounts);
+		return View::make('users.sysAdmin.accounts')->withUsers($accounts);*/
+		return View::make('users.sysAdmin.accounts');
 	}
 
 	/**
