@@ -29,12 +29,13 @@
 	        	<td>{{user.lname}}</td>
 	        	<td>{{user.username}}</td>
 	        	<td>{{user.role}}</td>
-	        	<td><a href="accounts/{{user.id}}"><i class="fa fa-pencil"></i></a> 
-	        	<a href="accounts/{{user.id}}/delete"><i class="fa fa-trash"></i></a> </td>
+	        	<td style="margin-right:2px;"><a href="accounts/{{user.id}}" class="btn btn-success"><i class="fa fa-pencil"></i>edit</a> 
+	        	<a href="accounts/{{user.id}}/delete" class="btn btn-danger"><i class="fa fa-trash-o"></i>delete</a></td>
 	            
 	        </tr>
 
 	        
 	      </tbody>
 	    </table>
+
 </div>

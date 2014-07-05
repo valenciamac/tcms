@@ -17,10 +17,6 @@
 	$.plot($("#placeholder"), [ [[0, 0], [1, 1]] ], { yaxis: { max: 1 } });
 	</script>
 
-	<script type="text/javascript">
-
-	</script>
-
 <a id="back-to-top" href="#" style="display: none;"><i class="fa fa-chevron-up"></i></a>
 </div>
 <footer>
