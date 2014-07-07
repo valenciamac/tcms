@@ -1,18 +1,18 @@
 function UsersController($scope, $http)
 {	
-	$http.get('/accts').success(function(users)
+	$http.get('public/accts').success(function(users)
 	{
 		$scope.users = users;
 	});
 
-	$scope.addUser = function()
+	$scope.adduser = function()
 	{
 		var user = {
-			body: $scope.newTask,
-			body: $scope.newTask,
-			body: $scope.newTask,
-			body: $scope.newTask,
-			body: $scope.newTask,
+			fname: $scope.fname,
+			lname: $scope.lname,
+			username: $scope.username,
+			password: $scope.password,
+			role: $scope.role
 		};
 
 		$scope.users.push(user);

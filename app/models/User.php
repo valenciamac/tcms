@@ -64,6 +64,14 @@ public function getRememberTokenName()
     return 'remember_token';
 }
 
+protected $fillable = [
+		'fname',
+		'lname',
+		'username',
+		'password',
+		'role'
+];
+
 public static $rules = [
 	
 	'username' => 'required|unique:users',
