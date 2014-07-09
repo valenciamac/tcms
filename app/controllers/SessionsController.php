@@ -47,7 +47,7 @@ class SessionsController extends \BaseController {
 		}
 		else
 		{
-			return Redirect::to('login');
+			return Redirect::to('login')->with('flash_message', 'Wrong username or Password!');
 		}
 	}
 

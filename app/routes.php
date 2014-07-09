@@ -75,9 +75,29 @@ Route::get('view', ['as' => 'view' , function()
 }])->before('auth|purchasing'); 
 Route::get('view',['as' => 'view', 'uses' => 'PoController@show'])->before('auth|purchasing');
 Route::resource('po', 'PoController');
+Route::get('view2', ['as' => 'view2' , function()
+{
+
+	return View::make('users.purchasing.view2');	
+
+}])->before('auth|purchasing'); 
+Route::get('purchase/{id}', ['uses' => 'PoController@edit' ])->before('auth|purchasing');
+Route::get('purchase/{id}/update', ['uses' => 'PoController@update' ])->before('auth|purchasing');
+Route::get('purchase/{id}/delete', ['uses' => 'PoController@destroy' ])->before('auth|purchasing');
+Route::get('view2', ['as' => 'view2', 'uses' => 'ItemController@show' ])->before('auth|purchasing');
+Route::get('payment', ['as' => 'payment' , function()
+{
+
+	return View::make('users.purchasing.payment');	
+
+}])->before('auth|purchasing'); 
+Route::resource('request', 'RequestController');
+Route::get('product/{id}', ['uses' => 'ItemController@edit' ])->before('auth|purchasing');
+Route::get('product/{id}/update', ['uses' => 'ItemController@update' ])->before('auth|purchasing');
+Route::get('product/{id}/delete', ['uses' => 'ItemController@destroy' ])->before('auth|purchasing');
 Route::get('public/accts', function()
 {
-	return User::all();
+	return User::orderBy('id', 'DESC')->get();
 })->before('auth|sysAdmin');
 
 Route::post('accts', function()
@@ -89,6 +109,59 @@ Route::post('accts', function()
 		$password = Input::get('password');
 		$user->password = Hash::make($password);
 		$user->role = Input::get('role');
-		$user->save();
+		$success = $user->save();	
 
 })->before('auth|sysAdmin');
+
+Route::post('save', function()
+{
+	$activity = new Activity;
+	$activity->user_id = 4;
+	$activity->action = 'may bagong gawa';
+	$activity->save();
+
+})->before('auth|sysAdmin');
+
+Route::get('activities', function()
+{
+	return View::make('users.sysAdmin.activities');
+
+})->before('auth|sysAdmin');
+
+Route::get('save', function()
+{
+	return Activity::orderBy('id', 'DESC')->get();
+})->before('auth|sysAdmin');
+
+Route::get('employ', ['as' => 'employ' , function()
+{
+
+	return View::make('users.accounting.employ');	
+
+}])->before('auth|accounting');
+
+Route::get('employ2', ['as' => 'employ2' , function()
+{
+
+	return View::make('users.accounting.employ2');	
+
+}])->before('auth|accounting');
+
+Route::resource('employee', 'EmployeeController');
+
+Route::get('employ2', ['as' => 'employ2', 'uses' => 'EmployeeController@show' ])->before('auth|accounting');
+
+Route::get('payroll', ['as' => 'payroll', 'uses' => 'EmployeeController@shows' ])->before('auth|accounting');
+
+Route::get('{id}', ['uses' => 'EmployeeController@edit' ])->before('auth|accounting');
+
+Route::get('{id}/update', ['uses' => 'EmployeeController@update' ])->before('auth|accounting');
+
+Route::get('{id}/delete', ['uses' => 'EmployeeController@destroy' ])->before('auth|accounting');
+
+Route::get('vouchers', ['as' => 'vouchers' , function()
+{
+
+	return View::make('users.accounting.vouchers');	
+
+}])->before('auth|accounting');

@@ -48,8 +48,8 @@
       
 </form> 
 <a href="accounts" class="btn btn-success">Show All</a>
-
-		<table class="table table-bordered table-hover" style="font-size:13px;">
+	
+		<table class="table table-bordered content" style="font-size:13px;">
 	      <thead>
 	        <tr>
 	          <th>Id</th>
@@ -75,5 +75,5 @@
 	        
 	      </tbody>
 	    </table>
-
+	    <input type="hidden" ng-model="id" class="form-control" value="user.id">
 </div>

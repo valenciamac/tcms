@@ -91,5 +91,4 @@ public static $rules = [
 					  ->orWhere('id', 'LIKE', "%$search%");
 			});
 	}
-
 }

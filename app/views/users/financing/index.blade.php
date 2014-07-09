@@ -49,9 +49,9 @@
             <a href="financing"><i class="fa fa-home"></i>Dashboard</a>
         </li>
         <li>
-            <a href="#"><i class="fa fa-user"></i>Financial Report</a>
+            <a href="financialReports"><i class="fa fa-user"></i>Financial Report</a>
         </li>
     </ul>
 </div>
-@include('users.financing.layouts.body')
+@include('users.financing.layouts.indexBody')
 @include('users.includes.footer')

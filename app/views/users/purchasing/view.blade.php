@@ -47,6 +47,12 @@
          <li class="active">
             <a href="view"><i class="fa fa-user"></i>View</a>
         </li>
+        <li class="">
+            <a href="view2"><i class="fa fa-home"></i>View Items</a>
+        </li>
+         <li class="">
+            <a href="payment"><i class="fa fa-home"></i>Create RFP</a>
+        </li>
 
     </ul>
 </div>

@@ -13,7 +13,7 @@
 
 	{{HTML::style('css/css.css')}}
 	{{HTML::style('css/font-awesome.min.css')}}
-	{{HTML::style('css/bootstrap.min.css')}}
+	{{HTML::style('css/bootstrap.css')}}
 	{{HTML::style('css/jquery-ui-1.9.2.custom.css')}}
 	{{HTML::style('css/App.css')}}
 	{{HTML::style('css/Login.css')}}
@@ -35,14 +35,12 @@
 	
 </head>
 
-<body>
+<body style="background-color:#b93d30;">
 
-<div id="login-container">
+<div id="login-container" style="min-width:1000px;">
 
-	<div id="logo">
-		<a href="#">
+	<div id="logo" class="hidden-xs">
 			<img src="{{asset('img/logo.png')}}" alt="Logo" width="100px;">
-		</a>
 	</div>
 
 	<div id="login" style="width:40%; padding-top:140px; margin-left:30%;">
@@ -50,6 +48,12 @@
 		<h3>Welcome to TCMS Admin.</h3>
 
 		<h5>Please sign in to get access.</h5>
+
+		@if (Session::has('flash_message'))
+			<div class="alert alert-danger" role="alert">
+				<p>{{ Session::get('flash_message') }}</p>
+			</div>
+		@endif
 
 		{{Form::open(array('route' => 'sessions.store'))}}
 

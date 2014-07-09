@@ -22,6 +22,7 @@ class PoController extends \BaseController {
 		$item->desc = Input::get('desc');
 		$item->price = Input::get('price');
 		$item->amount = Input::get('amount');
+		$item->po = Input::get('po');
 
 		$item->save();
 		$po->save();
@@ -44,6 +45,42 @@ class PoController extends \BaseController {
 		return View::make('users.purchasing.view')->withPo($purchase);
 	}
 
+public function edit($id)
+	{
+		$purchase = Po::where('id', '=', $id)->get();
 
+		return View::make('users.purchasing.edit')->withPo($purchase);
+	}
+	public function update($id)
+	{
+		$purchase = Po::find($id);
+		$purchase->suppler_name = Input::get('suppler_name');
+		$purchase->prs= Input::get('prs');
+		$purchase->po = Input::get('po');
+		$purchase->po_date= Input::get('po_date');
+		$purchase->address= Input::get('address');
+		$purchase->terms= Input::get('terms');
+		$purchase->supplier_code= Input::get('supplier_code');
+		$purchase->deliverTo= Input::get('deliverTo');
+
+		$saved = $purchase->save();
+
+		if ($saved)
+		{
+			return Redirect::to('view');
+		}
+		else
+		{
+			return 'not saved';
+		}
+	}
+	public function destroy($id)
+	{
+		$purchase = Po::find($id);
+
+		$purchase->delete();
+
+		return Redirect::back();
+	}
 
 }

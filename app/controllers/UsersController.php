@@ -32,22 +32,7 @@ class UsersController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validation = Validator::make(Input::all(), User::$rules);
-		if ($validation->fails())
-		{
-			return Redirect::back()->withInput()->withErrors($validation->messages());
-		}
-
-		$user = new User;
-		$user->fname = Input::get('fname');
-		$user->lname = Input::get('lname');
-		$user->username = Input::get('username');
-		$password = Input::get('password');
-		$user->password = Hash::make($password);
-		$user->role = Input::get('role');
-		$user->save();
-
-		return Redirect::to('create');
+		//
 		
 	}
 

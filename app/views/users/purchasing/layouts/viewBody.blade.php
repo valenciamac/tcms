@@ -35,7 +35,10 @@
             <td>{{ ucwords($purchase->address)}}</td> 
             <td>{{ $purchase->terms}}</td>
             <td>{{ ucwords($purchase->supplier_code)}}</td>
-            <td>{{ ucwords($purchase->deliverTo)}}</td>   
+            <td>{{ ucwords($purchase->deliverTo)}}</td> 
+             <td><a href="purchase/{{$purchase->id}}"><i class="fa fa-pencil-square-o"></i></a>
+              <a href="purchase/{{$purchase->id}}/delete"><i class="fa fa-trash-o"></i></a>
+            </td>  
           </tr>
           
           @endforeach

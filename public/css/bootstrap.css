@@ -4426,8 +4426,7 @@ a.thumbnail.active {
   color: #333;
 }
 .alert {
-  padding: 15px;
-  margin-bottom: 20px;
+  padding: 5px;
   border: 1px solid transparent;
   border-radius: 4px;
 }
@@ -5783,3 +5782,8 @@ button.close {
     display: none !important;
   }
 }
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }

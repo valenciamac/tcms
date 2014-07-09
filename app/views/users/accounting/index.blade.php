@@ -42,7 +42,13 @@
             <a href="accounting"><i class="fa fa-home"></i>Dashboard</a>
         </li>
         <li>
-            <a href="javascript;"><i class="fa fa-user"></i>Payroll</a>
+            <a href="employ"><i class="fa fa-user"></i>Employee</a>
+        </li>
+        <li>
+            <a href="payroll"><i class="fa fa-money"></i>Payroll</a>
+        </li>
+        <li>
+            <a href="vouchers"><i class="fa fa-file"></i>Voucher</a>
         </li>
     </ul>
 </div>
