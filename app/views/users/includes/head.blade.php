@@ -5,6 +5,7 @@
 	<meta name="author" content="">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
+	
 
 	{{HTML::style('css/bootstrap.css')}}
 	{{HTML::style('css/font-awesome.css')}}
@@ -18,8 +19,6 @@
 	{{HTML::script('js/jquery-1.9.1.min.js')}}
 	{{HTML::script('js/angular.min.js')}}
 	{{HTML::script('js/main.js')}}
-	{{HTML::script('js/jquery.flot.js')}}
-	{{HTML::script('js/jquery.cookie.js')}}
 	
 </head>
 

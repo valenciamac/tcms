@@ -2,7 +2,7 @@
 <div ng-app ng-controller="UsersController">
 		<!-- content here -->
 
-<form ng-submit="adduser()">
+<form ng-submit="adduser()" method="Post">
 	<table class="table table-bordered" style="font-size:13px;">
 		      <thead>
 		        <tr>
@@ -47,7 +47,6 @@
 
       
 </form> 
-<a href="accounts" class="btn btn-success">Show All</a>
 	
 		<table class="table table-bordered content" style="font-size:13px;">
 	      <thead>
@@ -75,6 +74,5 @@
 	        
 	      </tbody>
 	    </table>
-	    <input type="hidden" ng-model="id" class="form-control" value="user.id">
 </div>
 

@@ -113,7 +113,7 @@ Route::post('accts', function()
 
 		$activity = new Activity;
 		$activity->user_id = Auth::user()->id;
-		$activity->action = 'i created something';
+		$activity->action = 'created something';
 		$activity->save();
 
 })->before('auth|sysAdmin');

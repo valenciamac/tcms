@@ -34,7 +34,7 @@ function UsersController($scope, $http, $interval)
   // $interval runs the given function every X millisec (2nd arg)
   $interval(function() { 
     refresh();
-  }, $scope.refreshInterval * 5000); // the refresh interval must be in millisec
+  }, $scope.refreshInterval * 60000); // the refresh interval must be in millisec
 
 }
 function ActsController($scope, $http)

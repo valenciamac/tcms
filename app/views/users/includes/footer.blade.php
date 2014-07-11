@@ -1,3 +1,7 @@
+	
+	{{HTML::script('js/jquery.flot.js')}}
+	{{HTML::script('js/jquery.cookie.js')}}
+	{{HTML::script('js/jquery.slimscroll.min.js')}}
 	{{HTML::script('js/jquery-ui-1.9.2.custom.min.js')}}
 	{{HTML::script('js/bootstrap.min.js')}}
 	{{HTML::script('js/App.js')}}
@@ -8,8 +12,6 @@
 	{{HTML::script('js/validate.js')}}
 	{{HTML::script('js/add2.js')}}
 	{{HTML::script('js/fullcalendar.min.js')}}
-	{{HTML::script('css/bootstrap-datepicker-0.1.11/js/bootstrap-datepicker.js')}}
-	{{HTML::script('js/jquery-1.10.1.min.js')}}
 	<!--{{HTML::script('js/skin.js')}}-->
 	<script type="text/javascript">
 		$('.dropdown-toggle').dropdown()
@@ -38,13 +40,6 @@
 	</div>
 	
 </div>
-<script type="text/javascript">
-		$(function(){
-		   $('.datepicker').datepicker({
-		   		
-		    });
-		});	
-    </script>
       <script type="text/javascript">
 		$(function	()	{
 		
@@ -157,6 +152,23 @@
   document.querySelector('head').appendChild(msViewportStyle)
 	}
 	</script>
+
+<script type="text/javascript">
+	$(function(){
+	    $('#activities').slimScroll({
+	        height: '250px'
+	    });
+});
+</script>
+<script type="text/javascript">
+
+function ucwords (str) {
+    return (str + '').replace(/^([a-z])|\s+([a-z])/g, function ($1) {
+        return $1.toUpperCase();
+    });
+}
+
+</script>
 </footer>
 </body>
 </html>

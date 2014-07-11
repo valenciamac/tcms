@@ -110,6 +110,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'DaveJamesMiller\Boris\BorisServiceProvider',
+		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 
 	),
 
