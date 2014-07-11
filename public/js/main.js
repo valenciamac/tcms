@@ -10,18 +10,10 @@ function UsersController($scope, $http, $interval)
 			role: $scope.role
 		};
 
-    var activity = {
-      user_id: 4,
-      action: 'may bagong gawa'
-    };
-
 		$scope.users.push(user);
 
 		$http.post('accts', user);
 
-    $scope.activities.push(activity);
-
-    $http.post('save', activity)
 	};
 
 	function refresh() {

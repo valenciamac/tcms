@@ -109,16 +109,12 @@ Route::post('accts', function()
 		$password = Input::get('password');
 		$user->password = Hash::make($password);
 		$user->role = Input::get('role');
-		$success = $user->save();	
+		$success = $user->save();
 
-})->before('auth|sysAdmin');
-
-Route::post('save', function()
-{
-	$activity = new Activity;
-	$activity->user_id = 4;
-	$activity->action = 'may bagong gawa';
-	$activity->save();
+		$activity = new Activity;
+		$activity->user_id = Auth::user()->id;
+		$activity->action = 'i created something';
+		$activity->save();
 
 })->before('auth|sysAdmin');
 
@@ -130,7 +126,9 @@ Route::get('activities', function()
 
 Route::get('save', function()
 {
-	return Activity::orderBy('id', 'DESC')->get();
+	$activity = Activity::with('user')->orderBy('id', 'DESC')->get();
+
+	return $activity;
 })->before('auth|sysAdmin');
 
 Route::get('employ', ['as' => 'employ' , function()

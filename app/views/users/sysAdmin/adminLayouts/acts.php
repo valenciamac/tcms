@@ -13,7 +13,7 @@
 </form> 
 		    <div class="panel panel-default" ng-repeat="activity in activities | filter:search">
 			  <div class="panel-body">
-			    {{activity.user_id}}<br>
+			    {{activity.user.fname}}&nbsp;{{activity.user.lname}}<br>
 			    {{activity.action}}
 			  </div>
 			</div>

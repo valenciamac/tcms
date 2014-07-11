@@ -61,7 +61,7 @@
 	        </tr>
 	      </thead>
 	      <tbody>	    
-	         <tr ng-repeat="user in users | filter:search">
+	         <tr ng-repeat="user in users | filter:search" class="contents">
 	        	<td>{{user.id}}</td>
 	        	<td>{{user.fname}}</td>
 	        	<td>{{user.lname}}</td>
@@ -77,3 +77,4 @@
 	    </table>
 	    <input type="hidden" ng-model="id" class="form-control" value="user.id">
 </div>
+
