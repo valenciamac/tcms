@@ -14,6 +14,12 @@ function UsersController($scope, $http, $interval)
 
 		$http.post('accts', user);
 
+    $scope.fname = '';
+    $scope.lname = '';
+    $scope.username = '';
+    $scope.password = '';
+    $scope.role = '';
+
 	};
 
 	function refresh() {
@@ -37,8 +43,10 @@ function UsersController($scope, $http, $interval)
   }, $scope.refreshInterval * 60000); // the refresh interval must be in millisec
 
 }
-function ActsController($scope, $http)
+function ActsController($scope, $http, $interval)
 {
+  function refreshActs() 
+  {
     $http({
       url: 'save',
       method: "GET"
@@ -49,6 +57,13 @@ function ActsController($scope, $http)
     }).error(function (activities) {
       console.log('Error');
     });
+  }
+  refreshActs();
+
+  $interval(function() { 
+    refreshActs();
+  }, $scope.refreshInterval * 60000);
+
 
 
 }

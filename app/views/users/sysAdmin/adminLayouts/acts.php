@@ -13,7 +13,7 @@
 		    <div class="activity-group" ng-repeat="activity in activities | filter:search" style="margin:3px;">
 			  <div class="activity-body">
 			    <p><block style="color:orange">{{activity.user.fname}}&nbsp;{{activity.user.lname}}</block>&nbsp;
-			    {{activity.action}} {{activity.created_at}}
+			    {{activity.action}} {{activity.identifier}}
 
 			    </p>
 			  </div>

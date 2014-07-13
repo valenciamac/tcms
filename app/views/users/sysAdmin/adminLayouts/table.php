@@ -22,6 +22,7 @@
 		        	<td><input type="password" ng-model="password" class="form-control"></td>
 		        	<td>
 			        	<select ng-model="role" class="form-control" id="role">
+		                    <option value="" disabled>&nbsp;</option>
 		                    <option value="sysAdmin">System Administrator</option>
 		                    <option value="accounting">Accounting</option>
 		                    <option value="admin">Administrator</option>
