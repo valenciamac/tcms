@@ -55,7 +55,7 @@
 	    });
 });
 </script>
-<SCRIPT language="javascript">
+<script type="text/javascript">
         function addRow(tableID) {
  
             var table = document.getElementById(tableID);
