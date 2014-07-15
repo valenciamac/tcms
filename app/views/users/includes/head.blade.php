@@ -25,13 +25,7 @@
 	{{HTML::script('js/jquery-ui.js')}}
 
 	
-	  <script>
-    $(function() {
-      $( "#datepicker" ).datepicker({ minDate: -100, maxDate: "+0D" });
-      $("#datepicker").datepicker("setDate",new Date());
-      $( "#datepicker" ).datepicker( "option", "dateFormat", "yy/mm/dd");
-    });
-</script>
+
 <script>
     $(function() {
       $( "#datepicker1" ).datepicker();

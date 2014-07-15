@@ -140,7 +140,13 @@
   document.querySelector('head').appendChild(msViewportStyle)
 	}
 	</script>
-
+<script>
+    $(function() {
+      $( "#datepicker" ).datepicker({ minDate: -100, maxDate: "+0D" });
+      $("#datepicker").datepicker("setDate",new Date());
+      $( "#datepicker" ).datepicker( "option", "dateFormat", "yy/mm/dd");
+    });
+</script>
 </footer>
 </body>
 </html>
