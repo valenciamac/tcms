@@ -18,6 +18,7 @@
     {{HTML::script('js/sum9.js')}}
     {{HTML::script('js/addNumbers.js')}}
     {{HTML::script('js/chart.min.js')}}
+    {{HTML::script('js/jquery.slimscroll.min.js')}}
 	<!--{{HTML::script('js/skin.js')}}-->
 
 	<script type="text/javascript">
@@ -47,7 +48,13 @@
 	</div>
 	
 </div>
-
+<script type="text/javascript">
+	$(function(){
+	    $('#activities').slimScroll({
+	        height: '250px'
+	    });
+});
+</script>
 <SCRIPT language="javascript">
         function addRow(tableID) {
  
