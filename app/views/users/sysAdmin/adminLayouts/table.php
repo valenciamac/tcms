@@ -2,7 +2,7 @@
 <div ng-app ng-controller="UsersController">
 		<!-- content here -->
 
-<form ng-submit="adduser()">
+<form ng-submit="adduser()" method="Post">
 	<table class="table table-bordered" style="font-size:13px;">
 		      <thead>
 		        <tr>
@@ -22,6 +22,7 @@
 		        	<td><input type="password" ng-model="password" class="form-control"></td>
 		        	<td>
 			        	<select ng-model="role" class="form-control" id="role">
+		                    <option value="" disabled>&nbsp;</option>
 		                    <option value="sysAdmin">System Administrator</option>
 		                    <option value="accounting">Accounting</option>
 		                    <option value="admin">Administrator</option>
@@ -47,7 +48,6 @@
 
       
 </form> 
-<a href="accounts" class="btn btn-success">Show All</a>
 	
 		<table class="table table-bordered content" style="font-size:13px;">
 	      <thead>
@@ -61,7 +61,7 @@
 	        </tr>
 	      </thead>
 	      <tbody>	    
-	         <tr ng-repeat="user in users | filter:search">
+	         <tr ng-repeat="user in users | filter:search" class="contents">
 	        	<td>{{user.id}}</td>
 	        	<td>{{user.fname}}</td>
 	        	<td>{{user.lname}}</td>
@@ -75,5 +75,5 @@
 	        
 	      </tbody>
 	    </table>
-	    <input type="hidden" ng-model="id" class="form-control" value="user.id">
 </div>
+

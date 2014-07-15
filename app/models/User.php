@@ -80,6 +80,11 @@ public static $rules = [
 	'lname' => 'required'
 ];
 
+public function activities()
+{
+	return $this->hasMany('Activity');
+}
+
 	public function scopeSearch($query, $search)
 	{
 		return $query->where(function($query) use ($search)
