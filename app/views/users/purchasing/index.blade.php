@@ -44,8 +44,14 @@
         <li>
             <a href="purchaseOrder"><i class="fa fa-user"></i>Purchase Order</a>
         </li>
+         <li>
+            <a href="view"><i class="fa fa-user"></i>view</a>
+        </li>
         <li class="">
-            <a href="payment"><i class="fa fa-home"></i>Request For Payment</a>
+            <a href="view2"><i class="fa fa-home"></i>View Items</a>
+        </li>
+        <li class="">
+            <a href="payment"><i class="fa fa-home"></i>Create RFP</a>
         </li>
     </ul>
 </div>

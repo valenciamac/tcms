@@ -12,7 +12,7 @@
               <th>Middle Name</th>
               <th>Last Name</th>
               <th>Rate</th>
-              
+              <th>Option</th>
 	        </tr>
 	      </thead>
 	      <tbody>
@@ -23,38 +23,38 @@
 	         <form action="{{$emp->id}}/update">
 	        	<td>{{ $emp->id }}</td>
 	            <td>
-	            <select name="department" class="form-control" id="department">
-                    <option value="office">Office</option>
-                    <option value="worksite">Work Site</option>
+	            <select name="department" class="form-control" id="department" value="{{$emp->department}}">
+                    <option>Office</option>
+                    <option>Work Site</option>
                 </select>
             	</td>
 	            <td>
-	              <select name="position" class="form-control" id="position">
-                    <option value="accountant" class="office">Accountant</option>
-                    <option value="admin" class="office">Admin</option>
-                    <option value="architect" class="worksite">Architect</option>
-                    <option value="carpenter" class="worksite">Carpenter</option>
-                    <option value="corpsec" class="office">Corporate Secretary</option>
-                    <option value="drivver" class="office work site">Driver</option>
-                    <option value="electrician" class="worksite office">Electrician</option>
-                    <option value="engineer" class="worksite">Engineer</option>
-                    <option value="foreman" class="worksite">Foreman</option>
-                    <option value="stockman" class="worksite">Gen. Stockman</option>
-                    <option value="laborer" class="worksite">Laborer</option>
-                    <option value="maintenance" class="worksite office">Maintenance</option>
-                    <option value="mason" class="worksite">Mason</option>
-                    <option value="plumber" class="worksite office">Plumber</option>
-                    <option value="president" class="office">President</option>
-                    <option value="programmer" class="office">Programmer</option>
-                    <option value="proincha" class="office worksite">Project in-charge</option>
-                    <option value="purchase" class="office">Purchaser</option>
-                    <option value="site" class="worksite">Site</option>
-                    <option value="steelman" class="worksite">Steelman</option>
-                    <option value="settler" class="worksite">Tile Settler</option>
-                    <option value="vicepres" class="office"> Vice President</option>
-                    <option value="warehouse" class="worksite">Warehouseman</option>
-                    <option value="welder" class="worksite">Welder</option>
-                </select>
+	            <select name="position" class="form-control" id="position" value="{{$emp->position}}">
+					<option>Accountant</option>
+                    <option>Admin</option>
+                    <option>Architect</option>
+                    <option>Carpenter</option>
+                    <option>Corporate Secretary</option>
+                    <option>Driver</option>
+                    <option>Electrician</option>
+                    <option>Engineer</option>
+                    <option>Foreman</option>
+                    <option>Gen. Stockman</option>
+                    <option>Labor</option>
+                    <option>Maintenance</option>
+                    <option>Mason</option>
+                    <option>Plumber</option>
+                    <option>President</option>
+                    <option>Programmer</option>
+                    <option>Project in-charge</option>
+                    <option>Purchaser</option>
+                    <option>Site</option>
+                    <option>Steelman</option>
+                    <option>Tile Settler</option>
+                    <option>Vice President</option>
+                    <option>Warehouseman</option>
+                    <option>Welder</option>
+				</select>
 				</td>
 	            
 	            <td><input name="fname" type="text" onkeypress="return checkNum();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,20);" maxlength="20" placeholder=""  required value="{{ ($emp->fname) }}" class="form-controll"> </td>
@@ -70,21 +70,14 @@
 	        
 	      </tbody>
 	    </table>
-		<div class="form-inline">
-            <button type="submit" id="login-btn" class="btn btn-primary btn-block" style="width:20%;">Save &nbsp; <i class="fa fa-save"></i></button>
-        </div>
-        <div class="form-inline">
-        	<p></p>
-        </div>
-        <div class="form-inline">
-        	<button type="back" id="login-btn" class="btn btn-primary btn-block" style="width:20%;">Back &nbsp; <i class="fa fa-refresh"></i></button>
-	    </div>
-	    
-        
-	   	
-	   	</form>  
+	    <button type="submit" class="btn btn-primary">Save</button>
+	    <button type="back" class="btn btn-primary">Back</button>
+	    </form>  
+
 	    @endif
+
 			</div>
 		</div>
+		
 	</div>
 </div>

@@ -3,64 +3,44 @@
 class FinanceController extends \BaseController {
 
 	
-	public function index()
+	public function store()
 	{
-		//
+		$monthly = new Monthly;
+		$monthly->date = Input::get('date');
+		$monthly->income = Input::get('income');
+		$monthly->expenses = Input::get('expenses');
+
+		$monthly->save();
+
+		$activity = new Activity;
+		$activity->user_id = Auth::user()->id;
+		$activity->action = 'created new transaction';
+		$activity->identifier = 'of the company';
+		$activity->save()
+
+		return redirect::to('users.financing.index');
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /accounts/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /accounts
-	 *
-	 * @return Response
-	 */
-	public function view()
-	{
-		// $income = new Income;
-		// $income->clientName = Input::get('clientName');
-		// $income->projectTitle= Input::get('projectTitle');
-		// $income->siteSalaryTotal = Input::get('siteSalaryTotal');
-		// $income->officeSalaryTotal= Input::get('officeSalaryTotal');
-		// $income->priceOfMaterialsTotal= Input::get('priceOfMaterialsTotal');
-		// $income->misc= Input::get('misc');
-		// $income->expensesTotal= Input::get('expensesTotal');
-		// $income->incomeTotal= Input::get('incomeTotal');
-
-		// $income->save();
-
-		// return View::make('users.financing.financialReports')->withIncome($income);
-	}
 
 	/**
 	 * Display the specified resource.
-	 * GET /accounts/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show()
+	public function show($id)
 	{
 		if ( $search = Request::get('search'))
 		{
-			$incomes = Income::search($search)->paginate(6);
+			$monthly = Monthly::search($search)->get();
 		}
 		else
 		{
-			$incomes = Income::paginate(6);
+			$monthly = Monthly::all();
 		}
 		
-		return View::make('users.financing.financialReports')->withIncome($incomes);
+
+		return View::make('users.financing.index')->withMonthly($monthly);
 	}
 
 
@@ -70,7 +50,7 @@ class FinanceController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit()
+	public function edit($id)
 	{
 		//
 	}
@@ -82,7 +62,7 @@ class FinanceController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update()
+	public function update($id)
 	{
 		//
 	}
@@ -96,9 +76,15 @@ class FinanceController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$user = Income::find($id);
+		$monthly = Monthly::find($id);
 
-		$user->delete();
+		$monthly->delete();
+
+		$activity = new Activity;
+		$activity->user_id = Auth::user()->id;
+		$activity->action = 'deleted a transaction';
+		$activity->identifier = 'of the company';
+		$activity->save()
 
 		return Redirect::back();
 	}

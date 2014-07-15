@@ -1,11 +1,5 @@
 <div class="col-md-9">
-<ul class="nav nav-tabs nav-justified">
-<li class=""><a href="purchaseOrder">Make Purchase Order</a></li>
-<li class="active"><a href="view">View PO Details</a></li>
-<li class=""><a href="view2">View Item Details</a></li>
-
-
-</ul>
+        
     <!-- content here -->
     <form class="form-inline" action="view" role="form">
     <div class="form-group" >

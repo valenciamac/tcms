@@ -38,11 +38,17 @@
 		<div class="row">
 			<div class="col-md-3">
     <ul class="sideMenu">
-        <li class="">
+        <li class="active">
             <a href="purchasing"><i class="fa fa-home"></i>Dashboard</a>
         </li>
-        <li class="active">
+        <li>
             <a href="purchaseOrder"><i class="fa fa-user"></i>Purchase Order</a>
+        </li>
+         <li>
+            <a href="view"><i class="fa fa-user"></i>view</a>
+        </li>
+        <li>
+            <a href="view2"><i class="fa fa-user"></i>view Items</a>
         </li>
           <li>
             <a href="payment"><i class="fa fa-user"></i>Create RFP</a>

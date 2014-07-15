@@ -52,32 +52,6 @@ Route::get('financing', ['as' => 'financing' , function()
 	return View::make('users.financing.index');	
 
 }])->before('auth|financing');
-Route::get('monthlyGraph', ['as' => 'monthlyGraph' , function()
-{
-
-	return View::make('users.financing.monthlyGraph');	
-
-}])->before('auth|financing');
-
-Route::get('yearlyGraph', ['as' => 'yearlyGraph' , function()
-{
-
-	return View::make('users.financing.yearlyGraph');	
-
-}])->before('auth|financing');
-Route::get('financing',['as' => 'financing', 'uses' => 'FinanceReportsController@monthly'])->before('auth|financing');
-
-Route::get('monthlyGraph',['as' => 'monthlyGraph', 'uses' => 'FinanceReportsController@monthly'])->before('auth|financing');
-
-Route::get('yearlyGraph',['as' => 'yearlyGraph', 'uses' => 'FinanceYearlyReportsController@annual'])->before('auth|financing');
-
-Route::get('financialReports', ['as' => 'financialReports', function()
-{
-	return View::make('users.financing.financialReports');
-}])->before('auth|financing');
-
-Route::get('financialReports',['as' => 'financialReports', 'uses' => 'FinanceController@show'])->before('auth|financing');
-
 
 Route::get('purchaseOrder', ['as' => 'purchaseOrder' , function()
 {
@@ -117,27 +91,7 @@ Route::get('payment', ['as' => 'payment' , function()
 	return View::make('users.purchasing.payment');	
 
 }])->before('auth|purchasing'); 
-Route::resource('rfp','RfpController');
-Route::get('view3', ['as' => 'view3' , function()
-{
-
-	return View::make('users.purchasing.view3');	
-
-}])->before('auth|purchasing'); 
-Route::get('view3',['as' => 'view3', 'uses' => 'RfpController@show'])->before('auth|purchasing');
-Route::get('prf/{id}', ['uses' => 'RfpController@edit' ])->before('auth|purchasing');
-Route::get('prf/{id}/update', ['uses' => 'RfpController@update' ])->before('auth|purchasing');
-Route::get('prf/{id}/delete', ['uses' => 'RfpController@destroy' ])->before('auth|purchasing');
-Route::get('view4', ['as' => 'view4' , function()
-{
-
-	return View::make('users.purchasing.view4');	
-
-}])->before('auth|purchasing'); 
-Route::get('view4',['as' => 'view4', 'uses' => 'DetailController@show'])->before('auth|purchasing');
-Route::get('info/{id}', ['uses' => 'DetailController@edit' ])->before('auth|purchasing');
-Route::get('info/{id}/update', ['uses' => 'DetailController@update' ])->before('auth|purchasing');
-Route::get('info/{id}/delete', ['uses' => 'DetailController@destroy' ])->before('auth|purchasing');
+Route::resource('request', 'RequestController');
 Route::get('product/{id}', ['uses' => 'ItemController@edit' ])->before('auth|purchasing');
 Route::get('product/{id}/update', ['uses' => 'ItemController@update' ])->before('auth|purchasing');
 Route::get('product/{id}/delete', ['uses' => 'ItemController@destroy' ])->before('auth|purchasing');
@@ -155,16 +109,13 @@ Route::post('accts', function()
 		$password = Input::get('password');
 		$user->password = Hash::make($password);
 		$user->role = Input::get('role');
-		$success = $user->save();	
+		$success = $user->save();
 
-})->before('auth|sysAdmin');
-
-Route::post('save', function()
-{
-	$activity = new Activity;
-	$activity->user_id = 4;
-	$activity->action = 'may bagong gawa';
-	$activity->save();
+		$activity = new Activity;
+		$activity->user_id = Auth::user()->id;
+		$activity->action = 'created new user';
+		$activity->identifier = Input::get('fname');
+		$activity->save();
 
 })->before('auth|sysAdmin');
 
@@ -176,7 +127,9 @@ Route::get('activities', function()
 
 Route::get('save', function()
 {
-	return Activity::orderBy('id', 'DESC')->get();
+	$activity = Activity::with('user')->orderBy('id', 'DESC')->get();
+
+	return $activity;
 })->before('auth|sysAdmin');
 
 Route::get('employ', ['as' => 'employ' , function()
@@ -195,19 +148,15 @@ Route::get('employ2', ['as' => 'employ2' , function()
 
 Route::resource('employee', 'EmployeeController');
 
-Route::get('employ2', ['as' => 'employ2', 'uses' => 'EmployeeController@showemploy' ])->before('auth|accounting');
+Route::get('employ2', ['as' => 'employ2', 'uses' => 'EmployeeController@show' ])->before('auth|accounting');
 
-Route::get('viewpay', ['as' => 'viewpay', 'uses' => 'EmployeeController@showpayoffice' ])->before('auth|accounting');
+Route::get('payroll', ['as' => 'payroll', 'uses' => 'EmployeeController@shows' ])->before('auth|accounting');
 
-Route::get('viewpay2', ['as' => 'viewpay2', 'uses' => 'EmployeeController@showpayworksite' ])->before('auth|accounting');
+Route::get('{id}', ['uses' => 'EmployeeController@edit' ])->before('auth|accounting');
 
-Route::get('emp/{id}', ['uses' => 'EmployeeController@editemploy' ])->before('auth|accounting');
+Route::get('{id}/update', ['uses' => 'EmployeeController@update' ])->before('auth|accounting');
 
-Route::get('{id}', ['uses' => 'EmployeeController@editpayroll' ])->before('auth|accounting');
-
-Route::get('emp/{id}/update', ['uses' => 'EmployeeController@update' ])->before('auth|accounting');
-
-Route::get('emp/{id}/delete', ['uses' => 'EmployeeController@destroy' ])->before('auth|accounting');
+Route::get('{id}/delete', ['uses' => 'EmployeeController@destroy' ])->before('auth|accounting');
 
 Route::get('vouchers', ['as' => 'vouchers' , function()
 {
@@ -215,3 +164,15 @@ Route::get('vouchers', ['as' => 'vouchers' , function()
 	return View::make('users.accounting.vouchers');	
 
 }])->before('auth|accounting');
+
+Route::get('reports', function()
+{
+    	JasperPHP::process(
+        storage_path() . '/report2.jasper', //Input file 
+        storage_path() . '/report2', //Output file without extension
+        array("pdf","rtf"), //Output format
+        array("php_version" => phpversion()), //Parameters array
+        Config::get('database.connections.mysql') //DB connection array
+        )->execute();
+
+});

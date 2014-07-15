@@ -41,7 +41,7 @@
 
 <div id="header">
     <div class="container">
-        <a href="financing" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+        <a href="sysAdmin" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
         <div class="row">
 <div class="col-md-3">
     <ul class="sideMenu">
@@ -49,10 +49,9 @@
             <a href="financing"><i class="fa fa-home"></i>Dashboard</a>
         </li>
         <li>
-            <a href="financialReports"><i class="fa fa-user"></i>Financial Reports</a>
+            <a href="financialReports"><i class="fa fa-user"></i>Financial Report</a>
         </li>
     </ul>
 </div>
-
 @include('users.financing.layouts.indexBody')
 @include('users.includes.footer')

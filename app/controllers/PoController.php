@@ -24,6 +24,12 @@ class PoController extends \BaseController {
 		$item->amount = Input::get('amount');
 		$item->po = Input::get('po');
 
+		$activity = new Activity;
+		$activity->user_id = Auth::user()->id;
+		$activity->action = 'added new Purchase Order #';
+		$activity->identifier = Input::get('po');
+		$activity->save();
+
 		$item->save();
 		$po->save();
 
@@ -67,6 +73,11 @@ public function edit($id)
 
 		if ($saved)
 		{
+			$activity = new Activity;
+			$activity->user_id = Auth::user()->id;
+			$activity->action = 'edited a Purchase Order #';
+			$activity->identifier = Input::get('po');
+			$activity->save();
 			return Redirect::to('view');
 		}
 		else
@@ -79,6 +90,12 @@ public function edit($id)
 		$purchase = Po::find($id);
 
 		$purchase->delete();
+
+		$activity = new Activity;
+		$activity->user_id = Auth::user()->id;
+		$activity->action = 'deleted a Purchase Order #';
+		$activity->identifier = $purchase->po;
+		$activity->save();
 
 		return Redirect::back();
 	}

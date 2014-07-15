@@ -14,14 +14,19 @@ public function store()
 		$employee->mname = Input::get('mname');
 		$employee->lname = Input::get('lname');
 		$employee->rate = Input::get('rate');
-		$employee->basic = Input::get('basic');
-		$employee->days = Input::get('days');
+
 		$employee->save();
+
+		$activity = new Activity;
+		$activity->user_id = Auth::user()->id;
+		$activity->action = 'Added a new employee';
+		$activity->identifier = Input::get('fname');
+		$activity->save();
 
 		return Redirect::to('employ');
 	}
 
-public function showemploy()
+public function show()
 	{
 		if ( $search = Request::get('search'))
 		{
@@ -34,15 +39,13 @@ public function showemploy()
 
 		return View::make('users.accounting.employ2')->withEmployee($emp);
 	}
-
-public function editemploy($id)
+public function edit($id)
 	{
 		$emp = Employee::where('id', '=', $id)->get();
 
 		return View::make('users.accounting.editemploy')->withEmployee($emp);
 	}
-
-public function update($id)
+	public function update($id)
 	{
 		$emp = Employee::find($id);
 		$emp->department = Input::get('department');
@@ -55,6 +58,12 @@ public function update($id)
 
 		if ($saved)
 		{
+			$activity = new Activity;
+			$activity->user_id = Auth::user()->id;
+			$activity->action = 'Updated an employee';
+			$activity->identifier = Input::get('fname');
+			$activity->save();
+
 			return Redirect::to('employ2');
 		}
 		else
@@ -62,35 +71,32 @@ public function update($id)
 			return 'not saved';
 		}
 	}
-public function destroy($id)
+	public function destroy($id)
 	{
 		$emp = Employee::find($id);
 
 		$emp->delete();
 
+		$activity = new Activity;
+		$activity->user_id = Auth::user()->id;
+		$activity->action = 'Deleted an employee';
+		$activity->identifier = Input::get('fname');
+		$activity->save();
+
 		return Redirect::to('employ2');
 	}
 
-public function showpayoffice()
+public function shows()
 	{
-		
-		$emp1 = Employee::where('department', '=', 'office')->get();
+		if ( $search = Request::get('search'))
+		{
+			$emp1 = Employee::search($search)->get();
+		}
+		else
+		{
+			$emp1 = Employee::all();
+		}
 
-		return View::make('users.accounting.viewpay')->withEmployee($emp1);
+		return View::make('users.accounting.payroll')->withEmployee($emp1);
 	}
-
-public function showpayworksite()
-	{
-		
-		$emp2 = Employee::where('department', '=', 'worksite')->get();
-
-		return View::make('users.accounting.viewpay2')->withEmployee($emp2);
-	}
-public function editpayroll($id)
-	{
-		$emp1 = Employee::where('id', '=', $id)->get();
-
-		return View::make('users.accounting.computepay')->withEmployee($emp1);
-	}
-
 }

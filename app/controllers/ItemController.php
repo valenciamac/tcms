@@ -94,6 +94,12 @@ class ItemController extends \BaseController {
 
 		if ($saved)
 		{
+			$activity = new Activity;
+			$activity->user_id = Auth::user()->id;
+			$activity->action = 'edited an item';
+			$activity->identifier = Input::get('name');
+			$activity->save();
+
 			return Redirect::to('view2');
 		}
 		else
@@ -115,6 +121,13 @@ class ItemController extends \BaseController {
 		$product = Item::find($id);
 
 		$product->delete();
+
+			$activity = new Activity;
+			$activity->user_id = Auth::user()->id;
+			$activity->action = 'deleted an item';
+			$activity->identifier = $product->name;
+			$activity->save();
+
 
 		return Redirect::back();
 	}

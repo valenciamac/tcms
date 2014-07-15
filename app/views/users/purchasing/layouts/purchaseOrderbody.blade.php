@@ -1,13 +1,5 @@
 <div class="col-md-9">
-<ul class="nav nav-tabs nav-justified">
-<li class="active"><a href="purchaseOrder">Make Purchase Order</a></li>
-<li class=""><a href="view">View PO Details</a></li>
-<li class=""><a href="view2">View Item Details</a></li>
-
-
-</ul>
               {{Form::open(array('route' => 'po.store','class'=>'form-horizontal','role'=>'form'))}}
-              <div class="form-group" style="padding-bottom:45px;">
 			<div class="row">
 			
 				<div class="col-xs-6">
@@ -29,7 +21,7 @@
 				<div class="col-lg-6">
 					<label>P.O. Date:</label>
 					<div class="input-append date">	
-							<input id="datepicker" type="text" class="form-control input-sm" name="po_date"  required>
+							<input id="datepicker" type="text" class="form-control input-sm" value="<?php echo date("Y/m/d") ?>" name="po_date"  required>
 					</div>
 				</div>
 			
@@ -77,10 +69,10 @@
 					<INPUT type="button" class="btn btn-primary" value="Delete Row" onclick="deleteRow('dataTable')" />
 				</div>
 				</div>
-				</div>
-
 		{{Form::close()}}
-		</div>
-		</div>
 
-	
+			</div>
+		</div>
+		
+	</div>
+</div>

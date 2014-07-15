@@ -1,25 +1,19 @@
-	{{HTML::script('js/jquery-ui-1.9.2.custom.min.js')}}
+	
+	{{HTML::script('js/jquery.flot.js')}}
+	{{HTML::script('js/jquery.cookie.js')}}
+	{{HTML::script('js/jquery.slimscroll.min.js')}}
 	{{HTML::script('js/bootstrap.min.js')}}
 	{{HTML::script('js/App.js')}}
 	{{HTML::script('js/Login.js')}}
 	{{HTML::script('js/checkNum.js')}}
 	{{HTML::script('js/numeric.js')}}
 	{{HTML::script('js/numeric2.js')}}
-    {{HTML::script('js/numeric3.js')}}
 	{{HTML::script('js/validate.js')}}
 	{{HTML::script('js/add2.js')}}
-	{{HTML::script('js/sum2.js')}}
-    {{HTML::script('js/sum3.js')}}
-    {{HTML::script('js/sum4.js')}}
-    {{HTML::script('js/sum5.js')}}
-    {{HTML::script('js/sum6.js')}}
-    {{HTML::script('js/sum7.js')}}
-    {{HTML::script('js/sum8.js')}}
-    {{HTML::script('js/sum9.js')}}
-    {{HTML::script('js/addNumbers.js')}}
-    {{HTML::script('js/chart.min.js')}}
-	<!--{{HTML::script('js/skin.js')}}-->
+	{{HTML::script('js/fullcalendar.min.js')}}
+	{{HTML::script('js/jquery.chained.min.js')}}
 
+	<!--{{HTML::script('js/skin.js')}}-->
 	<script type="text/javascript">
 		$('.dropdown-toggle').dropdown()
 	</script>
@@ -47,7 +41,42 @@
 	</div>
 	
 </div>
-
+      <script type="text/javascript">
+		$(function	()	{
+		
+			// Full calendar
+			var date = new Date();
+			var d = date.getDate();
+			var m = date.getMonth();
+			var y = date.getFullYear();
+					
+			var calendar = $('#calendar').fullCalendar({
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: ''
+				},
+				selectable: true,
+				selectHelper: true,
+				select: function(start, end, allDay) {
+					var title = prompt('Event Title:');
+					if (title) {
+						calendar.fullCalendar('renderEvent',
+							{
+								title: title,
+								start: start,
+								end: end,
+								allDay: allDay	
+							},
+							true // make the event "stick"
+						);
+					}
+					calendar.fullCalendar('unselect');
+				},
+				editable: true
+			});
+		});
+	</script>
 <SCRIPT language="javascript">
         function addRow(tableID) {
  
@@ -113,15 +142,6 @@
 
     });
     </script>	
-    <script>
-       $(function(){
-        $('#controlNo').blur(function() {
-            $('input[name=controlNo1]').attr('value',$('controlNo1').val()+$('#controlNo').val());
-    console.log($('#controlNo1').val());
-        });
-
-    });
-    </script>   
     	<script>
 		if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
   var msViewportStyle = document.createElement('style')
@@ -134,6 +154,26 @@
 	}
 	</script>
 
+<script type="text/javascript">
+	$(function(){
+	    $('#activities').slimScroll({
+	        height: '250px'
+	    });
+});
+</script>
+<script type="text/javascript">
+
+function ucwords (str) {
+    return (str + '').replace(/^([a-z])|\s+([a-z])/g, function ($1) {
+        return $1.toUpperCase();
+    });
+}
+
+</script>
+
+<script type="text/javascript">
+		$("#position").chained("#department");
+</script>
 </footer>
 </body>
 </html>
