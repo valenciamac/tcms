@@ -16,7 +16,7 @@ class FinanceController extends \BaseController {
 		$activity->user_id = Auth::user()->id;
 		$activity->action = 'created new transaction';
 		$activity->identifier = 'of the company';
-		$activity->save();
+		$activity->save()
 
 		return redirect::to('users.financing.index');
 	}
@@ -84,7 +84,7 @@ class FinanceController extends \BaseController {
 		$activity->user_id = Auth::user()->id;
 		$activity->action = 'deleted a transaction';
 		$activity->identifier = 'of the company';
-		$activity->save();
+		$activity->save()
 
 		return Redirect::back();
 	}
