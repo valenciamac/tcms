@@ -10,16 +10,18 @@ function UsersController($scope, $http, $interval)
 			role: $scope.role
 		};
 
+    var activity = {
+      user_id: 4,
+      action: 'may bagong gawa'
+    };
+
 		$scope.users.push(user);
 
 		$http.post('accts', user);
 
-    $scope.fname = '';
-    $scope.lname = '';
-    $scope.username = '';
-    $scope.password = '';
-    $scope.role = '';
+    $scope.activities.push(activity);
 
+    $http.post('save', activity)
 	};
 
 	function refresh() {
@@ -40,13 +42,11 @@ function UsersController($scope, $http, $interval)
   // $interval runs the given function every X millisec (2nd arg)
   $interval(function() { 
     refresh();
-  }, $scope.refreshInterval * 60000); // the refresh interval must be in millisec
+  }, $scope.refreshInterval * 5000); // the refresh interval must be in millisec
 
 }
-function ActsController($scope, $http, $interval)
+function ActsController($scope, $http)
 {
-  function refreshActs() 
-  {
     $http({
       url: 'save',
       method: "GET"
@@ -57,13 +57,6 @@ function ActsController($scope, $http, $interval)
     }).error(function (activities) {
       console.log('Error');
     });
-  }
-  refreshActs();
-
-  $interval(function() { 
-    refreshActs();
-  }, $scope.refreshInterval * 60000);
-
 
 
 }

@@ -61,12 +61,4 @@
     </ul>
 </div>
 @include('users.financing.layouts.financialReports')
-<div class="col-md-3" >
-@include('users.sysAdmin.adminLayouts.acts')
-</div>
-</div>
-        
-    </div>
-</div>
-
 @include('users.includes.footer')

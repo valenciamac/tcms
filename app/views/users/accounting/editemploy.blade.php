@@ -38,11 +38,17 @@
 		<div class="row">
 			<div class="col-md-3">
     <ul class="sideMenu">
-        <li class="active">
+        <li>
             <a href="accounting"><i class="fa fa-home"></i>Dashboard</a>
         </li>
-        <li>
+        <li class="active">
             <a href="employ"><i class="fa fa-user"></i>Employee</a>
+        </li>
+        <li>
+            <a href="viewpay"><i class="fa fa-money"></i>Payroll</a>
+        </li>
+        <li>
+            <a href="vouchers"><i class="fa fa-file"></i>Voucher</a>
         </li>
     </ul>
 </div>

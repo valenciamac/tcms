@@ -45,7 +45,7 @@
             <a href="employ2"><i class="fa fa-user"></i>Employee</a>
         </li>
         <li>
-            <a href="payroll"><i class="fa fa-money"></i>Payroll</a>
+            <a href="viewpay"><i class="fa fa-money"></i>Payroll</a>
         </li>
         <li>
             <a href="vouchers"><i class="fa fa-file"></i>Voucher</a>

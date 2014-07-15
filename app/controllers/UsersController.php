@@ -32,16 +32,7 @@ class UsersController extends \BaseController {
 	 */
 	public function store()
 	{
-		$user = new User;
-		$user->fname = Input::get('fname');
-		$user->lname = Input::get('lname');
-		$user->username = Input::get('username');
-		$password = Input::get('password');
-		$user->password = Hash::make($password);
-		$user->role = Input::get('role');
-		$success = $user->save();
-
-		return Redirect::to('login');
+		//
 		
 	}
 

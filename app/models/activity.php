@@ -8,10 +8,5 @@ class Activity extends Eloquent {
 			'action'
 	];
 
-	public function user()
-	{
-		return $this->belongsTo('User');
-	}
-
 
 }

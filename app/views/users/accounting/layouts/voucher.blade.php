@@ -2,7 +2,8 @@
 
 <h2>Cash/Check Voucher</h2>
 
-{{Form::open(array('route' => 'employee.store','class'=>'form-horizontal','role'=>'form'))}}
+<form class ="form-horizontal" role="form" action="vouchers">
+<div class="form-horizontal" style="padding-top:40px;">
 
  			<div class = "form-horizontal">
 			<table class="table table-bordered table-hover" style="font-size:13px;">
@@ -29,7 +30,7 @@
               <th>Debit</th>
               <th>Credit</th>
             </tr>
-         </thead>
+         </thead>   
       	   <tbody>
       	   	<tr>
                 <td></td>
@@ -126,8 +127,8 @@
                 <button type="submit" id="login-btn"  class="btn btn-primary btn-block pull-right" style="width:60%;">Save &nbsp; <i class="fa fa-save"></i></button>
 
             </div>
-        {{Form::close()}}
-        	
+        </div>
+        </form>
 
 
 </div>

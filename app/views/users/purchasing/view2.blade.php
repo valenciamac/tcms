@@ -41,18 +41,13 @@
         <li>
             <a href="purchasing"><i class="fa fa-home"></i>Dashboard</a>
         </li>
-        <li>
-            <a href="purchaseOrder"><i class="fa fa-user"></i>Purchase Order</a>
-        </li>
-         <li class="">
-            <a href="view"><i class="fa fa-user"></i>View</a>
-        </li>
         <li class="active">
-            <a href="view2"><i class="fa fa-home"></i>View Items</a>
+            <a href="purchaseOrder"><i class="fa fa-user"></i>Purchase Order</a>
         </li>
          <li class="">
             <a href="payment"><i class="fa fa-home"></i>Create RFP</a>
         </li>
+      
 
     </ul>
 </div>

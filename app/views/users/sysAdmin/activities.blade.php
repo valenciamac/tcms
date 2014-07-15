@@ -46,7 +46,7 @@
         <div class="row">
 <div class="col-md-3">
     <ul class="sideMenu">
-        <li>
+        <li class="active">
             <a href="sysAdmin"><i class="fa fa-home"></i>Dashboard</a>
         </li>
         <li>
@@ -55,16 +55,10 @@
         <li>
             <a href="#"><i class="fa fa-archive"></i>Inventory</a>
         </li>
-        <li class="active">
+        <li>
             <a href="activities"><i class="fa fa-archive"></i>Activities</a>
         </li>
     </ul>
 </div>
-<div class="col-md-6" >
-@include('users.sysAdmin.adminLayouts.acts')
-</div>
-        </div>
-        
-    </div>
-</div>
+@include('users.sysAdmin.adminLayouts.activities')
 @include('users.includes.footer')

@@ -5,18 +5,16 @@
 <form class="form-inline" action="accounts" role="form">
     <div class="form-group" >
         <div class="input-inline">
-          <input class="form-control" type="text" placeholder="search" ng-model="search" style="margin-bottom:20px;">
+          <input class="form-control" type="text" placeholder="search" ng-model="search">
         </div>
       </div>
-</form> 
-	<div id="activities" class="acts">
-		    <div class="activity-group" ng-repeat="activity in activities | filter:search" style="margin:3px;">
-			  <div class="activity-body">
-			    <p><block style="color:orange">{{activity.user.fname}}&nbsp;{{activity.user.lname}}</block>&nbsp;
-			    {{activity.action}} {{activity.identifier}}
 
-			    </p>
+      
+</form> 
+		    <div class="panel panel-default" ng-repeat="activity in activities | filter:search">
+			  <div class="panel-body">
+			    {{activity.user_id}}<br>
+			    {{activity.action}}
 			  </div>
 			</div>
-	</div>
 </div>

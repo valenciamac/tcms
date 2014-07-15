@@ -1,73 +1,72 @@
 <div class="col-md-9">
-              {{Form::open(array('route' => 'request.store','class'=>'form-horizontal','role'=>'form'))}}
+<ul class="nav nav-tabs nav-justified">
+<li class="active"><a href="payment">Make Request For Payment</a></li>
+<li class=""><a href="view3">View Request For Payment Details</a></li>
+<li class=""><a href="view4">View Requet For Payment</a></li>
+
+
+</ul>
+              {{Form::open(array('route' => 'rfp.store','class'=>'form-horizontal','role'=>'form'))}}
             <div class="row">
-            
-                <div class="col-xs-6">
-                    <label for="exampleInputEmail1">PO #: </label>
-                    <input type="text" class="form-control input-sm" name="po" class="inputext" id="po" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,5);" maxlength="5" placeholder=""  required>
-                    
+
+            <div class="col-xs-6">
+                    <label>Control Number:&nbsp;</label>
+                    <input type="text" class="form-control input-sm maxwidth" name="controlNo" class= "inputext" id="controlNo" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,8);" maxlength="8" placeholder="" style="min-width:290px;" required>
+
+            </div>
+
+                <div class="col-xs-6 ">
+                    <label >Payee (Supplier):</label>
+                    <input type="text" class="form-control input-sm maxwidth" name="payee" onkeypress="return checkNum();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,15);" maxlength="15" placeholder="" required >
                 </div>
 
                 <div class="col-xs-6">
-                    <label for="exampleInputEmail1">PRS #:</label>
-                    <input type="text" class="form-control input-sm" name="prs"  onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,8);" maxlength="8" placeholder="" required>
-                </div>
-                <div class="col-xs-6">
-                    <label for="exampleInputEmail1">Supplier Name:</label>
-                    <input type="text" class="form-control input-sm" name="suppler_name" onkeypress="return checkNum();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,15);" maxlength="15" placeholder="" required>
-                </div>
-                    
-                
-                <div class="col-lg-6">
-                    <label>P.O. Date:</label>
+                    <label>Requested Date:</label> 
                     <div class="input-append date"> 
-                            <input id="dp1 date1" type="text" class="form-control input-sm datepicker" value="<?php echo date("Y/m/d") ?>" name="po_date"  required>
+                            <input id="datepicker1" type="text" class="form-control input-sm datepicker maxwidth" value="<?php echo date("m/d/Y") ?>" name="requestedDate" required>
                     </div>
                 </div>
-            
-                  
+
+                
                 <div class="col-xs-6">
-                    <label>Address:</label>
-                    <input type="text" class="form-control input-sm" name="address" onkeypress="return validate();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,45);" maxlength="45" placeholder="" required>
+                    <label>Reason</label>
+                    <input type="text" class="form-control input-sm maxwidth" name="reason" onkeypress="return checkNum();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,20);" maxlength="20" placeholder="" required >
                 </div>
-                <div class="col-xs-6">
-                    <label>Terms (Days):</label>
-                    <input type="text" class="form-control input-sm" name="terms" onkeypress="return numeric2();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,2);" maxlength="2" placeholder="" required>
                 </div>
-                <div class="col-xs-6">
-                    <label>Supplier Code:</label>
-                    <input type="text" class="form-control input-sm" name="supplier_code"  onkeypress="return checkNum();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,15);" maxlength="15" placeholder="" required>
-                </div>
-                <div class="col-xs-6">
-                    <label>Deliver to:</label>
-                    <input type="text" class="form-control input-sm" name="deliverTo"  onkeypress="return validate();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,45);" maxlength="45" placeholder="" required>
-                </div>
-            </div>
- <table class="table table-striped table-hover" style="padding-top:10px;" id="dataTable">
+
+ <table class="table table-striped table-hover" style="padding-top:10px;">
+              <thead>
+                <tr>
+                  <th>PO Number</th>
+                  <th>DR Number</th>
+                  <th>SI Number</th>
+                  <th>CI Number</th>
+                  <th>SO Number</th>
+                  <th>Others</th>
+                  <th>Description</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
               
               <tbody>
                 <tr>
-                    <TD><INPUT type="checkbox" name="chk"/></TD>
-                    <td><b><input type="text" style="max-width:230px;" class="form-control input-sm" name="qty"  id="text1" onkeyup="add2();" placeholder="Quantity"required></td>
-                    <td><b><input type="text" style="max-width:2000px;" class="form-control input-sm" name="name" placeholder="Name" required></td>
-                    <td><b><input type="text" style="max-width:110px;" class="form-control input-sm" name="desc" placeholder="Description" required></td>
-                    <td><b><input type="text" style="max-width:110px;" class="form-control input-sm" name="price" id="text2" placeholder="Price" onkeyup="add2();" required></td>
-                    <td><b><input type="text" style="max-width:110px;" class="form-control input-sm" name="amount" placeholder="Amount" id="text3" required></td>
-                    <td><b><input type="hidden" name="po1" id="po1" class="inputext"></b></td>
+                    <td><input type="text" style="max-width:110px;" class="form-control input-sm" name="po_number" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,5);" maxlength="5" placeholder=""></td>
+                    <td><input type="text" style="max-width:110px;" class="form-control input-sm" name="dr_number" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,5);" maxlength="5" placeholder=""></td>
+                    <td><input type="text" style="max-width:110px;" class="form-control input-sm" name="si_number" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,5);" maxlength="5" placeholder=""></td>
+                    <td><input type="text" style="max-width:110px;" class="form-control input-sm" name="ci_number" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,5);" maxlength="5" placeholder=""></td>
+                    <td><input type="text" style="max-width:100px;" class="form-control input-sm" name="so_number" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,5);" maxlength="5" placeholder=""></td>
+                    <td><input type="text" style="max-width:90px;" class="form-control input-sm" name="others" onkeypress="return checkNum();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,15);" maxlength="15" placeholder=""></td>
+                    <td><input type="text" style="max-width:90px;" class="form-control input-sm" name="description" onkeypress="return checkNum();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,15);" maxlength="15" placeholder=""></td>
+                    <td><input type="text" style="max-width:90px;" class="form-control input-sm" name="amount"  onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,15);" maxlength="15" placeholder=""></td>
+                    <td><b><input type="hidden" name="controlNo1"id="controlNo1" class="inputext"></b></td>
                 </tr>
                 </tbody>
                 </table>
+
                 <div class="pull-right" style="padding-top:20px;">
+                    
                     <input type="submit" class="btn btn-primary " value="Save">
                     <input type="reset" class="btn btn-primary " value="Clear">
-                </div>
-                <div class="pull-left" style="padding-top:20px;">
-                    <INPUT type="button" class="btn btn-primary" value="Add Row" onclick="addRow('dataTable')" />
- 
-                </div>
-                <div class="pull-left" style="padding-top:20px;">
-                    <INPUT type="button" class="btn btn-primary" value="Delete Row" onclick="deleteRow('dataTable')" />
-                </div>
                 </div>
         {{Form::close()}}
 

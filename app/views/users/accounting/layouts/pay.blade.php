@@ -39,7 +39,7 @@
                 <td>{{ ucwords($emp->lname) }}</td>
                 <td>{{ $emp->rate }}</td>
                 <td><a href="{{{$emp->id}}"><i class="fa fa-pencil-square-o"></i></a>
-              <a href="emp/{{$emp->id}}/delete"><i class="fa fa-trash-o"></i></a> 
+              <a href="{{$emp->id}}/delete"><i class="fa fa-trash-o"></i></a> 
             </tr>
             
             @endforeach
