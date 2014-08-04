@@ -15,26 +15,31 @@ class PoController extends \BaseController {
 		$po->terms= Input::get('terms');
 		$po->supplier_code= Input::get('supplier_code');
 		$po->deliverTo= Input::get('deliverTo');
-
-		$item = new Item;
-		$item->qty = Input::get('qty');
-		$item->name = Input::get('name');
-		$item->desc = Input::get('desc');
-		$item->price = Input::get('price');
-		$item->amount = Input::get('amount');
-		$item->po = Input::get('po');
+		$po->save();
+		// $item = new Item;
+		// $item->qty = Input::get('qty');
+		// $item->name = Input::get('name');
+		// $item->desc = Input::get('desc');
+		// $item->price = Input::get('price');
+		// $item->amount = Input::get('amount');
+		// $item->po = Input::get('po');
 
 		$activity = new Activity;
 		$activity->user_id = Auth::user()->id;
 		$activity->action = 'added new Purchase Order #';
 		$activity->identifier = Input::get('po');
+		$activity->save();
+		
+		
+		
 		
 
-		$item->save();
-		$po->save();
-		$activity->save();
+		$poitem = Input::get('po');
 
-		return Redirect::to('purchaseOrder');
+		$additem = Po::where('po', '=', 1)->get();
+
+		return $additem->po;
+		return Redirect::to('purchaseOrder/{id}')->withPo($additem);
 		
 	}
 	public function show()

@@ -23,6 +23,7 @@ class CreatePoTable extends Migration {
 			$table->string('terms');
 			$table->string('supplier_code');
 			$table->string('deliverTo');
+			$table->timestamps();
 
 		});
 	}

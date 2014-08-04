@@ -3,7 +3,6 @@
 class Po extends \Eloquent {
 
 	protected $table = 'pos';
-	public $timestamps = false;
 	protected $fillable = [];
 
 	public function Item()

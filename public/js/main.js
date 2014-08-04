@@ -67,3 +67,27 @@ function ActsController($scope, $http, $interval)
 
 
 }
+function PosController($scope, $http, $interval)
+{
+  function refreshPO() 
+  {
+    $http({
+      url: 'po',
+      method: "GET"
+
+    }).success(function (pos) {
+      $scope.pos = pos; 
+
+    }).error(function (pos) {
+      console.log('Error');
+    });
+  }
+  refreshPO();
+
+  $interval(function() { 
+    refreshPO();
+  }, 30000);
+
+
+
+}

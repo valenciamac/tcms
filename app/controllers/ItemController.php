@@ -32,18 +32,6 @@ class ItemController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 * GET /item/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show()
-	{
 		if ( $search = Request::get('search'))
 		{
 			$product = Item::search($search)->paginate(5);
@@ -58,6 +46,21 @@ class ItemController extends \BaseController {
 	}
 
 	/**
+	 * Display the specified resource.
+	 * GET /item/{id}
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($id)
+	{
+		return $id;
+		return View::make('users.purchasing.additem');
+
+		// return View::make('users.purchasing.addItem')->withPo($poItem);
+	}
+
+	/**
 	 * Show the form for editing the specified resource.
 	 * GET /item/{id}/edit
 	 *
@@ -66,11 +69,9 @@ class ItemController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		{
 		$product = Item::where('id', '=', $id)->get();
 
 		return View::make('users.purchasing.edit2')->withItem($product);
-	}
 	}
 
 	/**

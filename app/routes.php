@@ -1,3 +1,4 @@
+
 <?php
 
 Route::get('/', ['as' => 'home', function()
@@ -121,7 +122,8 @@ Route::get('view2', ['as' => 'view2' , function()
 Route::get('purchase/{id}', ['uses' => 'PoController@edit' ])->before('auth|purchasing');
 Route::get('purchase/{id}/update', ['uses' => 'PoController@update' ])->before('auth|purchasing');
 Route::get('purchase/{id}/delete', ['uses' => 'PoController@destroy' ])->before('auth|purchasing');
-Route::get('view2', ['as' => 'view2', 'uses' => 'ItemController@show' ])->before('auth|purchasing');
+Route::get('view2', ['as' => 'view2', 'uses' => 'ItemController@store' ])->before('auth|purchasing');
+Route::get('purchaseOrder/{id}', ['uses' => 'ItemController@show' ])->before('auth|purchasing');
 Route::get('payment', ['as' => 'payment' , function()
 {
 
@@ -189,6 +191,11 @@ Route::get('save', function()
 
 	return $activity;
 })->before('auth|sysAdmin');
+
+Route::get('po', function()
+{
+	return Po::orderBy('po', 'DESC')->get();
+})->before('auth|purchasing');
 
 Route::get('employ', ['as' => 'employ' , function()
 {
