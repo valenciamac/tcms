@@ -1,11 +1,13 @@
 <div class="col-md-9">
-   <ul class="nav nav-tabs nav-justified">
-      <li class="active"><a href="purchaseOrder">Make Purchase Order</a></li>
-      <li class=""><a href="view">View PO Details</a></li>
-      <li class=""><a href="view2">View Item Details</a></li>
+   <ul class="nav nav-tabs nav-justified" id="POSteps">
+      <li class="active"><a href="#1stStep" role="tab" data-toggle="tab">Make Purchase Order</a></li>
+      <li class=""><a href="#2ndStep" role="tab" data-toggle="tab">Add Items</a></li>
+      <li class=""><a href="#review" role="tab" data-toggle="tab">Finish</a></li>
    </ul>
    {{Form::open(array('route' => 'po.store','class'=>'form-horizontal','role'=>'form'))}}
-   <div class="form-group" style="padding-bottom:45px;">
+   <div class="tab-content">
+   <div class="tab-pane active" id="1stStep">
+      <div class="form-group" style="padding-bottom:45px;">
       <div class="row">
          <div class="col-xs-6">
             <label for="exampleInputEmail1">PO #: </label>
@@ -31,7 +33,7 @@
          </div>
          <div class="col-xs-6">
             <label>Terms (Days):</label>
-            <input type="text" class="form-control input-sm" name="terms" onkeypress="return numeric2();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,2);" maxlength="2" placeholder="" required>
+            <input type="text" class="form-control input-sm" name="terms" onkeypress="return numeric2();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,2);" placeholder="" required>
          </div>
          <div class="col-xs-6">
             <label>Supplier Code:</label>
@@ -41,17 +43,20 @@
             <label>Deliver to:</label>
             <input type="text" class="form-control input-sm" name="deliverTo"  onkeypress="return validate();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,45);" maxlength="45" placeholder="" required>
          </div>
+      </div><a href="#2ndStep" role="tab" data-toggle="tab" class="btn btn-primary pull-right" style="margin-top:10px;" >Next</a>
       </div>
+      </div><!--tab-pane 1st step-->
+      <div class="tab-pane" id="2ndStep">
       <table class="table table-striped table-hover" style="padding-top:10px;" id="dataTable">
          <tbody>
             <tr>
                <TD><INPUT type="checkbox" name="chk"/></TD>
-               <td><b><input type="text" style="max-width:230px;" class="form-control input-sm" name="qty"  id="text1" onkeyup="add2();" placeholder="Quantity" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,8);" maxlength="8" placeholder="" required></td>
-               <td><b><input type="text" style="max-width:2000px;" class="form-control input-sm" name="name" placeholder="Name" onkeypress="return validate2();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,25);" maxlength="25" placeholder="" required></td>
-               <td><b><input type="text" style="max-width:110px;" class="form-control input-sm" name="desc" placeholder="Description" onkeypress="return validate2();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,25);" maxlength="25" placeholder="" required></td>
-               <td><b><input type="text" style="max-width:110px;" class="form-control input-sm" name="price" id="text2" placeholder="Price" onkeyup="add2();" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,8);" maxlength="8" placeholder="" required></td>
-               <td><b><input type="text" style="max-width:110px;" class="form-control input-sm" name="amount" placeholder="Amount" id="text3" required></td>
-               <td><b><input type="hidden" name="po1" id="po1" class="inputext"></b></td>
+               <td><input type="text" style="max-width:230px;" class="form-control input-sm" name="qty"  id="text1" onkeyup="add2();" placeholder="Quantity" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,8);" maxlength="8" placeholder="" required></td>
+               <td><input type="text" style="max-width:2000px;" class="form-control input-sm" name="name" placeholder="Name" onkeypress="return validate2();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,25);" maxlength="25" placeholder="" required></td>
+               <td><input type="text" style="max-width:110px;" class="form-control input-sm" name="desc" placeholder="Description" onkeypress="return validate2();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,25);" maxlength="25" placeholder="" required></td>
+               <td><input type="text" style="max-width:110px;" class="form-control input-sm" name="price" id="text2" placeholder="Price" onkeyup="add2();" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,8);" maxlength="8" placeholder="" required></td>
+               <td><input type="text" style="max-width:110px;" class="form-control input-sm" name="amount" placeholder="Amount" id="text3" required></td>
+               <td><input type="hidden" name="po1" id="po1" class="inputext"></td>
             </tr>
          </tbody>
       </table>
@@ -59,14 +64,11 @@
          <input type="submit" class="btn btn-primary " value="Save">
          <input type="reset" class="btn btn-primary " value="Clear">
       </div>
-      <div class="pull-left" style="padding-top:20px;">
-         <INPUT type="button" class="btn btn-primary" value="Add Row" onclick="addRow('dataTable')" />
-      </div>
-      <div class="pull-left" style="padding-top:20px;">
-         <INPUT type="button" class="btn btn-primary" value="Delete Row" onclick="deleteRow('dataTable')" />
-      </div>
    </div>
+   </div><!--TAB-PANE 2ND STEP-->
+   </div> <!--TAB CONTENT-->
 </div>
 {{Form::close()}}
+
 </div>
 </div>

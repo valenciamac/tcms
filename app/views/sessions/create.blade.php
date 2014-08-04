@@ -10,14 +10,11 @@
 	<meta name="author" content="">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
-
-	{{HTML::style('css/css.css')}}
-	{{HTML::style('css/font-awesome.min.css')}}
+	
 	{{HTML::style('css/bootstrap.css')}}
+	{{HTML::style('css/font-awesome.css')}}
 	{{HTML::style('css/jquery-ui-1.9.2.custom.css')}}
-	{{HTML::style('css/App.css')}}
 	{{HTML::style('css/Login.css')}}
-	{{HTML::style('css/custom.css')}}
 	{{HTML::script('js/jquery-1.9.1.min.js')}}
 	{{HTML::script('js/jquery.cookie.js')}}
 	<script type="text/javascript">
@@ -67,7 +64,7 @@
 
 			<div class="form-group">
 
-				<button type="submit" id="login-btn" class="btn btn-primary btn-block loginSubmit">Sign in &nbsp; <i class="fa fa-play-circle"></i></button>
+				<button type="submit" id="login-btn" class="btn btn-block loginSubmit">Sign in &nbsp; <i class="fa fa-play-circle"></i></button>
 
 			</div>
 		{{Form::close()}}

@@ -21,6 +21,8 @@ class CreateEmployeeTable extends Migration {
 			$table->string('mname');
 			$table->string('lname');
 			$table->string('rate');
+			$table->string('basic');
+			$table->string('days');
 		});
 	}
 

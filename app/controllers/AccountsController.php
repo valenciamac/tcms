@@ -81,6 +81,12 @@ class AccountsController extends \BaseController {
 
 		if ($saved)
 		{
+			$activity = new Activity;
+			$activity->user_id = Auth::user()->id;
+			$activity->action = 'edited an employee';
+			$activity->identifier = Input::get('fname');
+			$activity->save();
+
 			return Redirect::to('accounts');
 		}
 		else

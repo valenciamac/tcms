@@ -1,3 +1,13 @@
+
+<!--{{HTML::script('js/skin.js')}}-->
+
+<a id="back-to-top" href="#" style="display: none;"><i class="fa fa-chevron-up"></i></a>
+</div>
+<footer>
+{{HTML::script('js/jquery-1.9.1.min.js')}}
+{{HTML::script('js/jquery.cookie.js')}}
+{{HTML::script('js/main.js')}}
+{{HTML::script('js/jquery-ui.js')}}
 {{HTML::script('js/jquery-ui-1.9.2.custom.min.js')}}
 {{HTML::script('js/bootstrap.min.js')}}
 {{HTML::script('js/App.js')}}
@@ -16,26 +26,19 @@
 {{HTML::script('js/sum7.js')}}
 {{HTML::script('js/sum8.js')}}
 {{HTML::script('js/sum9.js')}}
+{{HTML::script('js/sss.js')}}
+{{HTML::script('js/philhealth.js')}}
+  {{HTML::script('js/pagibig.js')}}
+  {{HTML::script('js/sssloan.js')}}
+  {{HTML::script('js/pagibigloan.js')}}
+  {{HTML::script('js/cashadv.js')}}
 {{HTML::script('js/addNumbers.js')}}
+
 {{HTML::script('js/chart.min.js')}}
 {{HTML::script('js/jquery.slimscroll.min.js')}}
-<!--{{HTML::script('js/skin.js')}}-->
 <script type="text/javascript">
    $('.dropdown-toggle').dropdown()
 </script>
-<script type="text/javascript">
-   var options = {
-      series: {
-          lines: { show: true },
-          points: { show: true }
-        }
-   };
-   $.plot($("#placeholder"), [ [[0, 0], [1, 1]] ], { yaxis: { max: 1 } });
-</script>
-<script type="text/javascript"></script>
-<a id="back-to-top" href="#" style="display: none;"><i class="fa fa-chevron-up"></i></a>
-</div>
-<footer>
    <div class="container">
       <div class="pull-right">
          copyright
@@ -48,62 +51,6 @@
           });
       });
    </script>
-   <script type="text/javascript">
-      function addRow(tableID) {
-      
-          var table = document.getElementById(tableID);
-      
-          var rowCount = table.rows.length;
-          var row = table.insertRow(rowCount);
-      
-          var colCount = table.rows[0].cells.length;
-      
-          for(var i=0; i<colCount; i++) {
-      
-              var newcell = row.insertCell(i);
-      
-              newcell.innerHTML = table.rows[0].cells[i].innerHTML;
-              //alert(newcell.childNodes);
-              switch(newcell.childNodes[0].type) {
-                  case "text":
-                          newcell.childNodes[0].value = "";
-                          break;
-                  case "checkbox":
-                          newcell.childNodes[0].checked = false;
-                          break;
-                  case "select-one":
-                          newcell.childNodes[0].selectedIndex = 0;
-                          break;
-              }
-          }
-      }
-      
-      function deleteRow(tableID) {
-          try {
-          var table = document.getElementById(tableID);
-          var rowCount = table.rows.length;
-      
-          for(var i=0; i<rowCount; i++) {
-              var row = table.rows[i];
-              var chkbox = row.cells[0].childNodes[0];
-              if(null != chkbox && true == chkbox.checked) {
-                  if(rowCount <= 1) {
-                      alert("Cannot delete all the rows.");
-                      break;
-                  }
-                  table.deleteRow(i);
-                  rowCount--;
-                  i--;
-              }
-      
-      
-          }
-          }catch(e) {
-              alert(e);
-          }
-      }
-      
-   </SCRIPT>
    <script>
       $(function(){
        $('#po').blur(function() {
@@ -122,6 +69,7 @@
       
       });
    </script>   
+ 
    <script>
       if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
       var msViewportStyle = document.createElement('style')
@@ -140,6 +88,12 @@
         $( "#datepicker" ).datepicker( "option", "dateFormat", "yy/mm/dd");
       });
    </script>
+   <script>
+   $(function() {
+     $( "#datepicker1" ).datepicker();
+   });
+</script>
+
 </footer>
 </body>
 </html>

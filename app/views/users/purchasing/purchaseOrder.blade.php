@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Purchase Order</title>
 @include('users.includes.head')
 <body>
    <div id="wrapper">
@@ -9,7 +14,7 @@
          <div id="top-nav">
             <ul class="pull-right">
                <li class="dropdown">
-                  <a href="sysAdmin"><i class="fa fa-home" style="padding-right:5px;"></i> Home</a>
+                  <a href="purchasing"><i class="fa fa-home" style="padding-right:5px;"></i> Home</a>
                </li>
                <li class="dropdown">
                   <a href="javascript:;" class="dropdown-toggle hover" data-toggle="dropdown">
@@ -26,7 +31,9 @@
    </div>
    <div id="header">
    <div class="container">
-   <a href="sysAdmin" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+      <div>
+      <a href="purchasing" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+      </div>
    <div class="row">
    <div class="col-md-3">
       <ul class="sideMenu">
@@ -43,3 +50,4 @@
    </div>
    @include('users.purchasing.layouts.purchaseOrderbody')
    @include('users.includes.footer')
+   

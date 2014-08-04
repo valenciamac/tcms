@@ -17,7 +17,7 @@
       <div class="col-xs-6">
          <label>Requested Date:</label> 
          <div class="input-append date"> 
-            <input id="datepicker1" type="text" class="form-control input-sm datepicker maxwidth" value="<?php echo date("m/d/Y") ?>" name="requestedDate" required>
+            <input id="datepicker1" type="text" class="form-control input-sm datepicker maxwidth" value="<?php echo date("Y/m/d") ?>" name="requestedDate" required>
          </div>
       </div>
       <div class="col-xs-6">

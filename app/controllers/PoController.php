@@ -28,10 +28,11 @@ class PoController extends \BaseController {
 		$activity->user_id = Auth::user()->id;
 		$activity->action = 'added new Purchase Order #';
 		$activity->identifier = Input::get('po');
-		$activity->save();
+		
 
 		$item->save();
 		$po->save();
+		$activity->save();
 
 		return Redirect::to('purchaseOrder');
 		

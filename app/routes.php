@@ -27,14 +27,18 @@ Route::get('accounts', ['as' => 'accounts', 'uses' => 'AccountsController@show' 
 
 Route::get('sysAdmin', ['as' => 'sysAdmin' , function()
 {
+	$monthly = FinanceReports::all();
 
-	return View::make('users.sysAdmin.index');	
+	return View::make('users.sysAdmin.index')
+			->with('rMonth', $monthly->lists('month'))
+			->with('rIncome', $monthly->lists('income'))
+			->with('rExpenses', $monthly->lists('expenses'));;	
 
 }])->before('auth|sysAdmin');
 
 Route::get('accounting', ['as' => 'accounting' , function()
 {
-
+	
 	return View::make('users.accounting.index');	
 
 }])->before('auth|accounting');
@@ -66,6 +70,12 @@ Route::get('yearlyGraph', ['as' => 'yearlyGraph' , function()
 	return View::make('users.financing.yearlyGraph');	
 
 }])->before('auth|financing');
+Route::get('printfr', ['as' => 'printfr', function()
+{
+	return View::make('users.financing.printfr');
+}])->before('auth|financing');
+
+Route::get('printfr',['as' => 'printfr', 'uses' => 'FinanceController@printShow'])->before('auth|financing');
 Route::get('financing',['as' => 'financing', 'uses' => 'FinanceReportsController@monthly'])->before('auth|financing');
 
 Route::get('monthlyGraph',['as' => 'monthlyGraph', 'uses' => 'FinanceReportsController@monthly'])->before('auth|financing');
@@ -200,11 +210,15 @@ Route::get('employ2', ['as' => 'employ2', 'uses' => 'EmployeeController@show' ])
 
 Route::get('payroll', ['as' => 'payroll', 'uses' => 'EmployeeController@shows' ])->before('auth|accounting');
 
-Route::get('{id}', ['uses' => 'EmployeeController@edit' ])->before('auth|accounting');
+Route::get('viewpay', ['as' => 'viewpay', 'uses' => 'EmployeeController@showpayoffice' ])->before('auth|accounting');
+
+Route::get('viewpay2', ['as' => 'viewpay2', 'uses' => 'EmployeeController@showpayworksite' ])->before('auth|accounting');
+Route::get('{id}', ['uses' => 'EmployeeController@editpayroll' ])->before('auth|accounting');
 
 Route::get('{id}/update', ['uses' => 'EmployeeController@update' ])->before('auth|accounting');
 
 Route::get('{id}/delete', ['uses' => 'EmployeeController@destroy' ])->before('auth|accounting');
+Route::resource('payroll', 'PayrollController');
 
 Route::get('vouchers', ['as' => 'vouchers' , function()
 {
@@ -224,3 +238,5 @@ Route::get('reports', function()
         )->execute();
 
 });
+
+Route::get('mark', ['uses' => 'PoController@item'])->before('auth|purchasing');

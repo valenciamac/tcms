@@ -1,13 +1,13 @@
 <div class="col-md-9">
+   {{Form::open(array('route' => 'payroll.store','class'=>'form-horizontal','role'=>'form'))}}
    <!-- content here -->
    @if ($employee->count())
    @foreach ($employee as $emp1)
-   <form class ="form-horizontal" role="form">
       <div class="form-horizontal" style="padding-top:40px;">
          <div class="form-group">
             <label for="fname" class="col-sm-3 control-label" >ID No:&nbsp;</label>
             <div class="col-sm-4">
-               <input name="empId" class="form-control" id="empId" value="{{$emp1->id}}" disabled>
+               <input name="empId" class="form-control" id="empId" value="{{$emp1->id}}" readonly="readonly" class="inputext">
             </div>
          </div>
          <div class="form-inline">
@@ -44,17 +44,22 @@
             <input name="days" type="hidden" class="form-control input-sm" id="days" value="{{$emp1->days}}">
          </div>
       </div>
-   </form>
    @endforeach
    <b>
-      <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+      <p>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
    </b>
-   <form class="form-horizontal" role="form" id="compute">
+   
       <div class="form-group" style="padding-bottom:45px;">
          <div class="form-inline">
             <label for="fname" class="col-sm-3 control-label" >Pay Date:</label> 
             <div class="input-append date col-sm-3"> 
-               <input id="paydate" type="text" class="form-control input-sm datepicker maxwidth" value="<?php echo date("m/d/Y") ?>" name="paydate" required>
+               <input id="paydate" type="text" class="form-control input-sm datepicker maxwidth" value="<?php echo date("Y/m/d") ?>" name="paydate" required>
+            </div>
+         </div>
+           <div class="form-group">
+            <label for="fname" class="col-sm-3 control-label" >Withholding Tax:&nbsp;</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control input-sm datepicker maxwidth" value="<?php echo date("Y/m/d") ?>" name="paydateend" required>
             </div>
          </div>
          <div class="form-group">
@@ -96,7 +101,7 @@
          <div class="form-group">
             <label for="fname" class="col-sm-3 control-label" >Pag-ibig Contribution:&nbsp;</label>
             <div class="col-sm-3">
-               <input name="pgibigcont" type="text" class="form-control input-sm" id="pgibigcont">
+               <input name="pagibigcont" type="text" class="form-control input-sm" id="pgibigcont">
             </div>
          </div>
          <div class="form-inline">
@@ -120,7 +125,7 @@
          <div class="form-group">
             <label for="pgibigloan" class="col-sm-3 control-label" >Pag-ibig Loan:&nbsp;</label>
             <div class="col-sm-3">
-               <input name="pgibigloan" type="text" class="form-control input-sm" id="pgibigloan">
+               <input name="pagibigloan" type="text" class="form-control input-sm" id="pgibigloan">
             </div>
          </div>
          <div class="form-inline">
@@ -144,7 +149,7 @@
          <div class="form-group">
             <label for="fname" class="col-sm-3 control-label">Net Income:&nbsp;</label>
             <div class="col-sm-3">
-               <input name="income" type="text" class="form-control input-sm" id="net" disabled>
+               <input name="income" type="text" class="form-control input-sm" id="net" readonly="readonly">
             </div>
          </div>
          <input type="hidden" id="val1"/>
@@ -155,13 +160,14 @@
          <input type="hidden" id="val6"/>
          <input type="hidden" id="val7"/>
          <!--  <input type="button" name="Sumbit" value="Click here" onclick="addNumbers()"/> -->
-         <div class="form-group">
-            <button type="button" id="submit-btn" class="btn btn-primary btn-block pull-right" style="width:35%;" onclick="addNumbers()">Compute &nbsp; <i class="fa fa-plus"></i></button>
-         </div>
+         <div class="pull-right" style="padding-top:20px;">
+            <button type="button" class="btn btn-primary btn-block pull-right" style="width:35%;" onclick="addNumbers()">Compute &nbsp; <i class="fa fa-plus"></i></button>
+            <input type="submit" class="btn btn-primary " value="Save">
+            </div>
       </div>
-   </form>
    <!-- <button type="back" class="btn btn-primary">Back</button> -->
    @endif
+{{Form::close()}}
 </div>
 </div>
 </div>

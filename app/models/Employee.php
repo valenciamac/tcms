@@ -5,7 +5,11 @@ class Employee extends Eloquent {
 	protected $table = 'employee';
 	public $timestamps = false;
 	protected $fillable = [];	
-
+    
+    public function payroll()
+{
+	return $this->hasMany('Payroll');
+}
 	public function scopeSearch($query, $search)
 	{
 		return $query->where(function($query) use ($search)

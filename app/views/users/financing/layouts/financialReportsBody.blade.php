@@ -3,39 +3,60 @@
    <form class="form-inline" action="financialReports" role="form">
       <div class="form-group" >
          <div class="input-inline">
-            <input class="form-control" type="text" placeholder="search" name="search">
+         <table>
+            <tr>
+               <td>
+                  <input class="form-control" type="text" placeholder="Search Contract" name="search">
+               </td>
+               <td>
+                  <div class = "col-md-9"></div>
+               </td>          
+               <td>
+                  </br>
+                  <ul class="nav nav-pills">
+                     <li><a href="printfr"><i class="fa fa-print"></i>Print Preview</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </table>
+         </div>
+         <div>
+            
          </div>
       </div>
    </form>
-   <br/>
    <table class="table table-bordered table-hover" style="font-size:10px;">
       <thead>
          <tr>
-            <th>ID</th>
-            <th>Client Name</th>
-            <th>Project Title</th>
-            <th>Project Budget</th>
-            <th>Total Salary (Site)</th>
-            <th>Total Salary (Office)</th>
-            <th>Total Price of Materials</th>
-            <th>Miscellaneous</th>
-            <th>Total Expenses</th>
-            <th>Total income</th>
+            <th>R-NO.</th>
+            <th>CONTRACT TITLE</th>
+            <th>INCOME FROM CONTRACT</th>
+            <th>PURCHASES COST</th>
+            <th>SUB-CON COST</th>
+            <th>INHOUSE COST</th>
+            <th>TRUCKING COST</th>
+            <th>FORMWORKS COST</th>
+            <th>MONTHLY SALARY</th>
+            <th>WEEKY SALARY</th>
+            <th>OVERHEAD EXPS</th>
+            <th>OTHER EXPS</th>
          </tr>
       </thead>
       <tbody>
          @foreach ($income as $incomes)
          <tr>
-            <td>{{ $incomes->id }}</td>
-            <td>{{ ucwords($incomes->clientName) }}</td>
-            <td>{{ ucwords($incomes->projectTitle) }}</td>
-            <td>{{ $incomes->projectBudget }}</td>
-            <td>{{ $incomes->siteSalaryTotal }}</td>
-            <td>{{ $incomes->officeSalaryTotal }}</td>
-            <td>{{ $incomes->priceOfMaterialsTotal }}</td>
-            <td>{{ $incomes->misc }}</td>
-            <td>{{ $incomes->expensesTotal }}</td>
-            <td>{{ $incomes->incomeTotal }}</td>
+            <td>{{ $incomes->rNo }}</td>
+            <td>{{ ucwords($incomes->contractTitle) }}</td>
+            <td>{{ sprintf('%0.2f',($incomes->contractIncome)) }}</td>
+            <td>{{ sprintf('%0.2f',($incomes->contractPurchase)) }}</td>
+            <td>{{ sprintf('%0.2f',($incomes->contractSubcon)) }}</td>
+            <td>{{ sprintf('%0.2f',($incomes->contractInhouse)) }}</td>
+            <td>{{ sprintf('%0.2f',($incomes->contractTrucking)) }}</td>
+            <td>{{ sprintf('%0.2f',($incomes->contractFormworks)) }}</td>
+            <td>{{ sprintf('%0.2f',($incomes->salaryMonthly)) }}</td>
+            <td>{{ sprintf('%0.2f',($incomes->salaryWeekly)) }}</td>
+            <td>{{ sprintf('%0.2f',($incomes->overheadExps)) }}</td>
+            <td>{{ sprintf('%0.2f',($incomes->otherExps)) }}</td>
          </tr>
          @endforeach
       </tbody>

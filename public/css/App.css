@@ -555,7 +555,7 @@ fieldset[disabled] .btn-twitter.active {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #e5412d;
+  /*color: #e5412d;*/
   font-weight: 600;
 }
 .nav-tabs > li > a {

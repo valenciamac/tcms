@@ -8,7 +8,7 @@
       <div id="wrapper">
       <div id="topbar">
          <div class="container">
-            <a href="javascript:;" id="menu-trigger" class="dropdown-toggle" data-toggle="dropdown" data-target="#">
+            <a href="financing" id="menu-trigger" class="dropdown-toggle" data-toggle="dropdown" data-target="#">
             <i class="icon-cog"></i>
             </a>
             <div id="top-nav">

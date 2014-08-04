@@ -14,16 +14,18 @@ class CreateFinanceTable extends Migration {
 	{
 		Schema::create('finance', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->string('clientName');
-			$table->string('projectTitle');
-			$table->double('projectBudget');
-			$table->double('siteSalaryTotal');
-			$table->double('officeSalaryTotal');
-			$table->double('priceOfMaterialsTotal');
-			$table->double('misc');
-			$table->double('expensesTotal');
-			$table->double('incomeTotal');
+			$table->increments('rNo');
+			$table->string('contractTitle');
+			$table->double('contractIncome');
+			$table->double('contractPurchase');
+			$table->double('contractSubcon');
+			$table->double('contractInhouse');
+			$table->double('contractTrucking');
+			$table->double('contractFormworks');
+			$table->double('salaryMonthly');
+			$table->double('salaryWeekly');
+			$table->double('overheadExps');
+			$table->double('otherExps');
 			$table->timestamps();
 		});
 	}

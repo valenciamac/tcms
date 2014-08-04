@@ -82,6 +82,14 @@ class FinanceController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
+	public function printShow()
+	{
+		
+		$incomes = Income::all();
+		
+		return View::make('users.financing.printfr')->withIncome($incomes);
+	}
 	public function update()
 	{
 		//

@@ -62,7 +62,7 @@ function ActsController($scope, $http, $interval)
 
   $interval(function() { 
     refreshActs();
-  }, 5000);
+  }, 30000);
 
 
 

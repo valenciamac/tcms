@@ -9,7 +9,7 @@
          <div id="top-nav">
             <ul class="pull-right">
                <li class="dropdown">
-                  <a href="sysAdmin"><i class="fa fa-home" style="padding-right:5px;"></i> Home</a>
+                  <a href="purchasing"><i class="fa fa-home" style="padding-right:5px;"></i> Home</a>
                </li>
                <li class="dropdown">
                   <a href="javascript:;" class="dropdown-toggle hover" data-toggle="dropdown">
@@ -26,7 +26,7 @@
    </div>
    <div id="header">
    <div class="container">
-   <a href="sysAdmin" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+   <a href="purchasing" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
    <div class="row">
    <div class="col-md-3">
       <ul class="sideMenu">
