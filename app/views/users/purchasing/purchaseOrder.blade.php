@@ -6,7 +6,7 @@
 @include('users.includes.head')
  {{HTML::script('js/angular.min.js')}}
 <body>
-   <div id="wrapper">
+   <div id="wrapper" style="height:100%;">
    <div id="topbar">
       <div class="container">
          <a href="javascript:;" id="menu-trigger" class="dropdown-toggle" data-toggle="dropdown" data-target="#">

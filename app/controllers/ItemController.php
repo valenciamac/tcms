@@ -52,12 +52,13 @@ class ItemController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($po)
 	{
-		return $id;
-		return View::make('users.purchasing.additem');
+		$additem = Po::where('po', '=', $po)->get();
 
-		// return View::make('users.purchasing.addItem')->withPo($poItem);
+		$items = Item::where('po_po', '=', $po)->get();
+
+		return View::make('users.purchasing.additem')->withPo($additem)->withItem($items);
 	}
 
 	/**

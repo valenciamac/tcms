@@ -87,7 +87,35 @@ function PosController($scope, $http, $interval)
   $interval(function() { 
     refreshPO();
   }, 30000);
+}
 
+function ItemsController($scope, $http)
+{ 
+  $scope.additem = function()
+  {
+    var items = {
+      iname: $scope.iname,
+      desc: $scope.desc,
+      qty: $scope.qty,
+      price: $scope.price
+    };
 
+    $scope.item.push(items);
 
+    $http.post('additem', items);
+
+  };
+  function refreshItems() {
+    $http({
+      url: 'additem',
+      method: "GET"
+
+    }).success(function (item) {
+      $scope.item = item; 
+
+    }).error(function (item) {
+      console.log('Error');
+    });
+  }
+  refreshItems();
 }

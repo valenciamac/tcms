@@ -15,9 +15,9 @@ class CreatePoTable extends Migration {
 		Schema::create('pos', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('po')->unique();
 			$table->string('suppler_name');
 			$table->string('prs');
-			$table->string('po');
 			$table->DATE('po_date');
 			$table->string('address');
 			$table->string('terms');

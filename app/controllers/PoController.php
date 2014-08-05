@@ -15,7 +15,7 @@ class PoController extends \BaseController {
 		$po->terms= Input::get('terms');
 		$po->supplier_code= Input::get('supplier_code');
 		$po->deliverTo= Input::get('deliverTo');
-		$po->save();
+		
 		// $item = new Item;
 		// $item->qty = Input::get('qty');
 		// $item->name = Input::get('name');
@@ -28,18 +28,17 @@ class PoController extends \BaseController {
 		$activity->user_id = Auth::user()->id;
 		$activity->action = 'added new Purchase Order #';
 		$activity->identifier = Input::get('po');
-		$activity->save();
 		
+		if($po->save())
+		{
+			$po = $po->po;
 		
-		
-		
+			$activity->save();	
+			return Redirect::route('item.show', ['po' => $po]);
+		}
 
-		$poitem = Input::get('po');
 
-		$additem = Po::where('po', '=', 1)->get();
-
-		return $additem->po;
-		return Redirect::to('purchaseOrder/{id}')->withPo($additem);
+		
 		
 	}
 	public function show()

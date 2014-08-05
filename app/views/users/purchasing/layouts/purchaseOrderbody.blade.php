@@ -57,7 +57,7 @@
 {{Form::close()}}
 <hr>
       </div> <!-- collapsible -->
-
+<div>
      @include('users.purchasing.layouts.viewPO')
     </div> <!-- col-md-9 -->
 

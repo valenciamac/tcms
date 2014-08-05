@@ -105,6 +105,7 @@ Route::get('accounts/{id}/delete', ['uses' => 'AccountsController@destroy' ])->b
 Route::resource('sessions', 'SessionsController');
 Route::resource('users', 'UsersController');
 Route::resource('profiles', 'ProfilesController');
+Route::resource('item', 'ItemController');
 Route::get('view', ['as' => 'view' , function()
 {
 
@@ -119,11 +120,30 @@ Route::get('view2', ['as' => 'view2' , function()
 	return View::make('users.purchasing.view2');	
 
 }])->before('auth|purchasing'); 
+
+Route::post('item/{po}', function()
+{
+	$item = new Item;
+	$item->iname = Input::get('name');
+	$item->po_po = Input::get('po_po');
+	$item->desc = Input::get('desc');
+	$item->price = Input::get('price');
+	$item->qty = Input::get('qty');
+	$success = $item->save();
+
+	$po = $item->po_po;
+
+	$items = Item::where('po_po', '=' , $po)->get();
+
+	return Redirect::route('item.show', ['po' => $po])->withItem($items);
+
+})->before('auth|purchasing');
+
 Route::get('purchase/{id}', ['uses' => 'PoController@edit' ])->before('auth|purchasing');
 Route::get('purchase/{id}/update', ['uses' => 'PoController@update' ])->before('auth|purchasing');
 Route::get('purchase/{id}/delete', ['uses' => 'PoController@destroy' ])->before('auth|purchasing');
 Route::get('view2', ['as' => 'view2', 'uses' => 'ItemController@store' ])->before('auth|purchasing');
-Route::get('purchaseOrder/{id}', ['uses' => 'ItemController@show' ])->before('auth|purchasing');
+Route::get('purchaseOrder/{id}/delete', ['uses' => 'PoController@destroy' ])->before('auth|purchasing');
 Route::get('payment', ['as' => 'payment' , function()
 {
 
@@ -234,16 +254,21 @@ Route::get('vouchers', ['as' => 'vouchers' , function()
 
 }])->before('auth|accounting');
 
-Route::get('reports', function()
+Route::get('item/{po}/reports', function($po)
 {
     	JasperPHP::process(
-        storage_path() . '/report2.jasper', //Input file 
-        storage_path() . '/report2', //Output file without extension
+        storage_path() . '/purchase_order.jasper', //Input file 
+        storage_path() . '/purchase_order', //Output file without extension
         array("pdf","rtf"), //Output format
-        array("php_version" => phpversion()), //Parameters array
+        array(
+        	'po' => $po
+        ), //Parameters array
         Config::get('database.connections.mysql') //DB connection array
         )->execute();
+	    $name = date("Y-m-s H.i.s");
+	    rename(storage_path() . '/purchase_order.pdf', storage_path() . '/report_'.$name.'.pdf');
+	    File::move(storage_path() . '/report_'.$name.'.pdf', storage_path() . '/../../public/reports/report_'.$name.'.pdf');
 
-});
+})->before('auth|purchasing');
 
 Route::get('mark', ['uses' => 'PoController@item'])->before('auth|purchasing');

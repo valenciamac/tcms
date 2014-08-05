@@ -17,6 +17,7 @@
 {{HTML::script('js/numeric2.js')}}
 {{HTML::script('js/numeric3.js')}}
 {{HTML::script('js/validate.js')}}
+{{HTML::script('js/validate2.js')}}
 {{HTML::script('js/add2.js')}}
 {{HTML::script('js/sum2.js')}}
 {{HTML::script('js/sum3.js')}}

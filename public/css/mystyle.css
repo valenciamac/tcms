@@ -69,13 +69,13 @@ min-height: 500px;
 }
 footer
 {
-position: fixed;
-bottom: 0;
-width: 100%;
-z-index: 91;
-min-height: 20px;
-background: #1f1f1f;
+background: #333333;
 color: #fff;
+border-top: 4px solid rgba(0, 0, 0, 0.1);
+clear: both;
+position: relative;
+z-index: 10;
+margin-top: -3em;
 }
 .fa
 {

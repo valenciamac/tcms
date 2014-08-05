@@ -26,9 +26,9 @@
             <td>{{po.prs}}</td>
             <td>{{po.suppler_name}}</td>
             <td>{{po.po_date}}</td>
-            <td><a href="purchaseOrder/{{po.id}}" class="btn btn-success"><i class="fa fa-pencil"></i>edit</a> 
-               <a href="po/{{po.id}}/delete" class="btn btn-danger"><i class="fa fa-trash-o"></i>delete</a>
-            </td>
+            <td><a href="item/{{po.po}}" class="btn btn-success"><i class="fa fa-pencil"></i>edit</a> 
+               <a href="purchaseOrder/{{po.id}}/delete" class="btn btn-danger" ><i class="fa fa-trash-o"></i>delete</a>
+               </td>
          </tr>
       </tbody>
    </table>
