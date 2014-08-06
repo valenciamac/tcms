@@ -4,7 +4,7 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.*",
+		"laravel/framework": "4.2.*",
 		"davejamesmiller/laravel-boris": "dev-master",
 		"nesbot/carbon": "*",
 		"cviebrock/eloquent-sluggable": "2.*",

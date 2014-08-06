@@ -23,6 +23,19 @@ Route::get('admin', ['as' => 'admin', function()
 
 }])->before('auth|admin');
 
+Route::get('adminPO', ['as' => 'adminPO', function()
+{
+	return View::make('users.admin.purchases');	
+}])->before('auth|admin');
+Route::resource('invoice', 'InvoiceController');
+Route::get('invoice/{po}', ['uses' => 'InvoiceController@show']);
+
+Route::get('pur', function()
+{
+	return Po::orderBy('po', 'DESC')->get();
+})->before('auth|admin');
+
+
 
 Route::get('accounts', ['as' => 'accounts', 'uses' => 'AccountsController@show' ])->before('auth|sysAdmin');
 
@@ -104,7 +117,6 @@ Route::get('accounts/{id}/delete', ['uses' => 'AccountsController@destroy' ])->b
 
 Route::resource('sessions', 'SessionsController');
 Route::resource('users', 'UsersController');
-Route::resource('profiles', 'ProfilesController');
 Route::resource('item', 'ItemController');
 Route::get('view', ['as' => 'view' , function()
 {
@@ -254,6 +266,12 @@ Route::get('vouchers', ['as' => 'vouchers' , function()
 
 }])->before('auth|accounting');
 
+
+// // administrator routes
+// Route::resource('purchases', 'PurchaseController');
+
+
+
 Route::get('item/{po}/reports', function($po)
 {
     	JasperPHP::process(
@@ -282,5 +300,3 @@ Route::get('item/{po}/reports', function($po)
     	)
     );
 })->before('auth|purchasing');
-
-Route::get('mark', ['uses' => 'PoController@item'])->before('auth|purchasing');

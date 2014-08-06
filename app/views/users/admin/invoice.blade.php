@@ -2,7 +2,7 @@
 <html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Purchases</title>
+      <title>Invoice</title>
       @include('users.includes.head')
    <body>
       <div id="wrapper">
@@ -22,7 +22,7 @@
                      <b class="caret hover"></b>
                      </a>
                      <ul class="dropdown-menu pull-right">
-                        <li><a href="logout">Logout</a></li>
+                        <li><a href="../logout">Logout</a></li>
                      </ul>
                   </li>
                </ul>
@@ -37,16 +37,16 @@
       <div class="row">
       <div class="col-md-3">
          <ul class="sideMenu">
+            <li>
+               <a href="../admin"><i class="fa fa-home"></i>Dashboard</a>
+            </li>
             <li class="active">
-               <a href="admin"><i class="fa fa-home"></i>Dashboard</a>
+               <a href="../adminPO"><i class="fa fa-user"></i>Purchases</a>
             </li>
             <li>
-               <a href="adminPO"><i class="fa fa-user"></i>Purchases</a>
-            </li>
-            <li>
-               <a href="inventory"><i class="fa fa-user"></i>Inventory</a>
+               <a href="../inventory"><i class="fa fa-user"></i>Inventory</a>
             </li>
          </ul>
       </div>
-      @include('users.admin.layouts.body')
+      @include('users.admin.layouts.addInvoice')
       @include('users.includes.footer')

@@ -20,6 +20,7 @@ class CreateItemTable extends Migration {
 			$table->string('iname');
 			$table->string('desc');
 			$table->float('price');
+			$table->integer('delivered');
 			$table->timestamps();
 			
 			$table->foreign('po_po')->references('po')->on('pos')->onUpdate('cascade')->onDelete('cascade');

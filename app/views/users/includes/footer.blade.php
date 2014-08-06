@@ -6,6 +6,7 @@
 <footer>
 {{HTML::script('js/jquery-1.9.1.min.js')}}
 {{HTML::script('js/jquery.cookie.js')}}
+{{HTML::script('js/jquery.maskedinput.min.js')}}
 {{HTML::script('js/main.js')}}
 {{HTML::script('js/jquery-ui.js')}}
 {{HTML::script('js/jquery-ui-1.9.2.custom.min.js')}}
@@ -60,6 +61,13 @@
        });
       
       });
+
+      jQuery(function($){
+       $(".number").mask("99999",{placeholder:" "});
+       $("#phone").mask("(999) 999-9999");
+       $("#tin").mask("99-9999999");
+       $("#ssn").mask("999-99-9999");
+    });
    </script>    
    <script>
       $(function(){

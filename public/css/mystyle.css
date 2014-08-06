@@ -132,3 +132,11 @@ a:hover
 {
 	margin-bottom:20px;
 }
+.invoice
+{
+	margin-bottom: 20px;
+}
+.addinvoice
+{
+	max-height: 25px;
+}

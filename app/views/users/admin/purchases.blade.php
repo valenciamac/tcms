@@ -4,6 +4,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title>Purchases</title>
       @include('users.includes.head')
+      {{HTML::script('js/angular.min.js')}}
    <body>
       <div id="wrapper">
       <div id="topbar">
@@ -37,16 +38,16 @@
       <div class="row">
       <div class="col-md-3">
          <ul class="sideMenu">
-            <li class="active">
+            <li>
                <a href="admin"><i class="fa fa-home"></i>Dashboard</a>
             </li>
-            <li>
-               <a href="adminPO"><i class="fa fa-user"></i>Purchases</a>
+            <li class="active">
+               <a href="purchases"><i class="fa fa-user"></i>Purchases</a>
             </li>
             <li>
                <a href="inventory"><i class="fa fa-user"></i>Inventory</a>
             </li>
          </ul>
       </div>
-      @include('users.admin.layouts.body')
+      @include('users.admin.layouts.indexBody')
       @include('users.includes.footer')

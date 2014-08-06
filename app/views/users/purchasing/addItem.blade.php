@@ -16,7 +16,9 @@
                   <i class="fa fa-user" style="padding-right:5px;" ></i> {{ ucwords(Auth::user()->fname), '&nbsp;', ucwords(Auth::user()->lname) }}						
                   <b class="caret hover"></b>
                   </a>
-                  @include('users.purchasing.layouts.topbar') 
+                  <ul class="dropdown-menu pull-right">
+                     <li><a href="../logout">Logout</a></li>
+                  </ul>
                </li>
             </ul>
          </div>

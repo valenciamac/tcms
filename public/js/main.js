@@ -119,3 +119,24 @@ function ItemsController($scope, $http)
   }
   refreshItems();
 }
+function PurchasesController($scope, $http, $interval)
+{
+  function refreshPO() 
+  {
+    $http({
+      url: 'pur',
+      method: "GET"
+
+    }).success(function (pos) {
+      $scope.pos = pos; 
+
+    }).error(function (pos) {
+      console.log('Error');
+    });
+  }
+  refreshPO();
+
+  $interval(function() { 
+    refreshPO();
+  }, 30000);
+}
