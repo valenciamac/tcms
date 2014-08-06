@@ -265,10 +265,22 @@ Route::get('item/{po}/reports', function($po)
         ), //Parameters array
         Config::get('database.connections.mysql') //DB connection array
         )->execute();
-	    $name = date("Y-m-s H.i.s");
-	    rename(storage_path() . '/purchase_order.pdf', storage_path() . '/report_'.$name.'.pdf');
-	    File::move(storage_path() . '/report_'.$name.'.pdf', storage_path() . '/../../public/reports/report_'.$name.'.pdf');
+	    $name = $po.'_'.date("Y-m-d H.i.s");
+	    rename(storage_path() . '/purchase_order.pdf', storage_path() . '/purchaseOrder_'.$name.'.pdf');
+	    File::move(storage_path() . '/purchaseOrder_'.$name.'.pdf', storage_path() . '/../../public/reports/purchaseOrder_'.$name.'.pdf');
 
+	    $file = storage_path() . '/../../public/reports/purchaseOrder_'.$name.'.pdf';  // <- Replace with the path to your .pdf file
+	
+		return Response::download(
+    	storage_path() . '/../../public/reports/purchaseOrder_'.$name.'.pdf', 
+    	'purchaseOrder_'.$name.'.pdf', 
+    	array(
+    		'Content-type:application/pdf',
+    		'Content-Disposition: inline; filename="' . 'purchaseOrder_'.$name.'.pdf' . '"',
+    		'Content-Transfer-Encoding: binary',
+    		'Accept-Ranges: bytes'
+    	)
+    );
 })->before('auth|purchasing');
 
 Route::get('mark', ['uses' => 'PoController@item'])->before('auth|purchasing');

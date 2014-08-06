@@ -15,7 +15,7 @@
          </tbody>
       </table>
       <div class="pull-right">
-         <input type="submit" class="btn btn-primary " value="Add">
+         <input type="submit" class="btn btn-primary " value="Add" style="margin-bottom:30px;">
       </div>
    </form>
    <script type="text/javascript" language="JavaScript">
@@ -50,8 +50,8 @@
       </tbody>
    </table>
    @if ($item->count())
-      <div class="pull-right">
-        <a href="{{$items->po_po}}/reports" class="btn btn-primary">Print</a>
+      <div class="pull-right" style="margin-bottom:50px;">
+        <a href="{{$additem->po}}/reports" class="btn btn-primary">Download Report</a>
         <a href="../purchaseOrder" class="btn btn-primary">Done</a>
       </div>
    @endif

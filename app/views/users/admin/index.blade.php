@@ -41,7 +41,7 @@
                <a href="admin"><i class="fa fa-home"></i>Dashboard</a>
             </li>
             <li>
-               <a href="javascript;"><i class="fa fa-user"></i>Inventory</a>
+               <a href="inventory"><i class="fa fa-user"></i>Inventory</a>
             </li>
          </ul>
       </div>

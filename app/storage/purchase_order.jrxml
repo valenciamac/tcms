@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="purchase_order" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dd8fdccb-5382-4a08-816b-e80b0428628b">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="144"/>
+	<property name="ireport.y" value="64"/>
 	<property name="ireport.background.image" value="C:\xampp\htdocs\tcms-mvc\public\img\PO.jpg"/>
 	<property name="ireport.background.image.properties" value="true,true,1.0,-8,-8,0,0,611,786"/>
 	<parameter name="po" class="java.lang.Integer">
@@ -61,11 +61,6 @@
 	</columnHeader>
 	<detail>
 		<band height="377" splitType="Stretch">
-			<subreport>
-				<reportElement x="0" y="80" width="555" height="270" uuid="77f5129d-e755-4c3c-849e-7df28ba1ed37"/>
-				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "purchaseOrder.jasper"]]></subreportExpression>
-			</subreport>
 			<textField>
 				<reportElement x="119" y="5" width="100" height="14" uuid="ab362135-6430-4f89-81ff-e691afb56ce3"/>
 				<textFieldExpression><![CDATA[$F{suppler_name}]]></textFieldExpression>
@@ -114,6 +109,14 @@
 				<reportElement x="358" y="52" width="65" height="15" uuid="655eac1a-97cf-4b41-886e-95c8d5fcdbc2"/>
 				<text><![CDATA[deliverTo]]></text>
 			</staticText>
+			<subreport>
+				<reportElement x="0" y="95" width="555" height="100" uuid="9a06e4fc-1301-4c39-a959-b0caa7f8f699"/>
+				<subreportParameter name="po">
+					<subreportParameterExpression><![CDATA[$P{po}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "purchaseOrder.jasper"]]></subreportExpression>
+			</subreport>
 		</band>
 	</detail>
 	<columnFooter>

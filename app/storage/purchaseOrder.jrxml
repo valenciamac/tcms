@@ -5,8 +5,11 @@
 	<property name="ireport.y" value="0"/>
 	<property name="ireport.background.image" value="C:\xampp\htdocs\tcms-mvc\public\img\PO.jpg"/>
 	<property name="ireport.background.image.properties" value="true,true,0.5,-11,-8,0,0,611,786"/>
-	<queryString language="SQL">
-		<![CDATA[select * from item;]]>
+	<parameter name="po" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from item where po_po = $P{po}]]>
 	</queryString>
 	<field name="id" class="java.lang.Long">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -72,7 +75,7 @@
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="16" splitType="Stretch">
+		<band height="17" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="65" height="14" uuid="b11e3dd4-245e-47a8-b56f-ded56d7e0fdc"/>
 				<textElement textAlignment="Center"/>
