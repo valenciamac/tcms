@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cost_Subcon" language="groovy" pageWidth="752" pageHeight="572" orientation="Landscape" columnWidth="752" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2afc4071-0a4a-4103-8fe9-439f00ba4a1a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from repcostsubcon]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconJanuary" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconFebruary" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconMarch" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconApril" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconMay" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconJune" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconJuly" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconAugust" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconSeptember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconOctober" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconNovember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconDecember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subconTotal" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="11" splitType="Stretch">
+			<textField>
+				<reportElement x="780" y="0" width="62" height="11" uuid="428fe5bc-aac3-49b6-bcf9-b0895bd463e2"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subconTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="650" y="0" width="62" height="11" uuid="09d677ac-33e0-498f-997a-c72877959c12"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subconNovember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="585" y="0" width="62" height="11" uuid="70824284-d36e-4f03-87b7-42be16458c7d"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subconOctober}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="62" height="11" uuid="7f7a58fd-e508-452c-92d8-39e69d8312c0"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subconJuly}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="0" width="62" height="11" uuid="83a4ffce-4cc6-44b5-838a-35c0145811ee"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subconMarch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="715" y="0" width="62" height="11" uuid="e9f3b711-f322-4829-be03-bc243ae40a63"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subconDecember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="325" y="0" width="62" height="11" uuid="2f38125a-8117-49e7-8eb1-b8f492ffec9b"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subconJune}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="65" y="0" width="62" height="11" uuid="cee76018-2e4a-4fd6-88a8-861a0f9eff52"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subconFebruary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="0" width="62" height="11" uuid="188f42db-1bf9-4bbd-81f5-b5326dfd67c6"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subconSeptember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="62" height="11" uuid="d981580b-f617-45e9-a369-63aafdd7a6b0"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subconAugust}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="62" height="11" uuid="e5a8d348-4c29-4569-adf9-27a8243af4c1"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subconMay}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="195" y="0" width="62" height="11" uuid="ea172317-bbc1-418a-91df-4e68d9f996d1"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subconApril}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="62" height="11" uuid="feb37695-c9c1-40b6-9eb5-f5f65da7be23"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subconJanuary}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

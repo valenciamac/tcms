@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="purchase_order" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dd8fdccb-5382-4a08-816b-e80b0428628b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="64"/>
+	<property name="ireport.background.image" value="C:\xampp\htdocs\tcms-mvc\public\img\PO.jpg"/>
+	<property name="ireport.background.image.properties" value="true,true,1.0,-8,-8,0,0,611,786"/>
+	<parameter name="po" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\tcms-mvc\\app\\storage\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM pos WHERE po = $P{po}]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="suppler_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prs" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="po" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="po_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="terms" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="supplier_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deliverTo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="updated_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="95" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="377" splitType="Stretch">
+			<textField>
+				<reportElement x="119" y="5" width="100" height="14" uuid="ab362135-6430-4f89-81ff-e691afb56ce3"/>
+				<textFieldExpression><![CDATA[$F{suppler_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="35" y="5" width="73" height="14" uuid="392a8119-6218-4643-a2de-bfc1828eec28"/>
+				<text><![CDATA[Supplier Name: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="26" width="73" height="13" uuid="a3f5dc00-ff2c-40c1-b1b9-cd0b106a1227"/>
+				<text><![CDATA[Address: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="119" y="26" width="100" height="13" uuid="b5e029c2-201f-468f-8069-3dffc78fa080"/>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="47" width="100" height="15" uuid="5af54545-a5b7-47a6-b09c-69cfb5d2c0c0"/>
+				<textFieldExpression><![CDATA[$F{supplier_code}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="35" y="47" width="73" height="13" uuid="fbe05344-aa9c-45c0-bb9f-762b00db31f3"/>
+				<text><![CDATA[Supplier Code]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="441" y="9" width="94" height="14" uuid="733b022f-9b35-493f-b0cd-6c7ec74e5fb1"/>
+				<textFieldExpression><![CDATA[$F{po_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="361" y="9" width="65" height="14" uuid="571eab8b-157f-4d02-a4ca-91835fe0dcf7"/>
+				<text><![CDATA[PO Date: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="441" y="30" width="94" height="13" uuid="df2fb086-ce9e-47d4-a93d-9cb36f22dda8"/>
+				<textFieldExpression><![CDATA[$F{terms}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="358" y="30" width="65" height="13" uuid="eee1f393-f5cc-4825-bfed-7b388ed505fd"/>
+				<text><![CDATA[Terms(Days)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="441" y="52" width="94" height="13" uuid="c5545894-c904-49ea-b112-fded80c7a3c0"/>
+				<textFieldExpression><![CDATA[$F{deliverTo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="358" y="52" width="65" height="15" uuid="655eac1a-97cf-4b41-886e-95c8d5fcdbc2"/>
+				<text><![CDATA[deliverTo]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="95" width="555" height="100" uuid="9a06e4fc-1301-4c39-a959-b0caa7f8f699"/>
+				<subreportParameter name="po">
+					<subreportParameterExpression><![CDATA[$P{po}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "purchaseOrder.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

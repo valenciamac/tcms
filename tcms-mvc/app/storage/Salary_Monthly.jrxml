@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Salary_Monthly" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2735e1c4-6cf1-44c3-93b4-26b8be5c1875">
+	<property name="ireport.zoom" value="1.6500000000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\8-05-2014\\vendor\\cossou\\jasperphp\\examples\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[select * from repsalarymonthly]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monthlyJanuary" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monthlyFebruary" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monthlyMarch" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monthlyApril" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monthlyMay" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monthlyJune" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monthlyJuly" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monthlyAugust" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monthlySeptember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monthlyOctober" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monthlyNovember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monthlyDecember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monthlyTotal" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="93" height="11" uuid="793124ed-844e-4bac-a8be-549fe378c43a"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[MONTHLY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="11" width="93" height="11" uuid="38cb04db-4713-469b-829e-3b840135df6b"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[WEEKLY]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="136" y="0" width="62" height="11" uuid="724b0751-5218-4a48-ba4e-94722a1f9b88"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthlyJanuary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="0" width="62" height="11" uuid="e59161b4-fdf7-4bdf-8b36-5a3c48c73a5f"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthlyFebruary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="0" width="62" height="11" uuid="f1cee25c-60db-48a0-a085-65f8a21f27a1"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthlyMarch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="396" y="0" width="62" height="11" uuid="210a54ae-dbb6-4068-8a55-58ae2af3be79"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthlyMay}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="461" y="0" width="62" height="11" uuid="041a6933-ba17-4540-9ce1-690f803377e5"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthlyJune}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="0" width="62" height="11" uuid="bd8b0605-c20c-43d6-8115-f0a4c2b55ed6"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthlyApril}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="591" y="0" width="62" height="11" uuid="75b84840-911d-4191-aad6-fc5a30225291"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthlyAugust}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="656" y="0" width="62" height="11" uuid="60d6ffb0-2d96-47f5-b369-7231da29f22f"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthlySeptember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="526" y="0" width="62" height="11" uuid="73e6c1c3-b284-4082-8dc5-dea4f1a3165a"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthlyJuly}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="851" y="0" width="62" height="11" uuid="54c497ed-675e-4688-80a2-52e308d24217"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthlyDecember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="721" y="0" width="62" height="11" uuid="f02b402a-5b24-447b-a935-4607ab21e593"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthlyOctober}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="786" y="0" width="62" height="11" uuid="bbd1e9d6-1bc6-4609-9814-ea80d2619f43"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthlyNovember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="916" y="0" width="62" height="11" uuid="9b5599c4-5bfd-46a7-a78d-cf6b1f7d889a"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthlyTotal}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="136" y="11" width="872" height="11" uuid="25993c1c-8338-4f28-9849-d918afbe6b57"/>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$F{id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Salary_Weekly.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="354">
+			<staticText>
+				<reportElement x="0" y="0" width="136" height="13" uuid="1f4db463-4688-4a73-bcd4-c8ea0668577c"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OVERHEAD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="13" width="93" height="11" uuid="e96b00d4-7c20-480a-96c7-ea168c562a96"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[A/R EMPLOYEES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="24" width="93" height="11" uuid="5e1b78f6-6d40-4b45-89ea-f09b0efcdc23"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ADVERTISING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="35" width="93" height="11" uuid="f376aef1-80ce-49f5-9f89-b979e0d04810"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[DONATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="46" width="93" height="11" uuid="7a134c86-0ba1-4d56-a08d-b16bb7dbef55"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[EMP. BENEFITS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="57" width="93" height="11" uuid="f121952f-f6ec-458b-9b97-caa83dcb041c"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[FEES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="68" width="93" height="11" uuid="d5ae9867-91d8-4030-9147-0b01e5cdf4e7"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[GAS & OIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="79" width="93" height="11" uuid="5605987b-5ab3-4af6-a446-e211ae4bb4d8"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[FREIGHT-IN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="90" width="93" height="11" uuid="a36a009e-965e-4bba-9421-d6ff7bc46b2e"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[FUR. & FIX.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="101" width="93" height="11" uuid="c16e58dd-f1e1-4982-b553-46215066eeaa"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[INTEREST/CHARGES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="112" width="93" height="11" uuid="63438fe9-32f5-485b-9843-c22a578e94a4"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[INSURANCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="123" width="93" height="11" uuid="dfdb28f0-7286-4c60-b68c-bca00626b786"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[JANITORIAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="134" width="93" height="11" uuid="5986c7be-129f-4b56-80a1-dc0e5e4626ab"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[LIGHTS & WATER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="145" width="93" height="11" uuid="30313ba9-4435-4e84-abce-a426d1146108"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[MEAL ALLOW.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="156" width="103" height="11" uuid="368eaa56-c5e4-4499-b092-77fb922fd12d"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[MED. (Health INCENTIVES)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="167" width="93" height="11" uuid="723b3ff9-63c0-43e8-8026-c44ea47818b8"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[MISC. EXPS.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="178" width="93" height="11" uuid="9bb043eb-a345-43c3-a7b4-c0a255d53160"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[MOTOR VEHICLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="189" width="93" height="11" uuid="d91372a1-4c33-418c-941f-4603111f33a0"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[OFFICE EQPT.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="200" width="93" height="11" uuid="de99e27d-81b5-4923-a384-1c22e0c8531d"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[OFFICE SUPP.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="211" width="93" height="11" uuid="68906550-c1ce-4867-910e-7f4222d29aa5"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[OPE. EXPS.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="222" width="93" height="11" uuid="d0403663-eb32-47d6-acc5-1b1e3beac940"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[RENTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="233" width="93" height="11" uuid="085a2f68-079a-4be8-90fd-d36a9bf65ffe"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[REPAIRS & MAINT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="244" width="93" height="11" uuid="82325203-61b1-4e96-a6ad-e5ba3c33025b"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[REPRESENTATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="255" width="93" height="11" uuid="a30a1201-36db-4a38-8486-285bffae4437"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ADMIN EXPS.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="266" width="93" height="11" uuid="b807ac8a-5076-4e81-9db0-4f11e5d14ac4"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SSS,PHIL,HDMF CONT.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="277" width="93" height="11" uuid="9e89df67-edfa-43b9-953d-bffad57e2072"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TAXES & LICENSES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="288" width="93" height="11" uuid="0bb5eac1-43d0-481c-a2ca-8f7127760f51"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TEL & FACSIMILE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="299" width="93" height="11" uuid="5d2a1ae2-28fe-4364-a76b-7271db4356b1"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TOLL & PARK. FEE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="310" width="93" height="11" uuid="1c7ec35e-5093-42f9-b31b-c09eac885841"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TRANSPO. ALLOW]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="321" width="93" height="11" uuid="0a1c3879-174f-4d92-a63a-240755f56429"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[13TH MONTH FEE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="343" width="93" height="11" uuid="bde7de28-c086-48f8-acd5-0380e35e8dd4"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[NOTARY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="332" width="93" height="11" uuid="bc4a3d02-828b-4627-82b6-88f57e1ac620"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[XEROX, PRINT EXPS.]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

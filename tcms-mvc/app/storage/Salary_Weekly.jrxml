@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Salary_Weekly" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="74722e30-86fa-43a9-b05e-10b5ccdb92f3">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="602"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from repsalaryweekly]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weeklyJanuary" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weeklyFebruary" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weeklyMarch" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weeklyApril" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weeklyMay" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weeklyJune" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weeklyJuly" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weeklyAugust" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weeklySeptember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weeklyOctober" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weeklyNovember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weeklyDecember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weeklyTotal" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="11" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="62" height="11" uuid="e6c74c9c-1972-4f60-a71d-f3427ba1fb40"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklyJanuary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="65" y="0" width="62" height="11" uuid="b80dcaba-dcf0-4537-a524-6294077a7b04"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklyFebruary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="0" width="62" height="11" uuid="d418a4d9-7aef-4430-a74b-5b1a07c691a8"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklyMarch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="62" height="11" uuid="5005240b-a33c-4057-97ee-f2d575f810da"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklyMay}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="325" y="0" width="62" height="11" uuid="d143943e-1e8f-44ec-933c-d19ac50c131b"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklyJune}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="195" y="0" width="62" height="11" uuid="effc8928-e486-4733-8d4c-ab2507a5fc40"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklyApril}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="62" height="11" uuid="93a3e47b-e617-4d9b-8fcf-b6398023844e"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklyAugust}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="0" width="62" height="11" uuid="c2f58f28-48a4-40f8-89e0-70b660eb244b"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklySeptember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="62" height="11" uuid="f49e9edf-25ca-411a-b781-aecab2910e7d"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklyJuly}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="715" y="0" width="62" height="11" uuid="32046aee-29a0-47ae-bd11-3cebc30d522e"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklyDecember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="585" y="0" width="62" height="11" uuid="ba4af3d1-911e-4875-ba6f-973675003ecc"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklyOctober}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="650" y="0" width="62" height="11" uuid="f4168705-faf3-415b-acd9-b289747649fd"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklyNovember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="780" y="0" width="62" height="11" uuid="9d4fe099-1179-4dab-b94b-d0dd3b127fa6"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklyTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

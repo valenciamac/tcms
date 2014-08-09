@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cost_Inhouse" language="groovy" pageWidth="752" pageHeight="572" orientation="Landscape" columnWidth="752" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d29130dd-797b-4c8e-b073-f3b0a9d1d23e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from repcostinhouse]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inhouseJanuary" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inhouseFebruary" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inhouseMarch" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inhouseApril" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inhouseMay" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inhouseJune" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inhouseJuly" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inhouseAugust" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inhouseSeptember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inhouseOctober" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inhouseNovember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inhouseDecember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inhouseTotal" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="11" splitType="Stretch">
+			<textField>
+				<reportElement x="65" y="0" width="62" height="11" uuid="026d4411-8c94-4d14-b0ad-5f3f96082ffb"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inhouseFebruary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="715" y="0" width="62" height="11" uuid="1cdfa8ff-3d4f-4d0f-8f53-4f18f1fd3097"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inhouseDecember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="0" width="62" height="11" uuid="f5c274c3-d929-4f06-adee-c928419a86c2"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inhouseSeptember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="62" height="11" uuid="3d3630e9-0a8a-471e-a9b6-64dded751509"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inhouseJuly}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="62" height="11" uuid="86855104-8f94-4324-8bdc-53e724204403"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inhouseJanuary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="62" height="11" uuid="b9ae0a6a-22a8-4b8b-8c94-1b2cde5f52de"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inhouseMay}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="195" y="0" width="62" height="11" uuid="51a155e9-d867-431a-991a-a6490e30f1f3"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inhouseApril}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="780" y="0" width="62" height="11" uuid="c14f0826-d672-4904-bd5b-f78abf2d0f63"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inhouseTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="325" y="0" width="62" height="11" uuid="e5d79c28-a8d3-4f07-af26-df006654c78c"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inhouseJune}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="0" width="62" height="11" uuid="fa39ad8d-9f06-425e-a307-d88e949e5eb8"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inhouseMarch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="585" y="0" width="62" height="11" uuid="aec24227-db01-4775-8a28-5e038ea4cc9b"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inhouseOctober}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="650" y="0" width="62" height="11" uuid="e8d700e4-1d50-4abd-a06f-c02ae86202d8"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inhouseNovember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="62" height="11" uuid="ead98df2-f7d9-47cc-825b-f615922ab2ee"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inhouseAugust}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
