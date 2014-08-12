@@ -26,6 +26,7 @@ class CreateFinanceTable extends Migration {
 			$table->double('salaryWeekly');
 			$table->double('overheadExps');
 			$table->double('otherExps');
+			$table->double('total');
 			$table->timestamps();
 		});
 	}

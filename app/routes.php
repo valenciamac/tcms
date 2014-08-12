@@ -103,6 +103,20 @@ Route::get('financialReports', ['as' => 'financialReports', function()
 
 Route::get('financialReports',['as' => 'financialReports', 'uses' => 'FinanceController@show'])->before('auth|financing');
 
+Route::get('incomeSummary', ['as' => 'incomeSummary', function()
+{
+	return View::make('users.financing.incomeSummary');
+}])->before('auth|financing');
+
+Route::get('incomeSummaryAdd', ['as' => 'incomeSummaryAdd', function()
+{
+	return View::make('users.financing.incomeSummaryAdd');
+}])->before('auth|financing');
+
+Route::get('incomeSummary',['as' => 'incomeSummary', 'uses' => 'IncomeSummaryController@chooseYear'])->before('auth|financing');
+Route::get('incomeSummaryAdd',['as' => 'incomeSummaryAdd', 'uses' => 'IncomeSummaryAddController@store'])->before('auth|financing');
+// Route::resource('incomeSummaryAdd', 'IncomeSummaryAddController');
+
 
 Route::get('purchaseOrder', ['as' => 'purchaseOrder' , function()
 {
@@ -400,7 +414,7 @@ Route::get('vouchers', ['as' => 'vouchers' , function()
 // // administrator routes
 // Route::resource('purchases', 'PurchaseController');
 
-Route::get('financialReports/printfin', function()
+Route::get('incomeSummary/printfin', function()
 {
 	JasperPHP::process(
         storage_path() . '/F_Reports.jasper', //Input file 
@@ -410,7 +424,34 @@ Route::get('financialReports/printfin', function()
         Config::get('database.connections.mysql') //DB connection array
         )->execute();
 	    $name = date("Y-m-d H.i.s");
-	    rename(storage_path() . '/F_Reports.pdf', storage_path() . '/financial_reports_'.$name.'.pdf');
+	    rename(storage_path() . '/F_Reports.pdf', storage_path() . '/summary_reports_'.$name.'.pdf');
+	    File::move(storage_path() . '/summary_reports_'.$name.'.pdf', storage_path() . '/../../public/reports/summary_reports_'.$name.'.pdf');
+
+	    $file = storage_path() . '/../../public/reports/summary_reports_'.$name.'.pdf';  // <- Replace with the path to your .pdf file
+	
+		return Response::download(
+    	storage_path() . '/../../public/reports/summary_reports_'.$name.'.pdf', 
+    	'summary_reports_'.$name.'.pdf', 
+    	array(
+    		'Content-type:application/pdf',
+    		'Content-Disposition: inline; filename="' . 'summary_reports_'.$name.'.pdf' . '"',
+    		'Content-Transfer-Encoding: binary',
+    		'Accept-Ranges: bytes'
+    	)
+    );
+});
+
+Route::get('financialReports/printfin', function()
+{
+	JasperPHP::process(
+        storage_path() . '/F_Report2.jasper', //Input file 
+        storage_path() . '/F_Report2', //Output file without extension
+        array("pdf"), //Output format
+        array(), //Parameters array
+        Config::get('database.connections.mysql') //DB connection array
+        )->execute();
+	    $name = date("Y-m-d H.i.s");
+	    rename(storage_path() . '/F_Report2.pdf', storage_path() . '/financial_reports_'.$name.'.pdf');
 	    File::move(storage_path() . '/financial_reports_'.$name.'.pdf', storage_path() . '/../../public/reports/financial_reports_'.$name.'.pdf');
 
 	    $file = storage_path() . '/../../public/reports/financial_reports_'.$name.'.pdf';  // <- Replace with the path to your .pdf file

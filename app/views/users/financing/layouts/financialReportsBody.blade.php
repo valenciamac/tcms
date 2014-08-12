@@ -14,8 +14,11 @@
                <td>
                   </br>
                   <ul class="nav nav-pills">
-                     <li><a href="financialReports/printfin"><i class="fa fa-print"></i>Print Preview</a></li>
+                     <li><a href="financialReports/printfin"><i class="fa fa-print"></i>Download PDF</a></li>
                   </ul>
+                  <!-- <ul class="nav nav-pills">
+                     <li><a href="financialReports/printfin"><i class="fa fa-print"></i>Download PDF</a></li>
+                  </ul> -->
                </td>
             </tr>
          </table>
@@ -28,7 +31,7 @@
    <table class="table table-bordered table-hover" style="font-size:10px;">
       <thead>
          <tr>
-            <th>R-NO.</th>
+            <th>NO.</th>
             <th>CONTRACT TITLE</th>
             <th>INCOME FROM CONTRACT</th>
             <th>PURCHASES COST</th>
@@ -38,8 +41,6 @@
             <th>FORMWORKS COST</th>
             <th>MONTHLY SALARY</th>
             <th>WEEKY SALARY</th>
-            <th>OVERHEAD EXPS</th>
-            <th>OTHER EXPS</th>
          </tr>
       </thead>
       <tbody>
@@ -55,8 +56,6 @@
             <td>{{ sprintf('%0.2f',($incomes->contractFormworks)) }}</td>
             <td>{{ sprintf('%0.2f',($incomes->salaryMonthly)) }}</td>
             <td>{{ sprintf('%0.2f',($incomes->salaryWeekly)) }}</td>
-            <td>{{ sprintf('%0.2f',($incomes->overheadExps)) }}</td>
-            <td>{{ sprintf('%0.2f',($incomes->otherExps)) }}</td>
          </tr>
          @endforeach
       </tbody>

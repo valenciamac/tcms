@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Salary_Weekly" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="74722e30-86fa-43a9-b05e-10b5ccdb92f3">
-	<property name="ireport.zoom" value="1.6105100000000008"/>
-	<property name="ireport.x" value="602"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Salary_Weekly" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1b121874-6a5e-4a85-b343-6c429e7f542d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<queryString language="SQL">
 		<![CDATA[select * from repsalaryweekly]]>
@@ -49,94 +49,94 @@
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<detail>
-		<band height="11" splitType="Stretch">
+		<band height="13" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="62" height="11" uuid="e6c74c9c-1972-4f60-a71d-f3427ba1fb40"/>
-				<textElement textAlignment="Right">
+				<reportElement x="0" y="0" width="61" height="13" uuid="68f9c7ff-ecc9-49b7-bdad-2bcb8eddb1df"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{weeklyJanuary}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="65" y="0" width="62" height="11" uuid="b80dcaba-dcf0-4537-a524-6294077a7b04"/>
-				<textElement textAlignment="Right">
+				<reportElement x="61" y="0" width="61" height="13" uuid="ad9e3942-688e-4f14-b495-bed208cf937e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{weeklyFebruary}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="130" y="0" width="62" height="11" uuid="d418a4d9-7aef-4430-a74b-5b1a07c691a8"/>
-				<textElement textAlignment="Right">
+				<reportElement x="122" y="0" width="61" height="13" uuid="ed87fc25-9054-4415-9954-635651e1e051"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{weeklyMarch}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="260" y="0" width="62" height="11" uuid="5005240b-a33c-4057-97ee-f2d575f810da"/>
-				<textElement textAlignment="Right">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyMay}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="325" y="0" width="62" height="11" uuid="d143943e-1e8f-44ec-933c-d19ac50c131b"/>
-				<textElement textAlignment="Right">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyJune}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="195" y="0" width="62" height="11" uuid="effc8928-e486-4733-8d4c-ab2507a5fc40"/>
-				<textElement textAlignment="Right">
+				<reportElement x="183" y="0" width="61" height="13" uuid="78271a1b-cc2b-41b7-a5ea-2ef9a7cd89f0"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{weeklyApril}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="455" y="0" width="62" height="11" uuid="93a3e47b-e617-4d9b-8fcf-b6398023844e"/>
-				<textElement textAlignment="Right">
+				<reportElement x="427" y="0" width="61" height="13" uuid="f87c03bd-c31e-4a1e-be64-1b608e4dcb82"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{weeklyAugust}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="520" y="0" width="62" height="11" uuid="c2f58f28-48a4-40f8-89e0-70b660eb244b"/>
-				<textElement textAlignment="Right">
+				<reportElement x="244" y="0" width="61" height="13" uuid="1dc4d85a-993b-4749-919a-6355f4f31b84"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklySeptember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{weeklyMay}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="390" y="0" width="62" height="11" uuid="f49e9edf-25ca-411a-b781-aecab2910e7d"/>
-				<textElement textAlignment="Right">
+				<reportElement x="305" y="0" width="61" height="13" uuid="83515cb6-4aa7-49c7-9e80-f3d8726ddd0d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklyJune}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="0" width="61" height="13" uuid="3841d1e3-4eb9-45dd-806a-cc31116c1ed0"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{weeklyJuly}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="715" y="0" width="62" height="11" uuid="32046aee-29a0-47ae-bd11-3cebc30d522e"/>
-				<textElement textAlignment="Right">
+				<reportElement x="671" y="0" width="61" height="13" uuid="29e824d2-de4f-4e0c-a587-e25d3cebe347"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{weeklyDecember}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="585" y="0" width="62" height="11" uuid="ba4af3d1-911e-4875-ba6f-973675003ecc"/>
-				<textElement textAlignment="Right">
+				<reportElement x="488" y="0" width="61" height="13" uuid="0f4735ec-7742-4e76-b5eb-122ec78b7b0c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weeklySeptember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="549" y="0" width="61" height="13" uuid="b2cac670-87fc-448a-9dff-c2e19828cc7c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{weeklyOctober}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="650" y="0" width="62" height="11" uuid="f4168705-faf3-415b-acd9-b289747649fd"/>
-				<textElement textAlignment="Right">
+				<reportElement x="610" y="0" width="61" height="13" uuid="67055bb7-cc9f-4148-b4de-485841d25f5b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{weeklyNovember}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="780" y="0" width="62" height="11" uuid="9d4fe099-1179-4dab-b94b-d0dd3b127fa6"/>
-				<textElement textAlignment="Right">
+				<reportElement x="732" y="0" width="61" height="13" uuid="dce0ddc3-ad42-4390-8625-0187df012075"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{weeklyTotal}]]></textFieldExpression>

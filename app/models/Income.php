@@ -15,15 +15,8 @@ class Income extends Eloquent {
 	{
 		return $query->where(function($query) use ($search)
 			{
-				$query->where('clientName', 'LIKE', "%$search%")
-					  ->orWhere('projectTitle', 'LIKE', "%$search%")
-					  ->orWhere('projectBudget', 'LIKE', "%$search%")
-					  ->orWhere('siteSalaryTotal', 'LIKE', "%$search%")
-					  ->orWhere('officeSalaryTotal', 'LIKE', "%$search%")
-					  ->orWhere('priceOfMaterialsTotal', 'LIKE', "%$search%")
-					  ->orWhere('misc', 'LIKE', "%$search%")
-					  ->orWhere('expensesTotal', 'LIKE', "%$search%")
-					  ->orWhere('incomeTotal', 'LIKE', "%$search%");
+				$query->where('rNo', 'LIKE', "%$search%")
+					  ->orWhere('contractTitle', 'LIKE', "%$search%");
 			});
 	}
 

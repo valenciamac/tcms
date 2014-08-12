@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cost_Of_Contracts" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="27072a00-b4f3-49c4-9303-793b7566c287">
+	<property name="ireport.zoom" value="1.2100000000000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\8-09-1014\\app\\storage\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from repcostpurchase where id = 1]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseJanuary" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseFebruary" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseMarch" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseApril" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseMay" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseJune" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseJuly" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseAugust" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseSeptember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseOctober" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseNovember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseDecember" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseTotal" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="165" height="13" uuid="56006092-ab00-4f6e-90db-5a27b8c1210b"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[PURCHASE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="175" y="0" width="61" height="13" uuid="992a46ef-a530-444c-8d53-3ebdf3a08703"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchaseJanuary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="236" y="0" width="61" height="13" uuid="9050efe1-cf22-4a0e-a4c6-11a6d79bc747"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchaseFebruary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="297" y="0" width="61" height="13" uuid="51a53cbf-6e4c-4c88-9abb-0ae679354561"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchaseMarch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="358" y="0" width="61" height="13" uuid="00210d5f-813d-4642-a1d7-1ad18d22aac7"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchaseApril}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="602" y="0" width="61" height="13" uuid="11d410d2-8d26-4975-a8ae-040c8d8d9676"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchaseAugust}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="419" y="0" width="61" height="13" uuid="67a6f52c-4ec0-4fa5-b731-d9f64c650e5a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchaseMay}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="61" height="13" uuid="dc33a8eb-65c3-4176-b4de-7605fd7e413d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchaseJune}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="541" y="0" width="61" height="13" uuid="083536b0-6418-41d1-be56-9fc53f371882"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchaseJuly}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="846" y="0" width="61" height="13" uuid="2cee5e7c-8543-440b-bfa8-7bd1e3ad21e1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchaseDecember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="663" y="0" width="61" height="13" uuid="237df8eb-b2c2-416d-9ac9-7ee31a61c133"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchaseSeptember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="724" y="0" width="61" height="13" uuid="78a5821d-8f4e-4cf4-b450-3b89a07943d6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchaseOctober}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="785" y="0" width="61" height="13" uuid="cc462d22-fcce-4308-8a43-b18e619dee1e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchaseNovember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="907" y="0" width="61" height="13" uuid="89831445-746f-44be-b294-3affeb557f5a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{purchaseTotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="13" width="165" height="13" uuid="228088e3-bc85-4a87-8cb2-5158c18da5f8"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SUB-CON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="26" width="165" height="13" uuid="ac5f5693-dfd5-4585-ac55-20609738ad9b"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[INHOUSE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="39" width="165" height="13" uuid="2194e7b2-ec94-4c3d-8cb8-88d5628eb1be"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TRUCKING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="52" width="165" height="13" uuid="eaee2006-4a86-4153-9339-4bf1fc207981"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[FORMWORKS]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="175" y="13" width="793" height="13" uuid="d56aa7f8-1901-49ec-b1fa-e0f70a9f288c"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Cost_Subcon.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="175" y="26" width="793" height="13" uuid="41d713b2-2827-4351-8b3c-276d15632927"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Cost_Inhouse.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="175" y="39" width="793" height="13" uuid="91952e53-097c-42b4-90cb-f79fcbfd5fdc"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Cost_Trucking.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="175" y="52" width="793" height="13" uuid="1642dc83-689b-4a8c-9c27-a2530bcdc1de"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Cost_Formworks.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="13">
+			<staticText>
+				<reportElement x="10" y="0" width="109" height="13" uuid="1ff0cd95-ad68-45a1-a9da-9d55fcd901e5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="175" y="0" width="793" height="13" uuid="066b6a02-e792-4819-9a85-b88e8cb4732f"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Costs_Total.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

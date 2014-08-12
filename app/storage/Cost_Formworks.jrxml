@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cost_Formworks" language="groovy" pageWidth="752" pageHeight="572" orientation="Landscape" columnWidth="752" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a3dc97c0-d5f7-4ece-9bcb-8418c4dc2fc4">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cost_Formworks" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="5741ce10-9e5a-4697-b9c4-9a664d166384">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -49,97 +49,97 @@
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<detail>
-		<band height="11" splitType="Stretch">
+		<band height="13" splitType="Stretch">
 			<textField>
-				<reportElement x="130" y="0" width="62" height="11" uuid="36d99e15-b509-469e-b38a-291a865e46ec"/>
-				<textElement textAlignment="Right">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{formworksMarch}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="195" y="0" width="62" height="11" uuid="cc4038e0-02a9-4eea-bf90-c373bcbd37bf"/>
-				<textElement textAlignment="Right">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{formworksApril}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="390" y="0" width="62" height="11" uuid="ad4cf836-2b49-4bd4-be51-c7f886792cf8"/>
-				<textElement textAlignment="Right">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{formworksJuly}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="520" y="0" width="62" height="11" uuid="334ccdfe-2d50-4bbb-974f-391a7a34f0c9"/>
-				<textElement textAlignment="Right">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{formworksSeptember}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="715" y="0" width="62" height="11" uuid="0e387c7f-2568-468d-9bb5-a9030ba9fbfb"/>
-				<textElement textAlignment="Right">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{formworksDecember}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="780" y="0" width="62" height="11" uuid="c292f4ff-ab3a-450b-89a5-4d031e5c3a28"/>
-				<textElement textAlignment="Right">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{formworksTotal}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="0" width="62" height="11" uuid="38aa0dc2-7f25-46bc-a22a-7e7e75b1b9a6"/>
-				<textElement textAlignment="Right">
+				<reportElement x="0" y="0" width="61" height="13" uuid="e8fb6e14-cd51-475f-9b40-56489b32469b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{formworksJanuary}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="260" y="0" width="62" height="11" uuid="6f780b86-c817-4df1-bcd0-32df38b44b4e"/>
-				<textElement textAlignment="Right">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{formworksMay}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="650" y="0" width="62" height="11" uuid="464bc304-658d-46e3-9542-98a515e3dc04"/>
-				<textElement textAlignment="Right">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{formworksNovember}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="65" y="0" width="62" height="11" uuid="93bd4fa1-20a7-4bc4-99fb-b05291368d75"/>
-				<textElement textAlignment="Right">
+				<reportElement x="61" y="0" width="61" height="13" uuid="222b66e9-d844-4737-a95a-baab5b42344d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{formworksFebruary}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="585" y="0" width="62" height="11" uuid="7e4d2c51-a4ce-4baa-89ca-dab3117ac825"/>
-				<textElement textAlignment="Right">
+				<reportElement x="122" y="0" width="61" height="13" uuid="72572429-505d-427c-ad06-3e4404beb8e7"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{formworksOctober}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{formworksMarch}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="325" y="0" width="62" height="11" uuid="b29bde9b-560d-4fbb-97aa-27e6873bee6a"/>
-				<textElement textAlignment="Right">
+				<reportElement x="183" y="0" width="61" height="13" uuid="d4fd8a14-2855-4f8e-aff5-8eaeffc18df6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{formworksApril}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="427" y="0" width="61" height="13" uuid="b9b240d2-5cef-4406-a231-c152dfd3b60e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{formworksAugust}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="244" y="0" width="61" height="13" uuid="2dfbe924-ea34-46c9-bbca-ac5c9a771bd0"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{formworksMay}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="0" width="61" height="13" uuid="4286c85f-fb93-4444-afc5-c55a06986391"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{formworksJune}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="455" y="0" width="62" height="11" uuid="d01df41b-30e0-4077-b674-400b116f40d2"/>
-				<textElement textAlignment="Right">
+				<reportElement x="366" y="0" width="61" height="13" uuid="a2451703-6a84-4b58-8d4e-37c495ac4493"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{formworksAugust}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{formworksJuly}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="671" y="0" width="61" height="13" uuid="d26a78bb-4af5-48e1-b66f-57699d7c364d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{formworksDecember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="0" width="61" height="13" uuid="40710b50-9186-485f-8a40-4c1c4a69945c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{formworksSeptember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="549" y="0" width="61" height="13" uuid="2afb636f-80ec-4dcf-9b31-b0bfb4846844"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{formworksOctober}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="610" y="0" width="61" height="13" uuid="1fde62b0-eec1-45b8-867b-b215bbc6b112"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{formworksNovember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="732" y="0" width="61" height="13" uuid="cb78f056-e292-4d57-96f3-d308e07ef90d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{formworksTotal}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

@@ -19,7 +19,7 @@ class CreateStandardDescTable extends Migration {
 			$table->string('sdesc');
 			$table->timestamps();
 
-			$table->foreign('sname_id')->references('id')->on('standardItem')->onUpdate('cascade')->onDelete('cascade');
+			$table->foreign('standard_item_id')->references('id')->on('standardItem')->onUpdate('cascade')->onDelete('cascade');
 		});
 	}
 
