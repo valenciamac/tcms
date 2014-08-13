@@ -2,7 +2,7 @@
 <html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Purchases</title>
+      <title>Material Requisition Slip</title>
       @include('users.includes.head')
       {{HTML::script('js/angular.min.js')}}
    <body>
@@ -41,16 +41,16 @@
             <li>
                <a href="admin"><i class="fa fa-home"></i>Dashboard</a>
             </li>
-            <li>
-               <a href="mrs"><i class="fa fa-user"></i>MRS</a>
-            </li>
             <li class="active">
-               <a href="adminPO"><i class="fa fa-home"></i>Purchases</a>
+               <a href="mrs"><i class="fa fa-home"></i>MRS</a>
+            </li>
+            <li>
+               <a href="adminPO"><i class="fa fa-user"></i>Purchases</a>
             </li>
             <li>
                <a href="inventory"><i class="fa fa-user"></i>Inventory</a>
             </li>
          </ul>
       </div>
-      @include('users.admin.layouts.indexBody')
+      @include('users.admin.layouts.mrsBody')
       @include('users.includes.footer')

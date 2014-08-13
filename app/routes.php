@@ -27,6 +27,14 @@ Route::get('adminPO', ['as' => 'adminPO', function()
 {
 	return View::make('users.admin.purchases');	
 }])->before('auth|admin');
+Route::resource('mrs', 'mrsController');
+Route::get('mrs', ['uses' => 'mrsController@index'])->before('auth|admin');
+Route::get('getmrs', function()
+	{
+
+	return Mrs::with('project')->get();
+	})->before('auth|admin');
+
 Route::resource('invoice', 'InvoiceController');
 Route::get('invoice/{po}', ['uses' => 'InvoiceController@show']);
 
@@ -440,7 +448,7 @@ Route::get('incomeSummary/printfin', function()
     	)
     );
 });
-
+Route::get('admin/mrs', ['uses' => 'mrsController@index'])->before('auth|admin');
 Route::get('financialReports/printfin', function()
 {
 	JasperPHP::process(
@@ -479,14 +487,13 @@ Route::get('item/{po}/reports', function($po)
         ), //Parameters array
         Config::get('database.connections.mysql') //DB connection array
         )->execute();
-	    $name = $po.'_'.date("Y-m-d H.i.s");
+	    $name = $po.'_'.date("Y-m-d");
 	    rename(storage_path() . '/purchase_order.pdf', storage_path() . '/purchaseOrder_'.$name.'.pdf');
 	    File::move(storage_path() . '/purchaseOrder_'.$name.'.pdf', storage_path() . '/../../public/reports/purchaseOrder_'.$name.'.pdf');
 
 	    $file = storage_path() . '/../../public/reports/purchaseOrder_'.$name.'.pdf';  // <- Replace with the path to your .pdf file
 	
-		return Response::download(
-    	storage_path() . '/../../public/reports/purchaseOrder_'.$name.'.pdf', 
+		return Response::download($file, 
     	'purchaseOrder_'.$name.'.pdf', 
     	array(
     		'Content-type:application/pdf',
@@ -494,5 +501,6 @@ Route::get('item/{po}/reports', function($po)
     		'Content-Transfer-Encoding: binary',
     		'Accept-Ranges: bytes'
     	)
+
     );
 })->before('auth|purchasing');

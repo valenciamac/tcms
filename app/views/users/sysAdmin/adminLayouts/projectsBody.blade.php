@@ -24,7 +24,7 @@
 			  </div>
          
            <div class="submit">
-            <button type="submit" class="btn btn-primary pull-right">Add User</button>
+            <button type="submit" class="btn btn-primary pull-right">Save Project</button>
             </div>
          {{Form::close()}}
 

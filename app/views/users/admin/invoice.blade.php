@@ -40,6 +40,9 @@
             <li>
                <a href="../admin"><i class="fa fa-home"></i>Dashboard</a>
             </li>
+            <li>
+               <a href="admin"><i class="fa fa-home"></i>MRS</a>
+            </li>
             <li class="active">
                <a href="../adminPO"><i class="fa fa-user"></i>Purchases</a>
             </li>

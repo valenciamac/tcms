@@ -5,6 +5,7 @@
 </div>
 <footer>
 {{HTML::script('js/jquery-1.9.1.min.js')}}
+{{HTML::script('js/jquery.chained.min.js')}}
 {{HTML::script('js/jquery.cookie.js')}}
 {{HTML::script('js/jquery.maskedinput.min.js')}}
 {{HTML::script('js/main.js')}}
@@ -64,7 +65,7 @@
       });
 
       jQuery(function($){
-       $(".number").mask("99999",{placeholder:" "});
+       $(".number").mask("99999",{placeholder:""});
        $("#phone").mask("(999) 999-9999");
        $("#tin").mask("99-9999999");
        $("#ssn").mask("999-99-9999");
@@ -104,6 +105,9 @@
    });
 </script>
 
+<script>
+  $("#ploc").chained("#pname"); /* or $("#series").chainedTo("#mark"); */
+</script>
 </footer>
 </body>
 </html>

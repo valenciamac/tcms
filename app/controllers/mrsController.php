@@ -1,5 +1,6 @@
 <?php
-class ProjectsController extends \BaseController {
+
+class MrsController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +10,8 @@ class ProjectsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$proj = Project::all();
+		return View::make('users.admin.mrs')->withProject($proj);
 	}
 
 	/**
@@ -20,7 +22,7 @@ class ProjectsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('users.sysAdmin.projects');
+		//
 	}
 
 	/**
@@ -30,15 +32,20 @@ class ProjectsController extends \BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{
-		$project = new Project;
-		$project->project_name = Input::get('projectName');
-		$project->location = Input::get('projectLocation');
-		$project->save();
+	{	
+		$pname = Input::get('pname');
+		$project_id = Project::where('project_name', '=', $pname)->first();
 
-		$id = $project->id;
-		return Redirect::route('project.show', ['id' => $id]);
-		
+		$mrs = new Mrs;
+		$mrs->project_id = $project_id->id;
+		$mrs->mrsno = Input::get('mrsno');
+		$mrs->save();
+
+		$mrsItem = $mrs->id;
+
+		$items = Mrs::where('project_id', '=' , $mrsItem)->get();
+
+	return Redirect::route('mrs.show', ['pid' => $mrsItem])->withMrs($mrsItem);
 	}
 
 	/**
@@ -48,11 +55,13 @@ class ProjectsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($pid)
 	{
-		$addproject = Project::where('id', '=', $id)->get();
-		$gitem = StandardDesc::with('standardItem')->groupBy('standard_item_id')->get();
-		return View::make('users.sysAdmin.projectDesc')->withProject($addproject)->withStandardDesc($gitem);
+		$project = Project::where('id', '=', $pid)->get();
+
+		$mrsitems = Mrs::where('project_id', '=', $pid)->get();
+
+		return View::make('users.admin.addmrsitem')->withProject($project)->withMrs($mrsitems);
 	}
 
 	/**

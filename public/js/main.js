@@ -1,6 +1,21 @@
 
+
+
 function UsersController($scope, $http, $interval)
 {	
+    var toUTCDate = function(date){
+    var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    return _utc;
+  };
+
+  var millisToUTCDate = function(millis){
+    return toUTCDate(new Date(millis));
+  };
+
+  
+    $scope.toUTCDate = toUTCDate;
+    $scope.millisToUTCDate = millisToUTCDate;
+
 	$scope.adduser = function()
 	{
 		var user = {
@@ -46,6 +61,19 @@ function UsersController($scope, $http, $interval)
 }
 function ActsController($scope, $http, $interval)
 {
+    var toUTCDate = function(date){
+    var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    return _utc;
+  };
+
+  var millisToUTCDate = function(millis){
+    return toUTCDate(new Date(millis));
+  };
+
+  
+    $scope.toUTCDate = toUTCDate;
+    $scope.millisToUTCDate = millisToUTCDate;
+
   function refreshActs() 
   {
     $http({
@@ -70,7 +98,7 @@ function ActsController($scope, $http, $interval)
 }
 function PosController($scope, $http, $interval)
 {
-  var toUTCDate = function(date){
+    var toUTCDate = function(date){
     var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
     return _utc;
   };
@@ -79,6 +107,7 @@ function PosController($scope, $http, $interval)
     return toUTCDate(new Date(millis));
   };
 
+  
     $scope.toUTCDate = toUTCDate;
     $scope.millisToUTCDate = millisToUTCDate;
 
@@ -103,7 +132,19 @@ function PosController($scope, $http, $interval)
 }
 
 function ItemsController($scope, $http)
-{ 
+{   var toUTCDate = function(date){
+    var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    return _utc;
+  };
+
+  var millisToUTCDate = function(millis){
+    return toUTCDate(new Date(millis));
+  };
+
+  
+    $scope.toUTCDate = toUTCDate;
+    $scope.millisToUTCDate = millisToUTCDate;
+
   $scope.additem = function()
   {
     var items = {
@@ -134,6 +175,20 @@ function ItemsController($scope, $http)
 }
 function PurchasesController($scope, $http, $interval)
 {
+
+    var toUTCDate = function(date){
+    var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    return _utc;
+  };
+
+  var millisToUTCDate = function(millis){
+    return toUTCDate(new Date(millis));
+  };
+
+  
+    $scope.toUTCDate = toUTCDate;
+    $scope.millisToUTCDate = millisToUTCDate;
+
   function refreshPO() 
   {
     $http({
@@ -155,7 +210,7 @@ function PurchasesController($scope, $http, $interval)
 }
 function ProjectsController($scope, $http, $interval)
 {
-  var toUTCDate = function(date){
+    var toUTCDate = function(date){
     var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
     return _utc;
   };
@@ -164,8 +219,10 @@ function ProjectsController($scope, $http, $interval)
     return toUTCDate(new Date(millis));
   };
 
+  
     $scope.toUTCDate = toUTCDate;
     $scope.millisToUTCDate = millisToUTCDate;
+    
   function refreshProjects() 
   {
     $http({
@@ -183,6 +240,43 @@ function ProjectsController($scope, $http, $interval)
 
   $interval(function() { 
     refreshActs();
+  }, 30000);
+
+
+
+}
+function MrsController($scope, $http, $interval)
+{
+    var toUTCDate = function(date){
+    var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    return _utc;
+  };
+
+  var millisToUTCDate = function(millis){
+    return toUTCDate(new Date(millis));
+  };
+
+  
+    $scope.toUTCDate = toUTCDate;
+    $scope.millisToUTCDate = millisToUTCDate;
+
+  function refreshMrs() 
+  {
+    $http({
+      url: 'getmrs',
+      method: "GET"
+
+    }).success(function (mrs) {
+      $scope.mrs = mrs; 
+
+    }).error(function (mrs) {
+      console.log('Error');
+    });
+  }
+  refreshMrs();
+
+  $interval(function() { 
+    refreshMrs();
   }, 30000);
 
 

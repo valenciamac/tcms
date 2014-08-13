@@ -10,4 +10,9 @@ class Project extends Eloquent
 	{
 		return $this->hasMany('InvItem');
 	}
+
+	public function Mrs()
+	{
+		return $this->hasMany('Mrs');
+	}
 }

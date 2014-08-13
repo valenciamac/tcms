@@ -26,7 +26,7 @@
 	<field name="po" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="po_date" class="java.sql.Date">
+	<field name="due_date" class="java.sql.Date">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="address" class="java.lang.String">
@@ -87,7 +87,7 @@
 			</staticText>
 			<textField>
 				<reportElement x="441" y="9" width="94" height="14" uuid="733b022f-9b35-493f-b0cd-6c7ec74e5fb1"/>
-				<textFieldExpression><![CDATA[$F{po_date}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("MMMM dd, yyyy").format($F{created_at})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="361" y="9" width="65" height="14" uuid="571eab8b-157f-4d02-a4ca-91835fe0dcf7"/>

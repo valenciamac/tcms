@@ -2,7 +2,7 @@
 <html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Purchases</title>
+      <title>Dashboard</title>
       @include('users.includes.head')
    <body>
       <div id="wrapper">
@@ -39,6 +39,9 @@
          <ul class="sideMenu">
             <li class="active">
                <a href="admin"><i class="fa fa-home"></i>Dashboard</a>
+            </li>
+            <li>
+               <a href="mrs"><i class="fa fa-home"></i>MRS</a>
             </li>
             <li>
                <a href="adminPO"><i class="fa fa-user"></i>Purchases</a>

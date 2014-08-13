@@ -44,10 +44,10 @@
               </tr>
             </thead>
             <tbody>
-            @foreach($standard_desc as $sitem)
+            @foreach($standard_desc as $gitem)
               <tr>
-                <td>{{ $sitem->standard_item->sname }}</td>
-                <td>{{ $sitem->sdesc }}</td>
+                <td>{{ $gitem->standard_item->sname }}</td>
+                <td>{{ $gitem->count() }}</td>
               </tr>
             @endforeach
             
