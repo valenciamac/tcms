@@ -1,9 +1,11 @@
-
-<!--{{HTML::script('js/skin.js')}}-->
-
-<a id="back-to-top" href="#" style="display: none;"><i class="fa fa-chevron-up"></i></a>
+<div class="footer">
+<div class="container">
+      <div class="pull-right">
+         copyright
+      </div>
 </div>
-<footer>
+</div>
+
 {{HTML::script('js/jquery-1.9.1.min.js')}}
 {{HTML::script('js/jquery.chained.min.js')}}
 {{HTML::script('js/jquery.cookie.js')}}
@@ -41,13 +43,11 @@
 {{HTML::script('js/chart.min.js')}}
 {{HTML::script('js/jquery.slimscroll.min.js')}}
 <script type="text/javascript">
-   $('.dropdown-toggle').dropdown()
+   $(document).ready(function(){
+    $(".dropdown-toggle").dropdown();
+}); 
 </script>
-   <div class="container">
-      <div class="pull-right">
-         copyright
-      </div>
-   </div>
+   
    <script type="text/javascript">
       $(function(){
           $('#activities').slimScroll({
@@ -70,8 +70,7 @@
        $("#tin").mask("99-9999999");
        $("#ssn").mask("999-99-9999");
     });
-   </script>    
-   <script>
+      
       $(function(){
        $('#controlNo').blur(function() {
            $('input[name=controlNo1]').attr('value',$('controlNo1').val()+$('#controlNo').val());
@@ -108,6 +107,5 @@
 <script>
   $("#ploc").chained("#pname"); /* or $("#series").chainedTo("#mark"); */
 </script>
-</footer>
 </body>
 </html>

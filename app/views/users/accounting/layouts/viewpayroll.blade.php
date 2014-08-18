@@ -1,4 +1,4 @@
-<div class="col-md-9">
+
   <ul class="nav nav-tabs nav-justified">
       <li class="active"><a href="viewpay">Payroll - Office</a></li>
       <li><a href="viewpay2">Payroll - Worksite</a></li>
@@ -61,8 +61,3 @@
 
           </tbody>
         </table>
-
-            </div>
-        </div> 
-    </div>
-</div>

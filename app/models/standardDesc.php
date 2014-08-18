@@ -2,7 +2,7 @@
 
 class StandardDesc extends Eloquent {
 
-	protected $table = 'standarddescs';
+	protected $table = 'standarddesc';
 	protected $guarded = [
 	];
 

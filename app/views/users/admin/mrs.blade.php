@@ -35,6 +35,9 @@
       <div id="header">
       <div class="container">
       <a href="admin" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+      </div>
+      </div>
+      <div class="container mainB">
       <div class="row">
       <div class="col-md-3">
          <ul class="sideMenu">

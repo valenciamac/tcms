@@ -6,7 +6,7 @@
 @include('users.includes.head')
  {{HTML::script('js/angular.min.js')}}
 <body>
-   <div id="wrapper" style="height:100%;">
+   <div id="wrapper">
    <div id="topbar">
       <div class="container">
          <a href="javascript:;" id="menu-trigger" class="dropdown-toggle" data-toggle="dropdown" data-target="#">
@@ -35,6 +35,9 @@
       <div class="brand">
       <a href="purchasing"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
       </div>
+      </div>
+      </div>
+<div class="container mainB">
    <div class="row">
    <div class="col-md-3">
       <ul class="sideMenu">
@@ -49,6 +52,11 @@
          </li>
       </ul>
    </div>
+   <div class="col-md-9">
    @include('users.purchasing.layouts.purchaseOrderbody')
+   </div>
+   </div>
+   </div>
+   </div>
    @include('users.includes.footer')
    

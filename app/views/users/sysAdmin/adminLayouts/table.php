@@ -1,4 +1,4 @@
-<div ng-app ng-controller="UsersController">
+<div ng-app ng-controller="UsersController" class="bottom-pad">
    <!-- content here -->
    <div class="panel-group" id="accordion">
 

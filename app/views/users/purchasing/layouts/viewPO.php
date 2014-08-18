@@ -1,4 +1,4 @@
- <div ng-app ng-controller="PosController">
+<div ng-app ng-controller="PosController" class="bottom-pad">
    <!-- content here -->
    <form class="form-inline" action="purchaseOrder" role="form">
       <div class="form-group" >
@@ -31,6 +31,4 @@
          </tr>
       </tbody>
    </table>
-      </div>
-   </div>
 </div>

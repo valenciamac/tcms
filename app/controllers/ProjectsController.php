@@ -51,8 +51,9 @@ class ProjectsController extends \BaseController {
 	public function show($id)
 	{
 		$addproject = Project::where('id', '=', $id)->get();
-		$gitem = StandardDesc::with('standardItem')->groupBy('standard_item_id')->get();
-		return View::make('users.sysAdmin.projectDesc')->withProject($addproject)->withStandardDesc($gitem);
+		$gitem = StandardDesc::all();
+		$sitem = StandardItem::all();
+		return View::make('users.sysAdmin.projectDesc')->withProject($addproject)->withStandardDesc($gitem)->withStandardItem($sitem);
 	}
 
 	/**
@@ -88,7 +89,12 @@ class ProjectsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$project = Project::find($id);
+
+		$project->delete();
+
+
+		return Redirect::back();
 	}
 
 }

@@ -9,12 +9,6 @@
     font-style: normal;
 }
 
-.container {
-    width: 960px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
 .clock {
     width: 800px;
     margin: 0 auto;

@@ -1,10 +1,10 @@
-<div class="col-md-9">
-   <!-- content here -->
+  <!-- content here -->
    <div class="panel-group" id="accordion">
       <ul class="nav nav-tabs nav-justified">
          <li class="active"><a href="incomeSummary">View Income Summary</a></li>
          <li><a href="incomeSummaryAdd">Add New Contract</a></li>
       </ul>
+
    <form class="form-inline" action="incomeSummary" role="form">
       <div class="form-group" >
          <div class="input-inline">
@@ -28,11 +28,9 @@
             </tr>
          </table>
          </div>
-         <div>
-            
-         </div>
       </div>
    </form>
+   </div>
    <table class="table table-bordered table-hover" style="font-size:10px;">
       <thead>
          <tr>
@@ -78,7 +76,3 @@
    <center>
       {{ $chooseYear->links() }}
    </center>
-</div>
-</div>
-</div>
-</div>

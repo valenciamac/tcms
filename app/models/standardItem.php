@@ -2,7 +2,7 @@
 
 class StandardItem extends Eloquent {
 
-	protected $table = 'standarditems';
+	protected $table = 'standarditem';
 	protected $guarded = [
 	];
 

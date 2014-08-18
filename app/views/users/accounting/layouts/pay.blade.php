@@ -1,4 +1,4 @@
-<div class="col-md-9">
+
    <ul class="nav nav-pills">
       <li class="active"><a href="employ">Add Employee</a></li>
       <li><a href="employ2">View Employee Details</a></li>
@@ -41,11 +41,3 @@
          @endforeach
       </tbody>
    </table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>

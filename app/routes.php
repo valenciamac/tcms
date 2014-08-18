@@ -32,9 +32,11 @@ Route::get('mrs', ['uses' => 'mrsController@index'])->before('auth|admin');
 Route::get('getmrs', function()
 	{
 
-	return Mrs::with('project')->get();
-	})->before('auth|admin');
+	$mrs = Mrs::with('project')->get();
 
+	return $mrs;
+	})->before('auth|admin');
+Route::get('project/{id}/delete', ['uses' => 'ProjectsController@destroy'])->before('auth|sysAdmin');
 Route::resource('invoice', 'InvoiceController');
 Route::get('invoice/{po}', ['uses' => 'InvoiceController@show']);
 

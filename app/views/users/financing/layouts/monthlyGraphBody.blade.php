@@ -1,20 +1,11 @@
-<!-- 	<style type="text/css">
-   body { font-family: Verdana, Arial, sans-serif; font-size: 12px; }
-   #placeholder { width: 700px; height: 400px; }
-   </style> -->
-<div class = "col-md-9">
+
    <ul class="nav nav-pills">
       <li class="active"><a href="monthlyGraph">Monthly Graph</a></li>
       <li><a href="yearlyGraph">Yearly Graph</a></li>
    </ul>
-   <div>
       <div>
          <canvas id="canvas" height="350" width="600"></canvas>
       </div>
-   </div>
-</div>
-</div>
-</div>
 <script type = "text/javascript">
    var lineChartData = {
    	labels : {{ json_encode($rMonth) }},

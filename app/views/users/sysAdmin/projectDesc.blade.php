@@ -3,8 +3,8 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title>Projects</title>
-@include('users.includes.head')
-{{HTML::script('js/angular.min.js')}}
+      @include('users.includes.head')
+      {{HTML::script('js/angular.min.js')}}
 <body>
    <div id="wrapper">
    <div id="topbar">
@@ -38,17 +38,20 @@
    <div class="brand">
       <a href="../sysAdmin"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
    </div>
+   </div>
+   </div>
+   <div class="container mainB">
    <div class="row">
    <div class="col-md-3">
       <ul class="sideMenu">
          <li>
             <a href="../sysAdmin"><i class="fa fa-home"></i>Dashboard</a>
          </li>
-         <li>
-            <a href="accounts"><i class="fa fa-user"></i>Accounts</a>
-         </li>
          <li class="active">
             <a href="../project"><i class="fa fa-archive"></i>Projects</a>
+         </li>
+         <li>
+            <a href="accounts"><i class="fa fa-user"></i>Accounts</a>
          </li>
          <li>
             <a href="#"><i class="fa fa-archive"></i>Inventory</a>
@@ -58,6 +61,10 @@
          </li>
       </ul>
    </div>
-
+   <div class="col-md-9">
    @include('users.sysAdmin.adminLayouts.projectsaddItems')
+   </div>
+   </div>
+   </div>
+   </div>
    @include('users.includes.footer')

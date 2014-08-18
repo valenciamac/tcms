@@ -1,5 +1,3 @@
-<div class="col-md-9">
-   
    <div class="panel-group" id="accordion">
 
         <a class="btn btn-primary" data-toggle="collapse" data-parent="#accordion" href="#newpo">
@@ -55,9 +53,5 @@
 {{Form::close()}}
 <hr>
       </div> <!-- collapsible -->
-<div>
      @include('users.purchasing.layouts.viewPO')
-    </div> <!-- col-md-9 -->
 
-</div>
-</div>

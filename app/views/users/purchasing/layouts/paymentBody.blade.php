@@ -1,4 +1,4 @@
-<div class="col-md-9">
+<div class="bottom-pad">
    <ul class="nav nav-tabs nav-justified">
       <li class="active"><a href="payment">Make Request For Payment</a></li>
       <li class=""><a href="view3">View Request For Payment Details</a></li>
@@ -57,7 +57,4 @@
       <input type="reset" class="btn btn-primary " value="Clear">
    </div>
    {{Form::close()}}
-</div>
-</div>
-</div>
-</div>
+   </div>

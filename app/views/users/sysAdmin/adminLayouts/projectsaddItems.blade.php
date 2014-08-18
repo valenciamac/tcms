@@ -1,5 +1,3 @@
-<div class="col-md-9" >
-   
    <!-- content here -->
    <div class="panel-group" id="accordion">
 
@@ -44,17 +42,15 @@
               </tr>
             </thead>
             <tbody>
-            @foreach($standard_desc as $gitem)
+            @foreach($standard_item as $sitem)
               <tr>
-                <td>{{ $gitem->standard_item->sname }}</td>
-                <td>{{ $gitem->count() }}</td>
+                <td>{{ $sitem->sname }}</td>
+                @foreach($standard_desc as $gitem)
+                <td>{{ $gitem->sdesc }}</td>
+                @endforeach
               </tr>
             @endforeach
             
             </tbody>
     </table>
     @endforeach
-</div>
-</div>
-</div>
-</div>
