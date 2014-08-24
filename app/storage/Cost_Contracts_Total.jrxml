@@ -3,7 +3,7 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<queryString language="SQL">
+	<queryString>
 		<![CDATA[select * from repcostcontractstotal]]>
 	</queryString>
 	<field name="costContractsTJanuary" class="java.lang.Double">
@@ -58,91 +58,91 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costContractsTJanuary}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{costContractsTJanuary})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="61" y="0" width="61" height="13" uuid="a6b77b32-3bb3-4e6f-9354-0b314fa38db8"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costContractsTFebruary}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{costContractsTFebruary})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="122" y="0" width="61" height="13" uuid="daeb6082-ef06-42a5-917a-a697d7afe0a0"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costContractsTMarch}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{costContractsTMarch})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="183" y="0" width="61" height="13" uuid="4ea3d058-a7e7-4ce3-ade4-861b57b75f4c"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costContractsTApril}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{costContractsTApril})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="427" y="0" width="61" height="13" uuid="c4a8f92b-883d-40e8-9cac-f05991ea8898"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costContractsTAugust}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{costContractsTAugust})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="244" y="0" width="61" height="13" uuid="6d1f901d-e4d6-4251-a070-9990247f9812"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costContractsTMay}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{costContractsTMay})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="305" y="0" width="61" height="13" uuid="3ebb5dc0-2a51-4651-a0aa-551a496441c7"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costContractsTJune}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{costContractsTJune})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="366" y="0" width="61" height="13" uuid="3b5dc310-6ce8-4d45-b1a7-c78e24b0deaa"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costContractsTJuly}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{costContractsTJuly})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="671" y="0" width="61" height="13" uuid="2ecf1824-9833-4eac-a39e-442d802882b1"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costContractsTDecember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{costContractsTDecember})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="488" y="0" width="61" height="13" uuid="c7e1ff6d-10b3-411b-a54b-45f5ff009f84"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costContractsTSeptember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{costContractsTSeptember})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="549" y="0" width="61" height="13" uuid="949044fd-a4ae-4628-82e6-c6945685b154"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costContractsTOctober}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{costContractsTOctober})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="610" y="0" width="61" height="13" uuid="3213f12a-9127-4e4c-b80f-2fc61b10d562"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costContractsTNovember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{costContractsTNovember})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="732" y="0" width="61" height="13" uuid="d5d52e1b-93df-4adf-8bd4-1516ec1c1dbe"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costContractsTTotal}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{costContractsTTotal})))]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

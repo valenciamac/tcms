@@ -1,4 +1,5 @@
 @include('users.includes.head')
+ {{HTML::script('js/angular.min.js')}}
 <body>
 <div id="wrapper">
     <div id="topbar">
@@ -52,6 +53,6 @@
         </li>
     </ul>
 </div>
-@include('users.accounting.layouts.rate')
+@include('users.accounting.layouts.addrate')
 
 @include('users.includes.footer')

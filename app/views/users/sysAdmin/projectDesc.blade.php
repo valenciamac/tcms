@@ -24,7 +24,7 @@
                   </a>
                   <ul class="dropdown-menu pull-right">
                      <li class="drop"><a href="create">Create new user</a></li>
-                     <li><a href="logout">Logout</a></li>
+                     <li><a href="../logout">Logout</a></li>
                   </ul>
                </li>
             </ul>
@@ -61,8 +61,63 @@
          </li>
       </ul>
    </div>
-   <div class="col-md-9">
+   <div class="col-md-7">
    @include('users.sysAdmin.adminLayouts.projectsaddItems')
+   </div>
+   <div class="col-md-2">
+      <div class="itemheader">
+         <div class="headerlabel">
+         
+         @foreach($project as $addproject)<!-- 
+            <a href="{{$addproject->id}}/addtemplate" class="headerplus">
+            <i class="fa fa-plus"></i></a> -->
+
+            <!-- Button trigger modal -->
+            <a href="#" class="headerplus" data-toggle="modal" data-target="#myModal">
+               ADD NEW TEMPLATE <i class="fa fa-plus"></i>
+            </a>
+            </div>
+            </div>
+            <div class="itemcontainer">
+
+            @if ($template->count())
+            <div class="notemp">
+               <label>Add this items</label>
+            </div>
+               @foreach ($template as $item)
+                  
+                  <a href="../additem/{{$item->id}}" class="btn btn-primary item">{{$item->tempname}}</a>
+                  
+               @endforeach
+            @else
+            <div class="notemp">
+               <label>No template Available</label>
+            </div>
+            @endif
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Create a Template</h4>
+                  </div>
+                  <div class="modal-body">
+                  {{Form::open(array('route' => 'addtemplate.store','class'=>'form-horizontal','role'=>'form'))}}
+                    <input name="tempname" class="form-control" type="text" placeholder="template name">
+                    {{Form::close()}}
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+         @endforeach
+         </div>
+      </div>
    </div>
    </div>
    </div>

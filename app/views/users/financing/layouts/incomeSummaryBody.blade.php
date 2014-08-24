@@ -1,17 +1,23 @@
-  <!-- content here -->
+<style>
+   .flash-message {
+   }
+</style>
+
+   <!-- content here -->
    <div class="panel-group" id="accordion">
       <ul class="nav nav-tabs nav-justified">
          <li class="active"><a href="incomeSummary">View Income Summary</a></li>
          <li><a href="incomeSummaryAdd">Add New Contract</a></li>
       </ul>
 
+   
    <form class="form-inline" action="incomeSummary" role="form">
       <div class="form-group" >
          <div class="input-inline">
          <table>
             <tr>
                <td>
-                  <input class="form-control" type="text" placeholder="Enter Year" name="search">
+                  <input class="form-control" type="text" placeholder="Search Year" name="search">
                </td>
                <td>
                   <div class = "col-md-9"></div>
@@ -21,6 +27,7 @@
                   <ul class="nav nav-pills">
                      <li><a href="incomeSummary/printfin"><i class="fa fa-print"></i>Download PDF</a></li>
                   </ul>
+                  
                   <!-- <ul class="nav nav-pills">
                      <li><a href="financialReports/printfin"><i class="fa fa-print"></i>Download PDF</a></li>
                   </ul> -->
@@ -30,7 +37,14 @@
          </div>
       </div>
    </form>
-   </div>
+   
+   <form action='incomeSummaryTotal' method="get" class="form-inline" role="form">
+      <div class="submit">
+         <button class="btn btn-primary" type="submit">Compute Total</button>
+         <label class="flash-message"><p>{{ Session::get('totalCompute_success') }}</p></label>
+      </div>
+   </form>
+   
    <table class="table table-bordered table-hover" style="font-size:10px;">
       <thead>
          <tr>
@@ -68,7 +82,16 @@
             <td>{{ sprintf('%0.2f',($chooseYears->incomeOctober)) }}</td>
             <td>{{ sprintf('%0.2f',($chooseYears->incomeNovember)) }}</td>
             <td>{{ sprintf('%0.2f',($chooseYears->incomeDecember)) }}</td>
-            <td>{{ sprintf('%0.2f',($chooseYears->incomeTotal)) }}</td>
+            <?php
+            $total =  $chooseYears->incomeJanuary + $chooseYears->incomeFebruary
+                     + $chooseYears->incomeMarch + $chooseYears->incomeApril
+                     + $chooseYears->incomeMay + $chooseYears->incomeJune
+                     + $chooseYears->incomeJuly + $chooseYears->incomeAugust
+                     + $chooseYears->incomeSeptember + $chooseYears->incomeOctober
+                     + $chooseYears->incomeNovember + $chooseYears->incomeDecember;
+
+            ?>
+            <td>{{ $total }}</td>
          </tr>
          @endforeach
       </tbody>
@@ -76,3 +99,4 @@
    <center>
       {{ $chooseYear->links() }}
    </center>
+   </div>

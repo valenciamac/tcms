@@ -1,5 +1,5 @@
 <div class="col-md-9">
-   <div ng-app ng-controller="IncomeSummaryAddController">
+   <div>
    <!-- content here -->
    <div class="panel-group" id="accordion">
       <ul class="nav nav-tabs nav-justified">
@@ -12,59 +12,59 @@
     <div id="addContract" class="panel-collapse collapse">
       <div class="panel-body">
       <hr>
-        <form ng-submit="addContract()" method="Post" class="form-inline" role="form">
+        <form action='incomeSummarySubmit' method="get" class="form-inline" role="form">
       <div class="row">
          <div class="col-xs-6">
             <label>Contract Title: </label>
-            <input type="text" ng-model="contractTitle" class="form-control input-sm">
+            <input type="text" name="contractTitle" class="form-control input-sm">
          </div>
          <div class="col-xs-6">
             <label>Income January:</label>
-            <input type="text" ng-model="incomeJanuary" class="form-control input-sm">
+            <input type="text" name="incomeJanuary" class="form-control input-sm">
          </div>
          <div class="col-xs-6">
             <label>Income February:</label>
-            <input type="text" ng-model="incomeFebruary" class="form-control input-sm">
+            <input type="text" name="incomeFebruary" class="form-control input-sm">
          </div>
          <div class="col-xs-6">
             <label>Income March:</label>
-            <input type="text" ng-model="incomeMarch" class="form-control input-sm">
+            <input type="text" name="incomeMarch" class="form-control input-sm">
          </div>
          <div class="col-xs-6">
             <label>Income April:</label>
-            <input type="text" ng-model="incomeApril" class="form-control input-sm">
+            <input type="text" name="incomeApril" class="form-control input-sm">
          </div>
          <div class="col-xs-6">
             <label>Income May:</label>
-            <input type="text" ng-model="incomeMay" class="form-control input-sm">
+            <input type="text" name="incomeMay" class="form-control input-sm">
          </div>
          <div class="col-xs-6">
             <label>Income June:</label>
-            <input type="text" ng-model="incomeJune" class="form-control input-sm">
+            <input type="text" name="incomeJune" class="form-control input-sm">
          </div>
          <div class="col-xs-6">
             <label>Income July:</label>
-            <input type="text" ng-model="incomeJuly" class="form-control input-sm">
+            <input type="text" name="incomeJuly" class="form-control input-sm">
          </div>
          <div class="col-xs-6">
             <label>Income August:</label>
-            <input type="text" ng-model="incomeAugust" class="form-control input-sm">
+            <input type="text" name="incomeAugust" class="form-control input-sm">
          </div>
          <div class="col-xs-6">
             <label>Income September:</label>
-            <input type="text" ng-model="incomeSeptember" class="form-control input-sm">
+            <input type="text" name="incomeSeptember" class="form-control input-sm">
          </div>
          <div class="col-xs-6">
             <label>Income October:</label>
-            <input type="text" ng-model="incomeOctober" class="form-control input-sm">
+            <input type="text" name="incomeOctober" class="form-control input-sm">
          </div>
          <div class="col-xs-6">
             <label>Income November:</label>
-            <input type="text" ng-model="incomeNovember" class="form-control input-sm">
+            <input type="text" name="incomeNovember" class="form-control input-sm">
          </div>
          <div class="col-xs-6">
             <label>Income December:</label>
-            <input type="text" ng-model="incomeDecember" class="form-control input-sm">
+            <input type="text" name="incomeDecember" class="form-control input-sm">
          </div>
       </div>
       <!-- button -->

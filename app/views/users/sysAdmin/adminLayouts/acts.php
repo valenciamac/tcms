@@ -7,6 +7,7 @@
                      </div>
                   </div>
                </form>
+               <div class="actsContainer">
                <div id="activities" class="acts">
                   <div class="activity-group" ng-repeat="activity in activities | filter:search">
                      <div class="activity-body">
@@ -17,5 +18,6 @@
                         </p>
                      </div>
                   </div>
+               </div>
                </div>
             </div>

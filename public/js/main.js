@@ -3,6 +3,14 @@
 
 function UsersController($scope, $http, $interval)
 {	
+   $scope.roleOptions = [
+    { name: 'System Administrator', value: 'sysAdmin' }, 
+    { name: 'Accounting', value: 'accounting' }, 
+    { name: 'Administrator', value: 'admin' },
+    { name: 'Financing', value: 'financing' },
+    { name: 'Purchasing', value: 'purchasing' }
+    ];
+
     var toUTCDate = function(date){
     var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
     return _utc;
@@ -16,8 +24,12 @@ function UsersController($scope, $http, $interval)
     $scope.toUTCDate = toUTCDate;
     $scope.millisToUTCDate = millisToUTCDate;
 
+   
+
 	$scope.adduser = function()
 	{
+    
+    
 		var user = {
 			fname: $scope.fname,
 			lname: $scope.lname,

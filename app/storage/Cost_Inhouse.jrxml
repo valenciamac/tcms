@@ -55,91 +55,102 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{inhouseJanuary}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{inhouseJanuary})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="61" y="0" width="61" height="13" uuid="777a45dd-effa-410c-9fd5-0a3629ed90a4"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{inhouseFebruary}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{inhouseFebruary})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="122" y="0" width="61" height="13" uuid="27c127a7-2d5c-4cff-8d71-69f2f976002c"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{inhouseMarch}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{inhouseMarch})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="183" y="0" width="61" height="13" uuid="c2277a82-a447-4555-9a29-3207c8ea9045"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{inhouseApril}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{inhouseApril})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="427" y="0" width="61" height="13" uuid="abaca89a-f793-4183-bcc4-92a4da4989b4"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{inhouseAugust}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{inhouseAugust})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="244" y="0" width="61" height="13" uuid="bba5200f-3267-4a98-8dff-3902a7e3dba1"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{inhouseMay}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{inhouseMay})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="305" y="0" width="61" height="13" uuid="eab4d94e-a06b-458d-93df-d97402664a1c"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{inhouseJune}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{inhouseJune})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="366" y="0" width="61" height="13" uuid="9d30e59f-f0be-4d22-be93-65a5002269b2"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{inhouseJuly}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{inhouseJuly})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="671" y="0" width="61" height="13" uuid="42c4f75e-ca0a-4db8-9bb9-ddb7fa45a950"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{inhouseDecember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{inhouseDecember})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="488" y="0" width="61" height="13" uuid="51a63834-88fa-4ed3-b098-85807cfbb171"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{inhouseSeptember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{inhouseSeptember})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="549" y="0" width="61" height="13" uuid="0bc2614d-f12a-43f3-8695-2dcbcfe35bc5"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{inhouseOctober}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{inhouseOctober})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="610" y="0" width="61" height="13" uuid="948ef69a-3dfe-498b-8ddc-cea89c0a586a"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{inhouseNovember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{inhouseNovember})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="732" y="0" width="61" height="13" uuid="7d6befc2-3857-42af-9258-f9e6e653538c"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{inhouseTotal}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{inhouseJanuary})))+
+Math.round((Double.valueOf($F{inhouseFebruary})))+
+Math.round((Double.valueOf($F{inhouseMarch})))+
+Math.round((Double.valueOf($F{inhouseApril})))+
+Math.round((Double.valueOf($F{inhouseMay})))+
+Math.round((Double.valueOf($F{inhouseJune})))+
+Math.round((Double.valueOf($F{inhouseJuly})))+
+Math.round((Double.valueOf($F{inhouseAugust})))+
+Math.round((Double.valueOf($F{inhouseSeptember})))+
+Math.round((Double.valueOf($F{inhouseOctober})))+
+Math.round((Double.valueOf($F{inhouseNovember})))+
+Math.round((Double.valueOf($F{inhouseDecember})))]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

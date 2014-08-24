@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Employ</title>
 @include('users.includes.head')
 <body>
 <div id="wrapper">
@@ -40,9 +35,6 @@
 <div id="header">
 	<div class="container">
 		<a href="sysAdmin" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
-		</div>
-		</div>
-		<div class="container mainB">
 		<div class="row">
 			<div class="col-md-3">
     <ul class="sideMenu">

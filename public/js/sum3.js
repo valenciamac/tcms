@@ -3,6 +3,6 @@ function sum3() {
       var dos = document.getElementById('regotpay').value;
       var ans = (parseFloat(uno)/8)*1.25*(parseFloat(dos));
       if (!isNaN(ans)) {
-         document.getElementById('val3').value = ans;
+         document.getElementById('val4').value = ans;
       }
 }

@@ -3,7 +3,7 @@ function sum5() {
       var dalawa = document.getElementById('regholdpay').value;
       var sagot = (parseFloat(una))/8*1.3*(parseFloat(dalawa));
       if (!isNaN(sagot)) {
-         document.getElementById('val4').value = sagot;
+         document.getElementById('val5').value = sagot;
       }
 }
 

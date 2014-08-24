@@ -46,9 +46,6 @@
             <li>
                <a href="incomeSummary"><i class="fa fa-user"></i>Income Summary Rep</a>
             </li>
-            <li>
-               <a href="#"><i class="fa fa-envelope"></i>Vouchers</a>
-            </li>
          </ul>
       </div>
       @include('users.financing.layouts.yearlyGraphBody')

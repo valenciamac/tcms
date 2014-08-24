@@ -17,7 +17,6 @@
 }
 .logo
 {
-	margin-bottom: 2%;
 	position: relative;
 	padding-top: 1%;
 	width: 200px;
@@ -104,6 +103,10 @@ a:hover
 	border-width: 1px;
     border-color: #DCDCDC;
 }
+.actsContainer
+{
+	margin-top: 5%;
+}
 .activity-group
 {
 	overflow: hidden;
@@ -161,4 +164,59 @@ a:hover
 .bottom-pad
 {
 	margin-bottom: 10%;
+}
+.itemheader
+{
+	min-height: 20px;
+	background-color: #646464;
+}
+.item
+{
+	width: 100%;
+	margin-bottom: 2%;
+}
+.itemcontainer
+{
+	padding: 1em;
+	background-color: #F5F5F5;
+}
+.headerlabel
+{
+	text-align: center;
+	color: #fff;
+}
+.headerplus
+{
+	color: #fff;
+	margin-left: 5%;
+}
+.addprobtn
+{
+	width: 100%;
+}
+.color
+{
+	padding-right: 0;
+	color:#fff;
+}
+.itemlabel
+{
+	font-size: 14px;
+}
+.notemp
+{
+	text-align: center;
+	color: #646464;
+}
+.modal-title
+{
+	color: #fff;
+}
+.th
+{
+	text-align: center;
+}
+.ic
+{
+	padding-right: 0;
 }

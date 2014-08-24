@@ -40,14 +40,13 @@ class PayrollController extends \BaseController {
 		$payroll->absent = Input::get("absent");
 		$payroll->phcont = Input::get("phcont");
 		$payroll->regotpay = Input::get("regotpay");
-		$payroll->pagibigcont = Input::get("pagibigcont");
+		$payroll->pgibigcont = Input::get("pgibigcont");
 		$payroll->regholdpay = Input::get("regholdpay");
-		$payroll->sssloan = Input::get("sssloan");
 		$payroll->regholdotpay = Input::get("regholdotpay");
-		$payroll->pagibigloan = Input::get("pagibigloan");
 		$payroll->restpay = Input::get("restpay");
-		$payroll->cashadv = Input::get("cashadv");
+		$payroll->advance = Input::get("advance");
 		$payroll->specholdpay = Input::get("specholdpay");
+		$payroll->gross = Input::get("gross");
 		$payroll->income = Input::get("income");
 		$payroll->employee_id = Input::get("empId");
 		$payroll->save();

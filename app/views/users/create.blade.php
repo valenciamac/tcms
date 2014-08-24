@@ -23,8 +23,12 @@
          <!-- /.container -->
       </div>
       <div id="header">
-      <div class="container">
-         <a href="sysAdmin" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+      <div class="container brand">
+         <a href="sysAdmin"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+         </div>
+         </div>
+         <div class="container mainB">
+         <div class="row">
          <div id="login" style="width:50%; padding-top:20px; margin-left:25%;">
             <div class="col-md-9">
                {{Form::open(array('route' => 'users.store','class'=>'form-horizontal','role'=>'form'))}}
@@ -74,5 +78,7 @@
                {{Form::close()}}
             </div>
          </div>
+      </div>
+      </div>
       </div>
       @include('users.includes.footer')

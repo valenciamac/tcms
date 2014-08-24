@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="payroll" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2d63dd59-1a22-4a55-bf15-5410f89f168c">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="33"/>
+	<queryString>
+		<![CDATA[select employee.fname , employee.lname ,payroll.paydate, payroll.gross, payroll.phcont, payroll.pgibigcont, payroll.ssscont, payroll.income from employee inner join payroll ON employee.id= payroll.employee_id]]>
+	</queryString>
+	<field name="fname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="paydate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gross" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="phcont" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pgibigcont" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ssscont" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="income" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="145" y="3" width="100" height="20" uuid="2676547b-5ead-438b-a80e-c2585b87cf75"/>
+				<textFieldExpression><![CDATA[$F{fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="23" width="100" height="20" uuid="4fa04c2f-ebc7-436c-b09c-39f86591f024"/>
+				<textFieldExpression><![CDATA[$F{lname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="46" width="100" height="20" uuid="13f79e77-78e1-4f69-8be9-8445c5e3bd56"/>
+				<textFieldExpression><![CDATA[$F{paydate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="66" width="100" height="20" uuid="7bffdc4c-2a60-446c-93ae-62eb6e5107a8"/>
+				<textFieldExpression><![CDATA[$F{gross}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="46" width="100" height="20" uuid="5d3c73de-f9ae-4d10-a26e-ed25979086c0"/>
+				<textFieldExpression><![CDATA[$F{phcont}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="26" width="100" height="20" uuid="7f3e8c77-d3ca-4a4a-ae7c-3229f7a5cd6e"/>
+				<textFieldExpression><![CDATA[$F{pgibigcont}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="3" width="100" height="20" uuid="41f29b70-25b7-4deb-8565-5f496bbf8bc3"/>
+				<textFieldExpression><![CDATA[$F{ssscont}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="66" width="100" height="20" uuid="f621c006-1699-4fa2-9962-6b129846a6ab"/>
+				<textFieldExpression><![CDATA[$F{income}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="33" y="3" width="100" height="20" uuid="7aeed3a0-bf73-4d67-8a1f-c73fee134d08"/>
+				<text><![CDATA[FirstName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="26" width="100" height="20" uuid="797fb9e7-e1e4-4927-962a-275322b6fe64"/>
+				<text><![CDATA[LastName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="46" width="100" height="20" uuid="c5209692-53c6-4167-ab2e-1ff66b047f8a"/>
+				<text><![CDATA[Paydate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="66" width="100" height="20" uuid="80f3ab3c-e292-4d3c-bc4d-7d16a2ae4a35"/>
+				<text><![CDATA[Gross]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="6" width="100" height="20" uuid="950c8706-3ba0-4969-985d-7b996017dfd0"/>
+				<text><![CDATA[SSS Contribution]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="26" width="100" height="20" uuid="fc72ca8d-e00a-4574-b285-9570ca25e487"/>
+				<text><![CDATA[Pagibig Contribution]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="46" width="100" height="20" uuid="b8e80725-09fb-4fa0-b56e-00991116dbf3"/>
+				<text><![CDATA[Philhealth Contribution]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="66" width="100" height="20" uuid="655bb590-b0f2-4655-b3a7-86b95bc43d9a"/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

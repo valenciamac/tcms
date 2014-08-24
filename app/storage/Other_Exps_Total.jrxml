@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Other_Exps_Total" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="195c067c-7050-4504-8ef5-70ea00e301fd">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="244"/>
 	<property name="ireport.y" value="0"/>
-	<queryString language="SQL">
-		<![CDATA[select * from repotherexpstotal]]>
+	<queryString>
+		<![CDATA[select * from repsalovothtotal]]>
 	</queryString>
-	<field name="otherExpsTJanuary" class="java.lang.Double">
+	<field name="SalOvOthJanuary" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="otherExpsTFebruary" class="java.lang.Double">
+	<field name="SalOvOthFebruary" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="otherExpsTMarch" class="java.lang.Double">
+	<field name="SalOvOthMarch" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="otherExpsTApril" class="java.lang.Double">
+	<field name="SalOvOthApril" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="otherExpsTMay" class="java.lang.Double">
+	<field name="SalOvOthMay" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="otherExpsTJune" class="java.lang.Double">
+	<field name="SalOvOthJune" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="otherExpsTJuly" class="java.lang.Double">
+	<field name="SalOvOthJuly" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="otherExpsTAugust" class="java.lang.Double">
+	<field name="SalOvOthAugust" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="otherExpsTSeptember" class="java.lang.Double">
+	<field name="SalOvOthSeptember" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="otherExpsTOctober" class="java.lang.Double">
+	<field name="SalOvOthOctober" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="otherExpsTNovember" class="java.lang.Double">
+	<field name="SalOvOthNovember" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="otherExpsTDecember" class="java.lang.Double">
+	<field name="SalOvOthDecember" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="otherExpsTTotal" class="java.lang.Double">
+	<field name="SalOvOthTotal" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="created_at" class="java.sql.Timestamp">
@@ -58,91 +58,91 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTJanuary}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{SalOvOthJanuary})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="61" y="0" width="61" height="13" uuid="b6b006d9-731c-47f9-be06-90bb43559322"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTFebruary}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{SalOvOthFebruary})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="122" y="0" width="61" height="13" uuid="ac44cd80-6ce2-4e13-879c-28895b67b610"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTMarch}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{SalOvOthMarch})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="183" y="0" width="61" height="13" uuid="a48ba663-eaa5-4063-996d-81f03264b3aa"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTApril}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{SalOvOthApril})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="427" y="0" width="61" height="13" uuid="485c02cd-5d69-4f6d-b557-13d7ce5dbe7e"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTAugust}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{SalOvOthAugust})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="244" y="0" width="61" height="13" uuid="26ff49a7-2ee6-4cb6-8707-f3300fcbb828"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTMay}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{SalOvOthMay})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="305" y="0" width="61" height="13" uuid="cfa51300-15f8-43c0-9630-0c592d9bd0d9"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTJune}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{SalOvOthJune})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="366" y="0" width="61" height="13" uuid="875df75f-21d8-435d-a3e9-1e2e3e4776e8"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTJuly}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{SalOvOthJune})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="671" y="0" width="61" height="13" uuid="eabce259-8dc1-4d4e-b5c7-f9971dc36099"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTDecember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{SalOvOthDecember})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="488" y="0" width="61" height="13" uuid="b6769acf-713d-46fb-926d-c74908f33769"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTSeptember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{SalOvOthSeptember})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="549" y="0" width="61" height="13" uuid="16b7a9a2-17f4-4037-9c47-327af98a31a9"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTOctober}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{SalOvOthOctober})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="610" y="0" width="61" height="13" uuid="ce1222a7-4bb5-46dc-a042-1d8efbf47aba"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTNovember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{SalOvOthNovember})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="732" y="0" width="61" height="13" uuid="feb82865-37d2-4b8c-8947-03ce216ad1f8"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTTotal}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{SalOvOthTotal})))]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

@@ -21,40 +21,35 @@ public function store()
 	}
 public function show()
 	{
-		if ( $search = Request::get('search'))
-		{
-			$phealth = Phcontr::search($search)->get();
-		}
-		else
-		{
-			$phealth = Phcontr::all();
-		}
+		
+			$phcontr = Phcontr::all();
+		
 
-		return View::make('users.accounting.rates2')->withPhcontr($phealth);
+		return View::make('users.accounting.ratese')->withPhcontr($phcontr);
 	}
 
 public function editrate($id)
 	{
-		$phealth = Phcontr::where('id', '=', $id)->get();
+		$phcontr = Phcontr::where('id', '=', $id)->get();
 
-		return View::make('users.accounting.changephilhealth')->withPhcontr($phealth);
+		return View::make('users.accounting.changephilhealth')->withPhcontr($phcontr);
 	}
 
 	public function update($id)
 	{
-		$phealth = Phcontr::find($id);
-		$phealth->salbracket = Input::get('salbracket');
-		$phealth->salrange= Input::get('salrange');
-		$phealth->salbase = Input::get('salbase');
-		$phealth->tmp= Input::get('tmp');
-		$phealth->empershare= Input::get('empershare');
-		$phealth->empeeshare= Input::get('empeeshare');
+		$phcontr = Phcontr::find($id);
+		$phcontr->salbracket = Input::get('salbracket');
+		$phcontr->salrange= Input::get('salrange');
+		$phcontr->salbase = Input::get('salbase');
+		$phcontr->tmp= Input::get('tmp');
+		$phcontr->empershare= Input::get('empershare');
+		$phcontr->empeeshare= Input::get('empeeshare');
 
-		$saved = $phealth->save();
+		$saved = $phcontr->save();
 
 		if ($saved)
 		{
-			return Redirect::to('rates2');
+			return Redirect::to('ratese');
 		}
 		else
 		{
@@ -64,9 +59,9 @@ public function editrate($id)
 		public function destroy($id)
 	{
 		
-		$phealth = Phcontr::find($id);
+		$phcontr = Phcontr::find($id);
 
-		$phealth->delete();
+		$phcontr->delete();
 
 
 		return Redirect::back();

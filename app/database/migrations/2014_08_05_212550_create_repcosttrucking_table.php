@@ -15,19 +15,19 @@ class CreateRepcosttruckingTable extends Migration {
 		Schema::create('repcosttrucking', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->double('truckingJanuary');
-			$table->double('truckingFebruary');
-			$table->double('truckingMarch');
-			$table->double('truckingApril');
-			$table->double('truckingMay');
-			$table->double('truckingJune');
-			$table->double('truckingJuly');
-			$table->double('truckingAugust');
-			$table->double('truckingSeptember');
-			$table->double('truckingOctober');
-			$table->double('truckingNovember');
-			$table->double('truckingDecember');
-			$table->double('truckingTotal');
+			$table->string('truckingJanuary');
+			$table->string('truckingFebruary');
+			$table->string('truckingMarch');
+			$table->string('truckingApril');
+			$table->string('truckingMay');
+			$table->string('truckingJune');
+			$table->string('truckingJuly');
+			$table->string('truckingAugust');
+			$table->string('truckingSeptember');
+			$table->string('truckingOctober');
+			$table->string('truckingNovember');
+			$table->string('truckingDecember');
+			$table->string('truckingTotal');
 			$table->timestamps();
 		});
 	}

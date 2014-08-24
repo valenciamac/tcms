@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Income_Summary_Report" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="968" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="db02487d-803f-4cd3-ab25-48da353f557d">
+	<property name="ireport.zoom" value="0.9090909090909095"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\tcms-mvc\\app\\storage\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="created_at" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from repincomefromcontracts limit 1]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractTitle" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeJanuary" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeFebruary" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeMarch" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeApril" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeMay" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeJune" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeJuly" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeAugust" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeSeptember" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeOctober" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeNovember" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeDecember" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="updated_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="486" height="13" uuid="970f6c1f-7d7f-4180-91b2-395a200917fe"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ST. JUDE TRADING & CONSTRUCTION CORPORATON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="14" width="486" height="13" uuid="22476555-a46d-470c-84e1-be7927d58b24"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<text><![CDATA[Plan Bldg. Unit 14, Km.40 Nat'l Hiway, Brgy. Macabling, Sta. Rosa, Laguna]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="13" splitType="Stretch">
+			<staticText>
+				<reportElement x="174" y="0" width="61" height="13" uuid="42ce7492-27f9-4be4-94b3-9c3ef3ae5455"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JANUARY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="235" y="0" width="61" height="13" uuid="bae44bcc-0a78-4346-b140-a65e9e9cf3f6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FEBRUARY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="296" y="0" width="61" height="13" uuid="e31f0386-835c-455a-91db-be36d3de88c9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MARCH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="0" width="61" height="13" uuid="26ce80ee-e140-4ec2-8525-a3616e174eb4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APRIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="0" width="61" height="13" uuid="7e9cd317-22a2-4b7a-8eed-367b2a7fed13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MAY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="0" width="61" height="13" uuid="4d2a287b-3402-49a6-9fd0-79886b88c0b7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUNE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="540" y="0" width="61" height="13" uuid="b9fa6250-9144-4b9a-8e51-62f9ff963e00"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JULY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="601" y="0" width="61" height="13" uuid="79ab9e78-10b2-4437-87ea-734a8ccb5baa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUGUST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="662" y="0" width="61" height="13" uuid="ce8c21b9-231e-449d-b16d-12fe628312ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEPTEMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="723" y="0" width="61" height="13" uuid="417b1225-5cfb-43d1-a7c8-22f36885f9b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OCTOBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="784" y="0" width="61" height="13" uuid="57f8869d-07b1-49a9-83de-98bdff4c3abe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOVEMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="845" y="0" width="61" height="13" uuid="4fdb3f38-8030-4b56-b41a-3fc14ed4e78f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DECEMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="906" y="0" width="61" height="13" uuid="58dc2b31-6569-45d1-8fcc-d4aac228c89c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTALS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="175" height="13" uuid="047278c0-2ba6-440b-82d3-184f7af2a602"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INCOME FROM CONTRACTS]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="13" width="968" height="13" uuid="ebaf1de1-07e3-468c-b379-a9f8d81436ef"/>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<subreportParameter name="updated_at"/>
+				<subreportParameter name="created_at">
+					<subreportParameterExpression><![CDATA[$F{created_at}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Income_From_Contracts.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="26">
+			<staticText>
+				<reportElement x="0" y="0" width="175" height="13" uuid="5d86af25-e248-410d-8115-4f97f5707039"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COST OF CONTRACTS]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="13" width="968" height="13" uuid="35517670-3052-4c10-8d50-e1e7fc423661"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Cost_Of_Contracts.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="26">
+			<staticText>
+				<reportElement x="0" y="0" width="175" height="13" uuid="62ddfb89-b56d-4088-a38a-078794edb4cc"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALARY]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="13" width="968" height="13" uuid="6c44bb1d-6b0b-4b31-b44c-b9f966a4d07b"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Salary_Monthly.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="26">
+			<staticText>
+				<reportElement x="0" y="0" width="175" height="13" uuid="95e87bd9-c473-4bda-992c-ac9459ddf215"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OTHER EXPS.]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="13" width="968" height="13" uuid="35b59b26-b30c-451f-8a8f-c7ab49d81da9"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Other_Exps.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="174" height="13" uuid="6e515e0e-4fd3-42e2-9edf-2d76be3b4048"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TOTAL COST OF CONTRACTS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="13" width="118" height="13" uuid="369a3bf1-45fe-4950-94a7-a5a8e765c730"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="175" y="0" width="793" height="13" uuid="47013ba4-e6dd-4e8f-8657-637256b724b8"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Cost_Contracts_Total.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="175" y="13" width="793" height="13" uuid="5183d7e8-2949-4506-9589-062ca6a08259"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "All_Total.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Income_From_Contracts" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3c495136-ac83-4afb-bf87-b96b1ad616b0">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Income_From_Contracts" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="421345d8-b6ce-4f43-a5f4-a67cc9dd312d">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="72"/>
+	<property name="ireport.x" value="263"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\8-09-1014\\app\\storage\\"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\tcms-mvc\\app\\storage\\"]]></defaultValueExpression>
 	</parameter>
-	<queryString language="SQL">
+	<parameter name="updated_at" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="created_at" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
 		<![CDATA[select * from repincomefromcontracts]]>
 	</queryString>
 	<field name="id" class="java.lang.Long">
@@ -15,158 +21,175 @@
 	<field name="contractTitle" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeJanuary" class="java.lang.Double">
+	<field name="incomeJanuary" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeFebruary" class="java.lang.Double">
+	<field name="incomeFebruary" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeMarch" class="java.lang.Double">
+	<field name="incomeMarch" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeApril" class="java.lang.Double">
+	<field name="incomeApril" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeMay" class="java.lang.Double">
+	<field name="incomeMay" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeJune" class="java.lang.Double">
+	<field name="incomeJune" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeJuly" class="java.lang.Double">
+	<field name="incomeJuly" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeAugust" class="java.lang.Double">
+	<field name="incomeAugust" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeSeptember" class="java.lang.Double">
+	<field name="incomeSeptember" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeOctober" class="java.lang.Double">
+	<field name="incomeOctober" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeNovember" class="java.lang.Double">
+	<field name="incomeNovember" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeDecember" class="java.lang.Double">
+	<field name="incomeDecember" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeTotal" class="java.lang.Double">
+	<field name="incomeTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="updated_at" class="java.sql.Timestamp">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<detail>
 		<band height="13" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="175" height="13" uuid="56d62fdf-b39e-437e-acb7-196b619635f3"/>
+				<reportElement x="0" y="0" width="175" height="13" uuid="81a47243-fdb9-4edf-824c-50a9a09a6197"/>
 				<textElement verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{contractTitle}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="175" y="0" width="61" height="13" uuid="36fa86dc-a4b5-43a1-9d68-ab592316eef4"/>
+				<reportElement x="175" y="0" width="61" height="13" uuid="b7ead1f9-f43f-4ea0-b6d2-e736f16ff2e7"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeJanuary}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeJanuary})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="236" y="0" width="61" height="13" uuid="1bf95a37-0b11-4ace-96ea-e89c48d7e1ba"/>
+				<reportElement x="236" y="0" width="61" height="13" uuid="7f42e193-f444-4401-a219-22611e38b1ef"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeFebruary}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeFebruary})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="297" y="0" width="61" height="13" uuid="1ef892c5-a62f-4f53-b17f-64692d3ee2dc"/>
+				<reportElement x="297" y="0" width="61" height="13" uuid="b7ec3fcc-e806-45cf-ae73-c9786fe1c71d"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeMarch}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeMarch})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="358" y="0" width="61" height="13" uuid="4ca51701-07ee-404c-b1c1-f43768fe8fb6"/>
+				<reportElement x="358" y="0" width="61" height="13" uuid="c39aed61-eb32-439b-ab25-a9bc0f0f8e12"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeApril}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeMarch})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="602" y="0" width="61" height="13" uuid="e9db320a-e483-4614-8d16-0c8943f52592"/>
+				<reportElement x="602" y="0" width="61" height="13" uuid="3d63477d-42d9-4a73-bf01-ce989809ddda"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeAugust}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeAugust})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="419" y="0" width="61" height="13" uuid="913b9dd0-88f6-4a19-928c-9a645d147b2c"/>
+				<reportElement x="419" y="0" width="61" height="13" uuid="55890834-d359-40e8-af4c-6d350c49e8ad"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeMay}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeMay})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="480" y="0" width="61" height="13" uuid="ebf910ac-45b9-4530-840c-9a6beab68221"/>
+				<reportElement x="480" y="0" width="61" height="13" uuid="ff11bfb2-5169-4dff-b348-ed5dcbde567d"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeJune}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeJune})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="541" y="0" width="61" height="13" uuid="a0c0d217-b496-48e1-87e5-4269c73ebc47"/>
+				<reportElement x="541" y="0" width="61" height="13" uuid="140404c6-81cf-4d09-aa34-6e46fea059b9"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeJuly}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeJuly})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="846" y="0" width="61" height="13" uuid="65da3b4c-9ea5-4a03-ba1b-e98e4244dcf3"/>
+				<reportElement x="846" y="0" width="61" height="13" uuid="b8275679-b68c-47c6-a871-a9a9e0f47659"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeDecember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeDecember})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="663" y="0" width="61" height="13" uuid="7554b5f5-389d-42bd-89cc-84281481919a"/>
+				<reportElement x="663" y="0" width="61" height="13" uuid="8f0eb3e9-aca8-43bc-b02f-4d3e49517ad9"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeSeptember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeSeptember})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="724" y="0" width="61" height="13" uuid="dcabd066-a004-4e74-8406-769475cbbbc9"/>
+				<reportElement x="724" y="0" width="61" height="13" uuid="b156802d-8e58-483c-90c0-1610594ec530"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeOctober}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeOctober})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="785" y="0" width="61" height="13" uuid="3ea3cc60-9fe0-4eb8-a878-f98bfe99eaa3"/>
+				<reportElement x="785" y="0" width="61" height="13" uuid="830ce4fb-f755-4bd6-951e-cac46a82c5fa"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeNovember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeNovember})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="907" y="0" width="61" height="13" uuid="784ae88d-abc8-41f8-9220-1575352dc9cd"/>
+				<reportElement x="907" y="0" width="61" height="13" uuid="c47cc3c2-e4d3-4de2-a3d0-0d5f93b12b8a"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeTotal}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeJanuary})))+
+Math.round((Double.valueOf($F{incomeFebruary})))+
+Math.round((Double.valueOf($F{incomeMarch})))+
+Math.round((Double.valueOf($F{incomeApril})))+
+Math.round((Double.valueOf($F{incomeMay})))+
+Math.round((Double.valueOf($F{incomeJune})))+
+Math.round((Double.valueOf($F{incomeJuly})))+
+Math.round((Double.valueOf($F{incomeAugust})))+
+Math.round((Double.valueOf($F{incomeSeptember})))+
+Math.round((Double.valueOf($F{incomeOctober})))+
+Math.round((Double.valueOf($F{incomeNovember})))+
+Math.round((Double.valueOf($F{incomeDecember})))]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<summary>
 		<band height="13">
 			<staticText>
-				<reportElement x="0" y="0" width="120" height="13" uuid="9cd4fa87-4f81-478d-93d3-ef611fb7a663"/>
+				<reportElement x="0" y="0" width="120" height="13" uuid="feaffe1d-0165-400d-ba6c-49385eb03766"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[TOTAL]]></text>
 			</staticText>
 			<subreport>
-				<reportElement x="175" y="0" width="793" height="13" uuid="6a810829-baa3-4d02-8a41-23193df1207d"/>
+				<reportElement x="175" y="0" width="793" height="13" uuid="321a1d52-b021-479b-833a-bcb891f8e777"/>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Income_From_Contracts_Total.jasper"]]></subreportExpression>
 			</subreport>

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="F_Report" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="968" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ac883304-2b21-4742-ab77-0537a1bcafb7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="263"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\tcms-mvc\\app\\storage\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from finance]]>
+	</queryString>
+	<field name="rNo" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractTitle" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractIncome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractPurchase" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractSubcon" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractInhouse" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractTrucking" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractFormworks" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="salaryMonthly" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="salaryWeekly" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totalIncome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="updated_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="486" height="13" uuid="3a2a4dc2-9c75-4b15-a0fd-56e1b8bf1e8d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ST. JUDE TRADING & CONSTRUCTION CORPORATON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="14" width="486" height="13" uuid="897fb620-c83e-4218-96b1-ad281199bf98"/>
+				<textElement verticalAlignment="Middle">
+					<font size="5"/>
+				</textElement>
+				<text><![CDATA[Plan Bldg. Unit 14, Km.40 Nat'l Hiway, Brgy. Macabling, Sta. Rosa, Laguna]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="116" height="27" uuid="0390e193-a0ff-4296-9da8-cd8cd3b6c91f"/>
+				<box leftPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTRACT TITLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="0" width="75" height="27" uuid="0931cef4-537b-4495-90ce-9f8a666815b9"/>
+				<box leftPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INCOME FROM
+CONTRACT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="0" width="75" height="27" uuid="2dfe0a6c-5658-454b-906d-9c6c305072c3"/>
+				<box leftPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PURCHASES
+COST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="0" width="75" height="27" uuid="50aa5dcf-383c-44dc-9997-08ef8e29846f"/>
+				<box leftPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUB-CON
+COST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="341" y="0" width="75" height="27" uuid="6e6bd0b7-2283-403d-8297-84bbaeb22057"/>
+				<box leftPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INHOUSE
+COST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="0" width="75" height="27" uuid="a2552806-4c39-4b74-b464-59cdfa6e303c"/>
+				<box leftPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TRUCKING
+COST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="491" y="0" width="75" height="27" uuid="c26bd90f-3386-433e-add0-19ae513a0197"/>
+				<box leftPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORMWORKS
+COST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="566" y="0" width="75" height="27" uuid="8f537f61-0d1d-408a-b2da-ed0a584d427f"/>
+				<box leftPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MONTHLY
+SALARY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="641" y="0" width="75" height="27" uuid="e546ac2c-1d5f-4ec4-a3c1-52e747f01946"/>
+				<box leftPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[WEEKLY
+SALARY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="716" y="0" width="75" height="27" uuid="e2aadd16-b543-474c-8d55-b30c2ff98b56"/>
+				<box leftPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="116" height="13" uuid="ae80ed72-61f0-413a-bda9-2faf527c7fa2"/>
+				<box leftPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contractTitle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="0" width="75" height="13" uuid="280ff189-e6c7-40b9-832f-ea3d623914ba"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractIncome})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="0" width="75" height="13" uuid="765a12ff-2922-4a75-a786-7c39dae68ce8"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractPurchase})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="0" width="75" height="13" uuid="9a3eeb3e-58a9-402b-bbad-b7db9571c1f1"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractSubcon})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="0" width="75" height="13" uuid="8d5e619b-001f-4933-b8bb-ff887590b0fa"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractInhouse})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="0" width="75" height="13" uuid="b5b080a9-e28b-409e-aa6b-cd9a9d78914b"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractTrucking})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="641" y="0" width="75" height="13" uuid="873664ac-8ea4-4072-aee2-edbc54663add"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{salaryWeekly})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="0" width="75" height="13" uuid="5e0a5119-c36b-4b0f-af24-f937903706d7"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractFormworks})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="566" y="0" width="75" height="13" uuid="b982dd1f-be57-47d7-86c0-cae1a77bc588"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{salaryMonthly})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="716" y="0" width="75" height="13" uuid="1c36c981-f401-471b-bc88-cb4c7d54b392"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractIncome})))-(
+Math.round((Double.valueOf($F{contractPurchase})))+
+Math.round((Double.valueOf($F{contractSubcon})))+
+Math.round((Double.valueOf($F{contractInhouse})))+
+Math.round((Double.valueOf($F{contractTrucking})))+
+Math.round((Double.valueOf($F{contractFormworks})))+
+Math.round((Double.valueOf($F{salaryMonthly})))+
+Math.round((Double.valueOf($F{salaryWeekly}))))]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="13" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="116" height="13" uuid="2e9c4b81-512c-4647-998b-0ed4f1743983"/>
+				<box rightPadding="20">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="116" y="0" width="675" height="13" uuid="d114e9e4-4fff-4085-8180-5eb0b6d21b37"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "F_Report_Total.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

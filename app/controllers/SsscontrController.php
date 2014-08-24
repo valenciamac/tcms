@@ -44,7 +44,7 @@ class SsscontrController extends \BaseController {
 		$ssscontr->tctotal= Input::get('tctotal');
 		$ssscontr->totalcontr= Input::get('totalcontr');
 		$ssscontr->save();
-		return Redirect::to('rates3');
+		return Redirect::to('ratesg');
 	}
 
 	/**
@@ -56,24 +56,19 @@ class SsscontrController extends \BaseController {
 	 */
 	public function show()
 	{
-		if ( $search = Request::get('search'))
-		{
-			$ssscont = Ssscontr::search($search)->get();
-		}
-		else
-		{
-			$ssscont = Ssscontr::all();
-		}
+		
+			$ssscontr = Ssscontr::all();
+		
 
-		return View::make('users.accounting.rates3')->withSsscontr($ssscont);
+		return View::make('users.accounting.ratesg')->withSsscontr($ssscontr);
 	}
 
 
 	public function editrate($id)
 	{
-		$ssscont = Ssscontr::where('id', '=', $id)->get();
+		$ssscontr = Ssscontr::where('id', '=', $id)->get();
 
-		return View::make('users.accounting.changesss')->withSsscontr($ssscont);
+		return View::make('users.accounting.changesss')->withSsscontr($ssscontr);
 	}
 	/**
 	 * Show the form for editing the specified resource.
@@ -96,23 +91,23 @@ class SsscontrController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$ssscont = Ssscontr::find($id);
-		$ssscont->range = Input::get('range');
-		$ssscont->credit= Input::get('credit');
-		$ssscont->ssempershare = Input::get('ssempershare');
-		$ssscont->ssempeeshare= Input::get('ssempeeshare');
-		$ssscont->sstotal= Input::get('sstotal');
-		$ssscont->ecempershare= Input::get('ecempershare');
-		$ssscont->tcempershare= Input::get('tcempershare');
-		$ssscont->tcempeeshare= Input::get('tcempeeshare');
-		$ssscont->tctotal= Input::get('tctotal');
-		$ssscont->totalcontr= Input::get('totalcontr');
+		$ssscontr = Ssscontr::find($id);
+		$ssscontr->range = Input::get('range');
+		$ssscontr->credit= Input::get('credit');
+		$ssscontr->ssempershare = Input::get('ssempershare');
+		$ssscontr->ssempeeshare= Input::get('ssempeeshare');
+		$ssscontr->sstotal= Input::get('sstotal');
+		$ssscontr->ecempershare= Input::get('ecempershare');
+		$ssscontr->tcempershare= Input::get('tcempershare');
+		$ssscontr->tcempeeshare= Input::get('tcempeeshare');
+		$ssscontr->tctotal= Input::get('tctotal');
+		$ssscontr->totalcontr= Input::get('totalcontr');
 
-		$saved = $ssscont->save();
+		$saved = $ssscontr->save();
 
 		if ($saved)
 		{
-			return Redirect::to('rates3');
+			return Redirect::to('ratesg');
 		}
 		else
 		{
@@ -122,9 +117,9 @@ class SsscontrController extends \BaseController {
 		public function destroy($id)
 	{
 		
-		$ssscont = Ssscontr::find($id);
+		$ssscontr = Ssscontr::find($id);
 
-		$ssscont->delete();
+		$ssscontr->delete();
 
 
 		return Redirect::back();

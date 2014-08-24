@@ -1,3 +1,8 @@
+<style>
+   .flash-message {
+   }
+</style>
+
 <div class="col-md-9">
    <!-- content here -->
    <form class="form-inline" action="financialReports" role="form">
@@ -28,6 +33,14 @@
          </div>
       </div>
    </form>
+
+   <form action='financialReportsTotal' method="get" class="form-inline" role="form">
+      <div class="submit">
+         <button class="btn btn-primary" type="submit">Compute Total</button>
+         <label class="flash-message"><p>{{ Session::get('totalCompute_success') }}</p></label>
+      </div>
+   </form>
+
    <table class="table table-bordered table-hover" style="font-size:10px;">
       <thead>
          <tr>
@@ -41,6 +54,7 @@
             <th>FORMWORKS COST</th>
             <th>MONTHLY SALARY</th>
             <th>WEEKY SALARY</th>
+            <th>TOTAL INCOME</th>
          </tr>
       </thead>
       <tbody>
@@ -56,6 +70,13 @@
             <td>{{ sprintf('%0.2f',($incomes->contractFormworks)) }}</td>
             <td>{{ sprintf('%0.2f',($incomes->salaryMonthly)) }}</td>
             <td>{{ sprintf('%0.2f',($incomes->salaryWeekly)) }}</td>
+            <?php
+            $totalIncome = $incomes->contractIncome-($incomes->contractPurchase+$incomes->contractSubcon+
+                           $incomes->contractInhouse+$incomes->contractTrucking+
+                           $incomes->contractFormworks+$incomes->salaryMonthly+
+                           $incomes->salaryWeekly);
+            ?>
+            <td>{{ sprintf('%0.2f',($totalIncome)) }}</td>
          </tr>
          @endforeach
       </tbody>

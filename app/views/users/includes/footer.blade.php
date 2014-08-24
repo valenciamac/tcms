@@ -39,15 +39,19 @@
   {{HTML::script('js/pagibigloan.js')}}
   {{HTML::script('js/cashadv.js')}}
 {{HTML::script('js/addNumbers.js')}}
-
+{{HTML::script('js/addNumbers2.js')}}
 {{HTML::script('js/chart.min.js')}}
 {{HTML::script('js/jquery.slimscroll.min.js')}}
+
+
 <script type="text/javascript">
    $(document).ready(function(){
     $(".dropdown-toggle").dropdown();
 }); 
+
 </script>
    
+
    <script type="text/javascript">
       $(function(){
           $('#activities').slimScroll({
@@ -70,6 +74,10 @@
        $("#tin").mask("99-9999999");
        $("#ssn").mask("999-99-9999");
     });
+
+      jQuery(function($){
+        $('#adddesc tr:last').after('<tr>...</tr><tr>...</tr>');
+    });
       
       $(function(){
        $('#controlNo').blur(function() {
@@ -78,8 +86,10 @@
        });
       
       });
+
+
    </script>   
- 
+     
    <script>
       if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
       var msViewportStyle = document.createElement('style')

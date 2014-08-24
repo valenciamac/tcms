@@ -48,7 +48,7 @@
                 <td>{{ ucwords($emp2->fname) }}</td>
                 <td>{{ ucwords($emp2->mname) }}</td>
                 <td>{{ ucwords($emp2->lname) }}</td>
-                <td>{{ $emp1->address }}</td>
+                <td>{{ $emp2->address }}</td>
                 <td>{{ $emp2->basic }}</td>
                 <td>{{ $emp2->rate }}</td>
                 <td>{{ $emp2->status }}</td>

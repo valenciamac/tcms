@@ -16,19 +16,19 @@ class CreateRepIncomeFromContractsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('contractTitle');
-			$table->double('incomeJanuary');
-			$table->double('incomeFebruary');
-			$table->double('incomeMarch');
-			$table->double('incomeApril');
-			$table->double('incomeMay');
-			$table->double('incomeJune');
-			$table->double('incomeJuly');
-			$table->double('incomeAugust');
-			$table->double('incomeSeptember');
-			$table->double('incomeOctober');
-			$table->double('incomeNovember');
-			$table->double('incomeDecember');
-			$table->double('incomeTotal');
+			$table->string('incomeJanuary');
+			$table->string('incomeFebruary');
+			$table->string('incomeMarch');
+			$table->string('incomeApril');
+			$table->string('incomeMay');
+			$table->string('incomeJune');
+			$table->string('incomeJuly');
+			$table->string('incomeAugust');
+			$table->string('incomeSeptember');
+			$table->string('incomeOctober');
+			$table->string('incomeNovember');
+			$table->string('incomeDecember');
+			$table->string('incomeTotal');
 			$table->timestamps();
 		});
 	}

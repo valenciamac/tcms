@@ -1,48 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Income_From_Contracts_Total" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="cddf1f9e-9b15-4af7-b12e-1eb3a9d3d01d">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Income_From_Contracts_Total" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7c15a089-3e73-4158-b6d0-44dcebb56ec0">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<queryString language="SQL">
+	<queryString>
 		<![CDATA[select * from repincomefromcontractstotal]]>
 	</queryString>
-	<field name="incomeTJanuary" class="java.lang.Double">
+	<field name="id" class="java.lang.Long">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeTFebruary" class="java.lang.Double">
+	<field name="year" class="java.lang.Long">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeTMarch" class="java.lang.Double">
+	<field name="incomeTJanuary" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeTApril" class="java.lang.Double">
+	<field name="incomeTFebruary" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeTMay" class="java.lang.Double">
+	<field name="incomeTMarch" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeTJune" class="java.lang.Double">
+	<field name="incomeTApril" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeTJuly" class="java.lang.Double">
+	<field name="incomeTMay" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeTAugust" class="java.lang.Double">
+	<field name="incomeTJune" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeTSeptember" class="java.lang.Double">
+	<field name="incomeTJuly" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeTOctober" class="java.lang.Double">
+	<field name="incomeTAugust" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeTNovember" class="java.lang.Double">
+	<field name="incomeTSeptember" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeTDecember" class="java.lang.Double">
+	<field name="incomeTOctober" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="incomeTTotal" class="java.lang.Double">
+	<field name="incomeTNovember" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeTDecember" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="incomeTTotal" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="created_at" class="java.sql.Timestamp">
@@ -51,98 +57,115 @@
 	<field name="updated_at" class="java.sql.Timestamp">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<variable name="incomeTotal" class="java.lang.String"/>
+	<variable name="incomeJanuaryTotal" class="java.lang.String"/>
 	<detail>
 		<band height="13" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="61" height="13" uuid="b56099ca-8e92-4765-9231-2934377f44ff"/>
+				<reportElement x="0" y="0" width="61" height="13" uuid="a1a0fb06-9911-4f9e-96d3-9eaa0fe085c3"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{incomeTJanuary}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="61" y="0" width="61" height="13" uuid="69d4468b-78e1-4d00-bf3b-3180d721e9a9"/>
+				<reportElement x="61" y="0" width="61" height="13" uuid="131f13ec-6fce-4805-8c6b-200776c3a2ea"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{incomeTFebruary}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="122" y="0" width="61" height="13" uuid="dd0c85df-6387-41d7-b42c-6771a1ae3672"/>
+				<reportElement x="122" y="0" width="61" height="13" uuid="f482441d-cc7c-4c91-acb1-a07d1de103f0"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{incomeTMarch}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="183" y="0" width="61" height="13" uuid="35f5bc15-29b5-4e4a-adbd-7662aaa0dc28"/>
+				<reportElement x="183" y="0" width="61" height="13" uuid="c185fb6a-3157-4a82-8919-b400dec8618b"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{incomeTApril}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="427" y="0" width="61" height="13" uuid="daa82428-bd4d-49ea-824b-8f3fb16289c4"/>
+				<reportElement x="427" y="0" width="61" height="13" uuid="117ecd75-48ed-4111-b980-063aca1dda9f"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{incomeTAugust}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="244" y="0" width="61" height="13" uuid="9c52c2a7-9212-49a6-a824-9c5ba4452c1f"/>
+				<reportElement x="244" y="0" width="61" height="13" uuid="1387b85d-f43b-4522-a29b-c703471d0c8a"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{incomeTMay}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="305" y="0" width="61" height="13" uuid="94f0f9f6-c780-4c35-a7ac-a2f844c7c6f5"/>
+				<reportElement x="305" y="0" width="61" height="13" uuid="b49968ac-62c0-4155-ab4a-ce7fabf416e5"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{incomeTJune}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="366" y="0" width="61" height="13" uuid="78a85ad7-e0a4-45bb-a10b-9e8b9e91e031"/>
+				<reportElement x="366" y="0" width="61" height="13" uuid="6cd4bc7e-3b2d-4f2c-b5c1-47268dcbe0bd"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{incomeTJuly}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="671" y="0" width="61" height="13" uuid="d1493b55-73c4-46a1-bd15-a14b472ae480"/>
+				<reportElement x="671" y="0" width="61" height="13" uuid="12decc13-ca05-4477-81c1-b1c615da2f39"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{incomeTDecember}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="488" y="0" width="61" height="13" uuid="a3d2b527-82dd-4f4f-9af3-cff6398433ed"/>
+				<reportElement x="488" y="0" width="61" height="13" uuid="747fbb23-8f26-47f1-b9a2-bd7491e52c39"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{incomeTSeptember}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="549" y="0" width="61" height="13" uuid="08261291-0f18-4a08-9d0e-99b9d8842cc3"/>
+				<reportElement x="549" y="0" width="61" height="13" uuid="e09acfd4-c689-44bd-998a-ed6385d33930"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{incomeTOctober}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="610" y="0" width="61" height="13" uuid="c48f71d3-4cb6-4b8a-8273-a2021e707dc2"/>
+				<reportElement x="610" y="0" width="61" height="13" uuid="b0d1ed6c-f95f-4a6b-992b-b1efd4f62bbb"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{incomeTNovember}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="732" y="0" width="61" height="13" uuid="33bc3172-913d-47c3-b5d9-d9def942750e"/>
+				<reportElement x="732" y="0" width="61" height="13" uuid="6d4c4ee9-620b-4ab8-aea4-dd2b68d57014"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{incomeTTotal}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{incomeTJanuary})))+
+Math.round((Double.valueOf($F{incomeTFebruary})))+
+Math.round((Double.valueOf($F{incomeTMarch})))+
+Math.round((Double.valueOf($F{incomeTApril})))+
+Math.round((Double.valueOf($F{incomeTMay})))+
+Math.round((Double.valueOf($F{incomeTJune})))+
+Math.round((Double.valueOf($F{incomeTJuly})))+
+Math.round((Double.valueOf($F{incomeTAugust})))+
+Math.round((Double.valueOf($F{incomeTSeptember})))+
+Math.round((Double.valueOf($F{incomeTOctober})))+
+Math.round((Double.valueOf($F{incomeTNovember})))+
+Math.round((Double.valueOf($F{incomeTDecember})))
+
+
+
+]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

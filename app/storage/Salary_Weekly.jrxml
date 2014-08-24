@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Salary_Weekly" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1b121874-6a5e-4a85-b343-6c429e7f542d">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="190"/>
 	<property name="ireport.y" value="0"/>
 	<queryString language="SQL">
 		<![CDATA[select * from repsalaryweekly]]>
@@ -55,91 +55,102 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyJanuary}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{weeklyJanuary})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="61" y="0" width="61" height="13" uuid="ad9e3942-688e-4f14-b495-bed208cf937e"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyFebruary}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{weeklyFebruary})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="122" y="0" width="61" height="13" uuid="ed87fc25-9054-4415-9954-635651e1e051"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyMarch}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{weeklyMarch})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="183" y="0" width="61" height="13" uuid="78271a1b-cc2b-41b7-a5ea-2ef9a7cd89f0"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyApril}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{weeklyApril})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="427" y="0" width="61" height="13" uuid="f87c03bd-c31e-4a1e-be64-1b608e4dcb82"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyAugust}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{weeklyAugust})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="244" y="0" width="61" height="13" uuid="1dc4d85a-993b-4749-919a-6355f4f31b84"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyMay}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{weeklyMay})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="305" y="0" width="61" height="13" uuid="83515cb6-4aa7-49c7-9e80-f3d8726ddd0d"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyJune}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{weeklyJune})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="366" y="0" width="61" height="13" uuid="3841d1e3-4eb9-45dd-806a-cc31116c1ed0"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyJuly}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{weeklyJuly})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="671" y="0" width="61" height="13" uuid="29e824d2-de4f-4e0c-a587-e25d3cebe347"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyDecember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{weeklyDecember})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="488" y="0" width="61" height="13" uuid="0f4735ec-7742-4e76-b5eb-122ec78b7b0c"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklySeptember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{weeklySeptember})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="549" y="0" width="61" height="13" uuid="b2cac670-87fc-448a-9dff-c2e19828cc7c"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyOctober}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{weeklyOctober})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="610" y="0" width="61" height="13" uuid="67055bb7-cc9f-4148-b4de-485841d25f5b"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyNovember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{weeklyNovember})))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="732" y="0" width="61" height="13" uuid="dce0ddc3-ad42-4390-8625-0187df012075"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weeklyTotal}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{weeklyJanuary})))+
+Math.round((Double.valueOf($F{weeklyFebruary})))+
+Math.round((Double.valueOf($F{weeklyMarch})))+
+Math.round((Double.valueOf($F{weeklyApril})))+
+Math.round((Double.valueOf($F{weeklyMay})))+
+Math.round((Double.valueOf($F{weeklyJune})))+
+Math.round((Double.valueOf($F{weeklyJuly})))+
+Math.round((Double.valueOf($F{weeklyAugust})))+
+Math.round((Double.valueOf($F{weeklySeptember})))+
+Math.round((Double.valueOf($F{weeklyOctober})))+
+Math.round((Double.valueOf($F{weeklyNovember})))+
+Math.round((Double.valueOf($F{weeklyDecember})))]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

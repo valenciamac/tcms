@@ -15,19 +15,19 @@ class CreateRepCostPurchaseTable extends Migration {
 		Schema::create('repCostPurchase', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->double('purchaseJanuary');
-			$table->double('purchaseFebruary');
-			$table->double('purchaseMarch');
-			$table->double('purchaseApril');
-			$table->double('purchaseMay');
-			$table->double('purchaseJune');
-			$table->double('purchaseJuly');
-			$table->double('purchaseAugust');
-			$table->double('purchaseSeptember');
-			$table->double('purchaseOctober');
-			$table->double('purchaseNovember');
-			$table->double('purchaseDecember');
-			$table->double('purchaseTotal');
+			$table->string('purchaseJanuary');
+			$table->string('purchaseFebruary');
+			$table->string('purchaseMarch');
+			$table->string('purchaseApril');
+			$table->string('purchaseMay');
+			$table->string('purchaseJune');
+			$table->string('purchaseJuly');
+			$table->string('purchaseAugust');
+			$table->string('purchaseSeptember');
+			$table->string('purchaseOctober');
+			$table->string('purchaseNovember');
+			$table->string('purchaseDecember');
+			$table->string('purchaseTotal');
 			$table->timestamps();
 		});
 	}

@@ -7,45 +7,40 @@ class RateController extends BaseController {
 	}
 public function store()
 	{
-		$rat = new Rate;
-		$rat->otpayrate = Input::get('otpayrate');
-		$rat->otrestnspecholdrate = Input::get('otrestnspecholdrate');
-		$rat->otrestspecholdrate = Input::get('otrestspecholdrate');
-		$rat->otregholdrate = Input::get('otregholdrate');
-		$rat->otrestonreghold = Input::get('otrestonreghold');
-		$rat->save();
+		$rates = new Rate;
+		$rates->otpayrate = Input::get('otpayrate');
+		$rates->otrestnspecholdrate = Input::get('otrestnspecholdrate');
+		$rates->otrestspecholdrate = Input::get('otrestspecholdrate');
+		$rates->otregholdrate = Input::get('otregholdrate');
+		$rates->otrestonreghold = Input::get('otrestonreghold');
+		$rates->save();
 
-		return Redirect::to('ratesb');
+		return Redirect::to('rates');
 	}
 public function show()
 	{
-		if ( $search = Request::get('search'))
-		{
-			$rat = Rate::search($search)->get();
-		}
-		else
-		{
-			$rat = Rate::all();
-		}
+		
+			$rates = Rate::all();
+	
 
-		return View::make('users.accounting.rates')->withRate($rat);
+		return View::make('users.accounting.rates')->withRate($rates);
 	}
 
 public function editrate($id)
 	{
-		$rat = Rate::where('id', '=', $id)->get();
+		$rates = Rate::where('id', '=', $id)->get();
 
-		return View::make('users.accounting.changerates')->withRate($rat);
+		return View::make('users.accounting.changerates')->withRate($rates);
 	}
 public function updaterate($id)
 	{
-		$rat = Rate::find($id);
-		$rat->otpayrate = Input::get('otpayrate');
-		$rat->otrestnspecholdrate = Input::get('otrestnspecholdrate');
-		$rat->otrestspecholdrate = Input::get('otrestspecholdrate');
-		$rat->otregholdrate = Input::get('otregholdrate');
-		$rat->otrestonreghold = Input::get('otrestonreghold');
-		$saved = $rat->save();
+		$rates = Rate::find($id);
+		$rates->otpayrate = Input::get('otpayrate');
+		$rates->otrestnspecholdrate = Input::get('otrestnspecholdrate');
+		$rates->otrestspecholdrate = Input::get('otrestspecholdrate');
+		$rates->otregholdrate = Input::get('otregholdrate');
+		$rates->otrestonreghold = Input::get('otrestonreghold');
+		$saved = $rates->save();
 
 		if ($saved)
 		{
@@ -58,11 +53,11 @@ public function updaterate($id)
 	}
 public function destroy($id)
 	{
-		$rat = Rate::find($id);
+		$rates = Rate::find($id);
 
-		$rat->delete();
+		$rates->delete();
 
-		return Redirect::to('ratesb');
+		return Redirect::back();
 	}
 	
 	}

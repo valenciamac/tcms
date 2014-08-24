@@ -11,6 +11,11 @@ class IncomeSummary extends \Eloquent {
     	//
     ];
 
+    public function FinanceYear()
+	{
+		return $this->hasMany('FinanceYear');
+	}
+
     public function scopeSearch($query, $search)
 	{
 		return $query->where(function($query) use ($search)

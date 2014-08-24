@@ -16,19 +16,19 @@ class CreateRepOtherExpsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('otherExpsTitle');
-			$table->double('otherExpsJanuary');
-			$table->double('otherExpsFebruary');
-			$table->double('otherExpsMarch');
-			$table->double('otherExpsApril');
-			$table->double('otherExpsMay');
-			$table->double('otherExpsJune');
-			$table->double('otherExpsJuly');
-			$table->double('otherExpsAugust');
-			$table->double('otherExpsSeptember');
-			$table->double('otherExpsOctober');
-			$table->double('otherExpsNovember');
-			$table->double('otherExpsDecember');
-			$table->double('otherExpsTotal');
+			$table->string('otherExpsJanuary');
+			$table->string('otherExpsFebruary');
+			$table->string('otherExpsMarch');
+			$table->string('otherExpsApril');
+			$table->string('otherExpsMay');
+			$table->string('otherExpsJune');
+			$table->string('otherExpsJuly');
+			$table->string('otherExpsAugust');
+			$table->string('otherExpsSeptember');
+			$table->string('otherExpsOctober');
+			$table->string('otherExpsNovember');
+			$table->string('otherExpsDecember');
+			$table->string('otherExpsTotal');
 			$table->timestamps();
 		});
 	}

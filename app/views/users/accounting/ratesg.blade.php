@@ -1,4 +1,5 @@
 @include('users.includes.head')
+ {{HTML::script('js/angular.min.js')}}
 <body>
 <div id="wrapper">
     <div id="topbar">

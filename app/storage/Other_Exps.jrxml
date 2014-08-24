@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Other_Exps" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f7435099-076f-4652-9cbe-a081381569ca">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Other_Exps" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ca783e85-9921-4d17-a799-53d8dc984b1a">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\8-09-1014\\app\\storage\\"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\tcms-mvc\\app\\storage\\"]]></defaultValueExpression>
 	</parameter>
-	<queryString language="SQL">
-		<![CDATA[SELECT * FROM REPOTHEREXPS]]>
+	<queryString>
+		<![CDATA[select * from repotherexps]]>
 	</queryString>
 	<field name="id" class="java.lang.Long">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -54,119 +54,136 @@
 	<field name="otherExpsTotal" class="java.lang.Double">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="updated_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<detail>
 		<band height="13" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="175" height="13" uuid="4950b537-a5ca-4884-8b6d-42431fbbef7d"/>
+				<reportElement x="0" y="0" width="175" height="13" uuid="578d3447-64c2-4ca2-9d93-f50c5201e323"/>
 				<textElement verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{otherExpsTitle}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="175" y="0" width="61" height="13" uuid="659d704b-3d76-4750-930e-826ce001344d"/>
+				<reportElement x="175" y="0" width="61" height="13" uuid="73bcf84c-cead-4b6a-89da-23191dca2262"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsJanuary}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{otherExpsJanuary})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="236" y="0" width="61" height="13" uuid="76c72346-ac93-4885-92dd-54f94dbe8901"/>
+				<reportElement x="236" y="0" width="61" height="13" uuid="a008e298-a503-4a51-bafa-318dfe71a842"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsFebruary}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{otherExpsFebruary})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="297" y="0" width="61" height="13" uuid="3d53809a-ae1d-43a2-b9d1-3466a5e0684d"/>
+				<reportElement x="297" y="0" width="61" height="13" uuid="e1cb21d0-f3fd-4257-be80-bb89d7077d01"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsMarch}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{otherExpsMarch})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="358" y="0" width="61" height="13" uuid="b6fec2ba-c7bc-41d6-89e3-b42cf35ef49b"/>
+				<reportElement x="358" y="0" width="61" height="13" uuid="c3b95aa7-aba0-4ad4-880f-73fe1108cb17"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsApril}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{otherExpsApril})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="602" y="0" width="61" height="13" uuid="996f4330-fce0-401a-84df-f600f64b40a5"/>
+				<reportElement x="602" y="0" width="61" height="13" uuid="1a0d438d-1934-4793-8d7c-5185c56e7d09"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsAugust}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{otherExpsAugust})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="419" y="0" width="61" height="13" uuid="36ab130f-5254-4807-bf41-038b93634aa7"/>
+				<reportElement x="419" y="0" width="61" height="13" uuid="0aae8c97-6efe-4ab7-beed-206a21ba8fca"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsMay}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{otherExpsMay})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="480" y="0" width="61" height="13" uuid="09694da3-7638-4924-8368-bb9ec5ac68d3"/>
+				<reportElement x="480" y="0" width="61" height="13" uuid="4dc5df4b-f08b-45f0-a0f1-a19b7d6f28cc"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsJune}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{otherExpsJune})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="541" y="0" width="61" height="13" uuid="d920ceea-1f01-4b91-a92f-f7defe59091e"/>
+				<reportElement x="541" y="0" width="61" height="13" uuid="5b4b401a-88f4-4be4-8d02-7d4f0e104200"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsJuly}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{otherExpsJuly})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="846" y="0" width="61" height="13" uuid="31793ef2-d035-40e1-86a7-b9024050dc84"/>
+				<reportElement x="846" y="0" width="61" height="13" uuid="b3467f40-8f89-4fd3-b1f6-02fb31a5621b"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsDecember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{otherExpsDecember})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="663" y="0" width="61" height="13" uuid="a4f9faca-ec9d-4251-8ee5-01375dc714ff"/>
+				<reportElement x="663" y="0" width="61" height="13" uuid="2535642a-10b1-4bf8-8b95-d4deb877d27d"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsSeptember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{otherExpsSeptember})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="724" y="0" width="61" height="13" uuid="d0b671ef-8aff-4af5-be92-f91192c2d880"/>
+				<reportElement x="724" y="0" width="61" height="13" uuid="83e032d1-a03b-42f7-ac4c-672378ec8f45"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsOctober}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{otherExpsOctober})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="785" y="0" width="61" height="13" uuid="fbce0a8a-1607-4445-853e-3686c1216df2"/>
+				<reportElement x="785" y="0" width="61" height="13" uuid="f9290caf-34f9-4f06-a240-fb05cc5625f2"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsNovember}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{otherExpsNovember})))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="907" y="0" width="61" height="13" uuid="11307c8b-5155-4962-9392-9c47bbbba13c"/>
+				<reportElement x="907" y="0" width="61" height="13" uuid="63b86731-3a18-4bdf-b907-166b3aaf1723"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{otherExpsTotal}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{otherExpsJanuary})))+
+Math.round((Double.valueOf($F{otherExpsFebruary})))+
+Math.round((Double.valueOf($F{otherExpsMarch})))+
+Math.round((Double.valueOf($F{otherExpsApril})))+
+Math.round((Double.valueOf($F{otherExpsMay})))+
+Math.round((Double.valueOf($F{otherExpsJune})))+
+Math.round((Double.valueOf($F{otherExpsJuly})))+
+Math.round((Double.valueOf($F{otherExpsAugust})))+
+Math.round((Double.valueOf($F{otherExpsSeptember})))+
+Math.round((Double.valueOf($F{otherExpsOctober})))+
+Math.round((Double.valueOf($F{otherExpsNovember})))+
+Math.round((Double.valueOf($F{otherExpsDecember})))]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<summary>
 		<band height="13" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="119" height="13" uuid="1ed158dd-a9d9-4fcc-9961-a79d1ff39f81"/>
+				<reportElement x="0" y="0" width="119" height="13" uuid="4aa62895-0d84-450d-b28d-f021eae19917"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[TOTAL]]></text>
 			</staticText>
 			<subreport>
-				<reportElement x="175" y="0" width="793" height="13" uuid="2012a86f-901a-43ad-85d9-29613782ead2"/>
+				<reportElement x="175" y="0" width="793" height="13" uuid="12b8189b-b3d5-481e-b1f4-f961d6bf05ac"/>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Other_Exps_Total.jasper"]]></subreportExpression>
 			</subreport>

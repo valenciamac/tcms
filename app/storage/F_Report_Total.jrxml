@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="F_Report_Total" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="1008" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="dec48614-b2d2-4408-a8c5-e80d2796a682">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from financetotal]]>
+	</queryString>
+	<field name="contractIncomeTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractPurchaseTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractSubconTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractInhouseTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractTruckingTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractFormworksTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="salaryMonthlyTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="salaryWeeklyTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totalTotal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="updated_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="75" height="13" uuid="557a2dd5-6a82-41a4-8fb5-d6ca83f62111"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractIncomeTotal})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="0" width="75" height="13" uuid="56dd473c-eda8-4058-8fca-796918a6ded4"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractPurchaseTotal})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="75" height="13" uuid="f32f45d9-2059-41ac-8271-e4c024a42821"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractSubconTotal})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="225" y="0" width="75" height="13" uuid="dc4bf43b-e06d-455c-999a-4d04f4849c9b"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractInhouseTotal})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="0" width="75" height="13" uuid="4ada9b63-34ba-44fb-a59f-63a3d63a7f0e"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractFormworksTotal})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="75" height="13" uuid="e5bdf8a4-b616-4ca2-b181-fa83f12f3c6c"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractTruckingTotal})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="525" y="0" width="75" height="13" uuid="77932e80-fce1-400b-a062-9b5abbdf7473"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{salaryWeeklyTotal})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="75" height="13" uuid="50871d7e-e541-4915-a419-2ef9abd82705"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{salaryMonthlyTotal})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="600" y="0" width="75" height="13" uuid="d398e063-c52c-45be-aa0c-d6d823052935"/>
+				<box rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Math.round((Double.valueOf($F{contractIncomeTotal})))-(
+Math.round((Double.valueOf($F{contractPurchaseTotal})))+
+Math.round((Double.valueOf($F{contractSubconTotal})))+
+Math.round((Double.valueOf($F{contractInhouseTotal})))+
+Math.round((Double.valueOf($F{contractTruckingTotal})))+
+Math.round((Double.valueOf($F{contractFormworksTotal})))+
+Math.round((Double.valueOf($F{salaryMonthlyTotal})))+
+Math.round((Double.valueOf($F{salaryWeeklyTotal}))))]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

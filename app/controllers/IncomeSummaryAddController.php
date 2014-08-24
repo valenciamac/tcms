@@ -19,6 +19,13 @@ class IncomeSummaryAddController extends \BaseController {
 		$incomeSummary->incomeOctober= Input::get('incomeOctober');
 		$incomeSummary->incomeNovember= Input::get('incomeNovember');
 		$incomeSummary->incomeDecember= Input::get('incomeDecember');
+		$total=$incomeSummary->incomeJanuary+$incomeSummary->incomeFebruary+
+				$incomeSummary->incomeMarch+$incomeSummary->incomeApril+
+				$incomeSummary->incomeMay+$incomeSummary->incomeJune+
+				$incomeSummary->incomeJuly+$incomeSummary->incomeAugust+
+				$incomeSummary->incomeSeptember+$incomeSummary->incomeOctober+
+				$incomeSummary->incomeNovember+$incomeSummary->incomeDecember;
+		$incomeSummary->incomeTotal = $total;	
 		$incomeSummary->save();
 
 		return Redirect::to('incomeSummaryAdd');
@@ -38,5 +45,8 @@ class IncomeSummaryAddController extends \BaseController {
 
 	}
 
-
+	public function create()
+	{
+		return View::make('users.financing.incomeSummaryAdd');
+	}
 }

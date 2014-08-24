@@ -7,9 +7,11 @@
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
+          <root url="phar://$MODULE_DIR$/vendor/cossou/jasperphp/phpunit.phar" />
           <root url="phar://$MODULE_DIR$/boris.phar" />
         </CLASSES>
         <SOURCES>
+          <root url="phar://$MODULE_DIR$/vendor/cossou/jasperphp/phpunit.phar" />
           <root url="phar://$MODULE_DIR$/boris.phar" />
         </SOURCES>
       </library>

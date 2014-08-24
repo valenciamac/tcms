@@ -75,3 +75,104 @@ function SalsController($scope, $http, $interval)
 
 
 }
+
+function SahodController($scope, $http, $interval)
+{
+  function refreshSahod() 
+  {
+    $http({
+      url: 'ratesave',
+      method: "GET"
+
+    }).success(function (rate) {
+      $scope.rate = rate; 
+
+    }).error(function (rate) {
+      console.log('Error');
+    });
+  }
+  refreshSahod();
+
+  $interval(function() { 
+    refreshSahod();
+  }, 30000);
+
+
+
+}
+function PhilhealthController($scope, $http, $interval)
+{
+  function refreshPhilhealth() 
+  {
+    $http({
+      url: 'ph',
+      method: "GET"
+
+    }).success(function (phcontr) {
+      $scope.phcontr = phcontr; 
+
+    }).error(function (phcontr) {
+      console.log('Error');
+    });
+  }
+  refreshPhilhealth();
+
+  $interval(function() { 
+    refreshPhilhealth();
+  }, 30000);
+
+
+
+}
+
+function SssController($scope, $http, $interval)
+{
+  function refreshSss() 
+  {
+    $http({
+      url: 'sss',
+      method: "GET"
+
+    }).success(function (ssscontr) {
+      $scope.ssscontr = ssscontr; 
+
+    }).error(function (ssscontr) {
+      console.log('Error');
+    });
+  }
+  refreshSss();
+
+  $interval(function() { 
+    refreshSss();
+  }, 30000);
+
+
+
+}
+
+function PagibigController($scope, $http, $interval)
+{
+  function refreshPagibig() 
+  {
+    $http({
+      url: 'pg',
+      method: "GET"
+
+    }).success(function (pagibig) {
+      $scope.pagibig = pagibig; 
+
+    }).error(function (pagibig) {
+      console.log('Error');
+    });
+  }
+  refreshPagibig();
+
+  $interval(function() { 
+    refreshPagibig();
+  }, 30000);
+
+
+
+}
+
+

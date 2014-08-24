@@ -15,19 +15,19 @@ class CreateRepCostSubconTable extends Migration {
 		Schema::create('repCostSubcon', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->double('subconJanuary');
-			$table->double('subconFebruary');
-			$table->double('subconMarch');
-			$table->double('subconApril');
-			$table->double('subconMay');
-			$table->double('subconJune');
-			$table->double('subconJuly');
-			$table->double('subconAugust');
-			$table->double('subconSeptember');
-			$table->double('subconOctober');
-			$table->double('subconNovember');
-			$table->double('subconDecember');
-			$table->double('subconTotal');
+			$table->string('subconJanuary');
+			$table->string('subconFebruary');
+			$table->string('subconMarch');
+			$table->string('subconApril');
+			$table->string('subconMay');
+			$table->string('subconJune');
+			$table->string('subconJuly');
+			$table->string('subconAugust');
+			$table->string('subconSeptember');
+			$table->string('subconOctober');
+			$table->string('subconNovember');
+			$table->string('subconDecember');
+			$table->string('subconTotal');
 			$table->timestamps();
 		});
 	}

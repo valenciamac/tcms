@@ -14,19 +14,19 @@ class CreateRepCostsTotalTable extends Migration {
 	{
 		Schema::create('RepCostsTotal', function(Blueprint $table)
 		{
-			$table->double('repCostTJanuary');
-			$table->double('repCostTFebruary');
-			$table->double('repCostTMarch');
-			$table->double('repCostTApril');
-			$table->double('repCostTMay');
-			$table->double('repCostTJune');
-			$table->double('repCostTJuly');
-			$table->double('repCostTAugust');
-			$table->double('repCostTSeptember');
-			$table->double('repCostTOctober');
-			$table->double('repCostTNovember');
-			$table->double('repCostTDecember');
-			$table->double('repCostTTotal');
+			$table->string('repCostTJanuary');
+			$table->string('repCostTFebruary');
+			$table->string('repCostTMarch');
+			$table->string('repCostTApril');
+			$table->string('repCostTMay');
+			$table->string('repCostTJune');
+			$table->string('repCostTJuly');
+			$table->string('repCostTAugust');
+			$table->string('repCostTSeptember');
+			$table->string('repCostTOctober');
+			$table->string('repCostTNovember');
+			$table->string('repCostTDecember');
+			$table->string('repCostTTotal');
 			$table->timestamps();
 		});
 	}

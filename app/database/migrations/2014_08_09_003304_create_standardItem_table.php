@@ -16,7 +16,10 @@ class CreateStandardItemTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('sname');
+			$table->integer('tempno')->unsigned();
 			$table->timestamps();
+
+			$table->foreign('tempno')->references('id')->on('templates')->onUpdate('cascade')->onDelete('cascade');
 		});
 	}
 

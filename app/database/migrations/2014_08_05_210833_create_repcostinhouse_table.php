@@ -15,19 +15,19 @@ class CreateRepcostinhouseTable extends Migration {
 		Schema::create('repcostinhouse', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->double('inhouseJanuary');
-			$table->double('inhouseFebruary');
-			$table->double('inhouseMarch');
-			$table->double('inhouseApril');
-			$table->double('inhouseMay');
-			$table->double('inhouseJune');
-			$table->double('inhouseJuly');
-			$table->double('inhouseAugust');
-			$table->double('inhouseSeptember');
-			$table->double('inhouseOctober');
-			$table->double('inhouseNovember');
-			$table->double('inhouseDecember');
-			$table->double('inhouseTotal');
+			$table->string('inhouseJanuary');
+			$table->string('inhouseFebruary');
+			$table->string('inhouseMarch');
+			$table->string('inhouseApril');
+			$table->string('inhouseMay');
+			$table->string('inhouseJune');
+			$table->string('inhouseJuly');
+			$table->string('inhouseAugust');
+			$table->string('inhouseSeptember');
+			$table->string('inhouseOctober');
+			$table->string('inhouseNovember');
+			$table->string('inhouseDecember');
+			$table->string('inhouseTotal');
 			$table->timestamps();
 		});
 	}

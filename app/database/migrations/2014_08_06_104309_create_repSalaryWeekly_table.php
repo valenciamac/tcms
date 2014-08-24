@@ -15,19 +15,19 @@ class CreateRepSalaryWeeklyTable extends Migration {
 		Schema::create('repSalaryWeekly', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->double('weeklyJanuary');
-			$table->double('weeklyFebruary');
-			$table->double('weeklyMarch');
-			$table->double('weeklyApril');
-			$table->double('weeklyMay');
-			$table->double('weeklyJune');
-			$table->double('weeklyJuly');
-			$table->double('weeklyAugust');
-			$table->double('weeklySeptember');
-			$table->double('weeklyOctober');
-			$table->double('weeklyNovember');
-			$table->double('weeklyDecember');
-			$table->double('weeklyTotal');
+			$table->string('weeklyJanuary');
+			$table->string('weeklyFebruary');
+			$table->string('weeklyMarch');
+			$table->string('weeklyApril');
+			$table->string('weeklyMay');
+			$table->string('weeklyJune');
+			$table->string('weeklyJuly');
+			$table->string('weeklyAugust');
+			$table->string('weeklySeptember');
+			$table->string('weeklyOctober');
+			$table->string('weeklyNovember');
+			$table->string('weeklyDecember');
+			$table->string('weeklyTotal');
 			$table->timestamps();
 		});
 	}

@@ -16,17 +16,15 @@ class CreateFinanceTable extends Migration {
 		{
 			$table->increments('rNo');
 			$table->string('contractTitle');
-			$table->double('contractIncome');
-			$table->double('contractPurchase');
-			$table->double('contractSubcon');
-			$table->double('contractInhouse');
-			$table->double('contractTrucking');
-			$table->double('contractFormworks');
-			$table->double('salaryMonthly');
-			$table->double('salaryWeekly');
-			$table->double('overheadExps');
-			$table->double('otherExps');
-			$table->double('total');
+			$table->string('contractIncome');
+			$table->string('contractPurchase');
+			$table->string('contractSubcon');
+			$table->string('contractInhouse');
+			$table->string('contractTrucking');
+			$table->string('contractFormworks');
+			$table->string('salaryMonthly');
+			$table->string('salaryWeekly');
+			$table->string('totalIncome');
 			$table->timestamps();
 		});
 	}

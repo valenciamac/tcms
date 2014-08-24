@@ -1,39 +1,11 @@
    <!-- content here -->
-   <div class="panel-group" id="accordion">
-
-        <a class="btn btn-primary" data-toggle="collapse" data-parent="#accordion" href="#adduser">
-          Add New Items
-        </a>
-    <div id="adduser" class="panel-collapse collapse">
-      <div class="panel-body">
-      <hr>
-         {{Form::open(array('route' => 'project.store','class'=>'form-horizontal','role'=>'form'))}}
-            <div class="form-group">
-			    <label for="ProjectName" class="col-sm-2 control-label">Project Name:&nbsp;</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="ProjectName" placeholder="" name="projectName">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="ProjectLocation" class="col-sm-2 control-label">Project Location:&nbsp;</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="ProjectLocation" placeholder="" name="projectLocation">
-			    </div>
-			  </div>
-         
-           <div class="submit">
-            <button type="submit" class="btn btn-primary pull-right">Add User</button>
-            </div>
-         {{Form::close()}}
-
-         </div>
-         </div><hr>
-         </div>
     @foreach($project as $addproject)
-         {{$addproject->id}}
-         {{$addproject->project_name}}
-         {{$addproject->location}}
-         {{$addproject->created_at->toFormattedDateString()}}
+
+    <label class="itemlabel">
+        <p>Inventory for {{ucwords($addproject->project_name)}} located in {{ucwords($addproject->location)}}</p>
+         </label>
+         
+         @if($standard_item->count())
          <table class="table table-bordered">
             <thead>
               <tr>
@@ -52,5 +24,11 @@
             @endforeach
             
             </tbody>
-    </table>
+          </table>
+          @else
+          <div class="notemp">
+            <h3><label>No Items yet</label></h3>
+          </div>
+          
+          @endif
     @endforeach

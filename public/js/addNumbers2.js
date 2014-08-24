@@ -1,12 +1,13 @@
 function addNumbers2(){
-						
-                        var val3 = parseInt(document.getElementById("val3").value);
-                        var val4 = parseInt(document.getElementById("val4").value);
-                        var val5 = parseInt(document.getElementById("val5").value);
-                        var val6 = parseInt(document.getElementById("val6").value);
-                        var val7 = parseInt(document.getElementById("val7").value);
-                        var ansD = document.getElementById("gross");
-                        ansD.value =  (val3 + val4 + val5 + val6 + val7);
+						var gross = parseFloat(document.getElementById("gross").value);
+                     	var val1 = parseFloat(document.getElementById("val1").value);
+                        var val2 = parseFloat(document.getElementById("val2").value);
+                        var val3 = parseFloat(document.getElementById("val3").value);
+                        var phcont = parseFloat(document.getElementById("phcont").value);
+                        var pgibigcont = parseFloat(document.getElementById("pgibigcont").value);
+                        var ssscont = parseFloat(document.getElementById("ssscont").value);
+                        var ansD = document.getElementById("net");
+                        ansD.value =  gross - (val1 + val2 + val3 + phcont + pgibigcont + ssscont);
 
 
 }

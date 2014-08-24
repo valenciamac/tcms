@@ -15,19 +15,19 @@ class CreateRepSalaryMonthlyTable extends Migration {
 		Schema::create('repSalaryMonthly', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->double('monthlyJanuary');
-			$table->double('monthlyFebruary');
-			$table->double('monthlyMarch');
-			$table->double('monthlyApril');
-			$table->double('monthlyMay');
-			$table->double('monthlyJune');
-			$table->double('monthlyJuly');
-			$table->double('monthlyAugust');
-			$table->double('monthlySeptember');
-			$table->double('monthlyOctober');
-			$table->double('monthlyNovember');
-			$table->double('monthlyDecember');
-			$table->double('monthlyTotal');
+			$table->string('monthlyJanuary');
+			$table->string('monthlyFebruary');
+			$table->string('monthlyMarch');
+			$table->string('monthlyApril');
+			$table->string('monthlyMay');
+			$table->string('monthlyJune');
+			$table->string('monthlyJuly');
+			$table->string('monthlyAugust');
+			$table->string('monthlySeptember');
+			$table->string('monthlyOctober');
+			$table->string('monthlyNovember');
+			$table->string('monthlyDecember');
+			$table->string('monthlyTotal');
 			$table->timestamps();
 		});
 	}

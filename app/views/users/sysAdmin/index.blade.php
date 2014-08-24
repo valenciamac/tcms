@@ -6,6 +6,7 @@
       @include('users.includes.head')
       {{HTML::script('js/jquery.flot.js')}}
       {{HTML::script('js/angular.min.js')}}
+      </head>
    <body>
       <div id="wrapper">
       <div id="topbar">
@@ -61,7 +62,7 @@
                   </ul>
                </div>
                <div class = "col-md-6">
-               @include('users.financing.layouts.monthlyGraphBody')
+                  
                </div>
                <div class="col-md-3" >
                   @include('users.sysAdmin.adminLayouts.acts')

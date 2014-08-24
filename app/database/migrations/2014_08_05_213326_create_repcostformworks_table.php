@@ -15,19 +15,19 @@ class CreateRepcostformworksTable extends Migration {
 		Schema::create('repcostformworks', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->double('formworksJanuary');
-			$table->double('formworksFebruary');
-			$table->double('formworksMarch');
-			$table->double('formworksApril');
-			$table->double('formworksMay');
-			$table->double('formworksJune');
-			$table->double('formworksJuly');
-			$table->double('formworksAugust');
-			$table->double('formworksSeptember');
-			$table->double('formworksOctober');
-			$table->double('formworksNovember');
-			$table->double('formworksDecember');
-			$table->double('formworksTotal');
+			$table->string('formworksJanuary');
+			$table->string('formworksFebruary');
+			$table->string('formworksMarch');
+			$table->string('formworksApril');
+			$table->string('formworksMay');
+			$table->string('formworksJune');
+			$table->string('formworksJuly');
+			$table->string('formworksAugust');
+			$table->string('formworksSeptember');
+			$table->string('formworksOctober');
+			$table->string('formworksNovember');
+			$table->string('formworksDecember');
+			$table->string('formworksTotal');
 			$table->timestamps();
 		});
 	}

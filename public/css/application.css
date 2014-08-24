@@ -680,8 +680,8 @@ body:not(:-moz-handler-blocked) .dropdown-submenu > a:after {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffdadada', GradientType=0);
 }
 .table-bordered thead tr th {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   font-size: 13px;
   font-weight: 600;
   color: #E3E3E3;

@@ -51,9 +51,13 @@ class ProjectsController extends \BaseController {
 	public function show($id)
 	{
 		$addproject = Project::where('id', '=', $id)->get();
+		$item = Template::all();
 		$gitem = StandardDesc::all();
 		$sitem = StandardItem::all();
-		return View::make('users.sysAdmin.projectDesc')->withProject($addproject)->withStandardDesc($gitem)->withStandardItem($sitem);
+		return View::make('users.sysAdmin.projectDesc')->withProject($addproject)
+		->withStandardDesc($gitem)
+		->withStandardItem($sitem)
+		->withTemplate($item);
 	}
 
 	/**

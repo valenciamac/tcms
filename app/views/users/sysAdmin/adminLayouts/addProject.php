@@ -9,7 +9,7 @@
    <table class="table table-bordered content" style="font-size:13px;">
       <thead>
          <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Project Name</th>
             <th>Location</th>
             <th>Date Created</th>
@@ -22,8 +22,8 @@
             <td>{{project.project_name}}</td>
             <td>{{project.location}}</td>
             <td>{{millisToUTCDate(project.created_at) | date: 'longDate'}}</td>
-            <td style="margin-right:2px;"><a href="project/{{project.id}}" class="btn btn-success"><i class="fa fa-pencil"></i>edit</a> 
-               <a href="project/{{project.id}}/delete" class="btn btn-danger"><i class="fa fa-trash-o"></i>delete</a>
+            <td style="margin-right:2px;"><a href="project/{{project.id}}" class="btn btn-success addprobtn"><i class="fa fa-pencil"></i>View Inventory</a> 
+               <!-- <a href="project/{{project.id}}/delete" class="btn btn-danger"><i class="fa fa-trash-o"></i>delete</a> -->
             </td>
          </tr>
       </tbody>

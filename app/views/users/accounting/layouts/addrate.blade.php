@@ -1,36 +1,22 @@
 <div class="col-md-9">
-    <ul class="nav nav-tabs nav-justified">
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="ratesb">Rates<span class="caret"></span><span class="sr-only">Toggle Dropdown</span></a>
-       <ul class="dropdown-menu">
-           <li><a href="ratesb">Add Rates</a></li>
-           <li class="divider"></li>
-           <li><a href="rates">Change Rates</a></li>
-    </ul>
-    </li>
+   
+   <div class="panel-group" id="accordion">
 
-    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="ratesc">Hourly Rates<span class="caret"></span><span class="sr-only">Toggle Dropdown</span></a>
-       <ul class="dropdown-menu">
-           <li><a href="ratesc">Add Rates</a></li>
-           <li class="divider"></li>
-           <li><a href="ratesd">Change Rates</a></li>
-    </ul>
-    </li>
-    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="ratesc">PhilHealth Contribution<span class="caret"></span><span class="sr-only">Toggle Dropdown</span></a>
-       <ul class="dropdown-menu">
-           <li><a href="ratese">Add Rates</a></li>
-           <li class="divider"></li>
-           <li><a href="rates2">Change Rates</a></li>
-    </ul>
-    </li>
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="ratesc">SSS Contribution<span class="caret"></span><span class="sr-only">Toggle Dropdown</span></a>
-       <ul class="dropdown-menu">
-           <li><a href="ratesg">Add Rates</a></li>
-           <li class="divider"></li>
-           <li><a href="rates3">Change Rates</a></li>
-    </ul>
-    </li>
-    <h2>Add Overtime Rates</h2>           
-
+        <a class="btn btn-primary" data-toggle="collapse" data-parent="#accordion" href="#rates">
+          Create Rates
+        </a>
+         <a class="btn btn-primary" href="ratese">
+          PhilHealth Contribution
+        </a>
+         <a class="btn btn-primary" data-toggle="collapse" data-parent="#accordion" href="#pagibig">
+          Pagibig Contribution
+        </a>
+         <a class="btn btn-primary" href="ratesg">
+          SSS Contribution
+        </a>
+    <div id="rates" class="panel-collapse collapse">
+      <div class="panel-body">
+      <hr>
     {{Form::open(array('route' => 'rate.store','class'=>'form-horizontal','role'=>'form'))}}
 <div class="form-group" style="padding-bottom:45px;">
       <div class="form-group">
@@ -78,7 +64,16 @@
 </div>
 {{Form::close()}}
 
+
+<hr>
+
+
+
 </div>
 </div>
+<div>
+     @include('users.accounting.layouts.viewRate')
+    </div>
+   
 </div>
 </div>

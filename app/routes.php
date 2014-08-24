@@ -38,6 +38,8 @@ Route::get('getmrs', function()
 	})->before('auth|admin');
 Route::get('project/{id}/delete', ['uses' => 'ProjectsController@destroy'])->before('auth|sysAdmin');
 Route::resource('invoice', 'InvoiceController');
+Route::resource('additem', 'additemController');
+Route::resource('adddesc', 'adddescController');
 Route::get('invoice/{po}', ['uses' => 'InvoiceController@show']);
 
 Route::get('pur', function()
@@ -45,19 +47,18 @@ Route::get('pur', function()
 	return Po::orderBy('po', 'DESC')->get();
 })->before('auth|admin');
 
+Route::resource('addtemplate', 'addtemplateController');
 
+Route::get('project/{id}/addtemplate', ['uses' => 'addtemplateController@create'])->before('auth|sysAdmin');
 
 Route::get('accounts', ['as' => 'accounts', 'uses' => 'AccountsController@show' ])->before('auth|sysAdmin');
 
 Route::get('sysAdmin', ['as' => 'sysAdmin' , function()
 {
-	$monthly = FinanceReports::all();
+	
 
-	return View::make('users.sysAdmin.index')
-			->with('rMonth', $monthly->lists('month'))
-			->with('rIncome', $monthly->lists('income'))
-			->with('rExpenses', $monthly->lists('expenses'));;	
-
+	return View::make('users.sysAdmin.index');
+			
 }])->before('auth|sysAdmin');
 
 Route::get('accounting', ['as' => 'accounting' , function()
@@ -81,6 +82,14 @@ Route::get('financing', ['as' => 'financing' , function()
 
 }])->before('auth|financing');
 
+// Financing Routes..
+Route::get('financing', ['as' => 'financing' , function()
+{
+
+	return View::make('users.financing.index');	
+
+}])->before('auth|financing');
+
 Route::get('monthlyGraph', ['as' => 'monthlyGraph' , function()
 {
 
@@ -94,17 +103,16 @@ Route::get('yearlyGraph', ['as' => 'yearlyGraph' , function()
 	return View::make('users.financing.yearlyGraph');	
 
 }])->before('auth|financing');
-Route::get('printfr', ['as' => 'printfr', function()
-{
-	return View::make('users.financing.printfr');
-}])->before('auth|financing');
 
-Route::get('printfr',['as' => 'printfr', 'uses' => 'FinanceController@printShow'])->before('auth|financing');
-Route::get('financing',['as' => 'financing', 'uses' => 'FinanceReportsController@monthly'])->before('auth|financing');
+Route::get('financing',['as' => 'financing', 'uses' => 'FinanceMonthlyController@monthly'])->before('auth|financing');
 
-Route::get('monthlyGraph',['as' => 'monthlyGraph', 'uses' => 'FinanceReportsController@monthly'])->before('auth|financing');
+Route::get('monthlyGraph',['as' => 'monthlyGraph', 'uses' => 'FinanceMonthlyController@monthly'])->before('auth|financing');
 
-Route::get('yearlyGraph',['as' => 'yearlyGraph', 'uses' => 'FinanceYearlyReportsController@annual'])->before('auth|financing');
+Route::get('financeMonthlyRefresh', ['as' => 'financeMonthlyRefresh', 'uses' => 'FinanceMonthlyController@refresh'])->before('auth|financing');
+
+Route::get('yearlyGraph',['as' => 'yearlyGraph', 'uses' => 'FinanceYearlyController@annual'])->before('auth|financing');
+
+Route::get('financeYearlyRefresh', ['as' => 'financeYearlyRefresh', 'uses' => 'FinanceYearlyController@refresh'])->before('auth|financing');
 
 Route::get('financialReports', ['as' => 'financialReports', function()
 {
@@ -112,20 +120,148 @@ Route::get('financialReports', ['as' => 'financialReports', function()
 }])->before('auth|financing');
 
 Route::get('financialReports',['as' => 'financialReports', 'uses' => 'FinanceController@show'])->before('auth|financing');
+Route::get('financialReportsTotal',['as' => 'financialReportsTotal', 'uses' => 'FinanceController@run'])->before('auth|financing');
 
 Route::get('incomeSummary', ['as' => 'incomeSummary', function()
 {
 	return View::make('users.financing.incomeSummary');
 }])->before('auth|financing');
 
-Route::get('incomeSummaryAdd', ['as' => 'incomeSummaryAdd', function()
-{
-	return View::make('users.financing.incomeSummaryAdd');
-}])->before('auth|financing');
-
 Route::get('incomeSummary',['as' => 'incomeSummary', 'uses' => 'IncomeSummaryController@chooseYear'])->before('auth|financing');
-Route::get('incomeSummaryAdd',['as' => 'incomeSummaryAdd', 'uses' => 'IncomeSummaryAddController@store'])->before('auth|financing');
+Route::get('incomeSummaryAdd',['as' => 'incomeSummaryAdd', 'uses' => 'IncomeSummaryAddController@create'])->before('auth|financing');
+Route::get('incomeSummarySubmit',['as' => 'incomeSummaryAdd', 'uses' => 'IncomeSummaryAddController@store'])->before('auth|financing');
+Route::get('incomeSummaryTotal',['as' => 'incomeSummaryTotal', 'uses' => 'IncomeSummaryController@run'])->before('auth|financing');
 // Route::resource('incomeSummaryAdd', 'IncomeSummaryAddController');
+
+Route::get('financialReports/printfin', function()
+{
+	JasperPHP::process(
+        storage_path() . '/F_Report.jasper', //Input file 
+        storage_path() . '/F_Report', //Output file without extension
+        array("pdf"), //Output format
+        array(), //Parameters array
+        Config::get('database.connections.mysql') //DB connection array
+        )->execute();
+	    $name = date("Y-m-d H.i.s");
+	    rename(storage_path() . '/F_Report.pdf', storage_path() . '/financial_reports_'.$name.'.pdf');
+	    File::move(storage_path() . '/financial_reports_'.$name.'.pdf', storage_path() . '/../../public/reports/financial_reports_'.$name.'.pdf');
+
+	    $file = storage_path() . '/../../public/reports/financial_reports_'.$name.'.pdf';  // <- Replace with the path to your .pdf file
+	
+		return Response::download(
+    	storage_path() . '/../../public/reports/financial_reports_'.$name.'.pdf', 
+    	'financial_reports_'.$name.'.pdf', 
+    	array(
+    		'Content-type:application/pdf',
+    		'Content-Disposition: inline; filename="' . 'financial_reports_'.$name.'.pdf' . '"',
+    		'Content-Transfer-Encoding: binary',
+    		'Accept-Ranges: bytes'
+    	)
+    );
+})->before('auth|financing');
+
+Route::get('incomeSummary/printfin', function()
+{
+	JasperPHP::process(
+        storage_path() . '/Income_Summary_Report.jasper', //Input file 
+        storage_path() . '/Income_Summary_Report', //Output file without extension
+        array("pdf"), //Output format
+        array(), //Parameters array
+        Config::get('database.connections.mysql') //DB connection array
+        )->execute();
+	    $name = date("Y-m-d H.i.s");
+	    rename(storage_path() . '/Income_Summary_Report.pdf', storage_path() . '/income_summary_reports_'.$name.'.pdf');
+	    File::move(storage_path() . '/income_summary_reports_'.$name.'.pdf', storage_path() . '/../../public/reports/income_summary_reports_'.$name.'.pdf');
+
+	    $file = storage_path() . '/../../public/reports/income_summary_reports_'.$name.'.pdf';  // <- Replace with the path to your .pdf file
+	
+		return Response::download(
+    	storage_path() . '/../../public/reports/income_summary_reports_'.$name.'.pdf', 
+    	'income_summary_reports_'.$name.'.pdf', 
+    	array(
+    		'Content-type:application/pdf',
+    		'Content-Disposition: inline; filename="' . 'income_summary_reports_'.$name.'.pdf' . '"',
+    		'Content-Transfer-Encoding: binary',
+    		'Accept-Ranges: bytes'
+    	)
+    );
+})->before('auth|financing');
+
+// Route::get('incomeSummary/{year}/printfin', function($pickedYear)
+// {
+// 	JasperPHP::process(
+//         storage_path() . '/Income_Summary_Report.jasper', //Input file 
+//         storage_path() . '/Income_Summary_Report', //Output file without extension
+//         array("pdf"), //Output format
+//         array(
+//         	'pickedYear' => $pickedYear
+//         ), //Parameters array
+//         Config::get('database.connections.mysql') //DB connection array
+//         )->execute();
+// 	    $name = date("Y-m-d H.i.s");
+// 	    rename(storage_path() . '/Income_Summary_Report.pdf', storage_path() . '/income_summary_reports_'.$name.'.pdf');
+// 	    File::move(storage_path() . '/income_summary_reports_'.$name.'.pdf', storage_path() . '/../../public/reports/income_summary_reports_'.$name.'.pdf');
+
+// 	    $file = storage_path() . '/../../public/reports/income_summary_reports_'.$name.'.pdf';  // <- Replace with the path to your .pdf file
+	
+// 		return Response::download(
+//     	storage_path() . '/../../public/reports/income_summary_reports_'.$name.'.pdf', 
+//     	'income_summary_reports_'.$name.'.pdf', 
+//     	array(
+//     		'Content-type:application/pdf',
+//     		'Content-Disposition: inline; filename="' . 'income_summary_reports_'.$name.'.pdf' . '"',
+//     		'Content-Transfer-Encoding: binary',
+//     		'Accept-Ranges: bytes'
+//     	)
+//     );
+// })->before('auth|financing');
+
+Route::get('incomeSummary/uly', function()
+{
+	$alls = IncomeSummary::all();
+
+	// $date = $all->created_at;
+
+	return View::make('users.financing.year', compact('alls'));
+
+
+})->before('auth|financing');
+
+Route::get('incomeSummary/uly/{year}', function($year)
+{
+	// $year = new IncomeSummary;
+	// $year->iname = Input::get('name');
+	// $year->po_po = Input::get('po_po');
+	// $year->desc = Input::get('desc');
+	// $year->price = Input::get('price');
+	// $year->qty = Input::get('qty');
+	// $success = $year->save();
+
+	// $year = IncomeSummary::all();
+	// $year->created_at = Input::get('created_at');
+	// $pickYear = $year->created_at;
+
+	return $year;
+
+	// return View::make('users.financing.wala');
+
+	// $pickedYear = IncomeSummary::where('created_at', '=' , $pickYear)->get();
+
+	// return Redirect::route('incomeSummary.show', ['pickYear' => $pickYear])->withIncomeSummary($pickedYear);
+
+})->before('auth|financing');
+
+Route::get('financing/asd', function()
+{
+	$total = CostPurchase::all();
+
+	return View::make('users.financing.asd', compact('total'));
+
+})->before('auth|financing');
+
+
+
+
 
 
 Route::get('purchaseOrder', ['as' => 'purchaseOrder' , function()
@@ -259,7 +395,7 @@ Route::get('salary', function()
 })->before('auth|accounting');
 Route::get('payrollsave', function()
 {
-	$payroll = Payroll::with('employee')->orderBy('id', 'DESC')->get();
+	$payroll = Payroll::with('employee')->orderBy('paydate', 'ASC')->get();
 
 	return $payroll;
 })->before('auth|accounting');
@@ -281,8 +417,10 @@ Route::post('sals', function()
 		$payroll = new Payroll;
 		$payroll->employee_id = Auth::employee()->id;
 		$payroll->paydate = Input::get('paydate');
-		$payroll->paydateend = Input::get('paydateend');
 		$payroll->gross = Input::get('gross');
+		$payroll->phcont= Input::get('phcont');
+		$payroll->phcont= Input::get('ssscont');
+		$payroll->phcont= Input::get('pgibigcont');
 		$payroll->income = Input::get('income');
 		$payroll->save();
 
@@ -293,6 +431,33 @@ Route::get('po', function()
 	return Po::orderBy('po', 'DESC')->get();
 })->before('auth|purchasing');
 
+Route::get('ratesave', function()
+{
+	$rate = Rate::orderBy('id', 'DESC')->get();
+
+	return $rate;
+})->before('auth|accounting');
+
+Route::get('ph', function()
+{
+	$phcontr = Phcontr::orderBy('id', 'ASC')->get();
+
+	return $phcontr;
+})->before('auth|accounting');
+
+Route::get('pg', function()
+{
+	$pagibig = Pagibig::orderBy('id', 'ASC')->get();
+
+	return $pagibig;
+})->before('auth|accounting');
+
+Route::get('sss', function()
+{
+	$ssscontr = Ssscontr::orderBy('id', 'ASC')->get();
+
+	return $ssscontr;
+})->before('auth|accounting');
 
 Route::get('rates', ['as' => 'rates' , function()
 {
@@ -329,6 +494,13 @@ Route::get('ratese', ['as' => 'ratese' , function()
 
 }])->before('auth|accounting');
 
+Route::get('ratesf', ['as' => 'ratesf' , function()
+{
+
+	return View::make('users.accounting.ratesf');	
+
+}])->before('auth|accounting');
+
 Route::get('ratesg', ['as' => 'ratesg' , function()
 {
 
@@ -358,21 +530,27 @@ Route::get('rates2', ['as' => 'rates2', 'uses' => 'PhcontrController@show' ])->b
 
 Route::get('rates3', ['as' => 'rates3', 'uses' => 'SsscontrController@show' ])->before('auth|accounting');
 
-Route::get('rat/{id}', ['uses' => 'RateController@editrate' ])->before('auth|accounting');
+Route::get('ratesf', ['as' => 'ratesf', 'uses' => 'PagibigController@show' ])->before('auth|accounting');
 
-Route::get('ssscont/{id}', ['uses' => 'SsscontrController@editrate' ])->before('auth|accounting');
-Route::get('ssscont/{id}/update', ['uses' => 'SsscontrController@update' ])->before('auth|accounting');
-Route::get('ssscont/{id}/delete', ['uses' => 'SsscontrController@destroy' ])->before('auth|accounting');
+Route::get('rates/{id}', ['uses' => 'RateController@editrate' ])->before('auth|accounting');
 
-Route::get('phealth/{id}', ['uses' => 'PhcontrController@editrate' ])->before('auth|accounting');
+Route::get('ssscontr/{id}', ['uses' => 'SsscontrController@editrate' ])->before('auth|accounting');
+Route::get('ssscontr/{id}/update', ['uses' => 'SsscontrController@update' ])->before('auth|accounting');
+Route::get('ssscontr/{id}/delete', ['uses' => 'SsscontrController@destroy' ])->before('auth|accounting');
 
-Route::get('phealth/{id}/update', ['uses' => 'PhcontrController@update' ])->before('auth|accounting');
+Route::get('pagibig/{id}', ['uses' => 'SsscontrController@edit' ])->before('auth|accounting');
+Route::get('pagibig/{id}/update', ['uses' => 'SsscontrController@update' ])->before('auth|accounting');
+Route::get('pagibig/{id}/delete', ['uses' => 'SsscontrController@destroy' ])->before('auth|accounting');
 
-Route::get('phealth/{id}/delete', ['uses' => 'PhcontrController@destroy' ])->before('auth|accounting');
+Route::get('phcontr/{id}', ['uses' => 'PhcontrController@editrate' ])->before('auth|accounting');
 
-Route::get('rat/{id}/update', ['uses' => 'RateController@updaterate' ])->before('auth|accounting');
+Route::get('phcontr/{id}/update', ['uses' => 'PhcontrController@update' ])->before('auth|accounting');
 
-Route::get('rat/{id}/delete', ['uses' => 'RateController@destroy' ])->before('auth|accounting');
+Route::get('phcontr/{id}/delete', ['uses' => 'PhcontrController@destroy' ])->before('auth|accounting');
+
+Route::get('rates/{id}/update', ['uses' => 'RateController@updaterate' ])->before('auth|accounting');
+
+Route::get('rates/{id}/delete', ['uses' => 'RateController@destroy' ])->before('auth|accounting');
 
 
 Route::get('employ', ['as' => 'employ' , function()
@@ -396,6 +574,7 @@ Route::resource('rate', 'RateController');
 Route::resource('phcontr', 'PhcontrController');
 
 Route::resource('ssscontr', 'SsscontrController');
+Route::resource('pagibig', 'PagibigController');
 Route::resource('payroll', 'PayrollController');
 Route::resource('hoursrate', 'HoursController');
 
@@ -424,59 +603,9 @@ Route::get('vouchers', ['as' => 'vouchers' , function()
 // // administrator routes
 // Route::resource('purchases', 'PurchaseController');
 
-Route::get('incomeSummary/printfin', function()
-{
-	JasperPHP::process(
-        storage_path() . '/F_Reports.jasper', //Input file 
-        storage_path() . '/F_Reports', //Output file without extension
-        array("pdf"), //Output format
-        array(), //Parameters array
-        Config::get('database.connections.mysql') //DB connection array
-        )->execute();
-	    $name = date("Y-m-d H.i.s");
-	    rename(storage_path() . '/F_Reports.pdf', storage_path() . '/summary_reports_'.$name.'.pdf');
-	    File::move(storage_path() . '/summary_reports_'.$name.'.pdf', storage_path() . '/../../public/reports/summary_reports_'.$name.'.pdf');
 
-	    $file = storage_path() . '/../../public/reports/summary_reports_'.$name.'.pdf';  // <- Replace with the path to your .pdf file
-	
-		return Response::download(
-    	storage_path() . '/../../public/reports/summary_reports_'.$name.'.pdf', 
-    	'summary_reports_'.$name.'.pdf', 
-    	array(
-    		'Content-type:application/pdf',
-    		'Content-Disposition: inline; filename="' . 'summary_reports_'.$name.'.pdf' . '"',
-    		'Content-Transfer-Encoding: binary',
-    		'Accept-Ranges: bytes'
-    	)
-    );
-});
 Route::get('admin/mrs', ['uses' => 'mrsController@index'])->before('auth|admin');
-Route::get('financialReports/printfin', function()
-{
-	JasperPHP::process(
-        storage_path() . '/F_Report2.jasper', //Input file 
-        storage_path() . '/F_Report2', //Output file without extension
-        array("pdf"), //Output format
-        array(), //Parameters array
-        Config::get('database.connections.mysql') //DB connection array
-        )->execute();
-	    $name = date("Y-m-d H.i.s");
-	    rename(storage_path() . '/F_Report2.pdf', storage_path() . '/financial_reports_'.$name.'.pdf');
-	    File::move(storage_path() . '/financial_reports_'.$name.'.pdf', storage_path() . '/../../public/reports/financial_reports_'.$name.'.pdf');
 
-	    $file = storage_path() . '/../../public/reports/financial_reports_'.$name.'.pdf';  // <- Replace with the path to your .pdf file
-	
-		return Response::download(
-    	storage_path() . '/../../public/reports/financial_reports_'.$name.'.pdf', 
-    	'financial_reports_'.$name.'.pdf', 
-    	array(
-    		'Content-type:application/pdf',
-    		'Content-Disposition: inline; filename="' . 'financial_reports_'.$name.'.pdf' . '"',
-    		'Content-Transfer-Encoding: binary',
-    		'Accept-Ranges: bytes'
-    	)
-    );
-});
 
 Route::get('item/{po}/reports', function($po)
 {
@@ -506,3 +635,30 @@ Route::get('item/{po}/reports', function($po)
 
     );
 })->before('auth|purchasing');
+
+Route::get('salary/payrollreport', function()
+{
+    	JasperPHP::process(
+        storage_path() . '/payroll.jasper', //Input file 
+        storage_path() . '/payroll', //Output file without extension
+        array("pdf","rtf"), //Output format
+        array(), //Parameters array
+        Config::get('database.connections.mysql') //DB connection array
+        )->execute();
+	    $name = date("Y-m-d H.i.s");
+	    rename(storage_path() . '/payroll.pdf', storage_path() . '/payroll_'.$name.'.pdf');
+	    File::move(storage_path() . '/payroll_'.$name.'.pdf', storage_path() . '/../../public/reports/payroll_'.$name.'.pdf');
+
+	    $file = storage_path() . '/../../public/reports/payroll_'.$name.'.pdf';  // <- Replace with the path to your .pdf file
+	
+		return Response::download($file, 
+    	'payroll_'.$name.'.pdf', 
+    	array(
+    		'Content-type:application/pdf',
+    		'Content-Disposition: inline; filename="' . 'payroll_'.$name.'.pdf' . '"',
+    		'Content-Transfer-Encoding: binary',
+    		'Accept-Ranges: bytes'
+    	)
+
+    );
+})->before('auth|accounting');

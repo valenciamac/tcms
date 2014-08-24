@@ -132,9 +132,10 @@ public function showpayworksite()
 	}
 public function editpayroll($id)
 	{
+		$rates=Rate::all();
 		$emp1 = Employee::where('id', '=', $id)->get();
 
-		return View::make('users.accounting.computepay')->withEmployee($emp1);
+		return View::make('users.accounting.computepay')->withEmployee($emp1)->withRate($rates);
 	}
 
 }
