@@ -1,7 +1,8 @@
 function sum8() {
       var aw = document.getElementById('rate').value;
       var ew = document.getElementById('regholdotpay').value;
-      var awew = (parseFloat(aw)/8)*1.3*(1.2*parseFloat(ew));
+      var ow = document.getElementById('otregholdrate').value;
+      var awew = (parseFloat(aw)/8)*(parseFloat(ow)*parseFloat(ew));
       if (!isNaN(awew)) {
          document.getElementById('val6').value = awew;
       }

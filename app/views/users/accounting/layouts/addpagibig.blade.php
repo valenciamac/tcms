@@ -1,5 +1,4 @@
-<div class="col-md-9">
-   
+
    <div class="panel-group" id="accordion">
 
         <a class="btn btn-primary" href="rates">
@@ -23,16 +22,23 @@
       <div class="form-group">
 
                 <div class="form-group">
-                <label class="col-sm-3 control-label" >Pagibig Range</label>
+                <label class="col-sm-3 control-label" >Pagibig Min</label>
                 <div class="col-sm-6">
-                <input name="pagibigrange" class="form-control">
+                <input name="pagibigmin" class="form-control">
                 </div>
                 </div> 
-            
+                
+                <div class="form-group">
+                <label class="col-sm-3 control-label" >Pagibig Max</label>
+                <div class="col-sm-6">
+                <input name="pagibigmax" class="form-control">
+                </div>
+                </div> 
+
                 <div class="form-group">
                 <label class="col-sm-3 control-label" >Employee Share</label>
                 <div class="col-sm-6">
-                <input name="share" class="form-control" id="hoursrestspecholdrate">
+                <input name="employeeshare" class="form-control" id="hoursrestspecholdrate">
                 </div> 
                 </div>
 
@@ -52,7 +58,3 @@
 </div>
 <div>
       @include('users.accounting.layouts.viewPagibig')
-
-</div>
-</div>
-</div>

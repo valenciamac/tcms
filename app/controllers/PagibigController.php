@@ -33,8 +33,9 @@ class PagibigController extends \BaseController {
 	public function store()
 	{
 		$pagibig= new Pagibig;
-		$pagibig->pagibigrange=Input::get('pagibigrange');
-		$pagibig->share= Input::get('share');
+		$pagibig->pagibigmin=Input::get('pagibigmin');
+		$pagibig->pagibigmax=Input::get('pagibigmax');
+		$pagibig->employeeshare= Input::get('employeeshare');
 		$pagibig->save();
 
 		return Redirect::to('ratesf');
@@ -79,8 +80,9 @@ class PagibigController extends \BaseController {
 	public function update($id)
 	{
 		$pagibig = Pagibig::find($id);
-		$pagibig->pagibigrange = Input::get('pagibigrange');
-		$pagibig->share= Input::get('share');
+		$pagibig->pagibigmin=Input::get('pagibigmin');
+		$pagibig->pagibigmax=Input::get('pagibigmax');
+		$pagibig->employeeshare= Input::get('employeeshare');
 
 		$saved = $pagibig->save();
 

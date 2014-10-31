@@ -1,7 +1,8 @@
 function sum5() {
       var una = document.getElementById('rate').value;
       var dalawa = document.getElementById('regholdpay').value;
-      var sagot = (parseFloat(una))/8*1.3*(parseFloat(dalawa));
+      var three = document.getElementById('otregholdrate').value;
+      var sagot = (parseFloat(una)/8)*(parseFloat(three)*parseFloat(dalawa));
       if (!isNaN(sagot)) {
          document.getElementById('val5').value = sagot;
       }

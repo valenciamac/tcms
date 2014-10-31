@@ -17,7 +17,6 @@ class CreateRfpTable extends Migration {
 			$table->increments('id');
 			$table->integer('controlNo');
 			$table->string('payee');
-			$table->DATE('requestedDate');
 			$table->string('reason');
 			$table->timestamps();
 		});

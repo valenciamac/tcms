@@ -21,7 +21,9 @@ class AccountsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$emp = Employee::where('department','=','office')->orderby('id', 'asc')->get();
+		$emp1 = Employee::orderby('id', 'asc')->get();
+		return View::make('users.sysAdmin.employee')->withEmployee($emp)->withEmp($emp1);
 	}
 
 	/**
@@ -44,7 +46,8 @@ class AccountsController extends \BaseController {
 	 */
 	public function show()
 	{
-		return View::make('users.sysAdmin.accounts');
+		$users = User::all();
+		return View::make('users.sysAdmin.accounts')->withUser($users);
 	}
 
 	/**

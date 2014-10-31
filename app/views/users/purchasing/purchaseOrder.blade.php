@@ -32,25 +32,48 @@
    </div>
    <div id="header">
    <div class="container">
-      <div class="brand">
-      <a href="purchasing"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+      <a href="purchasing"><img src="{{asset('img/brand1.png')}}" class="logo logo-link"></a>
       </div>
       </div>
+      <div id="masthead">
+   
+   <div class="container">
+      
+      <div class="masthead-pad">
+         <div class="row">
+         <div class="masthead-text">
+            <h2>Purchasing Department</h2>
+            <p>You have a total of {{$po->count()}} Purchase Orders this week.</p>
+         </div> <!-- /.masthead-text -->
+
+         </div>
       </div>
+      
+   </div> <!-- /.container -->   
+   
+</div>
 <div class="container mainB">
    <div class="row">
    <div class="col-md-3">
-      <ul class="sideMenu">
+      <aside class="right">
+      <div class="divider"></div>
+      <ul class="intended sideMenu">
          <li>
-            <a href="purchasing"><i class="fa fa-home"></i>Dashboard</a>
-         </li>
-         <li class="active">
-            <a href="purchaseOrder"><i class="fa fa-user"></i>Purchase Order</a>
+            <a href="purchasing"><i class="fa fa-home link"></i>Dashboard</a>
          </li>
          <li class="">
-            <a href="payment"><i class="fa fa-home"></i>Request For Payment</a>
+            <a href="prspo"><i class="fa fa-file link"></i>PRS</a>
+         </li>
+         <li class="">
+            <a href="rfp"><i class="fa fa-home link"></i>Request For Payment</a>
          </li>
       </ul>
+      <div class="divider"></div>
+         <div id="datepicker">
+         <div class="datepicker datepicker-inline">
+         </div>
+         </div>
+      </aside>
    </div>
    <div class="col-md-9">
    @include('users.purchasing.layouts.purchaseOrderbody')

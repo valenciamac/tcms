@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bom_tile" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="93c05ea9-5949-416e-a116-3dd765f7f107">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT modelhouse.id , tile.model_id ,tile.itemdesc , tile.nopieces , tile.unitmeasure , tile.unitprice, (tile.nopieces*tile.unitprice) as total from modelhouse INNER JOIN tile on modelhouse.id = tile.model_id]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="model_id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="itemdesc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nopieces" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unitmeasure" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unitprice" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<rectangle>
+				<reportElement x="252" y="8" width="107" height="20" uuid="64227e31-2d05-45e2-a110-6606492a3032"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="6" y="28" width="533" height="20" uuid="db3e98ee-450a-446d-a1c7-81cbf57ed9da"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="359" y="8" width="92" height="20" uuid="91d256f2-286a-4079-9552-e18ec695e201"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="276" y="8" width="71" height="20" uuid="14f24f05-63ff-496a-9e87-c6cdc36d56f3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO. OF PCS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="451" y="8" width="88" height="20" uuid="0cb7e554-f61b-4122-b19b-5a030fe23b60"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="6" y="8" width="246" height="20" uuid="36486b83-c569-4066-af0b-c14dbde1846e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="13" y="28" width="218" height="20" uuid="71cf9ea3-019a-4f77-aa58-d3a2c6aa8059"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VIII.   TILE WORKS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="461" y="8" width="78" height="20" uuid="581d5acf-43a2-4d94-8ae0-0e1f3483abc4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL COST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="8" width="115" height="20" uuid="fb6aa65e-f74e-42f9-946b-cd16d91ee29a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM DESCRIPTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="8" width="68" height="20" uuid="a37d3201-5d43-43ac-8040-71430a23ed72"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIT COST]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="359" y="0" width="92" height="20" uuid="0f3f34c0-78c7-48c5-8701-2e18694b66d4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="451" y="0" width="88" height="20" uuid="b4a01e1b-4145-4fda-8f03-b7ec85e19ac9"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="6" y="0" width="246" height="20" uuid="1905a915-540c-4b96-a456-565d08c80bf1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="252" y="0" width="107" height="20" uuid="551b3541-79b9-4a2c-974e-9fa884969b9a"/>
+			</rectangle>
+			<textField>
+				<reportElement x="461" y="0" width="56" height="20" uuid="4567f8a8-fdcf-4643-8ce3-b7ed193abe51"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="374" y="0" width="68" height="20" uuid="56bdae49-26c4-434b-a1eb-c82a6ea86761"/>
+				<textFieldExpression><![CDATA[$F{unitprice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="57" y="0" width="100" height="20" uuid="f043279e-0553-4037-9172-f0acacd33734"/>
+				<textFieldExpression><![CDATA[$F{itemdesc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="304" y="0" width="43" height="20" uuid="e47fbd1c-75bb-4ab3-9dda-a366b2b9f56e"/>
+				<textFieldExpression><![CDATA[$F{unitmeasure}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="0" width="33" height="20" uuid="e99ba1e6-ce43-4bb8-8b5a-c5574815ffb4"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{nopieces}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,14 +1,7 @@
-<div class="col-md-9">
+
   <ul class="nav nav-tabs nav-justified">
       <li class="active"><a href="viewpay">Payroll - Office</a></li>
       <li><a href="viewpay2">Payroll - Worksite</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Total Salary<span class="caret"></span><span class="sr-only">Toggle Dropdown</span></a>
-      <ul class="dropdown-menu" role="menu">
-           <li><a href="#">Total Salary - Office</a></li>
-           <li class="divider"></li>
-           <li><a href="#">Total Salary - Worksite</a></li>
-    </ul>
-    </li>
   </ul>
 	
 
@@ -17,7 +10,7 @@
         <form class="form-inline" action="viewpay" role="form">
     <div class="form-group" >
         <div class="input-inline">
-          <input class="form-control" type="text" placeholder="Search" name="search">
+          <input class="form-control" type="text" id="searchpayroll" placeholder="Search" name="search">
         </div>
       </div>
 </form>
@@ -30,39 +23,28 @@
               <th>First Name</th>
               <th>Middle Name</th>
               <th>Last Name</th>
-              <th>Home Address</th>
-              <th>Basic Income</th>
               <th>Rate</th>
-              <th>Status</th>
-              <th>Dependent</th>
               <th>Option</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="payroll">
            
-            @foreach ($employee as $emp1)
+            @foreach ($employee as $pay)
             
              <tr>
-                <td>{{ $emp1->id }}</td>
-                <td>{{ ucwords($emp1->department) }}</td>
-                <td>{{ ucwords($emp1->position) }}</td>
-                <td>{{ ucwords($emp1->fname) }}</td>
-                <td>{{ ucwords($emp1->mname) }}</td>
-                <td>{{ ucwords($emp1->lname) }}</td>
-                <td>{{ $emp1->address }}</td>
-                <td>{{ $emp1->basic }}</td>
-                <td>{{ $emp1->rate }}</td>
-                <td>{{ $emp1->status }}</td>
-                <td>{{ $emp1->dependent }}</td>
-                <td><a href="{{$emp1->id}}"><i class="fa fa-plus-square-o"></i></a></td>
+                <td>{{ $pay->id }}</td>
+                <td>{{ ucwords($pay->department) }}</td>
+                <td>{{ ucwords($pay->position) }}</td>
+                <td>{{ ucwords($pay->fname) }}</td>
+                <td>{{ ucwords($pay->mname) }}</td>
+                <td>{{ ucwords($pay->lname) }}</td>
+                <td>{{ $pay->rate }}</td>
+                <td><a href="pay/{{$pay->id}}" class="btn btn-primary btn-full-width">Add Payroll Details</i></a>
+                <a href="sep/{{$pay->id}}" class="btn btn-primary btn-full-width">Separation Pay</i></a></td>
+                
             </tr>
             
             @endforeach
 
           </tbody>
         </table>
-
-            </div>
-        </div> 
-    </div>
-</div>

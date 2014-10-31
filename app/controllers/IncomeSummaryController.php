@@ -9,6 +9,20 @@ class IncomeSummaryController extends \BaseController {
 
 	public function run()
 	{
+                // get project names
+                // DB::select('INSERT INTO repincomefromcontracts SELECT id FROM projects');
+                // $projectId = DB::table('projects')
+                //                         ->select('id');
+
+                
+                // DB::table('repincomefromcontracts')->insert(
+                // array(
+                //         array(
+                //                 'project_id' => $projectId,
+                //         ),
+                // ));
+
+
 		// computation for total of income from contracts
 		$incomeJanuaryTotal = DB::table('repincomefromcontracts')
 										->sum('incomeJanuary');
@@ -595,13 +609,13 @@ class IncomeSummaryController extends \BaseController {
 		return Redirect::to('incomeSummary')->with('totalCompute_success', 'Total Computed!');
 	}
 
-	public function show($pickYear)
-	{
-		// $additem = Po::where('po', '=', $po)->get();
+	// public function show($pickYear)
+	// {
+	// 	// $additem = Po::where('po', '=', $po)->get();
 
-		$pickedYear = IncomeSummary::where('year', '=', $pickYear)->get();
+	// 	$pickedYear = IncomeSummary::where('year', '=', $pickYear)->get();
 
-		return View::make('users.financing.incomeSummary', compact('pickedYear'));
+	// 	return View::make('users.financing.incomeSummary', compact('pickedYear'));
 		// return View::make('users.financing.year', compact('alls'));
 	
 
@@ -632,20 +646,47 @@ class IncomeSummaryController extends \BaseController {
 		// 	$activity->save();	
 		// 	return Redirect::route('incomeSummary.show', ['contractTitle' => $income]);
 		// }
-	}
+	// }
 
-	public function chooseYear()
+        public function show($id)
+        {
+                $detail = IncomeSummary::where('id', '=', $id)->get();
+
+                // $monthly = FinanceMonthly::all();
+
+                // return View::make('users.financing.monthlyGraph')
+                //         ->with('rMonth', $monthly->lists('month'))
+                //         ->with('rIncome', $monthly->lists('income'))
+                //         ->with('rExpenses', $monthly->lists('expenses'));
+
+                return View::make('users.financing.incomeSummaryDetails', compact('detail'));
+        }
+
+        // public function showA()
+        // {
+                
+        //         $alls = IncomeSummary::all();
+
+        //         // $date = $all->created_at;
+
+        //         return View::make('users.financing.incomeSummaryDetailsA', compact('alls'));
+        // }
+
+	public function chooseProject()
 	{
+                // $detail = IncomeSummary::where('id', '=', $id)->get();
+
 		if ( $search = Request::get('search'))
 		{
-			$chooseYear = IncomeSummary::search($search)->paginate(6);
+			$project = IncomeSummary::search($search)->paginate(6);
 		}
 		else
 		{
-			$chooseYear = IncomeSummary::paginate(6);
+			$project = IncomeSummary::paginate(6);
 		}
 		
-		return View::make('users.financing.IncomeSummary', compact('chooseYear'));
+                // return View::make('users.financing.IncomeSummary')->withIncomeSummary($project);
+		return View::make('users.financing.IncomeSummary', compact('project'));
 	}
 
 }

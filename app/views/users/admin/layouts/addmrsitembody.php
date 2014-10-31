@@ -1,7 +1,7 @@
 <div class="col-md-9">
-   <div ng-app ng-controller="PurchasesController">
+   <div ng-app ng-controller="addMrsitemController">
    <!-- content here -->
-   <form class="form-inline" action="purchaseOrder" role="form">
+   <form class="form-inline" action="projects" role="form">
       <div class="form-group" >
          <div class="input-inline">
             <input class="form-control search" type="text" placeholder="search" ng-model="search">
@@ -19,12 +19,12 @@
          </tr>
       </thead>
       <tbody>
-         <tr ng-repeat="po in pos | filter:search" class="contents">
-            <td>{{po.po}}</td>
-            <td>{{po.prs}}</td>
-            <td>{{po.suppler_name}}</td>
-            <td>{{millisToUTCDate(po.created_at) | date: 'longDate'}}</td>
-            <td><a href="invoice/{{po.po}}" class="btn btn-primary">Add Invoice</a></td>
+         <tr ng-repeat="invitem in invitem | filter:search" class="contents">
+            <td>{{project.id}}</td>
+            <td>{{proj.prs}}</td>
+            <td>{{project.suppler_name}}</td>
+            <td>{{millisToUTCDate(project.created_at) | date: 'longDate'}}</td>
+            <td><a href="invoice/{{project.project}}" class="btn btn-primary">View Mrs Items</a></td>
         
          </tr>
       </tbody>

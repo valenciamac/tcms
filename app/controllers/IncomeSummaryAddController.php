@@ -3,31 +3,40 @@
 class IncomeSummaryAddController extends \BaseController {
 
 	
+	// public function show($id)
+	// {
+	// 	return View::make('users.financing.incomeSummaryAdd');
+	// }
+
 	public function store()
 	{
-		$incomeSummary = new IncomeSummaryAdd;
-		$incomeSummary->contractTitle = Input::get('contractTitle');
-		$incomeSummary->incomeJanuary= Input::get('incomeJanuary');
-		$incomeSummary->incomeFebruary = Input::get('incomeFebruary');
-		$incomeSummary->incomeMarch= Input::get('incomeMarch');
-		$incomeSummary->incomeApril= Input::get('incomeApril');
-		$incomeSummary->incomeMay= Input::get('incomeMay');
-		$incomeSummary->incomeJune= Input::get('incomeJune');
-		$incomeSummary->incomeJuly= Input::get('incomeJuly');
-		$incomeSummary->incomeAugust= Input::get('incomeAugust');
-		$incomeSummary->incomeSeptember= Input::get('incomeSeptember');
-		$incomeSummary->incomeOctober= Input::get('incomeOctober');
-		$incomeSummary->incomeNovember= Input::get('incomeNovember');
-		$incomeSummary->incomeDecember= Input::get('incomeDecember');
-		$total=$incomeSummary->incomeJanuary+$incomeSummary->incomeFebruary+
-				$incomeSummary->incomeMarch+$incomeSummary->incomeApril+
-				$incomeSummary->incomeMay+$incomeSummary->incomeJune+
-				$incomeSummary->incomeJuly+$incomeSummary->incomeAugust+
-				$incomeSummary->incomeSeptember+$incomeSummary->incomeOctober+
-				$incomeSummary->incomeNovember+$incomeSummary->incomeDecember;
-		$incomeSummary->incomeTotal = $total;	
-		$incomeSummary->save();
+		$pname = Input::get('pname');
+		$project_id = Project::where('project_name', '=', $pname)->first();
 
+		$detail = new IncomeSummaryAdd;
+		$detail->project_id = $project_id->id;
+		$detail->incomeJanuary= Input::get('incomeJanuary');
+		$detail->incomeFebruary = Input::get('incomeFebruary');
+		$detail->incomeMarch= Input::get('incomeMarch');
+		$detail->incomeApril= Input::get('incomeApril');
+		$detail->incomeMay= Input::get('incomeMay');
+		$detail->incomeJune= Input::get('incomeJune');
+		$detail->incomeJuly= Input::get('incomeJuly');
+		$detail->incomeAugust= Input::get('incomeAugust');
+		$detail->incomeSeptember= Input::get('incomeSeptember');
+		$detail->incomeOctober= Input::get('incomeOctober');
+		$detail->incomeNovember= Input::get('incomeNovember');
+		$detail->incomeDecember= Input::get('incomeDecember');
+		$total=$detail->incomeJanuary+$detail->incomeFebruary+
+				$detail->incomeMarch+$detail->incomeApril+
+				$detail->incomeMay+$detail->incomeJune+
+				$detail->incomeJuly+$detail->incomeAugust+
+				$detail->incomeSeptember+$detail->incomeOctober+
+				$detail->incomeNovember+$detail->incomeDecember;
+		$detail->incomeTotal = $total;	
+		$detail->save();
+
+		// return Redirect::route('incomesummaryadd.show', ['pid' => $mrsItem])->withMrs($mrsItem);
 		return Redirect::to('incomeSummaryAdd');
 
 		// $activity = new Activity;
@@ -45,8 +54,27 @@ class IncomeSummaryAddController extends \BaseController {
 
 	}
 
-	public function create()
+	// public function show($pid)
+	// {
+	// 	$project = Project::where('id', '=', $pid)->get();
+
+	// 	$mrsitems = Mrs::where('project_id', '=', $pid)->get();
+
+	// 	return View::make('users.admin.addmrsitem')->withProject($project)->withMrs($mrsitems);
+	// }
+
+	public function edit($id)
 	{
-		return View::make('users.financing.incomeSummaryAdd');
+		$detail = IncomeSummaryAdd::where('id', '=', $id)->get();
+
+		return View::make('users.financing.incomeSummaryAdd', compact('detail'));
+		// return View::make('users.sysAdmin.profile')->withUsers($user);
 	}
+
+	
+
+	// public function create()
+	// {
+	// 	return View::make('users.financing.incomeSummaryAdd');
+	// }
 }

@@ -43,7 +43,7 @@
          </div>
       </div>
    </form>
-   <table class="table table-bordered content" style="font-size:13px;">
+   <table class="table table-striped content" style="font-size:13px;">
       <thead>
          <tr>
             <th>Id</th>
@@ -61,8 +61,8 @@
             <td>{{user.lname}}</td>
             <td>{{user.username}}</td>
             <td>{{user.role}}</td>
-            <td style="margin-right:2px;"><a href="accounts/{{user.id}}" class="btn btn-success"><i class="fa fa-pencil"></i>edit</a> 
-               <a href="accounts/{{user.id}}/delete" class="btn btn-danger"><i class="fa fa-trash-o"></i>delete</a>
+            <td style="margin-right:2px;"><a href="accounts/{{user.id}}" class="btn btn-success"><i class="fa fa-pencil link"></i>edit</a> 
+               <a href="accounts/{{user.id}}/delete" class="btn btn-danger"><i class="fa fa-trash-o link"></i>delete</a>
             </td>
          </tr>
       </tbody>

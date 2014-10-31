@@ -17,10 +17,10 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Paydate</th>
-            <th>Gross</th>
             <th>Philhealth Contribution</th>
             <th>Pagibig Contribution</th>
             <th>Sss Contribution</th>
+            <th>Gross</th>
             <th>Income</th>
          </tr>
 
@@ -31,11 +31,16 @@
             <td>{{payroll.employee.fname}}</td>
             <td>{{payroll.employee.lname}}</td>
             <td>{{payroll.paydate}}</td>
-            <td>{{payroll.gross}}</td>
             <td>{{payroll.phcont}}</td>
             <td>{{payroll.pgibigcont}}</td>
             <td>{{payroll.ssscont}}</td>
+            <td>{{payroll.gross}}</td>
             <td>{{payroll.income}}</td>
+            </tr>
+             <tr>
+                <td colspan="8"></td>
+                <td>Total : {{ total() }}</td>
+               
             </tr>
             </tbody>
             </table>

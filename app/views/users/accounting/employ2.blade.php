@@ -33,8 +33,11 @@
 </div>
 
 <div id="header">
-	<div class="container">
-		<a href="sysAdmin" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+	<div class="container brand">
+    <a href="accounting"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+    </div>
+    </div>
+    <div class="container mainB">
 		<div class="row">
 			<div class="col-md-3">
     <ul class="sideMenu">
@@ -50,6 +53,16 @@
         <li>
             <a href="rates"><i class="fa fa-file"></i>Rates and Contribution</a>
         </li>
+        <li class="">
+            <a href="salary"><i class="fa fa-user"></i>View Salary</a>
+        </li>
+        <li class>
+            <a href="cashvouchers"><i class="fa fa-file"></i>Voucher</a>
+         </li>
+         <li>
+            <a href="purchases"><i class="fa fa-file"></i>Report</a>
+         </li>
+        
     </ul>
 </div>
 @include('users.accounting.layouts.viewemploy')

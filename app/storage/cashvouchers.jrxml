@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="checkvouchers" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6273a767-5d83-4ed7-84e0-4eddd3454a72">
+	<property name="ireport.zoom" value="1.2100000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="e760d142-c3ed-49c2-8c1c-597857969fca"/>
+	<parameter name="checkno" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{checkno}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="summary" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\tcms-mvc\\app\\storage\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sumless" class="java.lang.String"/>
+	<parameter name="sumamt" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT cashvouchers.rfrom , cashvouchers.rpb, cashvouchers.prepared , cashvouchers.checked , cashvouchers.approved , cashvouchers.created_at , cashitem.cashvouchers_checkno, cashitem.payee , cashitem.labor , cashitem.descr ,cashitem.amount,cashitem.less , cashitem.acctitle , cashitem.acctitle2, cashitem.debit , cashitem.credit from cashvouchers INNER JOIN cashitem on cashitem.cashvouchers_checkno = cashvouchers.checkno where cashvouchers.checkno = $P{checkno} limit 1]]>
+	</queryString>
+	<field name="rfrom" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rpb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prepared" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="checked" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="approved" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cashvouchers_checkno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payee" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="labor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descr" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="less" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acctitle" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acctitle2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="debit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="credit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="385" splitType="Stretch">
+			<subreport>
+				<reportElement x="9" y="177" width="535" height="208" uuid="6488cbb0-9852-490b-98fd-acb9b92aa7d7"/>
+				<subreportParameter name="summary">
+					<subreportParameterExpression><![CDATA[$P{summary}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="sumamt">
+					<subreportParameterExpression><![CDATA[$P{sumamt}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="checkno">
+					<subreportParameterExpression><![CDATA[$P{checkno}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="sumless">
+					<subreportParameterExpression><![CDATA[$P{sumless}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "cashvouchers_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="17" y="142" width="47" height="20" uuid="ef3683af-690e-45ae-878c-1824ce3d35e7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAYEE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="141" width="37" height="20" uuid="9d6e1fd6-87ec-4941-94d1-522daf0a02e2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="107" width="19" height="20" uuid="6dfc7696-feea-490e-a710-51c6e7d7dfae"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="64" y="161" width="191" height="1" uuid="ca8f3a9a-c00c-4075-a321-c59b88fcf811"/>
+			</line>
+			<line>
+				<reportElement x="431" y="160" width="114" height="1" uuid="fcd03548-4254-4549-9522-6fbcfc86d436"/>
+			</line>
+			<staticText>
+				<reportElement x="215" y="40" width="125" height="25" uuid="10fba704-1c64-456d-a368-8db3a6195de0"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CASH VOUCHERS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="64" y="142" width="193" height="20" uuid="2f865184-9a8c-4af8-b7a6-f4c2c3b1d889"/>
+				<textFieldExpression><![CDATA[$F{payee}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="140" width="114" height="20" uuid="3232d534-6977-42cb-bd07-0b05a541118d"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("MMMM dd, yyyy").format($F{created_at})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="497" y="107" width="49" height="20" uuid="365817f9-59aa-4294-ad5a-97bcd0937091"/>
+				<textFieldExpression><![CDATA[$F{cashvouchers_checkno}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="186">
+			<staticText>
+				<reportElement x="330" y="10" width="94" height="20" uuid="06907319-b4d6-4f05-9881-c1f7fc76670f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECEIVED FROM:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="60" width="127" height="20" uuid="7bc08b82-e49d-450e-a33f-0a7a0fcfef28"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECEIVE PAYMENT BY:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="110" width="140" height="20" uuid="d7361ba4-6919-4437-91f2-02cb70d2e3a0"/>
+				<text><![CDATA[Signature over printed name]]></text>
+			</staticText>
+			<line>
+				<reportElement x="411" y="110" width="114" height="1" uuid="07026d3d-3077-4ab2-bf62-f017f7667e91"/>
+			</line>
+			<staticText>
+				<reportElement x="19" y="145" width="62" height="20" uuid="ca495ded-ce2e-4199-a431-a4e932485abd"/>
+				<text><![CDATA[Prepared By:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="42" y="184" width="100" height="1" uuid="42ea6c70-01fc-47ec-b5b7-e60f991cfb2d"/>
+			</line>
+			<staticText>
+				<reportElement x="241" y="145" width="69" height="20" uuid="71247a67-74d7-41a3-9558-c094a2c1a9ea"/>
+				<text><![CDATA[Checked By:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="241" y="185" width="100" height="1" uuid="292779be-cf14-42e3-8c70-b5bdb62798d3"/>
+			</line>
+			<staticText>
+				<reportElement x="424" y="145" width="73" height="20" uuid="069139e4-2e0f-4caa-9553-4f433ed232e5"/>
+				<text><![CDATA[Approved By:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="431" y="184" width="100" height="1" uuid="4424728d-5e0f-4a8f-9657-e345f1be531a"/>
+			</line>
+			<textField>
+				<reportElement x="411" y="30" width="129" height="20" uuid="04a71d1b-f841-43f2-9c0d-2941fc6b136d"/>
+				<textFieldExpression><![CDATA[$F{rfrom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="446" y="90" width="79" height="20" uuid="0d05178e-c5b6-41c3-a69c-fd1ada17b95e"/>
+				<textFieldExpression><![CDATA[$F{rpb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="42" y="164" width="100" height="20" uuid="bed1d839-f370-43e5-bf64-d35711f17d07"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prepared}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="241" y="164" width="100" height="20" uuid="bcdfa193-6655-492d-872c-ff84a2cffbe1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checked}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="164" width="100" height="20" uuid="63e48051-18ef-4eb6-8465-8c2124264c31"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{approved}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="9" y="10" width="314" height="120" uuid="f9289a97-8b64-4929-acba-186d56477bf9"/>
+				<subreportParameter name="summary">
+					<subreportParameterExpression><![CDATA[$P{summary}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="checkno">
+					<subreportParameterExpression><![CDATA[$P{checkno}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "cashvouchers_subcon.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

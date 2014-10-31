@@ -9,6 +9,10 @@ class Mrs extends Eloquent {
 	{
 		return $this->belongsTo('Project');
 	}
+	public function Mrsinv()
+	{
+		return $this->hasMany('mrsinv','mrsnum','id');
+	}
 
 
 }

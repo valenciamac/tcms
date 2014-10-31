@@ -1,18 +1,4 @@
-<div class="col-md-9">
-	<ul class="nav nav-tabs nav-justified">
-  		<li><a href="employ">Add Employee</a></li>
-  		<li class="active"><a href="employ2">View Employee Details</a></li>
-	</ul>
 
-	<h2>View Employee Details</h2>           
-        <!-- content here -->
-        <form class="form-inline" action="employ2" role="form">
-    <div class="form-group" >
-        <div class="input-inline">
-          <input class="form-control" type="text" placeholder="search" name="search">
-        </div>
-      </div>
-</form>
         <table class="table table-bordered table-hover" style="font-size:13px;">
           <thead>
             <tr>
@@ -22,15 +8,13 @@
               <th>First Name</th>
               <th>Middle Name</th>
               <th>Last Name</th>
-              <th>Home Address</th>
-              <th>Basic Income</th>
               <th>Rate</th>
-              <th>Status</th>
-              <th>Dependent</th>
+              <th>Basic</th>
+              <th>Days</th>
               <th>Option</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="employee">
            
             @foreach ($employee as $emp)
             
@@ -41,11 +25,9 @@
                 <td>{{ ucwords($emp->fname) }}</td>
                 <td>{{ ucwords($emp->mname) }}</td>
                 <td>{{ ucwords($emp->lname) }}</td>
-                <td>{{ $emp->address }}</td>
-                <td>{{ $emp->basic }}</td>
                 <td>{{ $emp->rate }}</td>
-                <td>{{ $emp->status }}</td>
-                <td>{{ $emp->dependent }}</td>
+                <td>{{ $emp->basic }}</td>
+                <td>{{ $emp->days }}</td>
                 <td><a href="emp/{{$emp->id}}"><i class="fa fa-pencil-square-o"></i></a>
                     <a href="emp/{{$emp->id}}/delete"><i class="fa fa-trash-o"></i></a></td>
 
@@ -56,10 +38,6 @@
           </tbody>
         </table>
 
-            </div>
-        </div>
-        
-    </div>
-</div>
+   
 
       

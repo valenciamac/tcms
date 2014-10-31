@@ -26,7 +26,9 @@
    </div>
    <div id="header">
    <div class="container">
-   <a href="purchasing" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+   <a href="purchasing"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+   </div></div>
+   <div class="container mainB">
    <div class="row">
    <div class="col-md-3">
       <ul class="sideMenu">
@@ -34,10 +36,10 @@
             <a href="purchasing"><i class="fa fa-home"></i>Dashboard</a>
          </li>
          <li class="active">
-            <a href="purchaseOrder"><i class="fa fa-user"></i>Purchase Order</a>
+            <a href="prspo"><i class="fa fa-file link"></i>PRS</a>
          </li>
          <li class="">
-            <a href="payment"><i class="fa fa-home"></i>Create RFP</a>
+            <a href="rfp"><i class="fa fa-home"></i>Create RFP</a>
          </li>
       </ul>
    </div>

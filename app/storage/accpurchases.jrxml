@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="accpurchases" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="66feaa30-2a2d-4ccb-96af-f89f2ac4cc37">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\tcms-mvc\\app\\storage\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="summary3" class="java.lang.String"/>
+	<parameter name="summary2" class="java.lang.String"/>
+	<parameter name="summary" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select projects.project_name , item.qty ,item.price,(item.qty * item.price) as mytotal , pos.po from pos INNER JOIN item on pos.po=item.po_po Inner Join projects on projects.id = pos.proj_id]]>
+	</queryString>
+	<field name="project_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="qty" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="price" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mytotal" class="java.lang.Double"/>
+	<field name="po" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="59" splitType="Stretch">
+			<rectangle>
+				<reportElement x="98" y="39" width="299" height="20" uuid="9a27e41b-77a3-4e2f-9e15-1c0d04f57216"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="107" y="39" width="90" height="20" forecolor="#FF0000" uuid="2f896f73-5b57-4c8d-96af-bcaefefdcd99"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROJECT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="297" y="39" width="100" height="20" forecolor="#FF0000" uuid="e0753b5f-e322-48de-9e38-167a54b74fd0"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="197" y="39" width="100" height="20" forecolor="#FF0000" uuid="309f04fd-f955-41ec-91da-185a9025fa0a"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNPAID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="18" width="83" height="21" forecolor="#FF0033" uuid="646e1290-fd8f-4f7e-9d27-c6348ae0c6ed"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PURCHASES]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="107" y="0" width="90" height="20" uuid="0cd2baf1-47a3-4d15-b34c-18d14de70ca0"/>
+				<textFieldExpression><![CDATA[$F{project_name}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="219" y="0" width="60" height="20" uuid="ddc90c86-0e3d-4188-85c2-45580bcac903"/>
+				<subreportParameter name="summary2">
+					<subreportParameterExpression><![CDATA[$P{summary2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "accpurchases_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="321" y="0" width="63" height="20" uuid="95775704-d9ed-42c3-a0e9-ddff2c80e89b"/>
+				<subreportParameter name="summary3">
+					<subreportParameterExpression><![CDATA[$P{summary3}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "accpurchases_subreport2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="20">
+			<textField>
+				<reportElement x="413" y="0" width="71" height="20" uuid="d31f99d8-7d6c-4d19-82c6-f3b71c43f461"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{summary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="205" y="0" width="74" height="20" uuid="650dc450-c351-4592-adcd-155d50a475bc"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{summary2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="302" y="0" width="82" height="20" uuid="76ba472b-ebbe-4094-9d93-7434265ee222"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{summary3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="98" y="0" width="45" height="20" forecolor="#FF0000" uuid="db69fb57-f00a-42d4-81b8-7e41b001dc9d"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

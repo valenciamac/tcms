@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="F_Report" language="groovy" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="968" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ac883304-2b21-4742-ab77-0537a1bcafb7">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="263"/>
+	<property name="ireport.x" value="133"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\tcms-mvc\\app\\storage\\"]]></defaultValueExpression>
@@ -207,7 +207,8 @@ SALARY]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="8" isBold="true"/>
 				</textElement>
-				<text><![CDATA[TOTAL]]></text>
+				<text><![CDATA[TOTAL
+INCOME]]></text>
 			</staticText>
 		</band>
 	</columnHeader>

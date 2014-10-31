@@ -15,15 +15,16 @@ class CreateItemTable extends Migration {
 		Schema::create('item', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('po_po');
+			$table->integer('po_po')->unsigned();
 			$table->integer('qty');
 			$table->string('iname');
 			$table->string('desc');
 			$table->float('price');
 			$table->integer('delivered');
+			$table->integer('edit_this');
 			$table->timestamps();
 			
-			$table->foreign('po_po')->references('po')->on('pos')->onUpdate('cascade')->onDelete('cascade');
+			$table->foreign('po_po')->references('id')->on('pos')->onUpdate('cascade')->onDelete('cascade');
 		});
 	}
 

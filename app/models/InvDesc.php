@@ -3,11 +3,11 @@
 class InvDesc extends Eloquent 
 {
 
-	protected $table = 'inventoryDesc';
+	protected $table = 'inventorydesc';
 	protected $guarded = [];
 
 	public function InvItem()
 	{
-		return $this->hasMany('InvDesc');
+		return $this->belongsTo('InvItem');
 	}
 }

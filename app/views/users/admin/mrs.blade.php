@@ -34,26 +34,29 @@
       </div>
       <div id="header">
       <div class="container">
-      <a href="admin" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+      <a href="admin"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
       </div>
       </div>
       <div class="container mainB">
       <div class="row">
       <div class="col-md-3">
-         <ul class="sideMenu">
+         <aside class="right">
+      <div class="divider"></div>
+      <ul class="intended sideMenu">
+         
             <li>
-               <a href="admin"><i class="fa fa-home"></i>Dashboard</a>
-            </li>
-            <li class="active">
-               <a href="mrs"><i class="fa fa-home"></i>MRS</a>
-            </li>
-            <li>
-               <a href="adminPO"><i class="fa fa-user"></i>Purchases</a>
+               <a href="admin"><i class="fa fa-home link"></i>Dashboard</a>
             </li>
             <li>
-               <a href="inventory"><i class="fa fa-user"></i>Inventory</a>
+               <a href="adminPO"><i class="fa fa-user link"></i>Purchases</a>
             </li>
-         </ul>
+      </ul>
+      <div class="divider"></div>
+         <div id="datepicker">
+         <div class="datepicker datepicker-inline">
+         </div>
+         </div>
+      </aside>
       </div>
       @include('users.admin.layouts.mrsBody')
       @include('users.includes.footer')

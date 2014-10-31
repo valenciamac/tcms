@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="checkvouchers1_subreport1" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4ef24475-b77d-48b5-9ab5-311ad5ab85ce">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="checkno" class="java.lang.String"/>
+	<parameter name="summary" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT checkvouchers.rfrom , checkvouchers.rpb, checkvouchers.prepared , checkvouchers.checked , checkvouchers.approved , checkvouchers.created_at , checkitem.checkvouchers_checkno, checkitem.payee , checkitem.po_po , checkitem.project ,checkitem.check, checkitem.bank, checkitem.checkdate , checkitem.acctitle1 , checkitem.acctitle2, checkitem.debit , checkitem.amount, checkitem.credit from checkvouchers INNER JOIN checkitem on checkitem.checkvouchers_checkno = checkvouchers.checkno where checkitem.checkvouchers_checkno = $P{checkno}]]>
+	</queryString>
+	<field name="rfrom" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rpb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prepared" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="checked" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="approved" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="checkvouchers_checkno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payee" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="po_po" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="project" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="check" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bank" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="checkdate" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acctitle1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acctitle2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="debit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="credit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="25">
+			<rectangle>
+				<reportElement x="0" y="0" width="376" height="20" uuid="a8e76352-4612-4aff-a084-a66236ac87b3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="376" y="0" width="160" height="20" uuid="5fa3bbb0-e894-4d6b-8c07-c4b7696cb1ae"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="106" y="0" width="100" height="20" uuid="a11f5ae6-3385-4081-8ba8-7428668f40fa"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="0" width="55" height="20" uuid="baacd07a-c132-4438-8b12-bc7a785efeb1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AMOUNT]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="376" y="20" width="160" height="5" uuid="03a6cfc3-3c20-47f5-88cf-f04221879bb6"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="0" y="20" width="376" height="5" uuid="419beb2f-e7ac-43e3-8d5c-d51154c8c5a5"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="436" y="1" width="48" height="20" uuid="b93e1f0b-4ce0-4173-a1b2-a3cb87135310"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{debit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="1" width="55" height="20" uuid="f4cb8959-e6d0-4d7c-b5f9-56a6baec0406"/>
+				<textFieldExpression><![CDATA[$F{project}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="1" width="54" height="20" uuid="ae99f0d2-b39f-4f55-bff5-463ddaa72ec8"/>
+				<textFieldExpression><![CDATA[$F{po_po}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="376" y="1" width="160" height="20" uuid="f6a22b99-5354-4849-b75d-9196f1dc14c8"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="0" y="1" width="376" height="20" uuid="944a2de9-1cb3-463e-bf3b-9a8fc798bff6"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+		</band>
+	</detail>
+	<summary>
+		<band height="20">
+			<frame>
+				<reportElement x="376" y="0" width="160" height="20" uuid="6e6ee0b7-c344-410e-abf2-a52a14d87948"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="0" y="0" width="376" height="20" uuid="8b6564c1-025a-4ea9-b5aa-1ae1a01373b1"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="249" y="0" width="100" height="20" uuid="a3e7e1ca-700e-43fb-a30f-0afc2091c6ad"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL]]></text>
+				</staticText>
+			</frame>
+			<textField>
+				<reportElement x="385" y="0" width="100" height="20" uuid="01906efe-4e88-418a-81a4-28b61a040a9c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{summary}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

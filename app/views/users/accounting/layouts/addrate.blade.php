@@ -1,5 +1,4 @@
-<div class="col-md-9">
-   
+
    <div class="panel-group" id="accordion">
 
         <a class="btn btn-primary" data-toggle="collapse" data-parent="#accordion" href="#rates">
@@ -8,7 +7,7 @@
          <a class="btn btn-primary" href="ratese">
           PhilHealth Contribution
         </a>
-         <a class="btn btn-primary" data-toggle="collapse" data-parent="#accordion" href="#pagibig">
+         <a class="btn btn-primary" href="ratesf">
           Pagibig Contribution
         </a>
          <a class="btn btn-primary" href="ratesg">
@@ -73,7 +72,4 @@
 </div>
 <div>
      @include('users.accounting.layouts.viewRate')
-    </div>
-   
-</div>
-</div>
+ 

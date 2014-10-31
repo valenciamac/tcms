@@ -10,7 +10,12 @@ class RfpController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$rfp = Rfp::all();
+		$suppliers = Suppliers::with('po')->get();
+		$proj = Project::all();
+		return View::make('users.purchasing.rfpindex')->withSuppliers($suppliers)
+		->withRfp($rfp)
+		->withProj($proj);
 	}
 
 	/**
@@ -19,9 +24,10 @@ class RfpController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($id,$supp,$project)
 	{
-		//
+		$rfpshow = Po::with('si.invoiceitem','dr.drinv','ci.ciitem','so.soitem','item')->where('payment','=',$id)->get();
+		return View::make('users.purchasing.viewrfp')->withPo($rfpshow);
 	}
 
 	/**
@@ -32,26 +38,10 @@ class RfpController extends \BaseController {
 	 */
 	public function store()
 	{
-		$rfp = new Rfp;
-		$rfp->controlNo = Input::get('controlNo');
-		$rfp->payee = Input::get('payee');
-		$rfp->requestedDate = Input::get('requestedDate');
-		$rfp->reason = Input::get('reason');
-
-		$detail = new Detail;
-		$detail->po_number = Input::get('po_number');
-		$detail->dr_number = Input::get('dr_number');
-		$detail->si_number = Input::get('si_number');
-		$detail->ci_number = Input::get('ci_number');
-		$detail->so_number = Input::get('so_number');
-		$detail->others = Input::get('others');
-		$detail->description = Input::get('description');
-		$detail->amount = Input::get('amount');
-		$detail->controlNo = Input::get('controlNo');
-		$detail->save();
-
-		$rfp->save();
-		return Redirect::to('payment');
+		$supp = Input::get('rfpname');
+		$project = Input::get('project');
+		$query = array($supp,$project);
+		return Redirect::route('rfpshow', $query);
 	}
 
 	/**
@@ -61,19 +51,13 @@ class RfpController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show()
+	public function show($supp, $project)
 	{
-		if ( $search = Request::get('search'))
-		{
-			$prf = Rfp::search($search)->paginate(5);
-		}
-		else
-		{
-			$prf = Rfp::paginate(5);
-		}
+		$proj = Project::where('project_name','=',$project)->first();
+		$project = $proj->id;
+		$po = Po::with(array('si.invoiceitem','dr.drinv','ci.ciitem','so.soitem'))->where('complete', '=', 1)->where('suppler_name','=',$supp)->where('proj_id','=',$project)->where('paid','=',0)->where('payment','=',0)->get();
 		
-
-		return View::make('users.purchasing.view3')->withRfp($prf);
+		return View::make('users.purchasing.newrfp')->withPo($po)->withProj($proj);
 	}
 
 	/**
@@ -85,9 +69,11 @@ class RfpController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$prf = Rfp::where('id', '=', $id)->get();
-
-		return View::make('users.purchasing.edit4')->withRfp($prf);
+		$rfp = Rfp::with('project')->find($id);
+		$po = Po::where('payment','=',$id)->get();
+		return View::make('users.purchasing.viewrfpinfo')
+		->withRfp($rfp)
+		->withPo($po);
 	}
 
 	/**
@@ -99,22 +85,7 @@ class RfpController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$prf= Rfp::find($id);
-		$prf->controlNo = Input::get('controlNo');
-		$prf->payee= Input::get('payee');
-		$prf->requestedDate= Input::get('requestedDate');
-		$prf->reason= Input::get('reason');
-
-		$saved = $prf->save();
-
-		if ($saved)
-		{
-			return Redirect::to('view3');
-		}
-		else
-		{
-			return 'not saved';
-		}
+		//
 	}
 
 	/**
@@ -126,11 +97,7 @@ class RfpController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$prf= Rfp::find($id);
-
-		$prf->delete();
-
-		return Redirect::back();
+		//
 	}
 
 }

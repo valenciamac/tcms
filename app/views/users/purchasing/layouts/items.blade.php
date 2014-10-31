@@ -1,22 +1,61 @@
 
 <div ng-app ng-controller="ItemsController">
-<form ng-submit="additem()" method="Post" role="form" name="itemadd">
+
       <table class="table table-striped" style="padding-top:10px;" id="dataTable">
+         <table class="table table-striped" style="padding-top:10px;" id="dataTable">
+      @foreach($po as $ponum)   
          <tbody>
-            <tr>
-               <td><input type="hidden" value="{{$additem->po}}" name="po_po" readonly="readonly"></td>
-               <td><input type="text" style="max-width:2000px;" class="form-control input-sm" name="name" placeholder="Name" onkeypress="return validate2();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,25);" maxlength="25" placeholder="" required></td>
-               <td><input type="text" style="max-width:110px;" class="form-control input-sm" name="desc" placeholder="Description" onkeypress="return validate2();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,25);" maxlength="25" placeholder="" required></td>
-               <td><input type="text" style="max-width:230px;" class="form-control input-sm" name="qty"  id="text1" onkeyup="add2();" placeholder="Quantity" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,8);" maxlength="8" placeholder="" required></td>
-               <td><input type="text" style="max-width:110px;" class="form-control input-sm" name="price" id="text2" placeholder="Price" onkeyup="add2();" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,8);" maxlength="8" placeholder="" required></td>
-               <td><input type="text" style="max-width:110px;" class="form-control input-sm" name="amount" placeholder="Amount" id="text3" required></td>
-               <td><input type="hidden" name="po1" id="po1" class="inputext"></td>
+          @foreach($prsitem as $pitem)
+          <form action="../../prsposave" role="form" name="itemadd">
+           <tr>
+               <td><input type="hidden" value="{{$ponum->id}}" name="po_po[]" readonly="readonly"></td>
+               <td><input type="hidden" value="{{$ponum->prs}}" name="prs[]" readonly="readonly"></td>
+               <td><input type="hidden" name="iname[]" value="{{$pitem->itemdesc}}" readonly="readonly">{{$pitem->itemdesc}}</td>
+               <td>
+                  <input type="hidden" class="noborder" id="qty{{$pitem->id}}" value="{{$pitem->edit_this}}" readonly>
+                  <input type="text" value="{{$pitem->edit_this}}" class="noborder" id="ans{{$pitem->id}}" name="edit_this[]">
+                  <td><input type="hidden" name="iunit[]" value="{{$pitem->unitmeasure}}" readonly="readonly">{{$pitem->unitmeasure}}</td>
+               </td>
+               <td><input type="text" class="noborder" value="{{$pitem->unitprice}}" name="iprice[]" readonly></td>
+            
+               <td>
+               <input type="number" onclick="invoice{{$pitem->id}}()" id="del{{$pitem->id}}" step="1" min="0" max="{{$pitem->edit_this}}"
+               onkeyup="invoice{{$pitem->id}}();" onkeypress="return isNumberKey(event)"
+                class="full-width addinvoice" name="qty[]" placeholder="0">
+               </td>
+              
+               
+       
+            <input type="hidden" value="{{$pitem->id}}" name="id[]" readonly>
+            <input type="hidden" value="{{$ponum->proj_id}}" name="projid[]" readonly>
+            
+            <script type="text/javascript">
+                 function invoice{{$pitem->id}}() {
+                  var uno = document.getElementById('qty{{$pitem->id}}').value;
+                  var dos = document.getElementById('del{{$pitem->id}}').value;
+                  var ans = parseFloat(uno)-parseFloat(dos);
+                  if (!isNaN(ans)) {
+                     document.getElementById('ans{{$pitem->id}}').value = ans;         
+                     }
+                  }
+
+                  function isNumberKey(evt){
+                      var charCode = (evt.which) ? evt.which : event.keyCode
+                      if (charCode > 31 && (charCode < 48 || charCode > 57))
+                          return false;
+                      return true;
+                  }
+            </script>
             </tr>
+            @endforeach
          </tbody>
+         @endforeach
       </table>
-      <div class="pull-right">
-         <input type="submit" class="btn btn-primary " value="Add" style="margin-bottom:30px;">
-      </div>
+   <input type="submit" class="btn btn-primary " value="Add" style="margin-bottom:30px;">
+            </form>
+   <script type="text/javascript" language="JavaScript">
+   document.forms['itemadd'].elements['name'].focus();
+   </script>
    </form>
    <script type="text/javascript" language="JavaScript">
    document.forms['itemadd'].elements['name'].focus();
@@ -35,25 +74,48 @@
       </thead>
       <tbody>
         <tr class="contents">
+        <?php
+        $summary = 0;
+        ?>
         @foreach($item as $items)
           <td>{{$items->iname}}</td>
           <td>{{$items->desc}}</td>
-          <td>{{$items->qty}}</td>
-          <td>{{$items->price}}</td>
+          <td>{{$items->qty}} {{$items->unit}}</td>
+          <td class="peso">{{$items->price}}</td>
           <?php
             $total =  $items->qty * $items->price;
 
+            $sum = $summary+$total;
+            $summary = $sum;
             ?>
-          <td>{{$total}}</td>
+          <td class="peso">{{$total}}</td>
          </tr>
          @endforeach
+         
+   @if ($item->count())
+   <td colspan="4"></td>
+         <td class="row">
+         <div class="col-xs-6">
+         <div>Total:</div>
+         </div>
+         <div class="col-xs-6">
+         <div class="peso">
+           Php {{$summary}}
+         </div>
+         </div>
+         </td>
+         </div>
+         
       </tbody>
    </table>
-   @if ($item->count())
       <div class="pull-right" style="margin-bottom:50px;">
-        <a href="{{$additem->po}}/reports" class="btn btn-primary">Download Report</a>
-        <a href="../purchaseOrder" class="btn btn-primary">Done</a>
+      
+        <a href="../{{$additem->id}}/{{$summary}}/reports" class="btn btn-primary">Download Report</a>
+        <a href="../../purchaseOrder" class="btn btn-primary">Done</a>
       </div>
+  @else
+   </tbody>
+   </table>
    @endif
 
 </div>

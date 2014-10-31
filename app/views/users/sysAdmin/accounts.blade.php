@@ -3,7 +3,19 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title>Accounts</title>
-@include('users.includes.head')
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
+      <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
+      {{HTML::style('css/bootstrap.min.css')}}
+      {{HTML::style('css/jquery-ui-1.9.2.custom.css')}}
+      {{HTML::style('css/jquery-ui.css')}}
+      {{HTML::style('css/application.css')}}
+      {{HTML::style('css/datepicker.css')}}
+      {{HTML::style('css/font-awesome.css')}}
+      {{HTML::style('css/mystyle.css')}}
+      {{HTML::script('js/angular.min.js')}}
 {{HTML::script('js/angular.min.js')}}
 <body>
    <div id="wrapper">
@@ -23,7 +35,6 @@
                   <b class="caret hover"></b>
                   </a>
                   <ul class="dropdown-menu pull-right">
-                     <li class="drop"><a href="create">Create new user</a></li>
                      <li><a href="logout">Logout</a></li>
                   </ul>
                </li>
@@ -35,29 +46,44 @@
    </div>
    <div id="header">
    <div class="container">
-   <a href="sysAdmin" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+   <a href="sysAdmin"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
    </div>
    </div>
+   <div id="masthead">
+   
+   <div class="container">
+      
+      <div class="masthead-pad">
+         
+         <div class="masthead-text">
+            <h2>Accounts</h2>
+            <p>You have {{$user->count()}} accounts registered in this system</p>
+         </div> <!-- /.masthead-text -->
+         
+      </div>
+      
+   </div> <!-- /.container -->   
+   
+</div>
    <div class="container mainB">
    <div class="row">
    <div class="col-md-3">
-      <ul class="sideMenu">
+   <aside class="right">
+      <div class="divider"></div>
+      <ul class="intended sideMenu">
          <li>
-            <a href="sysAdmin"><i class="fa fa-home"></i>Dashboard</a>
-         </li>
-         <li>
-            <a href="project"><i class="fa fa-archive"></i>Projects</a>
+            <a href="sysAdmin"><i class="fa fa-home link"></i>Dashboard</a>
          </li>
          <li class="active">
-            <a href="accounts"><i class="fa fa-user"></i>Accounts</a>
-         </li>
-         <li>
-            <a href="#"><i class="fa fa-archive"></i>Inventory</a>
-         </li>
-         <li>
-            <a href="activities"><i class="fa fa-archive"></i>Activities</a>
+            <a href="accounts"><i class="fa fa-user link"></i>Accounts</a>
          </li>
       </ul>
+      <div class="divider"></div>
+         <div id="datepicker">
+         <div class="datepicker datepicker-inline">
+         </div>
+         </div>
+      </aside>
    </div>
    @include('users.sysAdmin.adminLayouts.accountsBody')
    @include('users.includes.footer')

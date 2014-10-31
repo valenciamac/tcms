@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cashvouchers2_subreport1" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a9fef6d9-80b5-4aec-84af-5ca6ec2f476a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="checkno" class="java.lang.String"/>
+	<parameter name="summary" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT cashvouchers.rfrom , cashvouchers.rpb, cashvouchers.prepared , cashvouchers.checked , cashvouchers.approved , cashvouchers.created_at , cashitem3.cashvouchers_checkno, cashitem3.payee , cashitem3.po_po , cashitem3.project ,cashitem3.check, cashitem3.amount , cashitem3.acctitle1 , cashitem3.acctitle2, cashitem3.debit , cashitem3.credit from cashvouchers INNER JOIN cashitem3 on cashitem3.cashvouchers_checkno = cashvouchers.checkno where cashitem3.cashvouchers_checkno = $P{checkno}]]>
+	</queryString>
+	<field name="rfrom" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rpb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prepared" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="checked" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="approved" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cashvouchers_checkno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payee" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="po_po" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="project" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="check" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acctitle1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acctitle2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="debit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="credit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<rectangle>
+				<reportElement x="368" y="0" width="166" height="20" uuid="8ea8264c-042c-44af-93bb-3d96f96f7a53"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="436" y="0" width="55" height="20" uuid="4d223976-e2cf-472b-a3e1-215247f497f8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AMOUNT]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="0" width="368" height="20" uuid="2654100e-eb2f-477c-9dfc-fd19acfde934"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="122" y="0" width="100" height="20" uuid="478e17e7-e817-48f4-9da1-8d113bdede58"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPTION]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="0" y="20" width="368" height="7" uuid="5721d7a3-961c-4882-adc4-da6cfe8b61af"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="368" y="20" width="166" height="7" uuid="5ab4db6b-8724-428e-a518-a6acfd15dae8"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<frame>
+				<reportElement x="368" y="0" width="166" height="20" uuid="cf5d694e-7b51-403d-8ca2-774fee700543"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="0" y="0" width="368" height="20" uuid="3aa15432-0eef-4f5e-95ba-5a7d799cc926"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<textField>
+				<reportElement x="193" y="0" width="52" height="20" uuid="92341993-f4e3-4106-94dc-a2b8daab1274"/>
+				<textFieldExpression><![CDATA[$F{project}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="106" y="0" width="60" height="20" uuid="eb31aa16-9048-498b-b3db-c0123b3b9def"/>
+				<textFieldExpression><![CDATA[$F{po_po}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="61" height="20" uuid="fb24b607-c935-404b-a2fc-61c9efbe20c4"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="20">
+			<frame>
+				<reportElement x="368" y="0" width="166" height="20" uuid="07cd871e-1e57-4653-ba77-e4dbbdc7105c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="0" y="0" width="368" height="20" uuid="3c2e5941-594b-4aef-853d-dbbb610de1e4"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<textField>
+				<reportElement x="426" y="0" width="65" height="20" uuid="93127978-411a-4cad-a83e-3d68f38f6b9b"/>
+				<textFieldExpression><![CDATA[$P{summary}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

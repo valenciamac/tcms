@@ -50,6 +50,15 @@
         <li class="active">
             <a href="rates"><i class="fa fa-file"></i>Rates and Contribution</a>
         </li>
+        <li>
+                <a href="salary"><i class="fa fa-user"></i>View Salary</a>
+            </li>
+        <li class>
+            <a href="cashvouchers"><i class="fa fa-file"></i>Voucher</a>
+         </li>
+         <li>
+            <a href="purchases"><i class="fa fa-file"></i>Report</a>
+         </li>
     </ul>
 </div>
 @include('users.accounting.layouts.sss')

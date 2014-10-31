@@ -2,9 +2,12 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="payroll" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2d63dd59-1a22-4a55-bf15-5410f89f168c">
 	<property name="ireport.zoom" value="1.1"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="33"/>
+	<property name="ireport.y" value="15"/>
+	<parameter name="paydate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
 	<queryString>
-		<![CDATA[select employee.fname , employee.lname ,payroll.paydate, payroll.gross, payroll.phcont, payroll.pgibigcont, payroll.ssscont, payroll.income from employee inner join payroll ON employee.id= payroll.employee_id]]>
+		<![CDATA[select employee.fname , employee.lname ,payroll.paydate, payroll.gross, payroll.phcont, payroll.pgibigcont, payroll.ssscont, payroll.income from employee inner join payroll ON employee.id= payroll.employee_id where payroll.paydate = $P{paydate}]]>
 	</queryString>
 	<field name="fname" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>

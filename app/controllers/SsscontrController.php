@@ -33,7 +33,8 @@ class SsscontrController extends \BaseController {
 	public function store()
 	{
 		$ssscontr = new Ssscontr;
-		$ssscontr->range = Input::get('range');
+		$ssscontr->rangemin = Input::get('rangemin');
+		$ssscontr->rangemax = Input::get('rangemax');
 		$ssscontr->credit= Input::get('credit');
 		$ssscontr->ssempershare = Input::get('ssempershare');
 		$ssscontr->ssempeeshare= Input::get('ssempeeshare');
@@ -42,7 +43,6 @@ class SsscontrController extends \BaseController {
 		$ssscontr->tcempershare= Input::get('tcempershare');
 		$ssscontr->tcempeeshare= Input::get('tcempeeshare');
 		$ssscontr->tctotal= Input::get('tctotal');
-		$ssscontr->totalcontr= Input::get('totalcontr');
 		$ssscontr->save();
 		return Redirect::to('ratesg');
 	}

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="accunreleased" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8fea990d-e3e7-4066-86c0-ea420cfb3a35">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="summary" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from checkitem]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="checkvouchers_checkno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="po_po" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="check" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="checkdate" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="project" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payee" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bank" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acctitle1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acctitle2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="debit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="credit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="updated_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="65" splitType="Stretch">
+			<rectangle>
+				<reportElement x="15" y="45" width="524" height="20" uuid="abce322f-1c1e-4ffb-97fd-42547124da8c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="15" y="45" width="73" height="20" forecolor="#FF0000" uuid="76bae5fe-9aef-4617-b1ab-007c3afeaa19"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="45" width="58" height="20" forecolor="#FF0000" uuid="3351e7b8-1efe-413d-92dc-7f9ad715a49b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROJECT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="45" width="45" height="20" forecolor="#FF0000" uuid="9cdbc2f2-2826-4c08-844c-d529d7691e68"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CV #]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="262" y="45" width="118" height="20" forecolor="#FF0000" uuid="d6db5dad-3f18-4445-af99-58433bf99db7"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CHECKDATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="389" y="45" width="55" height="20" forecolor="#FF0000" uuid="0ca065ca-458d-4f87-8d36-b1637777e225"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AMOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="466" y="45" width="73" height="20" forecolor="#FF0000" uuid="ba4cc88e-9199-4c6a-a787-ebd8294eb8bb"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DUE DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="25" width="284" height="20" forecolor="#FF0000" uuid="0e0c5dd0-a41e-46c7-a9a8-72ad45f483a2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNRELEASE CHECKS FOR SUPPLIERS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="0" width="60" height="20" uuid="ee51012b-7b6b-43ef-b575-3e3053073908"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{payee}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="0" width="58" height="20" uuid="bca60ae9-ae95-4e7c-87e7-0e3008fa407d"/>
+				<textFieldExpression><![CDATA[$F{project}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="466" y="0" width="73" height="20" uuid="6c13411e-2f70-4b1a-be19-acaca0790184"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{checkdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="389" y="0" width="55" height="20" uuid="04e842cd-931a-44d9-97fb-d6369fbbc1c9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="203" y="0" width="45" height="20" uuid="b7224f19-57e8-4970-b881-ca86fd651449"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{checkvouchers_checkno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="262" y="0" width="118" height="20" uuid="298865eb-2cac-4620-9ab8-a388b571d123"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("MMMM dd, yyyy").format($F{created_at})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="27">
+			<line>
+				<reportElement x="15" y="3" width="524" height="1" uuid="8f5c44d1-f3c2-4859-b67d-bdefcf39b80f"/>
+			</line>
+			<textField>
+				<reportElement x="364" y="7" width="64" height="20" uuid="7d583439-6b9b-4185-9222-e3b531097eeb"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{summary}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="7" width="44" height="20" forecolor="#FF0000" uuid="b5c5681e-9182-42d2-b980-7c1ca00dc824"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,18 +1,13 @@
 <?php
 
 class Rfp extends \Eloquent {
-	protected $table="rfp";
-	public $timestamps = false;
 	protected $fillable = [];
-		public function scopeSearch($query, $search)
+
+	protected $table = 'rfp';
+
+
+	public function Project()
 	{
-		return $query->where(function($query) use ($search)
-			{
-				$query->where('controlNo', 'LIKE', "%$search%")
-					  ->orWhere('payee', 'LIKE', "%$search%")
-					  ->orWhere('requestedDate', 'LIKE', "%$search%")
-					  ->orWhere('reason', 'LIKE', "%$search%");
-					  
-			});
+		return $this->belongsTo('project','project_id','id');
 	}
 }

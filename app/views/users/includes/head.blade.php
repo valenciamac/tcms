@@ -7,6 +7,7 @@
 {{HTML::style('css/jquery-ui-1.9.2.custom.css')}}
 {{HTML::style('css/jquery-ui.css')}}
 {{HTML::style('css/application.css')}}
+{{HTML::style('css/datepicker.css')}}
 {{HTML::style('css/font-awesome.css')}}
 {{HTML::style('css/mystyle.css')}}
 </head>

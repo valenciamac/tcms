@@ -23,7 +23,7 @@
          <!-- /.container -->
       </div>
       <div id="header">
-      <div class="container brand">
+      <div class="container">
          <a href="sysAdmin"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
          </div>
          </div>

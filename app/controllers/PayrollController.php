@@ -1,5 +1,6 @@
 <?php
 
+
 class PayrollController extends \BaseController {
 
 	/**
@@ -33,9 +34,9 @@ class PayrollController extends \BaseController {
 	public function store()
 	{
 		$payroll = new Payroll;
-		$payroll->paydate = Input::get("paydate");
-		$payroll->wtax = Input::get("wtax");
 		$payroll->lateunder = Input::get("lateunder");
+		$payroll->paydate = Input::get("paydate");
+		$payroll->paydateend = Input::get('paydateend');
 		$payroll->ssscont = Input::get("ssscont");
 		$payroll->absent = Input::get("absent");
 		$payroll->phcont = Input::get("phcont");
@@ -46,11 +47,25 @@ class PayrollController extends \BaseController {
 		$payroll->restpay = Input::get("restpay");
 		$payroll->advance = Input::get("advance");
 		$payroll->specholdpay = Input::get("specholdpay");
+		$payroll->restspecial = Input::get("restspecial");
+		$payroll->restreg = Input::get("restreg");
 		$payroll->gross = Input::get("gross");
 		$payroll->income = Input::get("income");
 		$payroll->employee_id = Input::get("empId");
+		$employee = Employee::find(Input::get("empId"));
+		$employee->paydate = Input::get("paydateend");
+		$day= new Day;
+		$day->days=Input::get("days");
+		$day->employee_id=Input::get("empId");
+		$day->save();
 		$payroll->save();
+		$employee->save();
+
+		$out = Comein::find(1);
+		$out->income = $out->income-$payroll->income;
+		$out->save();
 		return Redirect::to('viewpay');
+	
 	}
 
 	/**
@@ -89,6 +104,8 @@ class PayrollController extends \BaseController {
 	{
 		//
 	}
+
+	
 
 	/**
 	 * Remove the specified resource from storage.

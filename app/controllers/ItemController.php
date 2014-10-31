@@ -1,5 +1,6 @@
-<?php
 
+<?php
+use Carbon\Carbon;
 class ItemController extends \BaseController {
 
 	/**
@@ -21,7 +22,32 @@ class ItemController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$good = false;
+		$input = Input::all();
+		for($i = 0; $i < count(Input::get('id')); $i++) 
+		{
+			if (Input::get('qty')[$i] > 0) {
+
+				$pitem = Prsitem::find(Input::get('id')[$i]);
+				$pitem->edit_this = $pitem->edit_this - Input::get('qty')[$i];
+				$saved = $pitem->save();
+				
+				Item::query()->insert(array(
+				'iname' => Input::get('iname')[$i],
+				'po_po' => Input::get('po_po')[$i],
+				'desc' => Input::get('iunit')[$i],
+				'price' => Input::get('iprice')[$i],
+				'qty' => Input::get('qty')[$i],
+				'edit_this' => Input::get('qty')[$i],
+				'created_at' => Carbon::now(),
+				'updated_at' => Carbon::now()
+				));
+				}
+			}
+		
+	
+	return Redirect::back();
+	
 	}
 
 	/**
@@ -52,13 +78,14 @@ class ItemController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($po)
+	public function show($po, $prs)
 	{
-		$additem = Po::where('po', '=', $po)->get();
+		$additem = Po::with('Project')->where('id', '=', $po)->get();
 
 		$items = Item::where('po_po', '=', $po)->get();
+		$pitem = Prsitem::where('prs','=',$prs)->get();
 
-		return View::make('users.purchasing.additem')->withPo($additem)->withItem($items);
+		return View::make('users.purchasing.additem')->withPo($additem)->withItem($items)->withPrsitem($pitem);
 	}
 
 	/**
@@ -87,6 +114,7 @@ class ItemController extends \BaseController {
 		$product = Item::find($id);
 		$product->po = Input::get('po');
 		$product->qty= Input::get('qty');
+		$product->edit_this= Input::get('qty');
 		$product->name= Input::get('name');
 		$product->desc= Input::get('desc');
 		$product->price= Input::get('price');

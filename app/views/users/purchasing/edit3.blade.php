@@ -33,11 +33,11 @@
          <li class="">
             <a href="purchasing"><i class="fa fa-home"></i>Dashboard</a>
          </li>
-         <li>
-            <a href="purchaseOrder"><i class="fa fa-user"></i>Purchase Order</a>
+         <li class="">
+            <a href="prspo"><i class="fa fa-file link"></i>PRS</a>
          </li>
          <li class="active">
-            <a href="payment"><i class="fa fa-user"></i>Create RFP</a>
+            <a href="rfp"><i class="fa fa-user"></i>Create RFP</a>
          </li>
       </ul>
    </div>

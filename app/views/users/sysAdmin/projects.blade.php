@@ -36,68 +36,32 @@
    </div>
    <div id="header">
    <div class="container">
-   <div class="brand">
-      <a href="sysAdmin"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
-      </div>
+      <a href="purchasing"><img src="{{asset('img/brand1.png')}}" class="logo logo-link"></a>
    </div>
    </div>
    <div class="container mainB">
    <div class="row">
    <div class="col-md-3">
-      <ul class="sideMenu">
+      <aside class="right">
+      <div class="divider"></div>
+      <ul class="intended sideMenu">
          <li>
-            <a href="sysAdmin"><i class="fa fa-home"></i>Dashboard</a>
+            <a href="sysAdmin"><i class="fa fa-home link"></i>Dashboard</a>
          </li>
          <li class="active">
-            <a href="project"><i class="fa fa-archive"></i>Projects</a>
-         </li>
-         <li>
-            <a href="accounts"><i class="fa fa-user"></i>Accounts</a>
-         </li>
-         <li>
-            <a href="#"><i class="fa fa-archive"></i>Inventory</a>
-         </li>
-         <li>
-            <a href="activities"><i class="fa fa-archive"></i>Activities</a>
+            <a href="accounts"><i class="fa fa-user link"></i>Accounts</a>
          </li>
       </ul>
+      <div class="divider"></div>
+         <div id="datepicker">
+         <div class="datepicker datepicker-inline">
+         </div>
+         </div>
+      </aside>
    </div>
- <div class="col-md-9" >
-   
-   <!-- content here -->
-   <div class="panel-group" id="accordion">
-
-        <a class="btn btn-primary" data-toggle="collapse" data-parent="#accordion" href="#adduser">
-          Add New Project
-        </a>
-    <div id="adduser" class="panel-collapse collapse">
-      <div class="panel-body">
-      <hr>
-         {{Form::open(array('route' => 'project.store','class'=>'form-horizontal','role'=>'form'))}}
-            <div class="form-group">
-             <label for="ProjectName" class="col-sm-2 control-label">Project Name:&nbsp;</label>
-             <div class="col-sm-10">
-               <input type="text" class="form-control" id="ProjectName" placeholder="" name="projectName">
-             </div>
-           </div>
-           <div class="form-group">
-             <label for="ProjectLocation" class="col-sm-2 control-label">Project Location:&nbsp;</label>
-             <div class="col-sm-10">
-               <input type="text" class="form-control" id="ProjectLocation" placeholder="" name="projectLocation">
-             </div>
-           </div>
-         
-           <div class="submit">
-            <button type="submit" class="btn btn-primary pull-right">Save Project</button>
-            </div>
-         {{Form::close()}}
-
-         </div>
-         </div><hr>
-         </div>
-
-@include('users.sysAdmin.adminLayouts.addProject')
-</div>
+   <div class="col-md-9">
+ @include('users.sysAdmin.adminLayouts.addProject')
+ </div>
 </div>
 </div>
 </div>

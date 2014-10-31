@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bom_tinsmithry" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="0e54003e-22f3-44de-9b00-24ecf6f9611f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT modelhouse.id , thinmistry.model_id ,thinmistry.itemdesc , thinmistry.nopieces , thinmistry.unitmeasure , thinmistry.unitprice, (thinmistry.nopieces*thinmistry.unitprice) as total from modelhouse INNER JOIN thinmistry on modelhouse.id = thinmistry.model_id]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="model_id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="itemdesc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nopieces" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unitmeasure" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unitprice" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="50" splitType="Stretch">
+			<rectangle>
+				<reportElement x="365" y="10" width="92" height="20" uuid="9b398435-af0c-40a4-ac15-f7ab2f0edaf0"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="12" y="30" width="533" height="20" uuid="c45345b2-2510-481c-a9f7-741562b5b169"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="12" y="10" width="246" height="20" uuid="3683449d-0ac8-48f8-89d2-a9e759b0162a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="258" y="10" width="107" height="20" uuid="8405485d-abcf-4428-86ad-523bb213691d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="377" y="10" width="68" height="20" uuid="954de5d6-b12d-4b2a-a82e-58cc62e6a10d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIT COST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="30" width="218" height="20" uuid="71873826-6e92-460e-9bba-b75f0ac3b859"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[V.   TINSMITHRY WORKS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="10" width="115" height="20" uuid="11d01157-dfeb-4d4d-b555-4a7e31d56e01"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM DESCRIPTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="10" width="71" height="20" uuid="1037fd01-aa91-43e8-be23-2abeaaaaf234"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO. OF PCS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="457" y="10" width="88" height="20" uuid="ce23c298-5df8-4151-9eb7-1bad13571216"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="467" y="10" width="78" height="20" uuid="96fb6994-e097-4896-9997-38c3d1fb5c64"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL COST]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="12" y="0" width="246" height="20" uuid="606b1ffd-6e6a-4912-9ae0-f8ac547bc249"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="457" y="0" width="88" height="20" uuid="5e3a14ec-5cc7-4a90-9241-552d0f1f654d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="258" y="0" width="107" height="20" uuid="a8a20ae0-7bb1-4ae7-84e8-f8c98cf2ff2e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="365" y="0" width="92" height="20" uuid="8ef1cd62-4c67-428d-9401-60cb045edcd3"/>
+			</rectangle>
+			<textField>
+				<reportElement x="52" y="0" width="100" height="20" uuid="5c9ffee7-c7f6-4398-bb7f-7e000485c4c4"/>
+				<textFieldExpression><![CDATA[$F{itemdesc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="0" width="39" height="20" uuid="2a17709b-a5f4-4e95-9122-ca1c7d9a53ef"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{nopieces}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="0" width="47" height="20" uuid="f8b8e051-7647-42d5-b281-4920a36ab39d"/>
+				<textFieldExpression><![CDATA[$F{unitmeasure}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="100" height="20" uuid="c9626691-8c77-4cd7-9ab6-96204450d249"/>
+				<textFieldExpression><![CDATA[$F{unitprice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="0" width="60" height="20" uuid="33af09e3-4842-4282-b671-2ac96d44affd"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

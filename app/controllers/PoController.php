@@ -9,31 +9,21 @@ class PoController extends \BaseController {
 		$po = new Po;
 		$po->suppler_name = Input::get('suppler_name');
 		$po->prs= Input::get('prs');
-		$po->po = Input::get('po');
 		$po->address= Input::get('address');
 		$po->due_date= Carbon::now()->addDays(Input::get('terms'));
 		$po->terms= Input::get('terms');
 		$po->supplier_code= Input::get('supplier_code');
 		$po->deliverTo= Input::get('deliverTo');
-		
-		// $item = new Item;
-		// $item->qty = Input::get('qty');
-		// $item->name = Input::get('name');
-		// $item->desc = Input::get('desc');
-		// $item->price = Input::get('price');
-		// $item->amount = Input::get('amount');
-		// $item->po = Input::get('po');
-
-		$activity = new Activity;
-		$activity->user_id = Auth::user()->id;
-		$activity->action = 'added new Purchase Order #';
-		$activity->identifier = Input::get('po');
+		$po->proj_id= Input::get('proj');
+		$po->payment= 0;
+		$po->save();
 		
 		if($po->save())
 		{
-			$po = $po->po;
-			$activity->save();	
-			return Redirect::route('item.show', ['po' => $po]);
+			$pos = $po->id;
+			$prs = Input::get('prs');
+			$query = array($pos,$prs);
+			return Redirect::route('prspongie', $query);
 		}
 
 
@@ -103,5 +93,12 @@ public function edit($id)
 
 		return Redirect::back();
 	}
-
+	public function create()
+	{
+		$unrel = Checkvouchers::where('released','=','1')->get();
+		$pay = Po::with('item', 'project')->where('paid','=','0')->get();
+		$unpaid = Po::with('item')->where('paid','=','0')->get();
+		$paid = Po::with('item')->where('paid','=','1')->get();
+		return View::make('users.accounting.payable')->withCheckvouchers($unrel)->withPo($pay)->withUnpaid($unpaid)->withPaid($paid);
+	}
 }

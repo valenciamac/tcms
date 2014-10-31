@@ -15,7 +15,8 @@ class CreatePagibigTable extends Migration {
 		Schema::create('pagibig', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->float('pagibigrange');
+			$table->float('pagibigmin');
+			$table->float('pagibigmax');
 			$table->float('employeeshare');
 		});
 	}

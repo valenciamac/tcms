@@ -1,4 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Edit Profile</title>
 @include('users.includes.head')
+{{HTML::script('js/jquery-1.9.1.min.js')}}
 <body>
    <div id="wrapper">
    <div id="topbar">
@@ -29,26 +35,31 @@
    </div>
    <div id="header">
    <div class="container">
-   <a href="sysAdmin" class="brand"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+   <a href="sysAdmin"><img src="{{asset('img/brand1.png')}}" class="logo"></a>
+   </div>
+   </div>
+   <div class="container mainB">
    <div class="row">
    <div class="col-md-3">
-      <ul class="sideMenu">
-         <li>
-            <a href="sysAdmin"><i class="fa fa-home"></i>Dashboard</a>
-         </li>
-         <li>
-            <a href="accounts"><i class="fa fa-user"></i>Accounts</a>
-         </li>
-         <li class="active">
-            <a href="project"><i class="fa fa-archive"></i>Projects</a>
-         </li>
-         <li>
-            <a href="#"><i class="fa fa-archive"></i>Inventory</a>
-         </li>
-         <li>
-            <a href="activities"><i class="fa fa-archive"></i>Activities</a>
-         </li>
-      </ul>
+    
+                  <aside class="right">
+                     
+                  <div class="divider"></div>
+                  <ul class="intended sideMenu">
+                     <li>
+                        <a href="../sysAdmin"><i class="fa fa-home link"></i>Dashboard</a>
+                     </li>
+                     <li class="active">
+                        <a href="../accounts"><i class="fa fa-user link"></i>Accounts</a>
+                     </li>
+                  </ul>
+                  
+                  <div class="divider"></div>
+                  <div id="datepicker">
+                  <div class="datepicker datepicker-inline">
+                  </div>
+                  </div>
+                  </aside> 
    </div>
    @include('users.sysAdmin.adminLayouts.profile')
    @include('users.includes.footer')

@@ -12,25 +12,23 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Pagibig Range</th>
+              <th>Pagibig Min</th>
+              <th>Pagibig Max</th>
               <th>Employee Share</th>
+              <th>Option</th>
               
             </tr>
           </thead>
           <tr ng-repeat="pagibig in pagibig | filter:search" class="contents">
                 <td>{{ pagibig.id }}</td>
-                <td>{{ pagibig.pagibigrange }}</td>
-                <td>{{ pagibig.share }}</td>
-                <td><a href="pagibig/{{pagibig.id}}"><i class="fa fa-pencil-square-o"></i></a>
-                    <a href="pagibig/{{pagibig.id}}/delete"><i class="fa fa-trash-o"></i></a></td>
+                <td>{{ pagibig.pagibigmin }}</td>
+                <td>{{ pagibig.pagibigmax }}</td>
+                <td>{{ pagibig.employeeshare }}</td>
+                <td><a href="pagibig/{{pagibig.id}}" class="btn btn-primary btn-full-width"><i class="fa fa-pencil-square-o">Edit Pagibig</i></a>
+                    <a href="pagibig/{{pagibig.id}}/delete"  class="btn btn-primary btn-full-width"><i class="fa fa-trash-o">Delete Pagibig</i></a></td>
 
             </tr>
 
 
           </tbody>
         </table>
-
-</div>
-</div>
-</div>
-</div>

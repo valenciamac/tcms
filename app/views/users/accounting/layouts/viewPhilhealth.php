@@ -13,7 +13,8 @@
             <tr>
               <th>ID</th>
               <th>Salary Bracket</th>
-              <th>Salary Range</th>
+              <th>Salary Range Min</th>
+              <th>Salary Range Max</th>
               <th>Salary Base</th>
               <th>Total Monthly Premium</th>
               <th>Employer Share</th>
@@ -25,13 +26,14 @@
          <tr ng-repeat="phcontr in phcontr | filter:search" class="contents">
                 <td>{{ phcontr.id }}</td>
                 <td>{{ phcontr.salbracket }}</td>
-                <td>{{ phcontr.salrange }}</td>
+                <td>{{ phcontr.salmin }}</td>
+                <td>{{ phcontr.salmax }}</td>
                 <td>{{ phcontr.salbase }}</td>
                 <td>{{ phcontr.tmp }}</td>
                 <td>{{ phcontr.empershare }}</td>
                 <td>{{ phcontr.empeeshare }}</td>
-                <td><a href="phcontr/{{phcontr.id}}"><i class="fa fa-pencil-square-o"></i></a>
-                     <a href="phcontr/{{phcontr.id}}/delete"><i class="fa fa-trash-o"></i></a></td>
+                <td><a href="phcontr/{{phcontr.id}}"  class="btn btn-primary btn-full-width" ><i class="fa fa-pencil-square-o">Edit PhContr</i></a>
+                     <a href="phcontr/{{phcontr.id}}/delete"  class="btn btn-primary btn-full-width"><i class="fa fa-trash-o">Delete Phcontr</i></a></td>
             </tr>
 
           </tbody>

@@ -32,7 +32,7 @@
 	
 </head>
 
-<body style="background-color:#b93d30;">
+<body style="background-color:#323232;">
 
 <div id="login-container" style="min-width:1000px;">
 
@@ -52,7 +52,7 @@
 			</div>
 		@endif
 
-		{{Form::open(array('route' => 'sessions.store'))}}
+		{{Form::open(array('route' => 'sessions.store', 'name' => 'login'))}}
 
 			<div class="form-group" style="padding-top:40px;">
 				<input name="username" type="text" class="form-control loginForm" id="username" placeholder="Username">
@@ -70,7 +70,9 @@
 		{{Form::close()}}
 
 	</div> <!-- /#login -->
-
+ <script type="text/javascript" language="JavaScript">
+   document.forms['login'].elements['username'].focus();
+   </script>
 
 </div> <!-- /#login-container -->
 	

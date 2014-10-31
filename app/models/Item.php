@@ -10,4 +10,13 @@ class Item extends \Eloquent {
 	{
 		return $this->belongsTo('po');
 	}
+
+	public function Invoice()
+	{
+		return $this->hasMany('invoice');
+	}
+	public function prsitem()
+	{
+		return $this->belongsTo('Prsitem');
+	}
 }

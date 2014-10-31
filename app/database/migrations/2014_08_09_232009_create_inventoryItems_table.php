@@ -17,6 +17,8 @@ class CreateInventoryItemsTable extends Migration {
 			$table->increments('id');
 			$table->integer('project_id')->unsigned();
 			$table->string('invName');
+			$table->string('idesc');
+			$table->integer('qty');	
 			$table->timestamps();
 
 			$table->foreign('project_id')->references('id')->on('projects')->onUpdate('cascade')->onDelete('cascade');

@@ -24,7 +24,13 @@ class purchasesController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$supplier = Suppliers::all();
+		$proj = Project::with('pos')->get();
+		$po = Po::where('created_at','>=', Carbon::now()->subweek())->get();
+		
+		return View::make('users.purchasing.purchaseOrder')->withSuppliers($supplier)
+		->withProject($proj)
+		->withPo($po);
 	}
 
 	/**

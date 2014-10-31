@@ -6,7 +6,7 @@ if ((event.keyCode > 64 && event.keyCode < 91) || (event.keyCode > 96 && event.k
    return true;
 else
    {
-       alert("Whoops You Enter Invalid Input Please Enter ()");
+       
        return false;
    }
  

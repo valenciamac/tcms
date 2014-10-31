@@ -1,7 +1,8 @@
+
 <div class="col-md-9">
    <!-- content here -->
    @if ($users->count())
-   <table class="table table-bordered table-hover" style="font-size:13px;">
+   <table class="table table-striped" style="font-size:13px;">
       <thead>
          <tr>
             <th>Id</th>
@@ -13,30 +14,36 @@
       </thead>
       <tbody>
          @foreach ($users as $user)
-         <tr>
+         <tr class="contents">
             <form action="{{$user->id}}/update">
-               <td>{{ $user->id }}</td>
-               <td><input name="fname" type="text" value="{{ ($user->fname) }}" class="form-controll"> </td>
-               <td><input name="lname" type="text" value="{{ ($user->lname) }}" class="form-controll"> </td>
-               <td><input name="username" type="text" value="{{ ($user->username) }}" class="form-controll"> </td>
-               <td>
+               <td class="full">{{ $user->id }}</td>
+               <td class="full"><input name="fname" type="text" value="{{ ($user->fname) }}" class="form-control"> </td>
+               <td class="full"><input name="lname" type="text" value="{{ ($user->lname) }}" class="form-control"> </td>
+               <td class="full"><input name="username" type="text" value="{{ ($user->username) }}" class="form-control"> </td>
+               <td class="full">
                   <select name="role" class="form-control" id="role">
-                     <option value="sysAdmin" >System Administrator</option>
-                     <option value="accounting">Accounting</option>
-                     <option value="admin">Administrator</option>
-                     <option value="financing">Financing</option>
-                     <option value="purchasing">Purchasing</option>
+                     <option id="sysAdmin" value="sysAdmin" >System Administrator</option>
+                     <option id="accounting" value="accounting">Accounting</option>
+                     <option id="admin" value="admin">Administrator</option>
+                     <option id="financing" value="financing">Financing</option>
+                     <option id="purchasing" value="purchasing">Purchasing</option>
                   </select>
+
+                  
                </td>
          </tr>
          @endforeach
       </tbody>
    </table>
-   <button type="submit">save</button>
+   <button type="submit" class="btn btn-primary pull-right">save</button>
    </form>  
    @else
    <h1>No results</h1>
    @endif
+
+   <script type="text/javascript">
+                           $( "#{{$user->role}}" ).attr( "selected","selected" );
+                           </script>
 </div>
 </div>
 </div>

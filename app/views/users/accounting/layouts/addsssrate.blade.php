@@ -23,9 +23,16 @@
       <div class="form-group">
 
                 <div class="form-group">
-                <label class="col-sm-3 control-label" >Range&nbsp;</label>
+                <label class="col-sm-3 control-label" >Range Min&nbsp;</label>
                 <div class="col-sm-6">
-                <input name="range" class="form-control">
+                <input name="rangemin" class="form-control">
+                </div>
+                </div> 
+
+                <div class="form-group">
+                <label class="col-sm-3 control-label" >Range Max&nbsp;</label>
+                <div class="col-sm-6">
+                <input name="rangemax" class="form-control">
                 </div>
                 </div> 
             

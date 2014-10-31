@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="defence" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="27ea1d62-d685-4017-9846-4a98a51cf433">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="paydate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select rate.otpayrate,rate.otrestnspecholdrate, rate.otrestspecholdrate,rate.otregholdrate,rate.otrestonreghold, employee.id, employee.fname, employee.mname , employee.lname, employee.basic, employee.days, employee.rate, employee.department, employee.position, payroll.paydate, payroll.paydateend, payroll.lateunder, payroll.absent, payroll.regotpay, payroll.regholdpay, payroll.regholdotpay,payroll.restpay,payroll.restreg,payroll.restspecial, payroll.restpay, payroll.advance, payroll.specholdpay, payroll.phcont, payroll.pgibigcont, payroll.ssscont, payroll.income, payroll.gross,
+Format(payroll.phcont + payroll.ssscont + payroll.pgibigcont + payroll.advance + employee.rate*payroll.absent + employee.basic/(employee.days*8)*(payroll.lateunder) ,2) as total,
+FORMAT(employee.rate/8*payroll.regholdpay*rate.otregholdrate,2) as bool,
+FORMAT(employee.rate/8*payroll.specholdpay*rate.otrestnspecholdrate,2) as bool1,
+FORMAT(employee.rate/8*payroll.regotpay*rate.otpayrate,2) as bool2,
+FORMAT(employee.rate/8*payroll.regholdotpay*rate.otregholdrate,2) as bool3,
+FORMAT(employee.rate/8*payroll.restpay*rate.otrestnspecholdrate,2) as bool4,
+FORMAT(employee.rate/8*payroll.restreg*rate.otrestonreghold,2) as bool5,
+FORMAT(employee.rate/8*payroll.restspecial*rate.otrestspecholdrate,2) as bool6,
+FORMAT(employee.rate*payroll.absent,2) as absents, FORMAT(employee.basic/(employee.days*8)*(payroll.lateunder),2) as late from employee inner join payroll ON employee.id= payroll.employee_id ,rate
+where payroll.paydate = $P{paydate}]]>
+	</queryString>
+	<field name="otpayrate" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="otrestnspecholdrate" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="otrestspecholdrate" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="otregholdrate" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="otrestonreghold" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="basic" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="days" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rate" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="department" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="position" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="paydate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="paydateend" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lateunder" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="absent" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="regotpay" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="regholdpay" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="regholdotpay" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="restpay" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="restreg" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="restspecial" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="advance" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="specholdpay" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="phcont" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pgibigcont" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ssscont" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="income" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gross" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.String"/>
+	<field name="bool" class="java.lang.String"/>
+	<field name="bool1" class="java.lang.String"/>
+	<field name="bool2" class="java.lang.String"/>
+	<field name="bool3" class="java.lang.String"/>
+	<field name="bool4" class="java.lang.String"/>
+	<field name="bool5" class="java.lang.String"/>
+	<field name="bool6" class="java.lang.String"/>
+	<field name="absents" class="java.lang.String"/>
+	<field name="late" class="java.lang.String"/>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="680" splitType="Stretch">
+			<rectangle>
+				<reportElement x="8" y="120" width="540" height="90" uuid="29eed1b3-032b-4117-9d22-244b438855d0"/>
+			</rectangle>
+			<textField>
+				<reportElement x="216" y="120" width="100" height="20" uuid="fbef675f-3bc0-4c0f-a5dc-9e59b4ece304"/>
+				<textFieldExpression><![CDATA[$F{fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="120" width="100" height="20" uuid="c833b33c-e146-4df7-849b-f8ee385e6c29"/>
+				<textFieldExpression><![CDATA[$F{lname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="120" width="100" height="20" uuid="e85bd9e1-f3b6-47b1-ab3f-8b92f5971ef4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employee Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="213" y="120" width="3" height="20" uuid="ac48bafe-1556-4f4d-aa7f-fe2a4afbda4e"/>
+				<text><![CDATA[,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="316" y="120" width="100" height="20" uuid="dfb7bdbb-4989-448a-bc3c-6e201d55011f"/>
+				<textFieldExpression><![CDATA[$F{mname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="79" y="146" width="79" height="20" uuid="0ca22759-e603-4aa2-bde5-77ab350cbb47"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Department:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="145" width="100" height="20" uuid="5ab829ff-55c3-4cc1-89e6-1e9020124e0c"/>
+				<textFieldExpression><![CDATA[$F{department}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="266" y="145" width="59" height="20" uuid="ec72f5bd-f14c-4928-b475-56639ebddb5d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Position:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="324" y="145" width="100" height="20" uuid="84ef744d-ac34-45b8-8d96-b4a1ce41f9af"/>
+				<textFieldExpression><![CDATA[$F{position}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="113" y="140" width="303" height="1" uuid="5c8b332f-86f4-47ac-ac39-b506025aeb4c"/>
+			</line>
+			<rectangle>
+				<reportElement x="8" y="222" width="205" height="24" uuid="3da894c7-f5cd-4bb9-81e6-af1c453ed20e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="213" y="222" width="129" height="24" uuid="782a1553-d210-4fba-a850-91f289fb0bdd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="342" y="222" width="100" height="24" uuid="377ef8cd-128d-404c-a07a-2776ba85a549"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="442" y="222" width="106" height="24" uuid="844c05cb-947c-43d2-b2d7-f6c1d9aa47f6"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="79" y="225" width="59" height="20" uuid="5e019453-dc3a-4c67-a2d1-8b3eff6f2a1b"/>
+				<textElement>
+					<font size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="225" width="22" height="20" uuid="8888c2af-5d8d-43c7-81d7-8bad5f6f8de9"/>
+				<textElement>
+					<font size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Unit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="225" width="51" height="20" uuid="8a48ef34-f567-41d3-9248-b893eed7be4a"/>
+				<textElement>
+					<font size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Earnings]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="465" y="225" width="56" height="20" uuid="29502bcc-32c4-4d20-a02c-cfa88fa0323b"/>
+				<textElement>
+					<font size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Deductions]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="8" y="245" width="205" height="375" uuid="b0ae0e46-4df9-4b68-89ee-f9b56dae4f69"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="213" y="245" width="129" height="375" uuid="f76295ba-f90d-4d55-bb5b-c8d88865d289"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="342" y="245" width="100" height="375" uuid="7d481e70-c6ef-4d36-b054-68d2c2c7d68f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="442" y="245" width="106" height="375" uuid="0b5d435f-1f7f-48ff-ac00-30527a5fef88"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="30" y="257" width="59" height="20" uuid="16347066-3ddc-4858-8284-f24c1fda077c"/>
+				<text><![CDATA[Basic Pay]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="374" y="257" width="51" height="20" uuid="18af5e3d-add3-41a5-9b9d-b539fcd15be9"/>
+				<textFieldExpression><![CDATA[$F{basic}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="51" y="459" width="59" height="20" uuid="c5427ec5-9610-4447-a7b1-6084a1b21854"/>
+				<text><![CDATA[Contribution]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="485" y="519" width="63" height="20" uuid="ca764a07-24cc-4f95-b511-14dcbc46e79a"/>
+				<textFieldExpression><![CDATA[$F{pgibigcont}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="486" y="479" width="55" height="20" uuid="6159b63a-fa96-4de3-b18f-8d31fbb43a36"/>
+				<textFieldExpression><![CDATA[$F{phcont}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="51" y="479" width="62" height="20" uuid="4f3e9e1e-6928-4f4a-9d92-a7773298ab87"/>
+				<text><![CDATA[Philhealth ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="499" width="25" height="20" uuid="30fbc0d9-3bc7-40af-bf53-b01fb198ef7b"/>
+				<text><![CDATA[SSS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="486" y="499" width="55" height="20" uuid="4cef7c88-c8eb-464f-9e85-e3149eb1428c"/>
+				<textFieldExpression><![CDATA[$F{ssscont}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="61" y="519" width="40" height="20" uuid="06416f68-574e-47dd-bcde-aa8d598c2c6a"/>
+				<text><![CDATA[Pagibig]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="51" y="539" width="72" height="20" uuid="678a40f8-f13b-4b8d-a686-0b3ba871422e"/>
+				<text><![CDATA[Cash Advance]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="482" y="539" width="66" height="20" uuid="b510b913-a441-4ec8-a0dc-6bd9d445a6e9"/>
+				<textFieldExpression><![CDATA[$F{advance}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="342" y="585" width="206" height="1" uuid="a444a816-eb0b-423d-bad4-54be3eb7498e"/>
+			</line>
+			<rectangle>
+				<reportElement x="8" y="620" width="540" height="60" uuid="6ed860ce-904a-4c68-8a03-1e547ff7f8b0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="30" y="634" width="100" height="20" uuid="f98f6c75-b7f9-4ab4-9c45-bc010138a1e6"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gross Pay]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="653" width="100" height="20" uuid="80fb6436-f2b1-422d-ba5b-1f8ddc069bf4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Income]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="468" y="653" width="58" height="20" uuid="10b2023f-dc81-41d5-8ddc-1005b79d688e"/>
+				<textFieldExpression><![CDATA[$F{income}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="317" width="100" height="20" uuid="1d63f849-f4fe-4605-9897-fa963a1b720b"/>
+				<text><![CDATA[OT Pay]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="231" y="317" width="100" height="20" uuid="62f6496d-cc25-4ff9-a943-c60d5eee1a6e"/>
+				<textFieldExpression><![CDATA[$F{regotpay}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="277" width="100" height="20" uuid="626c5a28-3be6-4801-b5c6-8a60fbca3c31"/>
+				<text><![CDATA[Reg. Holiday Pay]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="231" y="277" width="100" height="20" uuid="9dbf95a5-36eb-4b62-91d2-96ea8b44bc27"/>
+				<textFieldExpression><![CDATA[$F{regholdpay}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="337" width="100" height="20" uuid="cef8390d-b72d-44ea-9f10-4e627ddb017b"/>
+				<text><![CDATA[Reg. Holiday OT Pay]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="231" y="337" width="100" height="20" uuid="2038488e-83a7-4fcf-8653-767d0fb5df9a"/>
+				<textFieldExpression><![CDATA[$F{regholdotpay}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="297" width="100" height="20" uuid="43f87267-4310-43fb-b278-cc5202276a4c"/>
+				<text><![CDATA[Spec. Holiday Pay]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="231" y="297" width="100" height="20" uuid="43ea86db-3e3e-4d86-a1d6-9fe0906fb855"/>
+				<textFieldExpression><![CDATA[$F{specholdpay}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="419" width="100" height="20" uuid="ff67fa7b-86c5-48c4-9365-9039a6776efb"/>
+				<text><![CDATA[Late/Undertime]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="231" y="419" width="100" height="20" uuid="e309994b-e1ce-40f4-b626-efaa1dc484cc"/>
+				<textFieldExpression><![CDATA[$F{lateunder}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="439" width="100" height="20" uuid="17b4dc75-d0d4-42ca-83a6-699f62d2f3e3"/>
+				<text><![CDATA[Absent]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="231" y="439" width="100" height="20" uuid="51747f89-a354-409f-8afc-057ab95c2237"/>
+				<textFieldExpression><![CDATA[$F{absent}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="175" width="100" height="20" uuid="d0e9e723-f336-4dc2-a833-04c53ffc1cf9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pay Period:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="175" width="118" height="20" uuid="f76b9bd7-c128-4c1e-b3ea-b989fb64cdd2"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("MMMM dd, yyyy").format($F{paydate})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="175" width="118" height="20" uuid="a7f7a273-32db-4c13-be28-54a56771f1ed"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("MMMM dd, yyyy").format($F{paydateend})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="245" y="175" width="3" height="20" uuid="4f3257c7-3da9-4789-b71f-a0a81aeb90fb"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="146" width="17" height="20" uuid="e2e59e9d-8272-4491-a7e6-b1bf5d4051d9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="146" width="31" height="20" uuid="0edc42e8-dcd5-4216-8fad-332264fdefba"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="30" y="166" width="31" height="1" uuid="836af6e6-2f87-41f6-b8e5-9f04badb2508"/>
+			</line>
+			<line>
+				<reportElement x="158" y="165" width="100" height="1" uuid="82879172-0765-4a8c-bcdc-514930c078fc"/>
+			</line>
+			<line>
+				<reportElement x="325" y="164" width="97" height="1" uuid="357b2b77-9f73-46ec-aba2-5449d096b879"/>
+			</line>
+			<staticText>
+				<reportElement x="222" y="43" width="133" height="23" uuid="0f3abf96-ef44-4b5b-af1f-2ce75afc1ea8"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAYROLL DETAILS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="357" width="100" height="20" uuid="1dcff5fa-a912-4a37-8e60-afe6248d950c"/>
+				<text><![CDATA[Rest Day Pay]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="231" y="357" width="100" height="20" uuid="a9338ad1-cc01-4170-a0bc-748171bf1ff7"/>
+				<textFieldExpression><![CDATA[$F{restpay}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="379" width="100" height="20" uuid="09f0cb29-0147-49d1-95ea-908c1a593da3"/>
+				<text><![CDATA[Restday Regular Pay]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="231" y="377" width="100" height="20" uuid="e0d15dbc-230c-4dc5-9e72-d15ff9ff2fbf"/>
+				<textFieldExpression><![CDATA[$F{restreg}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="399" width="100" height="20" uuid="2790395f-bd14-4492-870c-7b5d58d0d2f2"/>
+				<text><![CDATA[Restday Special holiday Pay]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="231" y="397" width="100" height="20" uuid="7a5ba37c-0864-4208-b891-9e994345356f"/>
+				<textFieldExpression><![CDATA[$F{restspecial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="277" width="71" height="20" uuid="75c80928-c5cc-479d-b04f-dcfa7bc2eff0"/>
+				<textFieldExpression><![CDATA[$F{bool}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="297" width="72" height="20" uuid="3b87ab61-6bf6-4b6d-9f96-e8ca16944e20"/>
+				<textFieldExpression><![CDATA[$F{bool1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="317" width="73" height="20" uuid="b1d6459c-4b68-4f1f-a9f0-47879ccb3e72"/>
+				<textFieldExpression><![CDATA[$F{bool2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="337" width="71" height="20" uuid="a81e02c7-793b-446c-bdcc-c71536652169"/>
+				<textFieldExpression><![CDATA[$F{bool3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="359" width="70" height="20" uuid="9a4a39ba-9dc6-47cf-93c4-cd8d329d67c8"/>
+				<textFieldExpression><![CDATA[$F{bool4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="379" width="73" height="20" uuid="91c1a1a3-c8ea-45e0-aec0-37feabcf66f9"/>
+				<textFieldExpression><![CDATA[$F{bool5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="399" width="73" height="20" uuid="17608077-add0-43c3-bc08-84ef6dc7166f"/>
+				<textFieldExpression><![CDATA[$F{bool6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="422" width="73" height="20" uuid="19470005-abd7-4e3c-b31d-dfa00d4b63e3"/>
+				<textFieldExpression><![CDATA[$F{late}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="465" y="442" width="76" height="20" uuid="e8414577-5517-45c4-a8c6-8afd03b4b349"/>
+				<textFieldExpression><![CDATA[$F{absents}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="592" width="73" height="20" uuid="c76a7dc5-211a-4992-bd85-acf602f93457"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="592" width="73" height="20" uuid="9065c4ce-a6e5-4833-97bd-e50de18b720d"/>
+				<textFieldExpression><![CDATA[$F{gross}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="634" width="58" height="20" uuid="cfd34ac2-71c3-43d0-b2ba-ceef1b17160e"/>
+				<textFieldExpression><![CDATA[$F{gross}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

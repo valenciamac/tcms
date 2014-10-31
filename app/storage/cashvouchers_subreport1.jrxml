@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cashvouchers_subreport1" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1253bb40-f304-455d-abd8-182d7cb85e76">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\tcms-mvc\\app\\storage\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="checkno" class="java.lang.String"/>
+	<parameter name="summary" class="java.lang.String"/>
+	<parameter name="sumless" class="java.lang.String"/>
+	<parameter name="sumamt" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT cashvouchers.rfrom , cashvouchers.rpb, cashvouchers.prepared , cashvouchers.checked , cashvouchers.approved , cashvouchers.created_at , cashitem.cashvouchers_checkno, cashitem.payee , cashitem.labor , cashitem.descr ,cashitem.amount,cashitem.less , cashitem.acctitle , cashitem.acctitle2, cashitem.debit , cashitem.credit from cashvouchers INNER JOIN cashitem on cashitem.cashvouchers_checkno = cashvouchers.checkno where cashitem.cashvouchers_checkno = $P{checkno}]]>
+	</queryString>
+	<field name="rfrom" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rpb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prepared" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="checked" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="approved" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cashvouchers_checkno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payee" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="labor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descr" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="less" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acctitle" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acctitle2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="debit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="credit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="50">
+			<rectangle>
+				<reportElement x="0" y="0" width="376" height="20" uuid="5e29353e-cb58-4554-b862-469d4a4f0425"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="376" y="0" width="160" height="20" uuid="95c3a64b-6e46-4c1b-906c-7e7408370dfd"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="125" y="0" width="100" height="20" uuid="d4a5f33d-dec7-4d6b-b862-1501ee3e7288"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="0" width="55" height="20" uuid="dc06382b-fbb0-4fbf-af91-f4a9d0336eed"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AMOUNT]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="376" y="20" width="160" height="30" uuid="12ef2d7a-636d-451d-bce6-bd3de4476fe7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="0" y="20" width="376" height="30" uuid="106b7bfd-122f-4117-9090-c0db26da1203"/>
+				<box leftPadding="0">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<staticText>
+				<reportElement x="92" y="30" width="78" height="20" uuid="e50eb4a3-fdc2-4e2e-b6df-25acd652ea47"/>
+				<text><![CDATA[PAYMENT FOR]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="30" width="55" height="20" uuid="4eefeefe-84fe-4c6e-8412-d0ffa7c40b3f"/>
+				<textFieldExpression><![CDATA[$F{labor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="225" y="30" width="42" height="20" uuid="c2c06f70-07de-4321-8df0-28e342a0aa33"/>
+				<text><![CDATA[WORKS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<frame>
+				<reportElement x="376" y="0" width="160" height="20" uuid="7e670bc4-6e8f-46b0-966b-a1fc27f64388"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="0" y="0" width="376" height="20" uuid="b5065874-7df1-4ae6-abe1-21fe74ff9558"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<textField>
+				<reportElement x="437" y="0" width="65" height="20" uuid="7a55e64e-3fe8-4df8-8803-c661a71265b1"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="106" y="0" width="59" height="20" uuid="738b0545-8f6f-450b-b229-12afdd6b8da8"/>
+				<textFieldExpression><![CDATA[$F{descr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="85">
+			<frame>
+				<reportElement x="376" y="0" width="160" height="85" uuid="237181b2-0598-4e5e-9da3-29f86194811b"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement x="0" y="0" width="376" height="85" uuid="b95abd13-2406-480c-8ca3-110c9dfd9cba"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<staticText>
+				<reportElement isPrintRepeatedValues="false" x="89" y="38" width="100" height="20" isPrintInFirstWholeBand="true" uuid="2d350a1a-9a1f-447a-936a-7c2de22209ac"/>
+				<text><![CDATA[LESS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="65" width="72" height="20" uuid="01b94575-b0cb-487c-ab28-11e10c350985"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{summary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="437" y="37" width="65" height="20" uuid="feeb6e72-2cbe-4ac4-b685-8702718d3b06"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{sumless}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="430" y="58" width="79" height="1" uuid="acb0b205-0381-4ac4-8a6d-47cfeb4fb4f1"/>
+			</line>
+			<textField>
+				<reportElement x="437" y="11" width="65" height="20" uuid="b17d2b8f-2266-41ea-84a8-abcb02a3954c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{sumamt}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="430" y="4" width="79" height="1" uuid="f3127be4-5ba5-4c1f-bdd2-5a6eff5f695d"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

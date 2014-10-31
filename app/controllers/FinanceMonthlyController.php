@@ -53,6 +53,34 @@ class FinanceMonthlyController extends \BaseController {
         $incomeDecemberTotal = DB::table('repincomefromcontracts')
                                         ->sum('incomeDecember');
 
+        // cost of contracts total
+        $repcostTJanuary = DB::table('repcoststotal')
+                                        ->sum('repcostTJanuary');
+        $repcostTFebruary = DB::table('repcoststotal')
+                                        ->sum('repcostTFebruary');
+        $repcostTMarch = DB::table('repcoststotal')
+                                        ->sum('repcostTMarch');
+        $repcostTApril = DB::table('repcoststotal')
+                                        ->sum('repcostTApril');
+        $repcostTMay = DB::table('repcoststotal')
+                                        ->sum('repcostTMay');
+        $repcostTJune = DB::table('repcoststotal')
+                                        ->sum('repcostTJune');
+        $repcostTJuly = DB::table('repcoststotal')
+                                        ->sum('repcostTJuly');
+        $repcostTAugust = DB::table('repcoststotal')
+                                        ->sum('repcostTAugust');
+        $repcostTSeptember = DB::table('repcoststotal')
+                                        ->sum('repcostTSeptember');
+        $repcostTOctober = DB::table('repcoststotal')
+                                        ->sum('repcostTOctober');
+        $repcostTNovember = DB::table('repcoststotal')
+                                        ->sum('repcostTNovember');
+        $repcostTDecember = DB::table('repcoststotal')
+                                        ->sum('repcostTDecember');
+        $repcostTTotal = DB::table('repcoststotal')
+                                        ->sum('repcostTTotal');
+
         // salovoth
         $salovothJanuary = DB::table('repsalovothtotal')
 										->sum('salovothJanuary');
@@ -89,7 +117,24 @@ class FinanceMonthlyController extends \BaseController {
                                         
         $salovothDecember = DB::table('repsalovothtotal')
                                         ->sum('salovothDecember');
+        $salovothTotal = DB::table('repsalovothtotal')
+                                        ->sum('salovothTotal');
                         
+        // add coc total & salovoth
+        $expensesTJanuary = $repcostTJanuary + $salovothJanuary;
+        $expensesTFebruary = $repcostTFebruary + $salovothFebruary;
+        $expensesTMarch = $repcostTMarch + $salovothMarch;
+        $expensesTApril = $repcostTApril + $salovothApril;
+        $expensesTMay = $repcostTMay + $salovothMay;
+        $expensesTJune = $repcostTJune + $salovothJune;
+        $expensesTJuly = $repcostTJuly + $salovothJuly;
+        $expensesTAugust = $repcostTAugust + $salovothAugust;
+        $expensesTSeptember = $repcostTSeptember + $salovothSeptember;
+        $expensesTOctober = $repcostTOctober + $salovothOctober;
+        $expensesTNovember = $repcostTNovember + $salovothNovember;
+        $expensesTDecember = $repcostTDecember + $salovothDecember;
+        $expensesTTotal = $repcostTTotal + $salovothTotal;
+
         DB::table('financemonthly')->truncate();
 
         DB::table('financemonthly')->insert(
@@ -97,84 +142,84 @@ class FinanceMonthlyController extends \BaseController {
                         array(
                         		'month' => 'January',
                                 'income' => $incomeJanuaryTotal,
-                                'expenses' => $salovothJanuary,
+                                'expenses' => $expensesTJanuary,
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s'),
                         ),
                         array(
                         		'month' => 'February',
                                 'income' => $incomeFebruaryTotal,
-                                'expenses' => $salovothFebruary,
+                                'expenses' => $expensesTFebruary,
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s'),
                         ),
                         array(
                         		'month' => 'March',
                                 'income' => $incomeMarchTotal,
-                                'expenses' => $salovothMarch,
+                                'expenses' => $expensesTMarch,
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s'),
                         ),
                         array(
                         		'month' => 'April',
                                 'income' => $incomeAprilTotal,
-                                'expenses' => $salovothApril,
+                                'expenses' => $expensesTApril,
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s'),
                         ),
                         array(
                         		'month' => 'May',
                                 'income' => $incomeMayTotal,
-                                'expenses' => $salovothMay,
+                                'expenses' => $expensesTMay,
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s'),
                         ),
                         array(
                         		'month' => 'June',
                                 'income' => $incomeJuneTotal,
-                                'expenses' => $salovothJune,
+                                'expenses' => $expensesTJune,
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s'),
                         ),
                         array(
                         		'month' => 'July',
                                 'income' => $incomeJulyTotal,
-                                'expenses' => $salovothJuly,
+                                'expenses' => $expensesTJuly,
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s'),
                         ),
                         array(
                         		'month' => 'August',
                                 'income' => $incomeAugustTotal,
-                                'expenses' => $salovothAugust,
+                                'expenses' => $expensesTAugust,
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s'),
                         ),
                         array(
                         		'month' => 'September',
                                 'income' => $incomeSeptemberTotal,
-                                'expenses' => $salovothSeptember,
+                                'expenses' => $expensesTSeptember,
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s'),
                         ),
                         array(
                         		'month' => 'October',
                                 'income' => $incomeOctoberTotal,
-                                'expenses' => $salovothOctober,
+                                'expenses' => $expensesTOctober,
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s'),
                         ),
                         array(
                         		'month' => 'November',
                                 'income' => $incomeNovemberTotal,
-                                'expenses' => $salovothNovember,
+                                'expenses' => $expensesTNovember,
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s'),
                         ),
                         array(
                         		'month' => 'December',
                                 'income' => $incomeDecemberTotal,
-                                'expenses' => $salovothDecember,
+                                'expenses' => $expensesTDecember,
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s'),
                         ),

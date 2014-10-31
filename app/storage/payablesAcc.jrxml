@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="payablesAcc" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ac68944f-3618-40f2-a84d-d873f5a6dd7d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="summary" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select pos.po , pos.created_at , pos.suppler_name, pos.due_date, item.qty, item.price, projects.project_name ,(item.qty * item.price) as mytotal , pos.po from pos INNER JOIN item on pos.po = item.po_po inner join projects on projects.id = pos.proj_id]]>
+	</queryString>
+	<field name="po" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="suppler_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="due_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="qty" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="price" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="project_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mytotal" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<rectangle>
+				<reportElement x="31" y="39" width="503" height="20" uuid="47572bf7-d48c-4a90-b5e2-d65980af6383"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="452" y="39" width="63" height="20" forecolor="#FF0000" uuid="301a7578-0697-41a3-89d2-3fef8bc18475"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DUE DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="39" width="33" height="20" forecolor="#FF0000" uuid="c6af2147-3c91-49e8-bfc5-23f2c2330339"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="39" width="100" height="20" forecolor="#FF0000" uuid="07a92ada-50cc-4681-9935-6ddc99252a08"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="39" y="39" width="37" height="20" forecolor="#FF0000" uuid="ee30b725-ad34-40c8-8363-2ceb5ec9ecd7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[P.O. #]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="39" width="50" height="20" forecolor="#FF0000" uuid="3fd6718d-051b-4efc-a6af-f1a20d7a954d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNPAID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="11" width="150" height="21" forecolor="#FF0033" uuid="b0d36297-4f27-4f12-a597-595faa186b3a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAYABLE TO SUPPLIERS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="216" y="5" width="90" height="20" uuid="e67fd04b-31f5-4368-973c-1c5bd2b9ff75"/>
+				<textFieldExpression><![CDATA[$F{suppler_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="5" width="61" height="20" uuid="7a2b4a06-a49b-434d-8f8c-9cb7948e1b47"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{mytotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="422" y="5" width="112" height="20" uuid="842a427e-9900-48d2-a606-a7de21e52e46"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("MMMM dd, YYYY").format($F{due_date})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="5" width="117" height="20" uuid="1829ff1b-e48c-49df-bc91-0e718bfbe6c6"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("MMMM dd, YYYY").format($F{created_at})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="31" y="5" width="37" height="20" uuid="2ee71542-4ed3-482d-ab92-b8e9415b5e19"/>
+				<textFieldExpression><![CDATA[$F{po}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement x="31" y="5" width="503" height="1" uuid="46eb2325-bc18-4028-8ee4-7aedb5fd537f"/>
+			</line>
+			<staticText>
+				<reportElement x="31" y="10" width="44" height="20" forecolor="#FF0000" uuid="f6ae61d8-abda-47bc-9bb7-cc0b55c6db5d"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="342" y="6" width="61" height="20" uuid="2a640c0f-1d0a-43c0-b69e-d196e87fa37d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{summary}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

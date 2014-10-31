@@ -18,20 +18,20 @@ class CreatePayrollTable extends Migration {
 			$table->integer('employee_id')->unsigned();
 			$table->DATE('paydate');
 			$table->DATE('paydateend');
-			$table->float('wtax');
 			$table->float('lateunder');
 			$table->float('ssscont');
 			$table->float('absent');
 			$table->float('phcont');
 			$table->float('regotpay');
-			$table->float('pagibigcont');
+			$table->float('pgibigcont');
 			$table->float('regholdpay');
-			$table->float('sssloan');
 			$table->float('regholdotpay');
-			$table->float('pagibigloan');
 			$table->float('restpay');
-			$table->float('cashadv');
+			$table->float('restreg');
+			$table->float('restspecial');
+			$table->float('advance');
 			$table->float('specholdpay');
+			$table->float('gross');
 			$table->float('income');
 			$table->timestamps();
 

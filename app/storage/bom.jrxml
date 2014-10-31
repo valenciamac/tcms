@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bom" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="12ebee2b-3b79-427a-8fe3-3a3955efb733">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="82"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\tcms-mvc\\app\\storage\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="id" class="java.lang.Integer" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT projects.id , projects.project_name , projects.location , modelhouse.modelName from projects INNER JOIN modelhouse on modelhouse.project_id = projects.id where modelhouse.project_id = $P{id}]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="project_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="location" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="modelName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="89" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="48" height="20" uuid="2c580d04-2b9f-4d2c-8c39-3fa17953b3e3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Project:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="19" width="58" height="20" uuid="d890dc8c-3d7c-4283-94e5-575bfacf175d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Location:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="38" width="40" height="20" uuid="95b58b16-0a86-4202-a335-ba11e7cd4b7a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Model:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="63" y="0" width="100" height="20" uuid="149c75b2-24f6-49b5-94ef-6fb33cfca4af"/>
+				<textFieldExpression><![CDATA[$F{project_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="19" width="68" height="20" uuid="b2a4d012-0e56-481d-b94c-fb46221b0aa1"/>
+				<textFieldExpression><![CDATA[$F{location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="38" width="86" height="20" uuid="b771b651-2fc4-415f-ac1c-6c6d017608bb"/>
+				<textFieldExpression><![CDATA[$F{modelName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="236" y="58" width="102" height="20" uuid="5d1976a4-6068-4712-9f90-3f8c7a79a1b2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bill of Materials]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<subreport>
+				<reportElement x="15" y="0" width="540" height="37" uuid="2637b0b3-a4bb-4d5e-a706-18949ffd53a4"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "bom_masonry.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="37">
+			<subreport>
+				<reportElement x="15" y="0" width="540" height="37" uuid="869fb114-44d9-42f1-a9a5-2420aad5bc92"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "bom_formworks.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="39">
+			<subreport>
+				<reportElement x="15" y="0" width="540" height="39" uuid="2e1f8490-c528-445e-a170-4bbb3cd57a05"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "bom_steel.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="39">
+			<subreport>
+				<reportElement x="15" y="0" width="540" height="39" uuid="a1f21ddc-4ea7-4bf5-8ff1-5011717c304c"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "bom_carpentry.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="38">
+			<subreport>
+				<reportElement x="15" y="0" width="540" height="38" uuid="6960eb7a-0ca3-4c29-b911-ab3c6dfa08bb"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "bom_tinsmithry.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="36">
+			<subreport>
+				<reportElement x="15" y="0" width="540" height="36" uuid="58fe3d7c-aec8-43bc-9ffd-dad13af4a230"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "bom_truss.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="37">
+			<subreport>
+				<reportElement x="15" y="0" width="540" height="37" uuid="bc15dc25-67a7-40b5-95cd-68680b3d144e"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "bom_hardwares.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40">
+			<subreport>
+				<reportElement x="15" y="0" width="540" height="40" uuid="0266f5d1-b09d-4dd4-90c1-1c0a5455f74a"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "bom_tile.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="38">
+			<subreport>
+				<reportElement x="15" y="0" width="540" height="38" uuid="83813101-da15-4c2a-b47e-db8821601aeb"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "bom_dnw.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40">
+			<subreport>
+				<reportElement x="15" y="0" width="540" height="40" uuid="49088bb6-60f8-4bd5-8a40-652140634c8f"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "bom_electrical.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="38">
+			<subreport>
+				<reportElement x="15" y="0" width="540" height="38" uuid="4ec84817-329e-4919-b6cc-d50ce30ae75f"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "bom_plumbing.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="38">
+			<subreport>
+				<reportElement x="15" y="0" width="540" height="38" uuid="88f92098-8b92-4c65-b87b-1b4cf25ce946"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "bom_paint.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

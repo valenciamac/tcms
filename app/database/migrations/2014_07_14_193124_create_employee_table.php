@@ -16,13 +16,14 @@ class CreateEmployeeTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('department');
+			$table->DATE('paydate');
 			$table->string('position');
 			$table->string('fname');
 			$table->string('mname');
 			$table->string('lname');
 			$table->string('rate');
-			$table->string('basic');
 			$table->string('days');
+			$table->float('basic');
 			$table->timestamps();
 		});
 	}

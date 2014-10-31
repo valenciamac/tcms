@@ -15,15 +15,16 @@ class CreatePoTable extends Migration {
 		Schema::create('pos', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('po')->unique();
 			$table->string('suppler_name');
 			$table->string('prs');
 			$table->DATE('due_date');
 			$table->string('address');
 			$table->string('terms');
 			$table->string('supplier_code');
-			$table->string('deliverTo');
+			$table->string('deliverTo');$table->integer('proj_id')->unsigned();
 			$table->timestamps();
+			
+			$table->foreign('proj_id')->references('id')->on('projects')->onUpdate('cascade')->onDelete('cascade');
 
 		});
 	}

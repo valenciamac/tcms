@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cashvouchers2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dca71282-72e0-41a9-9435-797f67da14a0">
+	<property name="ireport.zoom" value="1.0717944050000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="checkno" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\xampp\\htdocs\\tcms-mvc\\app\\storage\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="summary" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT cashvouchers.rfrom , cashvouchers.rpb, cashvouchers.prepared , cashvouchers.checked , cashvouchers.approved , cashvouchers.created_at , cashitem3.cashvouchers_checkno, cashitem3.payee , cashitem3.po_po , cashitem3.project ,cashitem3.check, cashitem3.amount , cashitem3.acctitle1 , cashitem3.acctitle2, cashitem3.debit , cashitem3.credit from cashvouchers INNER JOIN cashitem3 on cashitem3.cashvouchers_checkno = cashvouchers.checkno where cashitem3.cashvouchers_checkno = $P{checkno} limit 1]]>
+	</queryString>
+	<field name="rfrom" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rpb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prepared" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="checked" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="approved" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cashvouchers_checkno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payee" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="po_po" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="project" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="check" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acctitle1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acctitle2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="debit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="credit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="241" splitType="Stretch">
+			<subreport>
+				<reportElement x="12" y="174" width="534" height="67" uuid="1c8c69f2-8b0f-4665-a47d-c3e119dfa6c2"/>
+				<subreportParameter name="summary">
+					<subreportParameterExpression><![CDATA[$P{summary}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="checkno">
+					<subreportParameterExpression><![CDATA[$P{checkno}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "cashvouchers2_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement x="474" y="162" width="74" height="1" uuid="62610339-1eee-4525-9aee-37d851b1c7ed"/>
+			</line>
+			<line>
+				<reportElement x="67" y="163" width="191" height="1" uuid="d3b3c814-fbe0-4b01-96c2-4ee9dfd290e9"/>
+			</line>
+			<staticText>
+				<reportElement x="437" y="142" width="37" height="20" uuid="6d5bbe76-f915-477e-b562-9446d9e29b5b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="225" y="56" width="128" height="25" uuid="a5eba76f-f422-47cd-812c-90b2a13e98d6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CASH VOUCHERS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="144" width="47" height="20" uuid="90e728df-4278-4c93-aef7-6597864506f9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAYEE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="474" y="142" width="74" height="20" uuid="67e69307-1a6f-4f85-be4b-13c949c80cc1"/>
+				<textFieldExpression><![CDATA[$F{created_at}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="67" y="144" width="191" height="20" uuid="f13d4505-f9d7-401f-84cd-c160010990b7"/>
+				<textFieldExpression><![CDATA[$F{payee}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="484" y="109" width="19" height="20" uuid="a5fad43c-af35-4686-9baf-12961c69de00"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="503" y="109" width="44" height="20" uuid="630db79a-dd64-45a6-8b50-ce4135140b19"/>
+				<textFieldExpression><![CDATA[$F{cashvouchers_checkno}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="182">
+			<rectangle>
+				<reportElement x="12" y="106" width="128" height="20" uuid="beb103e9-3631-4f98-9336-2dd54428598e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="140" y="86" width="96" height="20" uuid="d6ab5fba-a96d-4737-b627-932687f91aa9"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="140" y="6" width="96" height="20" uuid="9597530a-ceed-43b1-8fc7-1d648028739d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="236" y="106" width="89" height="20" uuid="2a7cd811-7d44-449a-b6fc-5ccf09d2b9ba"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="140" y="26" width="96" height="20" uuid="367f2996-e1d9-4138-a9ec-e6b6d6c9fdd7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="12" y="46" width="128" height="20" uuid="8fe61086-c761-47a6-a985-90c92f4a835b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="163" y="6" width="41" height="20" uuid="562e689d-0b23-413c-bb01-b338def971e1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEBIT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="399" y="97" width="114" height="1" uuid="827848bd-60db-4213-a9b4-346769169a58"/>
+			</line>
+			<line>
+				<reportElement x="433" y="180" width="100" height="1" uuid="9a1393fc-8c85-4034-82ff-203c392248dc"/>
+			</line>
+			<rectangle>
+				<reportElement x="236" y="6" width="89" height="20" uuid="8cbdb3a5-0b4b-4e43-a01f-f703cbb86f59"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="332" y="6" width="87" height="20" uuid="d690f4dc-59e8-4ee2-a5ad-08cf777e58c7"/>
+				<text><![CDATA[RECEIVED From:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="140" y="106" width="96" height="20" uuid="aa41d280-2385-4694-ba87-3ea71dbf8957"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="140" y="66" width="96" height="20" uuid="eac18c9c-f61b-4448-8338-8a1fb9f2cee3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="236" y="86" width="89" height="20" uuid="a2837eab-04d4-49a9-b979-c119a9d90a38"/>
+			</rectangle>
+			<line>
+				<reportElement x="243" y="181" width="100" height="1" uuid="c0ffe341-a05b-48ae-a5dd-ec25b8b260a5"/>
+			</line>
+			<rectangle>
+				<reportElement x="12" y="6" width="128" height="20" uuid="70f7b4c0-7f8e-4c70-9aa3-876e486a65d7"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="21" y="141" width="62" height="20" uuid="9b16fe69-afea-48a8-9d99-505d3a312821"/>
+				<text><![CDATA[Prepared By:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="140" y="46" width="96" height="20" uuid="e379d4f3-7d76-47c6-9bbf-80843c04396c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="236" y="66" width="89" height="20" uuid="33d3d12b-12d2-488a-bbf9-1efac9af1e07"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="12" y="86" width="128" height="20" uuid="e8f9f126-09db-4108-b93f-1d813a26d746"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="331" y="52" width="102" height="20" uuid="4af43133-cc56-4b93-a648-e145553d60ea"/>
+				<text><![CDATA[Receive Payment By:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="426" y="141" width="73" height="20" uuid="9645146d-22e2-4c90-86af-b232314a3e3d"/>
+				<text><![CDATA[Approved By:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="12" y="66" width="128" height="20" uuid="85e623e7-18e2-4371-8cae-368449b58ffc"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="243" y="141" width="69" height="20" uuid="203d6436-1694-44f6-a5ea-8fcd67ea4656"/>
+				<text><![CDATA[Checked By:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="6" width="90" height="20" uuid="e7f17a03-702e-4adf-8719-262f981f533f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACCOUNT TITLE]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="12" y="26" width="128" height="20" uuid="b5604ea3-ba62-40f2-b3af-ce3236b597ee"/>
+			</rectangle>
+			<line>
+				<reportElement x="44" y="180" width="100" height="1" uuid="0e989074-bc83-42ce-a120-61362eb76307"/>
+			</line>
+			<staticText>
+				<reportElement x="260" y="6" width="42" height="20" uuid="a386e2d5-d002-48ec-984e-5d10ffcb3a34"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CREDIT]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="236" y="26" width="89" height="20" uuid="f8f5b4e9-67f9-46c7-8a4c-f9b684ab3da4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="236" y="46" width="89" height="20" uuid="d11a5473-2560-48e6-b274-1fdf83358b8e"/>
+			</rectangle>
+			<textField>
+				<reportElement x="393" y="26" width="129" height="20" uuid="73caf4b9-5239-49e9-b5f9-0734b807cb4a"/>
+				<textFieldExpression><![CDATA[$F{rfrom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="439" y="77" width="60" height="20" uuid="28368d2f-f9fa-420d-baba-ed67f681eb8e"/>
+				<textFieldExpression><![CDATA[$F{rpb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="44" y="162" width="100" height="20" uuid="426c8bb1-fa2f-421a-b7f2-17cdce6430b4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prepared}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="239" y="162" width="100" height="20" uuid="52ca9a7a-6239-48ad-82b9-50874667d408"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checked}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="434" y="162" width="100" height="20" uuid="d9646c17-8959-4949-b0ea-24ae8d5ce1f5"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{approved}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="22" y="86" width="61" height="20" uuid="acbbc7e9-3c20-4a15-aabd-38044fe5b70b"/>
+				<textFieldExpression><![CDATA[$F{acctitle1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="106" width="68" height="20" uuid="b83070ee-d971-4daf-8b2f-1686a6ee394a"/>
+				<textFieldExpression><![CDATA[$F{acctitle2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="393" y="98" width="140" height="20" uuid="ef3add3c-79d5-4eb4-bbae-1aa8316fb545"/>
+				<text><![CDATA[Signature over printed name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="154" y="86" width="65" height="20" uuid="2d08b4b3-d6d0-498a-b087-8eb941d66639"/>
+				<textFieldExpression><![CDATA[$P{summary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="247" y="106" width="65" height="20" uuid="efde902b-6985-41c0-b982-f4a6e20d7c67"/>
+				<textFieldExpression><![CDATA[$P{summary}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

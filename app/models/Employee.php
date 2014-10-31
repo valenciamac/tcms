@@ -10,6 +10,18 @@ class Employee extends Eloquent {
 {
 	return $this->hasMany('Payroll');
 }
+	public function labor()
+{
+	return $this->hasMany('Labor');
+}
+	public function laborDescr()
+{
+	return $this->hasMany('laborDescr');
+}
+	public function cashitem()
+{
+	return $this->hasMany('Cashitem');
+}
 	public function scopeSearch($query, $search)
 	{
 		return $query->where(function($query) use ($search)

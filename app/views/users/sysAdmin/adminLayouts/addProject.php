@@ -6,7 +6,7 @@
          </div>
       </div>
    </form>
-   <table class="table table-bordered content" style="font-size:13px;">
+   <table class="table table-striped" style="font-size:13px;">
       <thead>
          <tr>
             <th>ID</th>
@@ -22,7 +22,7 @@
             <td>{{project.project_name}}</td>
             <td>{{project.location}}</td>
             <td>{{millisToUTCDate(project.created_at) | date: 'longDate'}}</td>
-            <td style="margin-right:2px;"><a href="project/{{project.id}}" class="btn btn-success addprobtn"><i class="fa fa-pencil"></i>View Inventory</a> 
+            <td style="margin-right:2px;"><a href="inventory/{{project.id}}" class="btn btn-success addprobtn"><i class="fa fa-pencil"></i>View Inventory</a> 
                <!-- <a href="project/{{project.id}}/delete" class="btn btn-danger"><i class="fa fa-trash-o"></i>delete</a> -->
             </td>
          </tr>

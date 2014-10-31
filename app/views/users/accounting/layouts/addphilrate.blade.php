@@ -1,4 +1,4 @@
-<div class="col-md-9">
+
    
    <div class="panel-group" id="accordion">
 
@@ -8,7 +8,7 @@
          <a class="btn btn-primary" data-toggle="collapse" data-parent="#accordion" href="#addphilrate">
           PhilHealth Contribution
         </a>
-         <a class="btn btn-primary" data-toggle="collapse" data-parent="#accordion" href="#pagibig">
+         <a class="btn btn-primary" href="ratesf">
           Pagibig Contribution
         </a>
          <a class="btn btn-primary" href="ratesg">
@@ -30,9 +30,16 @@
                 </div> 
             
                 <div class="form-group">
-                <label class="col-sm-3 control-label" >Salary Range&nbsp;</label>
+                <label class="col-sm-3 control-label" >Salary Range Min&nbsp;</label>
                 <div class="col-sm-6">
-                <input name="salrange" class="form-control" id="hoursrestspecholdrate">
+                <input name="salmin" class="form-control" id="hoursrestspecholdrate">
+                </div> 
+                </div>
+
+                 <div class="form-group">
+                <label class="col-sm-3 control-label" >Salary Range Max&nbsp;</label>
+                <div class="col-sm-6">
+                <input name="salmax" class="form-control" id="hoursrestspecholdrate">
                 </div> 
                 </div>
 
@@ -78,6 +85,4 @@
 </div>
 </div>
   @include('users.accounting.layouts.viewPhilhealth')
-    </div>
-</div>
-</div>
+ 

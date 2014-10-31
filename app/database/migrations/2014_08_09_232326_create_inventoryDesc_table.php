@@ -15,11 +15,12 @@ class CreateInventoryDescTable extends Migration {
 		Schema::create('inventoryDesc', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('invName_id')->unsigned();
+			$table->integer('inv_item_id')->unsigned();
 			$table->string('invDesc');
+			$table->integer('stock');
 			$table->timestamps();
 
-			$table->foreign('invName_id')->references('id')->on('inventoryItems')->onUpdate('cascade')->onDelete('cascade');
+			$table->foreign('inv_item_id')->references('id')->on('inventoryItems')->onUpdate('cascade')->onDelete('cascade');
 		});
 	}
 

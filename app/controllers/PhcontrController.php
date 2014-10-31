@@ -10,7 +10,8 @@ public function store()
 	{
 		$phcontr = new Phcontr;
 		$phcontr->salbracket = Input::get('salbracket');
-		$phcontr->salrange = Input::get('salrange');
+		$phcontr->salmin = Input::get('salmin');
+		$phcontr->salmax = Input::get('salmax');
 		$phcontr->salbase = Input::get('salbase');
 		$phcontr->tmp = Input::get('tmp');
 		$phcontr->empeeshare = Input::get('empeeshare');

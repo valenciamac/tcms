@@ -53,6 +53,7 @@ function EmployeeController($scope, $http, $interval)
 }
 function SalsController($scope, $http, $interval)
 {
+  $scope.payrol=[];
   function refreshSals() 
   {
     $http({
@@ -66,6 +67,14 @@ function SalsController($scope, $http, $interval)
       console.log('Error');
     });
   }
+  $scope.total = function() {
+        var total = 0;
+        angular.forEach($scope.payroll, function(payroll) {
+            total += payroll.income;
+        })
+
+        return total;
+    }
   refreshSals();
 
   $interval(function() { 
@@ -169,6 +178,44 @@ function PagibigController($scope, $http, $interval)
 
   $interval(function() { 
     refreshPagibig();
+  }, 30000);
+
+
+
+}
+function AstigController($scope, $http, $interval)
+{
+    var toUTCDate = function(date){
+    var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    return _utc;
+  };
+
+  var millisToUTCDate = function(millis){
+    return toUTCDate(new Date(millis));
+  };
+
+  
+    $scope.toUTCDate = toUTCDate;
+    $scope.millisToUTCDate = millisToUTCDate;
+   
+
+  function refreshAstig() 
+  {
+    $http({
+      url: 'astig',
+      method: "GET"
+
+    }).success(function (activities) {
+      $scope.activities = activities; 
+
+    }).error(function (activities) {
+      console.log('Error');
+    });
+  }
+  refreshAstig();
+
+  $interval(function() { 
+    refreshAstig();
   }, 30000);
 
 

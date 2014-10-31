@@ -7,21 +7,10 @@ class IncomeSummaryAdd extends \Eloquent {
         // 'title' => 'required'
     ];
     
-    protected $fillable = [
-        'contractTitle',
-		'incomeJanuary',
-		'incomeFebruary',
-		'incomeMarch',
-		'incomeApril',
-		'incomeMay',
-		'incomeJune',
-		'incomeJuly',
-		'incomeAugust',
-		'incomeSeptember',
-		'incomeOctober',
-		'incomeNovember',
-		'incomeDecember',
-		'updated_at',
-		'created_at'
-	];
+    protected $fillable = [];
+
+    public function Project()
+	{
+		return $this->belongsTo('project', 'project_id');
+	}
 }

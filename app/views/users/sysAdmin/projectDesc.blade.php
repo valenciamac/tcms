@@ -51,10 +51,10 @@
             <a href="../project"><i class="fa fa-archive"></i>Projects</a>
          </li>
          <li>
-            <a href="accounts"><i class="fa fa-user"></i>Accounts</a>
+            <a href="../inventory"><i class="fa fa-archive"></i>Inventory</a>
          </li>
          <li>
-            <a href="#"><i class="fa fa-archive"></i>Inventory</a>
+            <a href="../accounts"><i class="fa fa-user"></i>Accounts</a>
          </li>
          <li>
             <a href="../activities"><i class="fa fa-archive"></i>Activities</a>

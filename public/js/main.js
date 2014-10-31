@@ -1,4 +1,194 @@
+function MasonController($scope, $http, $interval)
+{ 
 
+
+    var toUTCDate = function(date){
+    var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    return _utc;
+  };
+
+  var millisToUTCDate = function(millis){
+    return toUTCDate(new Date(millis));
+  };
+
+  
+    $scope.toUTCDate = toUTCDate;
+    $scope.millisToUTCDate = millisToUTCDate;
+
+   
+
+  $scope.addmason = function()
+  {
+    
+    
+    var neg = {
+      itemdesc: $scope.itemdesc,
+      nopieces: $scope.nopieces,
+      unitmeasure: $scope.unitmeasure,
+      unitprice: $scope.unitprice
+      
+    };
+
+    $scope.masonry.push(neg);
+
+    $http.post('../mason', neg);
+
+    $scope.itemdesc = '';
+    $scope.nopieces = '';
+    $scope.unitmeasure = '';
+    $scope.unitprice = '';
+   
+    
+  };
+
+  function refreshMason() {
+    $http({
+      url: 'bahay/mason',
+      method: "GET"
+
+    }).success(function (masonry) {
+      $scope.masonry = masonry; 
+
+    }).error(function (masonry) {
+      console.log('Error');
+    });
+  }
+
+  refreshMason(); // We call the function on initialization to load the feed.
+
+  // $interval runs the given function every X millisec (2nd arg)
+  $interval(function() { 
+    refreshMason();
+  }, 30000); // the refresh interval must be in millisec
+
+}
+function FormController($scope, $http, $interval)
+{ 
+
+
+    var toUTCDate = function(date){
+    var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    return _utc;
+  };
+
+  var millisToUTCDate = function(millis){
+    return toUTCDate(new Date(millis));
+  };
+
+  
+    $scope.toUTCDate = toUTCDate;
+    $scope.millisToUTCDate = millisToUTCDate;
+
+   
+
+  $scope.addform = function()
+  {
+    
+    
+    var gon = {
+      itemdesc: $scope.itemdesc,
+      nopieces: $scope.nopieces,
+      unitmeasure: $scope.unitmeasure,
+      unitprice: $scope.unitprice
+      
+    };
+
+    $scope.formworks.push(gon);
+
+    $http.post('../form', gon);
+
+    $scope.itemdesc = '';
+    $scope.nopieces = '';
+    $scope.unitmeasure = '';
+    $scope.unitprice = '';
+   
+    
+  };
+
+  function refreshForm() {
+    $http({
+      url: '../public/form',
+      method: "GET"
+
+    }).success(function (formworks) {
+      $scope.formworks = formworks; 
+
+    }).error(function (formworks) {
+      console.log('Error');
+    });
+  }
+
+  refreshForm(); // We call the function on initialization to load the feed.
+
+  // $interval runs the given function every X millisec (2nd arg)
+  $interval(function() { 
+    refreshForm();
+  }, 30000); // the refresh interval must be in millisec
+
+}
+
+function BomController($scope, $http, $interval)
+{ 
+
+
+    var toUTCDate = function(date){
+    var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    return _utc;
+  };
+
+  var millisToUTCDate = function(millis){
+    return toUTCDate(new Date(millis));
+  };
+
+  
+    $scope.toUTCDate = toUTCDate;
+    $scope.millisToUTCDate = millisToUTCDate;
+
+   
+
+  $scope.addbom = function()
+  {
+    
+    
+    var bombom = {
+      itemdesc: $scope.itemdesc,
+      unitmeasure: $scope.unitmeasure,
+      unitprice: $scope.unitprice
+      
+    };
+
+    $scope.bomitem.push(bombom);
+
+    $http.post('bom', bombom);
+
+    $scope.itemdesc = '';
+    $scope.unitmeasure = '';
+    $scope.unitprice = '';
+   
+    
+  };
+
+  function refreshBom() {
+    $http({
+      url: 'public/bom',
+      method: "GET"
+
+    }).success(function (bomitem) {
+      $scope.bomitem = bomitem; 
+
+    }).error(function (bomitem) {
+      console.log('Error');
+    });
+  }
+
+  refreshBom(); // We call the function on initialization to load the feed.
+
+  // $interval runs the given function every X millisec (2nd arg)
+  $interval(function() { 
+    refreshBom();
+  }, 30000); // the refresh interval must be in millisec
+
+}
 
 
 function UsersController($scope, $http, $interval)
@@ -8,7 +198,8 @@ function UsersController($scope, $http, $interval)
     { name: 'Accounting', value: 'accounting' }, 
     { name: 'Administrator', value: 'admin' },
     { name: 'Financing', value: 'financing' },
-    { name: 'Purchasing', value: 'purchasing' }
+    { name: 'Purchasing', value: 'purchasing' },
+    { name: 'Engineer', value: 'engineer' }
     ];
 
     var toUTCDate = function(date){
@@ -85,6 +276,7 @@ function ActsController($scope, $http, $interval)
   
     $scope.toUTCDate = toUTCDate;
     $scope.millisToUTCDate = millisToUTCDate;
+   
 
   function refreshActs() 
   {
@@ -141,6 +333,48 @@ function PosController($scope, $http, $interval)
   $interval(function() { 
     refreshPO();
   }, 30000);
+}
+
+function PrsController($scope, $http)
+{   var toUTCDate = function(date){
+    var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    return _utc;
+  };
+
+  var millisToUTCDate = function(millis){
+    return toUTCDate(new Date(millis));
+  };
+
+  
+    $scope.toUTCDate = toUTCDate;
+    $scope.millisToUTCDate = millisToUTCDate;
+
+  $scope.addprs = function()
+  {
+    var prsitems = {
+      desc: $scope.desc,
+      qty: $scope.qty,
+      price: $scope.price
+    };
+
+    $scope.prsitem.push(prsitems);
+
+    $http.post('addprs', prsitems);
+
+  };
+  function refreshPrs() {
+    $http({
+      url: 'addprs',
+      method: "GET"
+
+    }).success(function (prsitem) {
+      $scope.prsitem = prsitem; 
+
+    }).error(function (prsitem) {
+      console.log('Error');
+    });
+  }
+  refreshPrs();
 }
 
 function ItemsController($scope, $http)
@@ -234,7 +468,7 @@ function ProjectsController($scope, $http, $interval)
   
     $scope.toUTCDate = toUTCDate;
     $scope.millisToUTCDate = millisToUTCDate;
-    
+     $scope.quantity = 5;
   function refreshProjects() 
   {
     $http({
@@ -293,4 +527,118 @@ function MrsController($scope, $http, $interval)
 
 
 
+}
+function CashVouchersController($scope, $http, $interval)
+{
+    var toUTCDate = function(date){
+    var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    return _utc;
+  };
+
+  var millisToUTCDate = function(millis){
+    return toUTCDate(new Date(millis));
+  };
+
+  
+    $scope.toUTCDate = toUTCDate;
+    $scope.millisToUTCDate = millisToUTCDate;
+
+  function refreshCash() 
+  {
+    $http({
+      url: 'cash',
+      method: "GET"
+
+    }).success(function (cashvouchers) {
+      $scope.cashvouchers = cashvouchers; 
+
+    }).error(function (cashvouchers) {
+      console.log('Error');
+    });
+  }
+  refreshCash();
+
+  $interval(function() { 
+    refreshCash();
+  }, 30000);
+}
+
+function CheckVouchersController($scope, $http, $interval)
+{
+    var toUTCDate = function(date){
+    var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    return _utc;
+  };
+
+  var millisToUTCDate = function(millis){
+    return toUTCDate(new Date(millis));
+  };
+
+  
+    $scope.toUTCDate = toUTCDate;
+    $scope.millisToUTCDate = millisToUTCDate;
+
+  function refreshCheck() 
+  {
+    $http({
+      url: 'check',
+      method: "GET"
+
+    }).success(function (checkvouchers) {
+      $scope.checkvouchers = checkvouchers; 
+
+    }).error(function (checkvouchers) {
+      console.log('Error');
+    });
+  }
+  refreshCheck();
+
+  $interval(function() { 
+    refreshCheck();
+  }, 30000);
+
+}
+
+function CashItemController($scope, $http)
+{   var toUTCDate = function(date){
+    var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+    return _utc;
+  };
+
+  var millisToUTCDate = function(millis){
+    return toUTCDate(new Date(millis));
+  };
+
+  
+    $scope.toUTCDate = toUTCDate;
+    $scope.millisToUTCDate = millisToUTCDate;
+
+  $scope.addcashitems = function()
+  {
+    var cash = {
+      descr: $scope.descr,
+      amount: $scope.amount,
+      acctitle: $scope.acctitle,
+      debit: $scope.debit,
+      credit: $scope.credit
+    };
+
+    $scope.cashitem.push(cash);
+
+    $http.post('addcashitems', cash);
+
+  };
+  function refreshCashItem() {
+    $http({
+      url: 'addcashitems',
+      method: "GET"
+
+    }).success(function (cashitem) {
+      $scope.cashitem = cash; 
+
+    }).error(function (cashitem) {
+      console.log('Error');
+    });
+  }
+  refreshCashItem();
 }

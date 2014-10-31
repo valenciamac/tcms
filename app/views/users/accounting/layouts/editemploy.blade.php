@@ -1,90 +1,108 @@
-<div class="col-md-9">
+
 				
 		<!-- content here -->
+
+		<h3> Edit Employee </h3>
 		@if ($employee->count())
-		<table class="table table-bordered table-hover" style="font-size:13px;">
-	      <thead>
-	        <tr>
-	          <th>Id</th>
-              <th>Department</th>
-              <th>Position</th>
-              <th>First Name</th>
-              <th>Middle Name</th>
-              <th>Last Name</th>
-              <th>Rate</th>
-              
-	        </tr>
-	      </thead>
-	      <tbody>
-	       
+		       
 	        @foreach ($employee as $emp)
-	        
-	         <tr>
-	         <form action="{{$emp->id}}/update">
-	        	<td>{{ $emp->id }}</td>
-	            <td>
-	            <select name="department" class="form-control" id="department">
-                    <option value="office">Office</option>
-                    <option value="worksite">Work Site</option>
+	       <form action="{{$emp->id}}/update">
+	       <div class="form-group" style="padding-bottom:45px;">
+            <div class="form-group">
+                <label for="role" class="col-sm-2 control-label">Department:&nbsp;</label>
+                <div class="col-sm-6">
+                <select name="department" class="form-control" id="department">
+                    <option id="office" value="office">Office</option>
+                    <option id="worksite" value="worksite">Work Site</option>
                 </select>
-            	</td>
-	            <td>
-	              <select name="position" class="form-control" id="position">
-                    <option value="accountant" class="office">Accountant</option>
-                    <option value="admin" class="office">Admin</option>
-                    <option value="architect" class="worksite">Architect</option>
-                    <option value="carpenter" class="worksite">Carpenter</option>
-                    <option value="corpsec" class="office">Corporate Secretary</option>
-                    <option value="drivver" class="office work site">Driver</option>
-                    <option value="electrician" class="worksite office">Electrician</option>
-                    <option value="engineer" class="worksite">Engineer</option>
-                    <option value="foreman" class="worksite">Foreman</option>
-                    <option value="stockman" class="worksite">Gen. Stockman</option>
-                    <option value="laborer" class="worksite">Laborer</option>
-                    <option value="maintenance" class="worksite office">Maintenance</option>
-                    <option value="mason" class="worksite">Mason</option>
-                    <option value="plumber" class="worksite office">Plumber</option>
-                    <option value="president" class="office">President</option>
-                    <option value="programmer" class="office">Programmer</option>
-                    <option value="proincha" class="office worksite">Project in-charge</option>
-                    <option value="purchase" class="office">Purchaser</option>
-                    <option value="site" class="worksite">Site</option>
-                    <option value="steelman" class="worksite">Steelman</option>
-                    <option value="settler" class="worksite">Tile Settler</option>
-                    <option value="vicepres" class="office"> Vice President</option>
-                    <option value="warehouse" class="worksite">Warehouseman</option>
-                    <option value="welder" class="worksite">Welder</option>
+            </div>
+            </div><br>
+            <br>
+             <div class="form-group">
+                <label for="role" class="col-sm-2 control-label">Position:&nbsp;</label>
+                <div class="col-sm-6">
+                <select name="position" class="form-control" id="position" id="position">
+                    <option id="accountant" value="accountant" class="office">Accountant</option>
+                    <option id="admin" value="admin" class="office">Admin</option>
+                    <option id="architect" value="architect" class="worksite">Architect</option>
+                    <option id="carpenter" value="carpenter" class="worksite">Carpenter</option>
+                    <option id="corpsec" value="corpsec" class="office">Corporate Secretary</option>
+                    <option id="driver" value="driver" class="worksite">Driver</option>
+                    <option id="electrician" value="electrician" class="worksite">Electrician</option>
+                    <option id="engineer" value="engineer" class="worksite">Engineer</option>
+                    <option id="foreman" value="foreman" class="worksite">Foreman</option>
+                    <option id="stockman" value="stockman" class="worksite">Gen. Stockman</option>
+                    <option id="laborer" value="laborer" class="worksite">Laborer</option>
+                    <option id="maintenance" value="maintenance" class="worksite">Maintenance</option>
+                    <option id="mason" value="mason" class="worksite">Mason</option>
+                    <option id="plumber" value="plumber" class="worksite">Plumber</option>
+                    <option id="president" value="president" class="office">President</option>
+                    <option id="programmer" value="programmer" class="office">Programmer</option>
+                    <option id="proincha" value="proincha" class="worksite">Project in-charge</option>
+                    <option id="purchase" value="purchase" class="office">Purchaser</option>
+                    <option id="site" value="site" class="worksite">Site</option>
+                    <option id="steelman" value="steelman" class="worksite">Steelman</option>
+                    <option id="settler" value="settler" class="worksite">Tile Settler</option>
+                    <option id="vicepres" value="vicepres" class="office"> Vice President</option>
+                    <option id="warehouse" value="warehouse" class="worksite">Warehouseman</option>
+                    <option id="welder" value="welder" class="worksite">Welder</option>
                 </select>
-				</td>
-	            
-	            <td><input name="fname" type="text" onkeypress="return checkNum();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,20);" maxlength="20" placeholder=""  required value="{{ ($emp->fname) }}" class="form-controll"> </td>
-	            <td><input name="mname" type="text" onkeypress="return checkNum();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,20);" maxlength="20" placeholder="" required value="{{ ($emp->mname) }}" class="form-controll"> </td>
-	            <td><input name="lname" type="text" onkeypress="return checkNum();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,20);" maxlength="20" placeholder="" required value="{{ ($emp->lname) }}" class="form-controll"> </td>
-	            <td><input name="rate" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,6);" maxlength="6" placeholder="" required type="text" value="{{ ($emp->rate) }}" class="form-controll"> </td>
-	            
-		 
-	        </tr>
-	        
+            </div>
+            </div>
+            <br><br>
+             <div class="form-group">
+                <label for="fname" class="col-sm-2 control-label" >First Name:&nbsp;</label>
+                <div class="col-sm-6">
+                <input name="fname" onkeypress="return checkNum();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,20);" maxlength="20" placeholder="" required type="text" class="form-control" id="fname" value="{{
+                $emp->fname}}">
+                
+            </div>
+            </div>
+             <br><br>
+             <div class="form-group">
+                <label for="fname" class="col-sm-2 control-label" >First Name:&nbsp;</label>
+                <div class="col-sm-6">
+                <input name="mname" onkeypress="return checkNum();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,20);" maxlength="20" placeholder="" required type="text" class="form-control" id="fname" value="{{
+                $emp->mname}}">
+                
+            </div>
+            </div>
+             <br><br>
+             <div class="form-group">
+                <label for="fname" class="col-sm-2 control-label" >First Name:&nbsp;</label>
+                <div class="col-sm-6">
+                <input name="lname" onkeypress="return checkNum();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,20);" maxlength="20" placeholder="" required type="text" class="form-control" id="fname" value="{{
+                $emp->lname}}">
+                
+            </div>
+            </div>
+            <br><br>
+            <div class="form-group">
+                <label for="lname" class="col-sm-2 control-label">Rate Per Day:&nbsp;</label>
+                <div class="col-sm-6">
+                <input name="rate" value="{{$emp->rate}}" onkeypress="return numeric();" onkeypress="limitText(this.form.limitedtextfield,this.form.countdown,6);" maxlength="6" placeholder="" required type="text" type="text" class="form-control" id="rate" onkeyup="sum2();">
+                {{ $errors->first('lname', '<span class=errors>:message</span>') }}
+            </div>
+            </div><br><br>
+ 
+
+
+                   
+             
+          <div class="form-group">
+      <button type="submit" id="login-btn"  class="btn btn-primary btn-block pull-right" style="width:35%;">Save &nbsp; <i class="fa fa-save"></i></button>
+   </div>
+        </div>
+            <script>
+            $("#{{$emp->department}}").attr("selected", "selected");
+            </script>
+             <script>
+            $("#{{$emp->position}}").attr("selected", "selected");
+            </script>
+             <script>
+            $("#{{$emp->days}}").attr("selected", "selected");
+            </script>
 	        @endforeach
 
-	        
-	      </tbody>
-	    </table>
-		<div class="form-inline">
-            <button type="submit" id="login-btn" class="btn btn-primary btn-block" style="width:20%;">Save &nbsp; <i class="fa fa-save"></i></button>
-        </div>
-        <div class="form-inline">
-        	<p></p>
-        </div>
-        <div class="form-inline">
-        	<button type="back" id="login-btn" class="btn btn-primary btn-block" style="width:20%;">Back &nbsp; <i class="fa fa-refresh"></i></button>
-	    </div>
-	    
-        
-	   	
-	   	</form>  
 	    @endif
-			</div>
-		</div>
-	</div>
-</div>
+	
